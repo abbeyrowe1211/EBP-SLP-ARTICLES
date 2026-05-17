@@ -2712,5 +2712,106 @@
       "Voice therapy cases with plateau or poor response where re-analysis of treatment targets is needed.",
       "SLPs completing CEU learning or clinical fellowship supervision in voice disorders who want a structured framework for treatment reasoning."
     ]
+  },
+  {
+    "id": "grasso-2026",
+    "title": "Efficacy of traditional swallowing therapy plus neuromuscular electrostimulation in multiple sclerosis: A randomized controlled trial",
+    "shortTitle": "NMES + Swallowing Therapy for MS Dysphagia",
+    "authors": "Grasso, M. G., et al.",
+    "authorShort": "Grasso et al.",
+    "journal": "Multiple Sclerosis and Related Disorders",
+    "year": 2026,
+    "pmid": "41689908",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": ["Swallowing"],
+    "tags": ["dysphagia", "multiple sclerosis", "NMES", "neuromuscular electrical stimulation", "swallowing therapy"],
+    "summary": "This double-blind RCT (n=101) found that adding NMES to standard swallowing therapy produced significantly greater dysphagia improvement in people with MS who had severe disability (EDSS ≥7), compared to sham stimulation plus the same therapy. No adverse effects were reported.",
+    "isFoundation": false,
+    "researchFindings": [
+      "Both groups improved in dysphagia disturbances over time, but NMES produced significantly greater ASHA NOMS gains specifically in severely disabled patients (EDSS ≥7).",
+      "NMES combined with standard swallowing therapy was feasible and safe with no adverse effects reported across 101 participants.",
+      "Effect was most pronounced for patients with higher disability levels, suggesting a specific patient profile (severe MS) benefits most from adjunctive NMES."
+    ],
+    "clinicalApplication": "For adult patients with MS and dysphagia—particularly those with more severe disability (EDSS ≥7)—adding NMES (e.g., VitalStim) to a standard swallowing exercise program may enhance outcomes beyond exercises alone. SLPs should use NMES as an adjunct to, not a replacement for, behavioral swallowing therapy. Confirm patient suitability for NMES (no pacemaker, no cervical metal implants, no active infection at electrode site) before initiating. Given that effects were strongest in severely disabled patients, SLPs in skilled nursing facilities, acute care, or long-term care settings treating advanced MS with dysphagia have the most to gain from this protocol.",
+    "sessionStats": {
+      "frequency": "Per standard NMES protocol (typically 5x/week in acute/subacute settings)",
+      "sessionLength": "45–60 min (NMES + swallowing therapy combined)",
+      "dose": "NMES electrodes applied during swallowing exercises per session",
+      "bestFit": "Adults with MS and dysphagia, especially EDSS ≥7"
+    },
+    "bestFitCriteria": [
+      "Diagnosis of multiple sclerosis with confirmed oropharyngeal dysphagia.",
+      "More severe disability level (EDSS ≥7) shows the greatest benefit from adjunctive NMES.",
+      "No contraindications to NMES (pacemaker, cervical metal implants, active infection at electrode site)."
+    ]
+  },
+  {
+    "id": "srp-2026",
+    "title": "Enhancing Adherence to Home-Based Expiratory Muscle Strength Training in Parkinson Disease: Randomized Controlled Trial of an mHealth Intervention",
+    "shortTitle": "mHealth App (SpiroGym) Boosts EMST Adherence in PD",
+    "authors": "Srp, M., Hoskovcova, M., Lagnerova, R., Dvorakova, K., Kliment, R., Muzik, J., Krupicka, R., Gal, O., & Ruzicka, E.",
+    "authorShort": "Srp et al.",
+    "journal": "Journal of Medical Internet Research",
+    "year": 2026,
+    "pmid": "41812147",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": ["Motor Speech"],
+    "tags": ["Parkinson's disease", "EMST", "expiratory muscle strength training", "mHealth", "dysphagia", "adherence", "telehealth", "home exercise"],
+    "summary": "This RCT (n=75) found that people with Parkinson's disease who used the SpiroGym mHealth app during unsupervised home EMST showed significantly better long-term adherence and greater gains in expiratory muscle strength than those using conventional EMST. First RCT integrating mHealth with EMST for PD.",
+    "isFoundation": false,
+    "researchFindings": [
+      "SpiroGym-assisted EMST produced significantly higher long-term adherence than conventional EMST over a 16-week unsupervised maintenance phase.",
+      "Greater gains in expiratory muscle strength were achieved in the mHealth group compared to the conventional EMST group.",
+      "Assessing patient self-efficacy after the 8-week supervised phase identifies those most likely to benefit from digital support during unsupervised maintenance."
+    ],
+    "clinicalApplication": "SLPs treating adults with Parkinson's disease who require long-term EMST for swallowing and cough function should consider mHealth-assisted home practice for the unsupervised maintenance phase. Implement 8 weeks of supervised EMST with biweekly in-person or telehealth reassessments, then transition to app-monitored independent practice (e.g., SpiroGym) for 16 weeks. Evaluate patient self-efficacy at the end of the supervised phase to identify who needs digital support most. Particularly useful in outpatient, home health, and telehealth settings where long-term exercise compliance is a persistent clinical challenge.",
+    "sessionStats": {
+      "frequency": "Biweekly supervised sessions for 8 weeks, then unsupervised daily with app for 16 weeks",
+      "sessionLength": "30–45 min per EMST session",
+      "dose": "EMST per standard protocol; app provides real-time feedback and progress tracking",
+      "bestFit": "Mild-moderate Parkinson's disease with dysphagia and/or impaired voluntary cough"
+    },
+    "bestFitCriteria": [
+      "Adults with mild to moderate Parkinson's disease who have dysphagia or impaired cough function.",
+      "Patients who can operate a smartphone app (or with caregiver support to do so).",
+      "Those with a history of poor adherence to home exercise programs.",
+      "Patients transitioning from supervised to unsupervised home EMST maintenance."
+    ]
+  },
+  {
+    "id": "banco-2025",
+    "title": "Rehabilitation of post-stroke aphasia by a single protocol targeting phonological, lexical, and semantic deficits with speech output tasks: a randomized controlled trial",
+    "shortTitle": "PHOLEXSEM: Multi-Domain Aphasia Protocol RCT",
+    "authors": "Banco, E., et al.",
+    "authorShort": "Banco et al.",
+    "journal": "European Journal of Physical and Rehabilitation Medicine",
+    "year": 2025,
+    "pmid": "39704642",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": ["Language"],
+    "tags": ["aphasia", "post-stroke", "naming", "lexical retrieval", "phonology", "semantics", "repetition", "intensive treatment", "RCT"],
+    "summary": "This RCT (n=44) showed that a 2-week PHOLEXSEM protocol—simultaneously targeting phonological, lexical, and semantic deficits through speech output tasks—produced significantly greater gains in naming, repetition, lexical retrieval, and sentence comprehension than PACE therapy. Gains generalized to untrained items regardless of aphasia type, severity, or chronicity.",
+    "isFoundation": false,
+    "researchFindings": [
+      "PHOLEXSEM significantly outperformed PACE therapy in repetition, naming, lexical retrieval, and sentence comprehension at end of the 2-week treatment.",
+      "Treatment gains generalized to untrained items, suggesting the protocol activates broader language networks rather than producing item-specific learning.",
+      "Improvements were independent of aphasia type, chronicity, and severity, and only marginally influenced by demographic factors—supporting broad clinical applicability."
+    ],
+    "clinicalApplication": "SLPs treating adults with post-stroke aphasia can implement the PHOLEXSEM protocol as a 2-week intensive approach that targets phonological, lexical, and semantic levels of language simultaneously through speech output tasks (e.g., repetition, naming, sentence completion). This integrated structure is more efficient than single-domain treatments and fits well within inpatient rehabilitation timelines. The protocol is appropriate across aphasia types and severities. The generalization to untrained items is a clinically meaningful outcome—patients improve language function broadly, not just on drilled stimuli. Compare to PACE therapy: PHOLEXSEM is more structured and linguistically targeted, while PACE emphasizes naturalistic communication.",
+    "sessionStats": {
+      "frequency": "Daily or near-daily over 2 weeks (intensive protocol)",
+      "sessionLength": "45–60 min",
+      "dose": "Phonological, lexical, and semantic speech output tasks targeting multiple language levels per session",
+      "bestFit": "Post-stroke aphasia of any type or chronicity with word retrieval deficits"
+    },
+    "bestFitCriteria": [
+      "Adults with post-stroke aphasia of any type (Broca's, Wernicke's, anomic, conduction, etc.).",
+      "Suitable across severity levels from mild to severe aphasia.",
+      "Appropriate for both acute/subacute and chronic aphasia.",
+      "Best suited to patients who can tolerate an intensive 2-week protocol (inpatient rehab or outpatient intensive format)."
+    ]
   }
 ]
