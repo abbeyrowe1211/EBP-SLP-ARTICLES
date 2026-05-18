@@ -2813,5 +2813,283 @@
       "Appropriate for both acute/subacute and chronic aphasia.",
       "Best suited to patients who can tolerate an intensive 2-week protocol (inpatient rehab or outpatient intensive format)."
     ]
+  },
+  {
+    "id": "rosenbek-1973-aos",
+    "title": "A Treatment for Apraxia of Speech in Adults",
+    "shortTitle": "Eight-Step Continuum for Apraxia of Speech",
+    "authors": "Rosenbek, J. C., Lemme, M. L., Ahern, M. B., Harris, E. H., & Wertz, R. T.",
+    "authorShort": "Rosenbek et al.",
+    "journal": "Journal of Speech and Hearing Disorders",
+    "year": 1973,
+    "pmid": "4754879",
+    "evidenceLevel": "3",
+    "evidenceType": "Case series / treatment framework",
+    "areas": ["Motor Speech"],
+    "tags": ["apraxia of speech", "AOS", "integral stimulation", "eight-step continuum", "motor speech treatment", "acquired apraxia"],
+    "summary": "The seminal paper introducing the eight-step task continuum for treatment of acquired apraxia of speech (AOS) in adults. Using integral stimulation principles, the continuum progresses from maximum clinician support (simultaneous production) to independent volitional speech, providing the structural foundation for virtually all motor speech treatment approaches that followed.",
+    "isFoundation": true,
+    "researchFindings": [
+      "An eight-step task continuum was developed based on principles of integral stimulation — moving from simultaneous production with the clinician to fully independent, volitional speech.",
+      "Three case studies of adults with severe AOS and mild-to-moderate aphasia demonstrated the applicability and clinical utility of the continuum.",
+      "The continuum provides a principled, hierarchically organized framework for shaping voluntary speech production by systematically fading clinician support.",
+      "The approach is based on the premise that patients with AOS can produce more accurate speech when given maximum facilitation (auditory, visual, and tactile cues simultaneously) and that this support can be progressively reduced."
+    ],
+    "clinicalApplication": "The eight-step continuum remains the structural backbone of integral stimulation-based AOS treatment. Use it to organize treatment sessions hierarchically: begin at whatever step the patient can achieve with reasonable accuracy (~80%), then advance steps as the patient demonstrates consistent success. Steps progress from: (1) simultaneous production, (2) immediate repetition with visual + auditory model, (3) immediate repetition with auditory model only, through to (8) role-playing without a model. Apply this framework to any motor speech treatment approach — DTTC, RASPS, MSTP all draw from this continuum. Document the step level at which the patient is working as a direct measure of treatment progress. This paper is required knowledge for any SLP treating acquired AOS.",
+    "sessionStats": {
+      "sessionLength": "45–60 min",
+      "dose": "Hierarchical framework applicable across any session structure",
+      "bestFit": "Adults with acquired apraxia of speech"
+    },
+    "bestFitCriteria": [
+      "Adults with acquired AOS from stroke, TBI, or other neurological etiology.",
+      "Any severity level of AOS — step entry point adjusts to patient's current ability.",
+      "Patients with co-occurring aphasia — the continuum accommodates reduced language load at lower steps."
+    ]
+  },
+  {
+    "id": "yorkston-1996-dysarthria-efficacy",
+    "title": "Treatment Efficacy: Dysarthria",
+    "shortTitle": "Evidence Base for Dysarthria Treatment",
+    "authors": "Yorkston, K. M.",
+    "authorShort": "Yorkston",
+    "journal": "Journal of Speech, Language, and Hearing Research",
+    "year": 1996,
+    "pmid": "8898266",
+    "evidenceLevel": "2",
+    "evidenceType": "Treatment efficacy review",
+    "areas": ["Motor Speech"],
+    "tags": ["dysarthria", "treatment efficacy", "Parkinson's disease", "ALS", "stroke", "TBI", "cerebral palsy", "evidence-based practice"],
+    "summary": "A foundational treatment efficacy review establishing the scientific and clinical evidence that individuals with dysarthria benefit from SLP services across etiologies including Parkinson's disease, stroke, TBI, ALS, and cerebral palsy. Defined the scope of SLP roles in dysarthria management and synthesized the evidence available at that time.",
+    "isFoundation": true,
+    "researchFindings": [
+      "Both scientific evidence and clinical evidence support that individuals with dysarthria benefit from the services of speech-language pathologists across multiple etiologies.",
+      "SLP roles in dysarthria include differential diagnosis, provision of speech treatment, staging of treatment appropriate to disease progression, and education of patients and families.",
+      "Dysarthria treatment evidence was reviewed across Parkinson's disease, stroke, TBI, ALS, and cerebral palsy — with varying levels of evidence at the time of publication.",
+      "The review distinguished between restorative approaches (improving speech subsystems) and compensatory approaches (maximizing communication despite persistent impairment).",
+      "Intelligibility-based treatment goals and functional communication outcomes were emphasized as the appropriate targets for dysarthria intervention."
+    ],
+    "clinicalApplication": "Use this review as the foundational rationale for dysarthria treatment in documentation and clinical decision-making. When justifying skilled SLP services for dysarthria to payers or referral sources, the evidence framework established here — that treatment is efficacious across etiologies and that SLPs have defined roles in diagnosis, treatment, and staging — remains foundational. Match treatment approach (restorative vs. compensatory) to disease trajectory: restorative approaches are appropriate where neurological recovery or plasticity is possible (stroke, TBI); compensatory and AAC-preparatory approaches are critical for progressive conditions (ALS, PD). Staging treatment to disease progression is essential in ALS — this paper establishes that clinical principle.",
+    "sessionStats": {
+      "sessionLength": "45–60 min",
+      "dose": "Framework applies across treatment intensities and etiologies",
+      "bestFit": "Adults with dysarthria of any etiology"
+    },
+    "bestFitCriteria": [
+      "Adults with dysarthria secondary to stroke, TBI, Parkinson's disease, ALS, MS, or other neurological conditions.",
+      "Clinicians needing evidence-based rationale for dysarthria treatment authorization or program development.",
+      "Patients in progressive neurological conditions requiring staged treatment planning."
+    ]
+  },
+  {
+    "id": "wertz-1986-va-aphasia",
+    "title": "Comparison of Clinic, Home, and Deferred Language Treatment for Aphasia: A Veterans Administration Cooperative Study",
+    "shortTitle": "VA Cooperative Study: Aphasia Treatment Efficacy",
+    "authors": "Wertz, R. T., Weiss, D. G., Aten, J. L., Brookshire, R. H., García-Buñuel, L., Holland, A. L., Kurtzke, J. F., LaPointe, L. L., Milianti, F. J., & Brannegan, R.",
+    "authorShort": "Wertz et al.",
+    "journal": "Archives of Neurology",
+    "year": 1986,
+    "pmid": "3524513",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": ["Language"],
+    "tags": ["aphasia", "treatment efficacy", "RCT", "deferred treatment", "home treatment", "clinic treatment", "aphasia intervention", "language rehabilitation"],
+    "summary": "The landmark VA Cooperative Study RCT directly comparing clinic-based aphasia treatment, volunteer home treatment, and deferred treatment. At 12 weeks, clinic-treated patients made significantly more improvement than deferred patients, establishing the efficacy of formal SLP treatment for aphasia. Delaying treatment for 12 weeks did not eliminate the capacity for improvement but demonstrated the value of early, formal intervention.",
+    "isFoundation": true,
+    "researchFindings": [
+      "At 12 weeks, clinic-treatment patients made significantly more language improvement than deferred-treatment patients — the first large-scale RCT demonstrating that aphasia treatment works.",
+      "Home treatment (volunteer-delivered) did not differ significantly from either clinic or deferred treatment at 12 weeks, suggesting that treatment quality and expertise matter.",
+      "At 24 weeks, after deferred patients had received clinic treatment, there were no significant differences among groups — suggesting that delaying treatment does not permanently compromise ultimate recovery.",
+      "The results established that formal, clinician-delivered treatment for aphasia is efficacious and should not be deferred when the patient is medically stable.",
+      "The study highlighted the importance of treatment intensity and professional delivery in aphasia rehabilitation."
+    ],
+    "clinicalApplication": "This is the study to cite when justifying early aphasia treatment and opposing insurance-based delays. The finding that clinic SLP treatment significantly outperforms deferred care at 12 weeks provides direct, RCT-level evidence that formal treatment should not wait. Use it when advocating for continued treatment authorization, when writing appeals for treatment denials, or when educating teams about the evidence base for aphasia rehabilitation. The finding that volunteer home treatment didn't match clinic outcomes underscores that skilled SLP delivery — not just language stimulation — drives the treatment effect. For clinicians: begin formal treatment as early as medically appropriate post-stroke or post-injury.",
+    "sessionStats": {
+      "frequency": "Approximately 3–5x/week (clinic-based)",
+      "sessionLength": "45–60 min",
+      "dose": "Skilled SLP-delivered language treatment",
+      "bestFit": "Adults with acute to chronic aphasia from stroke or acquired brain injury"
+    },
+    "bestFitCriteria": [
+      "Adults with aphasia in the acute, subacute, or chronic phase following stroke or brain injury.",
+      "Any aphasia type or severity — the study enrolled a heterogeneous aphasia population.",
+      "Clinicians seeking RCT-level evidence to justify treatment authorization or advocate against insurance-based treatment delays."
+    ]
+  },
+  {
+    "id": "albert-1973-mit",
+    "title": "Melodic Intonation Therapy",
+    "shortTitle": "Melodic Intonation Therapy (MIT) Original",
+    "authors": "Albert, M. L., Sparks, R. W., & Helm, N. A.",
+    "authorShort": "Albert, Sparks & Helm",
+    "journal": "Archives of Neurology",
+    "year": 1973,
+    "pmid": "4717723",
+    "evidenceLevel": "3",
+    "evidenceType": "Clinical report / treatment introduction",
+    "areas": ["Language"],
+    "tags": ["melodic intonation therapy", "MIT", "aphasia", "non-fluent aphasia", "Broca's aphasia", "singing", "melody", "intonation", "left hemisphere stroke"],
+    "summary": "The original paper introducing Melodic Intonation Therapy (MIT) for non-fluent aphasia, describing how the preserved melodic and rhythmic capacities of aphasic patients — often observed in singing — can be harnessed therapeutically to stimulate verbal output. This paper launched one of the most widely studied and applied aphasia treatment approaches.",
+    "isFoundation": true,
+    "researchFindings": [
+      "Patients with non-fluent aphasia who could not produce well-articulated speech voluntarily could often produce accurate words and phrases while singing.",
+      "MIT was developed to exploit this preserved capacity by using melodic and rhythmic patterns to facilitate verbal production in non-fluent aphasic patients.",
+      "The approach uses intoned (sung) speech patterns, hand tapping for rhythm, and gradual fading of melodic support to promote voluntary speech production.",
+      "The theoretical basis proposes that MIT engages right-hemisphere language and melody processing to compensate for left-hemisphere speech production damage."
+    ],
+    "clinicalApplication": "MIT is indicated for adults with non-fluent aphasia — particularly Broca's aphasia — with good auditory comprehension but severely reduced verbal output. The formal MIT protocol involves three stages: (1) humming/tapping with the patient, (2) intoned production with hand tapping, (3) fading melody to normal prosody. In clinical practice, incorporate MIT elements when patients can hum or sing words they cannot say, when verbal initiation is severely impaired but comprehension is relatively preserved, or when other approaches have plateaued. Even informal application of melodic facilitation — using a rising intonation or melodic cue to facilitate a target word — has clinical utility beyond the formal protocol. Document melodic facilitation responses as evidence of treatment candidacy.",
+    "sessionStats": {
+      "frequency": "Daily to near-daily in intensive protocols",
+      "sessionLength": "30–45 min",
+      "dose": "Formal MIT: 1.5 hours/day in original protocol; clinically adapted to 30–45 min",
+      "bestFit": "Non-fluent aphasia with good comprehension and minimal verbal output"
+    },
+    "bestFitCriteria": [
+      "Adults with non-fluent aphasia (Broca's, global) with severely reduced verbal output.",
+      "Patients with relatively preserved auditory comprehension (understanding exceeds expression).",
+      "Patients who demonstrate preserved melody or singing ability relative to propositional speech.",
+      "Left hemisphere stroke with right hemisphere largely intact — for neuroplasticity rationale."
+    ]
+  },
+  {
+    "id": "ramage-2024-discourse-aphasia",
+    "title": "Discourse-Level Communication Success in Aphasia: Unveiling Its Significance through Observer's Ratings",
+    "shortTitle": "Observer Ratings of Discourse Success in Aphasia",
+    "authors": "Ramage, A. E., Rowe, A. L., & Greenslade, K. J.",
+    "authorShort": "Ramage, Rowe & Greenslade",
+    "journal": "Seminars in Speech and Language",
+    "year": 2024,
+    "pmid": "39362267",
+    "evidenceLevel": "2",
+    "evidenceType": "Systematic/narrative review",
+    "areas": ["Language"],
+    "tags": ["aphasia", "discourse", "observer ratings", "communicative success", "narrative", "functional communication", "ecological validity", "social validity", "outcome measurement"],
+    "summary": "A systematic review of 16+ studies examining observer ratings of discourse-level communicative success in people with aphasia (PWA) across discourse genres. Findings demonstrate that naive and trained observer ratings provide social validity, capture real-world communication outcomes not visible in standardized tests, and are sensitive to treatment effects — with 9 of 10 treatment studies showing ratable improvements.",
+    "isFoundation": false,
+    "researchFindings": [
+      "Observer ratings of communicative success in PWA were identified across 16 studies, with ratings applied across narrative, procedural, conversational, and multimodal discourse genres.",
+      "Multimodal communication (gesture, writing, drawing combined with speech) and facilitative contexts consistently improved observer-rated success in aphasia.",
+      "Ratings of informativeness and communicative comfort correlated with objective discourse analysis measures, validating their use as clinically meaningful outcome indicators.",
+      "Nine of 10 treatment studies using observer ratings found that ratings captured significant treatment-related improvements — demonstrating the sensitivity of this method to change.",
+      "Observer ratings provide a window into factors affecting communicative success that standardized diagnostic tests and linguistic measures do not capture."
+    ],
+    "clinicalApplication": "This review supports the use of observer ratings as a valid, ecologically meaningful outcome measure in aphasia treatment. In clinical practice, incorporate observer ratings alongside standardized tests and linguistic analysis: trained communication partner ratings, structured conversation partner feedback, or simple Likert-scale ratings of communicative success during real-world or simulated tasks can capture functional outcomes that standardized tests miss. This is especially important for documenting treatment effects in chronic aphasia where standardized test score changes may be minimal but real-world communication has improved. Use facilitative contexts and multimodal communication as part of treatment design — evidence supports these as the conditions under which PWA demonstrate their highest communicative success. The social validity framework this paper applies is directly relevant to ASHA's Life Participation Approach to Aphasia (LPAA).",
+    "sessionStats": {
+      "sessionLength": "Framework applies across session types",
+      "dose": "Observer rating framework applicable as an adjunct outcome measure",
+      "bestFit": "Adults with aphasia in any phase of treatment where functional communication outcomes are a goal"
+    },
+    "bestFitCriteria": [
+      "Adults with aphasia at any stage where standardized test scores alone are insufficient to capture real-world communication gains.",
+      "Clinicians using LPAA or functional communication frameworks who need valid outcome measures beyond traditional testing.",
+      "Treatment programs targeting discourse-level communication, conversation, or multimodal communication in aphasia.",
+      "Chronic aphasia cases where demonstrating treatment effectiveness for insurance or program justification requires evidence of functional gains."
+    ]
+  },
+  {
+    "id": "andrews-1983-stuttering-review",
+    "title": "Stuttering: A Review of Research Findings and Theories circa 1982",
+    "shortTitle": "Foundational Review of Stuttering Research",
+    "authors": "Andrews, G., Craig, A., Feyer, A. M., Hoddinott, S., Howie, P., & Neilson, M.",
+    "authorShort": "Andrews et al.",
+    "journal": "Journal of Speech and Hearing Disorders",
+    "year": 1983,
+    "pmid": "6353066",
+    "evidenceLevel": "2",
+    "evidenceType": "Systematic literature review",
+    "areas": ["Fluency"],
+    "tags": ["stuttering", "evidence base", "natural history", "prevalence", "genetics", "treatment", "fluency disorders", "review"],
+    "summary": "A landmark review that synthesized the replicated empirical findings on stuttering — its natural history, prevalence, etiology, and treatment — into a structured set of 'facts' supported by the research available circa 1982. Established the foundational knowledge base for evidence-based practice in stuttering, including early onset patterns, recovery rates, genetic contributions, and what treatments were supported by evidence.",
+    "isFoundation": true,
+    "researchFindings": [
+      "Stuttering typically begins in early childhood (ages 2–5), with most cases developing before age 12; late-onset stuttering is rare and warrants investigation for neurogenic or psychogenic causes.",
+      "Approximately 5% of children stutter at some point; natural recovery occurs in roughly 75–80% of cases, leaving a persistent stuttering prevalence of approximately 1% in adults.",
+      "Positive family history of stuttering significantly increases risk, with strong evidence for genetic contribution — males are affected at approximately 3–4x the rate of females.",
+      "Stuttering is not caused by psychological problems or parenting style; emotional and attitudinal factors are consequences, not causes, of stuttering.",
+      "Treatment approaches with the strongest evidence at the time included prolonged speech and operant conditioning techniques; the review established a framework for evaluating treatment efficacy in fluency disorders."
+    ],
+    "clinicalApplication": "Use this foundational review to anchor evidence-based clinical reasoning about stuttering. The natural history findings are directly applicable to counseling: when a parent asks about their child's stuttering prognosis, the natural recovery rate data (~75–80%) provides evidence-based context. For adults with persistent stuttering, the finding that emotional and attitudinal factors are consequences — not causes — informs a treatment approach that addresses both speech modification and psychological impact (as captured by the OASES). For assessment, the demographic profile established here (early onset, male predominance, family history) helps distinguish developmental from acquired fluency disorders. The review's methodology — attending only to replicated findings — models the kind of evidence appraisal that EBP in stuttering requires.",
+    "sessionStats": {
+      "sessionLength": "Framework applies across assessment and treatment",
+      "dose": "Foundational knowledge applicable throughout clinical management",
+      "bestFit": "Adults and adolescents with developmental stuttering"
+    },
+    "bestFitCriteria": [
+      "Adults and adolescents with persistent developmental stuttering.",
+      "Clinicians counseling families about stuttering prognosis, etiology, and treatment options.",
+      "Any stuttering evaluation where differential diagnosis (developmental vs. neurogenic vs. psychogenic) is needed."
+    ]
+  },
+  {
+    "id": "verdolini-1998-resonant-voice",
+    "title": "Laryngeal Adduction in Resonant Voice",
+    "shortTitle": "Biomechanical Basis of Resonant Voice Therapy",
+    "authors": "Verdolini, K., Druker, D. G., Palmer, P. M., & Samawi, H.",
+    "authorShort": "Verdolini et al.",
+    "journal": "Journal of Voice",
+    "year": 1998,
+    "pmid": "9763181",
+    "evidenceLevel": "3",
+    "evidenceType": "Laboratory / mechanistic study",
+    "areas": ["Voice & Resonance"],
+    "tags": ["resonant voice", "voice therapy", "laryngeal adduction", "vocal fold nodules", "phonotrauma", "vocal hygiene", "LMRVT", "EGG", "voice production"],
+    "summary": "Foundational study establishing the biomechanical signature of resonant voice production: a barely adducted (or barely abducted) laryngeal configuration that is distinct from pressed and breathy voice. Using electroglottography in both healthy speakers and those with vocal nodules, the study provided the physiological rationale for resonant voice therapy — maximizing acoustic output while minimizing vocal fold collision forces.",
+    "isFoundation": true,
+    "researchFindings": [
+      "Resonant voice was produced with a barely adducted or barely abducted laryngeal configuration — distinct from both pressed voice (tightly adducted) and breathy voice (abducted), though not always distinguishable from normal voice.",
+      "Both healthy speakers and those with vocal nodules produced resonant voice with a similar laryngeal configuration, validating its use as a therapeutic target in hyperfunctional voice disorders.",
+      "Electroglottographic closed quotient (EGG CQ) differentiated resonant from pressed and breathy voice, providing a non-invasive measure for clinical use and biofeedback.",
+      "The barely adducted configuration is hypothesized to reduce vocal fold collision forces — the primary mechanism of phonotrauma in hyperfunctional voice — while maintaining or improving acoustic output.",
+      "Results support the theoretical premise that resonant voice therapy targets optimal vocal fold adduction: enough for efficient voice production, but not so much as to create pathological tissue stress."
+    ],
+    "clinicalApplication": "This paper provides the physiological rationale for resonant voice therapy (Lessac-Madsen Resonant Voice Therapy, LMRVT) and should inform how SLPs explain the treatment to patients. The core clinical message: resonant voice is produced with a 'just right' laryngeal configuration — not pressed, not breathy — that maximizes vocal output while minimizing the collision forces that cause or worsen nodules, polyps, and other phonotrauma. In treatment, target the kinesthetic and vibratory sensations associated with resonant voice (often described as buzzing in the lips, nose, or face) as the patient's guide to correct production. Use EGG biofeedback if available to provide real-time laryngeal adduction feedback. This approach is evidence-supported for hyperfunctional voice disorders including vocal nodules, contact ulcers, and muscle tension dysphonia. Combine with vocal hygiene counseling: reducing high-force phonation events (yelling, hard glottal attacks) complements the resonant voice technique.",
+    "sessionStats": {
+      "frequency": "1–2x/week with daily home practice",
+      "sessionLength": "45–60 min",
+      "dose": "Resonant voice technique training with progressive carry-over to connected speech",
+      "bestFit": "Hyperfunctional voice disorders including vocal nodules, muscle tension dysphonia, contact ulcers"
+    },
+    "bestFitCriteria": [
+      "Adults with hyperfunctional voice disorders (vocal nodules, polyps, contact ulcers, muscle tension dysphonia).",
+      "Professional voice users (teachers, singers, clergy, call center workers) with phonotrauma-related voice disorders.",
+      "Patients with voice disorders where reducing vocal fold collision force is the primary therapeutic target.",
+      "Patients who have not responded to vocal hygiene alone and require active voice technique retraining."
+    ]
+  },
+  {
+    "id": "logemann-1994-chin-tuck",
+    "title": "Chin-Down Posture Effect on Aspiration in Dysphagic Patients",
+    "shortTitle": "Chin Tuck for Aspiration Management in Dysphagia",
+    "authors": "Logemann, J. A., Rademaker, A., Pauloski, B. R., Ohmae, Y., & Kahrilas, P. J.",
+    "authorShort": "Logemann et al.",
+    "journal": "Dysphagia",
+    "year": 1994,
+    "pmid": "8328896",
+    "evidenceLevel": "3",
+    "evidenceType": "Controlled observational study",
+    "areas": ["Swallowing"],
+    "tags": ["dysphagia", "aspiration", "chin tuck", "chin-down posture", "postural compensation", "videofluoroscopy", "swallowing management", "neurogenic dysphagia"],
+    "summary": "Foundational study establishing the mechanism and clinical utility of the chin-down (chin tuck) posture for reducing aspiration in neurogenic dysphagia. Using videofluoroscopy in 30 neurologically impaired patients who aspirated before the swallow trigger, this study identified which patients benefited from chin-down posture and described the pharyngeal dimensional changes that explain its effect.",
+    "isFoundation": true,
+    "researchFindings": [
+      "In 30 neurologically impaired patients with pre-swallow aspiration, chin-down posture eliminated aspiration on at least one consistency in 50% (15/30) of patients.",
+      "Chin-down posture widens the valleculae and narrows the laryngeal entrance — mechanically reducing the risk of material entering the airway before the pharyngeal swallow triggers.",
+      "Patients for whom the chin-tuck was effective tended to have different pharyngeal anatomical dimensions at rest compared to non-responders, suggesting patient selection matters.",
+      "The posture is most effective for patients with delayed triggering of the pharyngeal swallow, as it provides additional time and space to protect the airway.",
+      "Chin-down posture does not universally eliminate aspiration — videofluoroscopic trial of the posture during assessment is needed to confirm effectiveness before prescribing."
+    ],
+    "clinicalApplication": "The chin tuck is one of the most commonly prescribed compensatory strategies in dysphagia management — but this paper establishes the critical clinical point: it doesn't work for everyone, and VFS or FEES trial is needed before prescribing. Use chin tuck as a first-line trial strategy for patients with delayed pharyngeal swallow trigger and pre-swallow aspiration (particularly on thin liquids), neurogenic dysphagia from stroke or TBI, and patients at risk of aspiration before the pharyngeal swallow initiates. Do not prescribe chin tuck as a blanket aspiration strategy without instrumental confirmation — some patients aspirate more with the posture, particularly those with reduced pharyngeal clearance. During MBSS or FEES, trial chin tuck across multiple consistencies and document the response. If effective, train the patient, family, and nursing staff in consistent posture positioning during meals and medication administration.",
+    "sessionStats": {
+      "frequency": "Applied with every swallow (compensatory strategy)",
+      "sessionLength": "Strategy training: 1–3 sessions",
+      "dose": "Consistent application at all meals once established",
+      "bestFit": "Neurogenic dysphagia with delayed pharyngeal swallow trigger and pre-swallow aspiration"
+    },
+    "bestFitCriteria": [
+      "Adults with neurogenic dysphagia demonstrating delayed or absent pharyngeal swallow trigger.",
+      "Pre-swallow aspiration on thin liquids confirmed by instrumental evaluation.",
+      "Patients with sufficient cognitive ability and neck mobility to maintain chin-down posture consistently.",
+      "Post-stroke, TBI, or neurodegenerative dysphagia where compensatory strategies are the primary management approach."
+    ]
   }
 ]
