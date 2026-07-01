@@ -4172,5 +4172,439 @@
       "Better single-word comprehension at baseline predicts stronger treatment response -- consider targeting comprehension in parallel for clients with lower receptive ability.",
       "Ensure phonological cueing is incorporated into treatment protocol -- phonological components predicted better outcomes in this meta-analysis."
     ]
+  },
+  {
+    "id": "spencer-2025-vpi-dysarthria",
+    "title": "Velopharyngeal Insufficiency in Adults With Dysarthria: A Systematic Review",
+    "shortTitle": "VPI in Adult Dysarthria: Systematic Review",
+    "authors": "Spencer, K. A.",
+    "authorShort": "Spencer",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2025,
+    "pmid": "39626093",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Motor Speech"
+    ],
+    "tags": [
+      "Dysarthria",
+      "Velopharyngeal Insufficiency",
+      "Nasal Resonance",
+      "ALS",
+      "Parkinson's Disease",
+      "Assessment",
+      "Prosthetic Management"
+    ],
+    "summary": "Systematic review examining velopharyngeal insufficiency (VPI) across adult dysarthria populations, synthesizing evidence on prevalence, assessment methods, and management approaches including prosthetic and behavioral intervention.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "VPI is a clinically significant feature of dysarthria across multiple etiologies including ALS, TBI, MS, and Parkinson's disease, with hypernasality affecting intelligibility and voice quality.",
+      "Palatal lift prostheses have the strongest evidence for management of VPI in dysarthria, particularly for individuals with flaccid dysarthria and adequate velar tissue movement.",
+      "Behavioral voice therapy approaches can complement prosthetic management but alone show limited evidence for correcting VPI at the structural level.",
+      "Nasometry and acoustic measures of nasalance are the most commonly used objective assessment tools, though normative data for adult dysarthric populations vary widely.",
+      "Surgical referral (e.g., posterior pharyngeal wall augmentation) is considered primarily when prosthetic management is not tolerated or insufficient.",
+      "Evidence base is limited by small sample sizes and heterogeneous populations; further RCTs are needed to establish optimal management protocols."
+    ],
+    "clinicalApplication": "Screen for VPI in all clients with dysarthria by listening for hypernasality, nasal emission, and reduced intraoral pressure during plosives and fricatives. Use nasometry or aerodynamic measures to quantify VPI severity when available. Refer to prosthodontist for palatal lift evaluation when VPI significantly impacts intelligibility — particularly in flaccid dysarthria (e.g., ALS, lower motor neuron involvement). Continue behavioral voice and articulation therapy alongside prosthetic management to maximize carryover.",
+    "sessionStats": {
+      "frequency": "Variable by intervention type",
+      "sessionLength": "45–60 min",
+      "dose": "Palatal lift: multiple fitting appointments; behavioral tx: individualized",
+      "bestFit": "Adults with flaccid or mixed dysarthria and hypernasality (ALS, TBI, MS)"
+    },
+    "bestFitCriteria": [
+      "Adults with dysarthria secondary to ALS, TBI, MS, or other neurological conditions presenting with hypernasality or nasal emission.",
+      "Clients where VPI is reducing speech intelligibility or voice quality despite other treatment approaches.",
+      "Clinicians determining whether to pursue prosthetic management, behavioral treatment, or surgical referral for VPI.",
+      "Adults who have not had formal VPI assessment and have not been evaluated for palatal lift candidacy."
+    ]
+  },
+  {
+    "id": "raymer-2023-cilt",
+    "title": "Effectiveness of Constraint-Induced Language Therapy for Aphasia: Evidence From Systematic Reviews and Meta-Analyses",
+    "shortTitle": "CILT for Aphasia: Umbrella Systematic Review",
+    "authors": "Raymer, A. M., & Roitsch, J.",
+    "authorShort": "Raymer & Roitsch",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2023,
+    "pmid": "36668725",
+    "evidenceLevel": "1a",
+    "evidenceType": "Umbrella systematic review",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "Aphasia",
+      "CILT",
+      "Constraint-Induced Language Therapy",
+      "Intensity",
+      "Neuroplasticity",
+      "Post-Stroke"
+    ],
+    "summary": "Umbrella systematic review synthesizing evidence from existing systematic reviews and meta-analyses on constraint-induced language therapy (CILT) for post-stroke aphasia. CILT incorporates forced verbal use, massed practice, and shaping to drive neuroplastic language recovery.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "CILT effectively improves language and functional communication in individuals with post-stroke aphasia, with benefits supported across multiple systematic reviews.",
+      "Some reviews report sustained gains from CILT beyond the treatment period, suggesting durable neuroplastic changes.",
+      "Generalization to untrained stimuli and connected speech is limited — most gains are seen on trained targets.",
+      "The high-intensity, massed practice component of CILT is thought to be a key active ingredient, consistent with neuroplasticity principles.",
+      "Constraint component (discouraging gesture/writing) may contribute benefit beyond intensity alone, though disentangling elements is difficult.",
+      "CILT may be particularly beneficial for individuals with nonfluent aphasia who retain some residual verbal output to shape."
+    ],
+    "clinicalApplication": "Implement CILT principles by requiring verbal communication attempts during treatment, using shaping techniques to gradually increase response complexity, and discouraging compensatory non-verbal strategies during treatment sessions. Pair with high-intensity scheduling (≥3 hours/week, ≥10 sessions) to leverage neuroplasticity. Program functional targets (e.g., names, frequently used phrases) to maximize ecological validity. For clients who cannot produce verbal output, consider hybrid approaches that incorporate CILT principles with supported communication.",
+    "sessionStats": {
+      "frequency": "3–5 x/week",
+      "sessionLength": "2–3 hours/session (intensive format)",
+      "dose": "Typically 10–15 sessions over 2–3 weeks",
+      "bestFit": "Adults with post-stroke aphasia retaining some verbal output"
+    },
+    "bestFitCriteria": [
+      "Adults with chronic or subacute post-stroke aphasia who have some residual verbal output.",
+      "Clients who have plateaued with traditional low-intensity therapy and may benefit from massed practice.",
+      "Individuals where functional verbal communication is the primary treatment goal.",
+      "Settings that can accommodate intensive scheduling (rehabilitation programs, intensive outpatient, ICAPs)."
+    ]
+  },
+  {
+    "id": "barsties-2024-mct-mtd",
+    "title": "The Efficacy of the Manual Circumlaryngeal Therapy for Muscle Tension Dysphonia: A Systematic Review and Meta-analysis",
+    "shortTitle": "Manual Circumlaryngeal Therapy for MTD: Meta-analysis",
+    "authors": "Barsties v. Latoszek, B., Watts, C. R., Hetjens, S., & Skowronski, T.",
+    "authorShort": "Barsties v. Latoszek et al.",
+    "journal": "The Laryngoscope",
+    "year": 2024,
+    "pmid": "37366280",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review and meta-analysis",
+    "areas": [
+      "Voice & Resonance"
+    ],
+    "tags": [
+      "Muscle Tension Dysphonia",
+      "Manual Therapy",
+      "MCT",
+      "Laryngeal Massage",
+      "Voice Treatment",
+      "Functional Voice"
+    ],
+    "summary": "Systematic review and meta-analysis examining the efficacy of manual circumlaryngeal therapy (MCT) for muscle tension dysphonia (MTD). MCT involves hands-on manual manipulation of the laryngeal and supralaryngeal musculature to reduce excess muscular tension and improve vocal quality.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "MCT significantly improved shimmer and harmonics-to-noise ratio (HNR) in individuals with MTD, with these effects maintained after accounting for measurement variability.",
+      "Jitter was also significantly reduced following MCT, indicating improvement in cycle-to-cycle frequency stability of the voice.",
+      "Effects on fundamental frequency were not consistently verified across studies, suggesting MCT does not reliably alter habitual pitch.",
+      "MCT can produce immediate and clinically significant voice improvements, sometimes within a single session.",
+      "MCT is a safe, non-invasive technique with no reported adverse effects across included studies.",
+      "Variability in MCT technique (Aronson approach, Lieberman approach, etc.) across studies limits direct comparison but all approaches showed benefit."
+    ],
+    "clinicalApplication": "MCT is a first-line technique for functional MTD with high laryngeal position and supralaryngeal tension. Techniques include gentle circular massage of the thyrohyoid space, inferior displacement of the larynx, and reduction of overall laryngeal tension. Prompt the client to phonate (sustain /i/ or /a/) during manipulation to immediately assess change in voice quality. Combine with voice therapy targeting easy onset, resonant voice, and elimination of abusive behaviors. Consider MCT before traditional voice therapy for clients presenting with primary musculoskeletal tension. Can achieve significant vocal improvement in 1–3 sessions when implemented by a trained clinician.",
+    "sessionStats": {
+      "frequency": "1–2 x/week",
+      "sessionLength": "45–60 min",
+      "dose": "1–6 sessions (often sufficient with early responders)",
+      "bestFit": "Adults with primary or secondary muscle tension dysphonia"
+    },
+    "bestFitCriteria": [
+      "Adults with muscle tension dysphonia (primary or secondary) with elevated laryngeal position, restricted thyrohyoid space, and visible/palpable laryngeal tension.",
+      "Clients who have not responded adequately to traditional voice therapy approaches alone.",
+      "Voice patients with neck, jaw, or shoulder tension that appears to contribute to dysphonia.",
+      "SLPs who have received training in laryngeal manual therapy techniques."
+    ]
+  },
+  {
+    "id": "wang-2023-nmes-dysphagia",
+    "title": "Effects of Transcutaneous Neuromuscular Electrical Stimulation on Post-Stroke Dysphagia: A Systematic Review and Meta-analysis",
+    "shortTitle": "NMES for Post-Stroke Dysphagia: Meta-analysis",
+    "authors": "Wang, Y., Xu, L., Wang, L., Jiang, M., & Zhao, L.",
+    "authorShort": "Wang et al.",
+    "journal": "Frontiers in Neurology",
+    "year": 2023,
+    "pmid": "37228409",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review and meta-analysis",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "Dysphagia",
+      "NMES",
+      "VitalStim",
+      "Post-Stroke",
+      "Electrical Stimulation",
+      "Swallowing Rehabilitation",
+      "Neurological"
+    ],
+    "summary": "Systematic review and meta-analysis of 46 RCTs (N=3,346) evaluating transcutaneous neuromuscular electrical stimulation (NMES) for post-stroke dysphagia. Findings support NMES combined with standard swallowing therapy as superior to swallowing therapy alone.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "NMES combined with routine swallowing therapy (NMES+ST) significantly outperformed swallowing therapy alone across six dysphagia outcome measures: PAS, FOIS, FDS, SSA, VFSS, and WST.",
+      "NMES alone was NOT superior to conventional swallowing therapy alone — the adjunctive combination is key to improved outcomes.",
+      "Optimal stimulation parameters identified: 25 Hz frequency, 7 mA or 0–15 mA intensity, courses of ≤4 weeks produced the strongest effects.",
+      "NMES+ST significantly improved quality of life measures and increased upward movement distance of the hyoid bone during swallowing.",
+      "46 RCTs with 3,346 patients were included, representing the largest and most comprehensive meta-analysis on NMES for dysphagia to date.",
+      "Subgroup analyses confirmed effectiveness across multiple outcome measures and treatment parameters, supporting clinical generalizability."
+    ],
+    "clinicalApplication": "Use NMES (e.g., VitalStim) as an adjunctive component paired with active swallowing exercises — not as a standalone intervention. Apply transcutaneous electrodes per manufacturer and clinical training protocols. Target treatment courses of ≤4 weeks with NMES+ST combined. Continue traditional swallowing therapy (e.g., effortful swallow, Mendelsohn, postural strategies) alongside every NMES session. Ensure NMES contraindications are screened (pacemaker, metal implants in treatment area, active seizures, altered skin integrity at electrode sites). NMES should be billed and documented as a component of dysphagia treatment, not a passive modality used in isolation.",
+    "sessionStats": {
+      "frequency": "Daily or 5 x/week",
+      "sessionLength": "30–45 min",
+      "dose": "≤4 weeks continuous course; typically 20–30 sessions",
+      "bestFit": "Adults with post-stroke oropharyngeal dysphagia, pharyngeal phase impairment"
+    },
+    "bestFitCriteria": [
+      "Adults with oropharyngeal dysphagia secondary to stroke with pharyngeal phase weakness.",
+      "Clients who have plateaued on standard swallowing therapy and may benefit from adjunctive neurostimulation.",
+      "Settings where NMES-certified SLPs and appropriate equipment are available.",
+      "Clients without NMES contraindications (no cardiac pacemakers, no metal implants in the cervical region, no seizure disorder, intact skin integrity at electrode sites)."
+    ]
+  },
+  {
+    "id": "sackley-2024-lsvt-pd",
+    "title": "Lee Silverman Voice Treatment Compared With Standard NHS Speech and Language Therapy for Dysarthria in Parkinson's Disease: The PD COMM Randomized Controlled Trial",
+    "shortTitle": "LSVT LOUD vs Standard SLT in Parkinson's: PD COMM RCT",
+    "authors": "Sackley, C., Patel, S., Hives, L., Bhanu, C., Bradley, E., Noorkoiv, M., et al.",
+    "authorShort": "Sackley et al.",
+    "journal": "BMJ",
+    "year": 2024,
+    "pmid": "38986549",
+    "evidenceLevel": "1b",
+    "evidenceType": "Randomized controlled trial",
+    "areas": [
+      "Motor Speech"
+    ],
+    "tags": [
+      "Parkinson's Disease",
+      "LSVT LOUD",
+      "Dysarthria",
+      "Voice",
+      "Intensity",
+      "Motor Speech",
+      "RCT",
+      "Neurological"
+    ],
+    "summary": "Large multicenter UK RCT (PD COMM) comparing LSVT LOUD, standard NHS speech and language therapy, and no treatment in adults with Parkinson's disease and dysarthria. LSVT LOUD significantly outperformed both standard care and no treatment; standard care showed no benefit over no treatment.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "LSVT LOUD significantly reduced the participant-reported impact of voice/speech problems compared to no speech and language therapy.",
+      "LSVT LOUD significantly outperformed standard NHS speech and language therapy on the primary voice-related quality of life outcome.",
+      "Standard NHS speech and language therapy showed NO statistically significant benefit compared to no speech and language therapy — a major and practice-changing finding.",
+      "Benefits of LSVT LOUD were maintained at follow-up, supporting the durability of intensive treatment.",
+      "The trial included adults with idiopathic Parkinson's disease across multiple NHS speech and language therapy services throughout the UK.",
+      "Results reinforce that the intensity and structured protocol of LSVT LOUD are critical active ingredients, not general SLT contact alone."
+    ],
+    "clinicalApplication": "Prioritize LSVT LOUD for individuals with Parkinson's disease-related dysarthria. The 16-session intensive protocol (4 sessions/week for 4 weeks, each 60 min) is key — do not dilute it with a lower-intensity schedule. Emphasize 'THINK LOUD' carry-over for functional communication. The PD COMM trial findings mean that conventional, lower-intensity Parkinson's speech therapy cannot be assumed to be sufficient. If LSVT LOUD is not available, consider at minimum replicating its core elements: loudness focus, high intensity, daily practice homework. Maintenance sessions every 3–6 months support long-term loudness carryover.",
+    "sessionStats": {
+      "frequency": "4 x/week",
+      "sessionLength": "60 min",
+      "dose": "16 sessions over 4 consecutive weeks",
+      "bestFit": "Adults with Parkinson's disease and hypokinetic dysarthria"
+    },
+    "bestFitCriteria": [
+      "Adults with Parkinson's disease presenting with hypokinetic dysarthria, reduced loudness, or reduced speech intelligibility.",
+      "Individuals who have not yet received intensive voice treatment for Parkinson's disease.",
+      "Clients in earlier stages of PD who can tolerate the intensive 4-week schedule and complete daily home practice.",
+      "Clinicians selecting between LSVT LOUD and standard speech therapy for a Parkinson's patient — the PD COMM trial provides strong evidence for LSVT LOUD."
+    ]
+  },
+  {
+    "id": "jiang-2024-app-aphasia",
+    "title": "The Effect of Mobile Application-Based Technology on Post-Stroke Aphasia: A Systematic Review",
+    "shortTitle": "App-Based Technology for Post-Stroke Aphasia: Systematic Review",
+    "authors": "Jiang, Z., He, M., Zhang, C., & Chen, X.",
+    "authorShort": "Jiang et al.",
+    "journal": "Frontiers in Neurology",
+    "year": 2024,
+    "pmid": "38933323",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "Aphasia",
+      "App-Based Therapy",
+      "Technology",
+      "Post-Stroke",
+      "Telehealth",
+      "Home Practice",
+      "Naming",
+      "Language Treatment"
+    ],
+    "summary": "Systematic review of 15 studies (including 10 RCTs) examining the effect of mobile application-based technology (tablets, iPads, phones) on post-stroke aphasia outcomes. Findings support app-based therapy as a valuable adjunct for aphasia rehabilitation, particularly for improving language function, naming, and quality of life.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "8 out of 15 studies demonstrated efficacy of mobile application-based therapy in enhancing overall language function for post-stroke aphasia patients.",
+      "4 studies indicated positive effects on naming abilities, suggesting app-based approaches can drive lexical-semantic recovery.",
+      "3 studies highlighted improvement in communication skills, and 3 in spontaneous speech expression.",
+      "2 studies documented improved quality of life for individuals with aphasia using app-based interventions.",
+      "App-based therapy enables higher doses of independent practice, addressing a known limitation of clinic-only aphasia treatment.",
+      "Apps do not replace face-to-face SLT but serve as effective supplements, allowing individuals to accumulate high-intensity practice outside of sessions."
+    ],
+    "clinicalApplication": "Prescribe app-based aphasia programs (e.g., Constant Therapy, Lingraphica, AphasiaScripts) as between-session home practice to increase treatment intensity. Target naming and word-finding specifically using app-based naming exercises aligned with clinic targets. Set up the app with the client and caregiver in session to ensure independence at home. Monitor progress via built-in app data where available and adjust app targets weekly. Apps are particularly useful for clients with chronic aphasia seeking to maintain or expand gains without daily clinical contact. Ensure the client and communication partner understand the app is supplementing — not replacing — SLP-directed treatment.",
+    "sessionStats": {
+      "frequency": "Daily independent practice (supplementing weekly SLT sessions)",
+      "sessionLength": "20–40 min home practice sessions",
+      "dose": "Ongoing as adjunct to formal treatment; 4–12 weeks in most studies",
+      "bestFit": "Adults with chronic or subacute post-stroke aphasia with sufficient motor ability to use a touchscreen device"
+    },
+    "bestFitCriteria": [
+      "Adults with post-stroke aphasia who are motivated for home practice and have access to a tablet or smartphone.",
+      "Clients with intact enough motor control to operate a touchscreen device independently or with caregiver assistance.",
+      "Individuals in chronic aphasia seeking to increase treatment intensity beyond weekly clinic sessions.",
+      "SLPs looking to augment face-to-face treatment with systematic, data-tracked home practice tools."
+    ]
+  },
+  {
+    "id": "brignell-2020-stuttering-review",
+    "title": "A Systematic Review of Interventions for Adults Who Stutter",
+    "shortTitle": "Interventions for Adults Who Stutter: Systematic Review",
+    "authors": "Brignell, A., Krahe, M., Downes, M., Kefalianos, E., Reilly, S., & Morgan, A. T.",
+    "authorShort": "Brignell et al.",
+    "journal": "Journal of Fluency Disorders",
+    "year": 2020,
+    "pmid": "32438123",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Fluency"
+    ],
+    "tags": [
+      "Stuttering",
+      "Adults",
+      "Speech Restructuring",
+      "CBT",
+      "Camperdown",
+      "Fluency Shaping",
+      "Stuttering Modification",
+      "Psychosocial"
+    ],
+    "summary": "Systematic review examining the evidence for face-to-face interventions, service delivery models, and psychological treatments for adults who stutter. Included 5 RCTs, 4 registered trials, and 3 systematic reviews. Speech restructuring approaches reduced stuttering frequency, and combined approaches incorporating CBT may improve psychosocial outcomes.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Speech restructuring approaches (e.g., prolonged speech, smooth speech, Camperdown Program) reduced stuttering frequency by 50–57% on average across included studies.",
+      "No intervention eliminated stuttering to the level of community controls who do not stutter; expectations should be calibrated accordingly.",
+      "Cognitive behavioral therapy (CBT) combined with speech restructuring may provide additional benefit for psychosocial outcomes (anxiety, avoidance, quality of life).",
+      "The Camperdown Program (an RCT-validated protocol) demonstrated significant stuttering reduction using smooth speech syllable-timed speech and problem-solving.",
+      "Internet-delivered and group-based treatment formats showed preliminary evidence comparable to individual face-to-face delivery.",
+      "Only 5 RCTs met inclusion criteria, highlighting significant gaps in the adult stuttering treatment evidence base."
+    ],
+    "clinicalApplication": "Use evidence-based stuttering restructuring approaches (Camperdown Program, prolonged speech, smooth speech) as the foundation for fluency-focused treatment. Integrate CBT-informed approaches (e.g., acceptance and commitment therapy, desensitization, cognitive restructuring) to address communication anxiety, avoidance, and overall quality of life — particularly for adults where avoidance is a primary presenting concern. Set explicit expectations: the goal is reduced stuttering frequency and improved confidence, not eliminating stuttering entirely. Consider group therapy and self-help support as adjuncts. Telehealth delivery is supported by emerging evidence and may expand access.",
+    "sessionStats": {
+      "frequency": "Weekly (individual or group)",
+      "sessionLength": "60–90 min",
+      "dose": "8–20 sessions; maintenance follow-up at 3, 6, 12 months",
+      "bestFit": "Adults who stutter with moderate to severe stuttering frequency and/or psychosocial impact"
+    },
+    "bestFitCriteria": [
+      "Adults who stutter presenting with stuttering frequency that impacts daily communication and occupational or social participation.",
+      "Clients with co-occurring communication anxiety, avoidance, or negative self-perception related to stuttering.",
+      "SLPs selecting an evidence-based treatment approach for adults who stutter.",
+      "Adults who have not received structured stuttering intervention as adults, or who are seeking a refresher with an evidence-based framework."
+    ]
+  },
+  {
+    "id": "shrubsole-2023-partner-training",
+    "title": "Communication Partner Training With Familiar Partners of People With Aphasia: A Systematic Review and Synthesis of Barriers and Facilitators to Implementation",
+    "shortTitle": "Communication Partner Training in Aphasia: Systematic Review",
+    "authors": "Shrubsole, K., Power, E., & Hall, A.",
+    "authorShort": "Shrubsole et al.",
+    "journal": "International Journal of Language & Communication Disorders",
+    "year": 2023,
+    "pmid": "36417196",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "Aphasia",
+      "Communication Partner Training",
+      "Caregiver",
+      "Family Training",
+      "Participation",
+      "Social Communication",
+      "Community Integration"
+    ],
+    "summary": "Systematic review examining communication partner training (CPT) for familiar partners (family members, caregivers) of people with aphasia, with synthesis of barriers and facilitators to real-world implementation. Evidence supports CPT as effective for improving communication activities and participation for both the person with aphasia and their trained partner.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Communication partner training is effective in improving communication activities and participation for trained familiar partners of people with aphasia.",
+      "CPT is probably effective in improving communication activities and participation for people with aphasia when interacting with trained communication partners.",
+      "Training familiar partners establishes an enriched communication environment, which may enhance neuroplasticity and support community participation long term.",
+      "Training that enables family caregivers to maintain their carer role and communication support has been associated with reduced caregiver burden.",
+      "Barriers to CPT implementation include partner availability, SLP time constraints, limited resources, and difficulty generalizing strategies beyond training contexts.",
+      "Facilitators include structured training programs, video modeling, role-play practice, and booster sessions to support skill retention."
+    ],
+    "clinicalApplication": "Incorporate communication partner training as a routine component of aphasia intervention — not an optional add-on. Teach partners specific Supported Conversation for Adults with Aphasia (SCA) techniques: acknowledging competence, revealing competence through multimodal scaffolding (pictures, writing, gesture), and confirming understanding. Use video modeling and role-play to build partner skills. Provide written resources and practice materials for home use. Conduct at least one session with the partner present in each episode of care. Address caregiver emotional needs and build confidence in communication alongside skill training.",
+    "sessionStats": {
+      "frequency": "1–2 family/partner training sessions per episode of care + ongoing reinforcement",
+      "sessionLength": "45–60 min (partner training sessions)",
+      "dose": "4–8 structured training sessions; booster sessions at 3–6 months",
+      "bestFit": "Adults with aphasia of any severity who have an available and motivated communication partner"
+    },
+    "bestFitCriteria": [
+      "Adults with aphasia at any stage of recovery who have an available familiar communication partner (family member, caregiver, friend).",
+      "Communication partners motivated to learn supported communication strategies and take an active role in aphasia rehabilitation.",
+      "Clinicians working with community-dwelling adults with aphasia for whom participation and quality of life are key goals.",
+      "Settings providing aphasia group treatment where partner training is feasible as a complementary home-based component."
+    ]
+  },
+  {
+    "id": "monnelly-2023-icap",
+    "title": "A Systematic Review of Intensive Comprehensive Aphasia Programmes — Who Takes Part, What Is Measured, What Are the Outcomes?",
+    "shortTitle": "Intensive Comprehensive Aphasia Programmes: Systematic Review",
+    "authors": "Monnelly, K., Marshall, J., Cruice, M., & others",
+    "authorShort": "Monnelly et al.",
+    "journal": "Disability and Rehabilitation",
+    "year": 2024,
+    "pmid": "37916542",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "Aphasia",
+      "Intensive Treatment",
+      "ICAP",
+      "Group Therapy",
+      "Comprehensive Aphasia",
+      "High Dose",
+      "Participation",
+      "Post-Stroke"
+    ],
+    "summary": "Systematic review of 21 studies covering 13 Intensive Comprehensive Aphasia Programmes (ICAPs) involving 485 adults aged 18–86 (11–335 months post-stroke). ICAPs combine high-dose individual and group treatment targeting communication across impairment, function, and participation domains. Outcomes generally favored ICAPs for word finding, communication, participation, and QoL.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "ICAPs generally improved word finding, functional communication, activity and participation, and communication-related quality of life outcomes for adults with aphasia.",
+      "Gains were largely maintained at follow-up, supporting the durability of intensive and comprehensive aphasia treatment.",
+      "21 studies covering 13 ICAPs and 485 participants were included; adults ranged from 18–86 years old and 11–335 months post-stroke onset.",
+      "ICAPs typically involve 3–5 hours of treatment per day over 2–3 weeks in formats combining individual SLT, group therapy, and self-management practice.",
+      "56 different outcome measures were used across studies, highlighting measurement heterogeneity that limits meta-analysis and cross-study comparison.",
+      "Individuals at all aphasia severity levels and life stages participated successfully in ICAPs, suggesting broad candidacy."
+    ],
+    "clinicalApplication": "Refer clients with chronic aphasia who have plateaued in traditional low-dose therapy to an Intensive Comprehensive Aphasia Programme (ICAP) when available. ICAPs are characterized by: high dose (≥3 hours/day), interdisciplinary group + individual format, targeting impairment AND participation AND quality of life simultaneously, and 2–3 week immersive structure. Communicate ICAP referral pathways in the clinical record and to the client/family. When a formal ICAP is not available, replicate key elements: increase session frequency, add group therapy, incorporate peer support, and target participation-level goals alongside impairment treatment. Outcomes are supported across broad severity range and chronicity.",
+    "sessionStats": {
+      "frequency": "Daily (Monday–Friday)",
+      "sessionLength": "3–5 hours/day (group + individual combined)",
+      "dose": "2–3 intensive weeks; varies by programme",
+      "bestFit": "Adults with post-stroke aphasia at any chronicity or severity seeking significant functional gains"
+    },
+    "bestFitCriteria": [
+      "Adults with post-stroke aphasia who have plateaued in traditional outpatient low-intensity therapy.",
+      "Clients who are motivated, medically stable, and can commit to 2–3 weeks of intensive daily treatment.",
+      "Individuals where aphasia is significantly limiting participation in life roles and a concentrated intensive effort is desired.",
+      "SLPs seeking to refer to an ICAP model or replicate its key components in a modified format within their practice setting."
+    ]
   }
 ]
