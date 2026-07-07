@@ -5651,5 +5651,558 @@
       "Clients with muscle tension dysphonia or functional dysphonia without structural pathology",
       "Voice patients seeking evidence-based treatment options including resonance approaches"
     ]
+  },
+  {
+    "id": "johnson-2008-aac-chronic-severe-aphasia",
+    "title": "Functional Communication in Individuals with Chronic Severe Aphasia Using Augmentative Communication",
+    "shortTitle": "AAC for Chronic Severe Aphasia — Functional Communication (2008)",
+    "authors": "Johnson RK, Hough MS, King KA, Vos P, Jeffs T",
+    "authorShort": "Johnson et al.",
+    "journal": "Augmentative and Alternative Communication",
+    "year": 2008,
+    "pmid": "19023749",
+    "evidenceLevel": "2",
+    "evidenceType": "Case Series",
+    "areas": [
+      "AAC",
+      "Language"
+    ],
+    "tags": [
+      "AAC",
+      "augmentative communication",
+      "severe aphasia",
+      "chronic aphasia",
+      "dynamic display",
+      "speech generating device",
+      "functional communication",
+      "non-fluent aphasia",
+      "stroke"
+    ],
+    "summary": "Case series examining three adults with chronic non-fluent aphasia who used a dynamic display AAC device (Dialect with Speaking Dynamically Pro) tailored to each participant's skill level. Pre- and post-treatment measures revealed meaningful improvements in functional communication quality and effectiveness across all three participants.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "All three adults with chronic non-fluent aphasia demonstrated improvement in quality and effectiveness of communication following AAC device intervention",
+      "Two participants showed concurrent improvements in linguistic and cognitive functioning after device use",
+      "Dynamic display AAC devices can be successfully customized to the skill level of individuals with severe aphasia using evidence-based protocols",
+      "Caregiver (spouse) involvement in AAC training was a key component of successful implementation"
+    ],
+    "clinicalApplication": [
+      "Trial dynamic display AAC devices for adults with moderate-to-severe chronic aphasia who have limited verbal output",
+      "Customize AAC device vocabulary and display complexity to match the individual's linguistic and cognitive skill level",
+      "Involve caregivers and communication partners in AAC training from the outset to support carryover to natural settings",
+      "Use AAC as a functional communication strategy alongside—not replacing—aphasia treatment targeting language impairment"
+    ],
+    "sessionStats": {
+      "population": "Adults with chronic non-fluent severe aphasia (post-stroke)",
+      "frequency": "Sessions integrated around device training protocol",
+      "duration": "Treatment length variable; pre- and post-treatment assessment conducted",
+      "environment": "Outpatient / home-based",
+      "goals": "Functional communication, message transmission effectiveness, quality of communication exchanges"
+    },
+    "bestFitCriteria": [
+      "Adults with chronic non-fluent or severe aphasia with very limited verbal communication",
+      "Individuals who have plateaued in language therapy but have functional communication goals",
+      "Clients motivated to use technology to support participation in daily communication"
+    ]
+  },
+  {
+    "id": "maresca-2019-aac-als-quality-life",
+    "title": "Augmentative and Alternative Communication Improves Quality of Life in the Early Stages of Amyotrophic Lateral Sclerosis",
+    "shortTitle": "AAC Improves QoL in Early-Stage ALS (2019)",
+    "authors": "Maresca G, Pranio F, Naro A, De Luca R, Maggio MG, Scarcella I, De Domenico C, Bramanti P, Conti Nibali V, Portaro S, Calabrò RS",
+    "authorShort": "Maresca et al.",
+    "journal": "Functional Neurology",
+    "year": 2019,
+    "pmid": "31172938",
+    "evidenceLevel": "2",
+    "evidenceType": "Prospective Clinical Study",
+    "areas": [
+      "AAC"
+    ],
+    "tags": [
+      "AAC",
+      "augmentative communication",
+      "ALS",
+      "amyotrophic lateral sclerosis",
+      "quality of life",
+      "dysarthria",
+      "motor neuron disease",
+      "low-tech AAC",
+      "early intervention",
+      "caregiver burden"
+    ],
+    "summary": "Prospective study evaluating low-tech AAC aids in 10 adults with ALS in the early stage of the disease when speech difficulties first emerge. A six-month training program (AAC-intervention + AAC-familiarization phases) demonstrated significant improvements in acceptance of AAC, mood, quality of life, and reduced caregiver burden.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "All 10 participants with early-stage ALS showed gradual and significant improvements in mood and quality of life following AAC training",
+      "Acceptance of AAC aids improved progressively over the six-month program, highlighting the importance of early and staged introduction",
+      "Caregiver burden was significantly reduced following the AAC intervention, benefiting both the patient and care system",
+      "AAC introduced proactively in early stages (when some natural speech remains) leads to better long-term uptake than introducing at end-stage"
+    ],
+    "clinicalApplication": [
+      "Introduce AAC proactively in early ALS when speech is still functional—do not wait for speech to deteriorate significantly",
+      "Stage AAC training in phases: initial AAC familiarization, then systematic AAC integration into daily communication",
+      "Involve caregivers in all phases of AAC training to reduce caregiver burden and support device use at home",
+      "Use low-tech AAC (alphabet boards, communication books) as entry-level tools before progressing to high-tech speech generating devices"
+    ],
+    "sessionStats": {
+      "population": "Adults with early-stage ALS presenting with dysarthria",
+      "frequency": "Structured sessions over 6-month period (two 3-month phases)",
+      "duration": "6 months total: 3-month AAC-intervention + 3-month AAC-familiarization",
+      "environment": "Rehabilitation center / outpatient",
+      "goals": "Quality of life, mood, caregiver burden, AAC acceptance and use"
+    },
+    "bestFitCriteria": [
+      "Adults with ALS in early stages when dysarthria first presents and natural speech is still partially functional",
+      "ALS patients or caregivers motivated to proactively prepare for communication changes",
+      "Clients for whom quality of life and caregiver burden are key outcome priorities"
+    ]
+  },
+  {
+    "id": "blomgren-2005-intensive-stuttering-modification",
+    "title": "Intensive Stuttering Modification Therapy: A Multidimensional Assessment of Treatment Outcomes",
+    "shortTitle": "Intensive Stuttering Modification Therapy Outcomes (2005)",
+    "authors": "Blomgren M, Roy N, Callister T, Merrill RM",
+    "authorShort": "Blomgren et al.",
+    "journal": "Journal of Speech, Language, and Hearing Research",
+    "year": 2005,
+    "pmid": "16197269",
+    "evidenceLevel": "2",
+    "evidenceType": "Pre-Post Cohort Study",
+    "areas": [
+      "Fluency"
+    ],
+    "tags": [
+      "stuttering",
+      "fluency",
+      "intensive therapy",
+      "stuttering modification",
+      "SSMP",
+      "Successful Stuttering Management Program",
+      "anxiety",
+      "multidimensional outcomes",
+      "adults who stutter"
+    ],
+    "summary": "Multidimensional treatment outcomes study examining 19 adults who stutter enrolled in a 3-week intensive stuttering modification program (Successful Stuttering Management Program, SSMP). Assessed across 14 fluency and affective measures at baseline, post-treatment, and 6-month follow-up. SSMP produced anxiolytic effects but limited durable reductions in core stuttering frequency.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Statistically significant improvements were observed on 4 of 14 measures immediately post-treatment and at 6-month follow-up",
+      "SSMP produced meaningful reductions in stuttering-related anxiety and avoidance behaviors",
+      "Core stuttering behaviors (stuttering frequency and severity) showed limited durable improvement at 6-month follow-up",
+      "Affective and attitudinal changes (anxiety, attitude toward stuttering) were more durable than behavioral fluency measures",
+      "Multidimensional outcomes assessment is essential—stuttering treatment gains in one domain may not reflect gains in others"
+    ],
+    "clinicalApplication": [
+      "Set realistic expectations with clients about intensive stuttering modification programs: emotional and attitudinal gains may exceed fluency gains",
+      "Measure treatment outcomes across multiple domains—fluency frequency, severity, anxiety, avoidance, quality of life—not just disfluency rate",
+      "Stuttering modification approaches (SSMP) are particularly appropriate for clients prioritizing reduced fear and avoidance over fluency targets",
+      "Plan for long-term follow-up and booster sessions; gains in core stuttering behavior can diminish at 6 months without maintenance"
+    ],
+    "sessionStats": {
+      "population": "Adults who stutter (moderate-to-severe)",
+      "frequency": "Intensive daily sessions over 3 weeks",
+      "duration": "3-week intensive program (SSMP); 6-month follow-up",
+      "environment": "Intensive outpatient / residential program",
+      "goals": "Stuttering frequency, severity, anxiety, avoidance, quality of life across 14 measures"
+    },
+    "bestFitCriteria": [
+      "Adults who stutter prioritizing reduction in fear, avoidance, and emotional burden over fluency",
+      "Clients for whom stuttering-related anxiety and social avoidance are primary barriers",
+      "Adults motivated for intensive treatment with availability for multi-week immersive programs"
+    ]
+  },
+  {
+    "id": "irani-2012-intensive-stuttering-longterm",
+    "title": "The Long Term Effectiveness of Intensive Stuttering Therapy: A Mixed Methods Study",
+    "shortTitle": "Long-Term Effectiveness of Intensive Stuttering Therapy (2012)",
+    "authors": "Irani F, Gabel R, Daniels D, Hughes S",
+    "authorShort": "Irani et al.",
+    "journal": "Journal of Fluency Disorders",
+    "year": 2012,
+    "pmid": "22682318",
+    "evidenceLevel": "2",
+    "evidenceType": "Mixed Methods Study",
+    "areas": [
+      "Fluency"
+    ],
+    "tags": [
+      "stuttering",
+      "fluency",
+      "intensive therapy",
+      "long-term outcomes",
+      "mixed methods",
+      "client perspectives",
+      "maintenance",
+      "relapse",
+      "adults who stutter",
+      "multifaceted treatment"
+    ],
+    "summary": "Mixed methods study examining client perceptions of a multi-faceted intensive stuttering therapy program and its long-term effectiveness. Qualitative and quantitative data from adults who stuttered captured both objective outcomes and lived experience of treatment, with themes around maintenance, relapse, and psychosocial factors influencing long-term success.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Multi-faceted intensive stuttering therapy produced meaningful gains in both fluency and psychosocial functioning for most participants",
+      "Long-term maintenance of treatment gains was variable; participants identified the importance of ongoing practice and support",
+      "Client-perceived success was often tied more to quality of life and reduced avoidance than to fluency rates alone",
+      "Relapse was commonly reported and linked to high-stress communication situations and reduced practice adherence",
+      "Clients valued the psychosocial components of intensive programs as much as or more than the fluency-shaping techniques"
+    ],
+    "clinicalApplication": [
+      "Address maintenance planning explicitly within intensive stuttering programs—schedule booster sessions and self-monitoring strategies",
+      "Use client-perceived outcomes (quality of life, communication confidence) alongside fluency measures to assess long-term treatment success",
+      "Prepare clients for expected variability in fluency post-treatment; distinguish lapse from relapse",
+      "Incorporate psychosocial support (acceptance, communication confidence) within intensive stuttering treatment to promote durable outcomes"
+    ],
+    "sessionStats": {
+      "population": "Adults who stutter following intensive multi-faceted treatment program",
+      "frequency": "Intensive program followed by long-term follow-up (mixed methods data collection)",
+      "duration": "Long-term follow-up of intensive treatment cohort",
+      "environment": "Post-intensive program; community-based follow-up",
+      "goals": "Stuttering severity, quality of life, client-perceived success, maintenance, avoidance"
+    },
+    "bestFitCriteria": [
+      "Adults who stutter post-intensive treatment requiring maintenance planning",
+      "Clients who have completed intensive programs and require ongoing support for relapse prevention",
+      "Adults seeking treatment that addresses the psychosocial impact of stuttering in addition to fluency goals"
+    ]
+  },
+  {
+    "id": "ingham-2015-mpi-stuttering-treatment",
+    "title": "Efficacy of the Modifying Phonation Intervals (MPI) Stuttering Treatment Program With Adults Who Stutter",
+    "shortTitle": "MPI Stuttering Treatment Program Efficacy RCT (2015)",
+    "authors": "Ingham RJ, Ingham JC, Bothe AK, Wang Y, Kilgo M",
+    "authorShort": "Ingham et al.",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2015,
+    "pmid": "25633470",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": [
+      "Fluency"
+    ],
+    "tags": [
+      "stuttering",
+      "fluency",
+      "MPI",
+      "modifying phonation intervals",
+      "speech restructuring",
+      "prolonged speech",
+      "RCT",
+      "fluency shaping",
+      "adults who stutter",
+      "naturalistic speech"
+    ],
+    "summary": "RCT comparing the Modifying Phonation Intervals (MPI) stuttering treatment to the standard of care (prolonged speech) in 27 adults who stutter. Both programs used similar infrastructures. At transfer, maintenance, and follow-up, 14 participants who completed treatment achieved speech similar to normally fluent adults, with MPI showing comparable or superior outcomes to prolonged speech.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "MPI and prolonged speech treatments both reduced stuttering to near-normal levels in adults who stutter who completed the full program",
+      "14 of 27 participants achieved speech indistinguishable from normally fluent adults at transfer and maintenance",
+      "MPI treatment was relatively more effective at helping clients identify and change specific speech behaviors associated with treatment success",
+      "Both MPI and prolonged speech resulted in improved speech naturalness compared to baseline",
+      "The RCT design with active comparator (prolonged speech) provides high-quality evidence for both treatment approaches"
+    ],
+    "clinicalApplication": [
+      "MPI stuttering treatment is an evidence-based alternative to prolonged speech for adults who stutter, with comparable outcomes at the RCT level",
+      "Use MPI when clients benefit from a specific behavioral target (reducing short phonation intervals) as a mechanism for reducing stuttering",
+      "Plan for a structured transfer and maintenance phase—both MPI and prolonged speech require active generalization to naturalistic settings",
+      "Ensure adequate treatment intensity; not all participants achieved fluency goals, highlighting the importance of individualized dosing"
+    ],
+    "sessionStats": {
+      "population": "Adults who stutter (moderate-to-severe)",
+      "frequency": "Intensive treatment schedule (matched infrastructure between MPI and prolonged speech groups)",
+      "duration": "Full treatment program with transfer, maintenance, and follow-up phases",
+      "environment": "Clinic-based with naturalistic speech sampling",
+      "goals": "Stuttering frequency, speech naturalness, phonation interval modification"
+    },
+    "bestFitCriteria": [
+      "Adults who stutter seeking fluency shaping treatment with evidence at the RCT level",
+      "Clients for whom a specific behavioral mechanism (phonation intervals) may be helpful in achieving fluency",
+      "Adults motivated for structured intensive treatment with clear transfer and maintenance phases"
+    ]
+  },
+  {
+    "id": "kapsner-smith-2015-sovt-rct",
+    "title": "A Randomized Controlled Trial of Two Semi-Occluded Vocal Tract Voice Therapy Protocols",
+    "shortTitle": "Semi-Occluded Vocal Tract RCT: FRT vs. Vocal Function Exercises (2015)",
+    "authors": "Kapsner-Smith MR, Hunter EJ, Kirkham K, Cox K, Titze IR",
+    "authorShort": "Kapsner-Smith et al.",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2015,
+    "pmid": "25675335",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": [
+      "Voice & Resonance"
+    ],
+    "tags": [
+      "voice therapy",
+      "semi-occluded vocal tract",
+      "SOVT",
+      "straw phonation",
+      "flow-resistant tube",
+      "vocal function exercises",
+      "VFE",
+      "dysphonia",
+      "vocal fatigue",
+      "voice handicap",
+      "RCT"
+    ],
+    "summary": "RCT comparing two semi-occluded vocal tract (SOVT) treatment protocols—phonation through a flow-resistant tube (FRT) versus Vocal Function Exercises (VFE)—in 20 adults with dysphonia and/or vocal fatigue. Both active treatment conditions produced significant improvements in Voice Handicap Index scores relative to no-treatment control; FRT was non-inferior to VFE.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Both FRT (flow-resistant tube) and VFE (Vocal Function Exercises) produced statistically significant improvements in Voice Handicap Index relative to the no-treatment control group",
+      "FRT therapy was non-inferior to the established VFE protocol, supporting its use as an evidence-based treatment option",
+      "Semi-occluded vocal tract exercises reduce supraglottic muscle tension and improve vocal efficiency through aerodynamic and resonatory mechanisms",
+      "Both treatment groups showed improvement in patient-reported vocal function and dysphonia severity",
+      "SOVT exercises are low-risk, low-cost interventions well-suited for home practice"
+    ],
+    "clinicalApplication": [
+      "Prescribe semi-occluded vocal tract exercises (straw phonation, lip trills, resonance tubes) as evidence-based voice therapy for functional and hyperfunctional dysphonia",
+      "Flow-resistant tube exercises are a clinically equivalent alternative to Vocal Function Exercises and may be particularly accessible for home practice",
+      "Semi-occluded vocal tract exercises are appropriate for adults with muscle tension dysphonia, vocal fatigue, or functional voice disorders",
+      "Provide structured home practice protocols for SOVT exercises; low adverse-event profile makes them safe for independent practice between sessions"
+    ],
+    "sessionStats": {
+      "population": "Adults with dysphonia and/or vocal fatigue (functional/hyperfunctional)",
+      "frequency": "Structured treatment sessions over several weeks",
+      "duration": "Active treatment followed by waitlist/delayed-start control comparison",
+      "environment": "Outpatient voice clinic",
+      "goals": "Voice Handicap Index (VHI) score, dysphonia severity, vocal efficiency"
+    },
+    "bestFitCriteria": [
+      "Adults with functional dysphonia, muscle tension dysphonia, or vocal fatigue",
+      "Voice patients who would benefit from low-resistance vocal tract exercise (straw phonation, lip trills)",
+      "Clients needing a structured home exercise program as part of voice therapy"
+    ]
+  },
+  {
+    "id": "behrman-2020-speak-out-loud-crowd-parkinsons",
+    "title": "The Effect of SPEAK OUT! and The LOUD Crowd on Dysarthria Due to Parkinson's Disease",
+    "shortTitle": "SPEAK OUT! and LOUD Crowd for Parkinson's Dysarthria (2020)",
+    "authors": "Behrman A, Cody J, Elandary S, Flom P, Chitnis S",
+    "authorShort": "Behrman et al.",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2020,
+    "pmid": "32421347",
+    "evidenceLevel": "2",
+    "evidenceType": "Pre-Post Cohort Study",
+    "areas": [
+      "Motor Speech"
+    ],
+    "tags": [
+      "Parkinson's disease",
+      "dysarthria",
+      "hypokinetic dysarthria",
+      "SPEAK OUT",
+      "LOUD Crowd",
+      "motor speech",
+      "voice intensity",
+      "intentional speech",
+      "group treatment",
+      "maintenance",
+      "telehealth"
+    ],
+    "summary": "Pre-post cohort study evaluating 40 individuals with idiopathic Parkinson's disease receiving the SPEAK OUT! program (12 individual sessions, 3x/week, 4 weeks) followed by The LOUD Crowd group maintenance. Significant post-therapy improvements in vocal intensity, frequency variation, cepstral peak prominence, and Voice-Related Quality of Life were maintained at 1-year follow-up for participants engaged in ongoing group sessions.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "SPEAK OUT! produced significant improvements in vocal intensity, frequency variation, cepstral peak prominence, and Voice-Related QoL relative to baseline",
+      "Treatment gains were maintained at 1-year follow-up, with LOUD Crowd group attendance positively correlated with sustained improvement",
+      "SPEAK OUT! leverages intentional, goal-directed basal ganglia-cortical circuits to compensate for automatic speech deficits in PD",
+      "Telehealth delivery of SPEAK OUT! produced positive outcomes comparable to in-person delivery in this study",
+      "The combination of individual intensive treatment (SPEAK OUT!) and ongoing group maintenance (LOUD Crowd) is critical for long-term outcomes"
+    ],
+    "clinicalApplication": [
+      "Implement SPEAK OUT! as a structured 12-session individual program for adults with hypokinetic dysarthria due to Parkinson's disease",
+      "Transition clients to The LOUD Crowd group maintenance immediately following SPEAK OUT! to support long-term outcomes",
+      "Use intentional, goal-directed speech approach: teach clients to 'think loud' and 'speak with intent' rather than relying on automatic habitual speech",
+      "Telehealth delivery of SPEAK OUT! is a viable option for clients with limited access to in-person care",
+      "Monitor vocal intensity and functional communication at regular intervals to assess maintenance and need for booster sessions"
+    ],
+    "sessionStats": {
+      "population": "Adults with idiopathic Parkinson's disease and hypokinetic dysarthria",
+      "frequency": "3 sessions/week (individual) + weekly group (LOUD Crowd)",
+      "duration": "4 weeks individual SPEAK OUT! + ongoing weekly LOUD Crowd maintenance",
+      "environment": "Outpatient / telehealth (individual); community group (LOUD Crowd)",
+      "goals": "Vocal intensity, frequency variation, cepstral peak prominence, Voice-Related Quality of Life"
+    },
+    "bestFitCriteria": [
+      "Adults with Parkinson's disease presenting with hypokinetic dysarthria (reduced loudness, monotone, rapid rate)",
+      "PD clients motivated for an intensive individual program followed by group maintenance",
+      "Clients with access to SPEAK OUT!-trained clinicians or telehealth-based delivery"
+    ]
+  },
+  {
+    "id": "finch-2016-social-communication-tbi-sr",
+    "title": "Systematic Review of Behavioral Interventions Targeting Social Communication Difficulties After Traumatic Brain Injury",
+    "shortTitle": "Social Communication Interventions After TBI — Systematic Review (2016)",
+    "authors": "Finch E, Copley A, Cornwell P, Kelly C",
+    "authorShort": "Finch et al.",
+    "journal": "Archives of Physical Medicine and Rehabilitation",
+    "year": 2016,
+    "pmid": "26679234",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "TBI",
+      "traumatic brain injury",
+      "social communication",
+      "pragmatics",
+      "cognitive-communication",
+      "systematic review",
+      "behavioral intervention",
+      "context-sensitive",
+      "group therapy",
+      "community reintegration"
+    ],
+    "summary": "Systematic review of behavioral interventions for social communication difficulties in adults with TBI, searching databases through October 2013. Found that interventions addressing social communication skills for adults with TBI are beneficial regardless of the treatment approach, with the strongest evidence supporting context-sensitive approaches delivered in group-based service models over at least 10 weeks.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Behavioral interventions for social communication in adults with TBI are beneficial regardless of treatment approach (impairment-specific or context-sensitive)",
+      "Context-sensitive approaches delivered in group-based models showed the strongest evidence and most durable outcomes",
+      "Improvements in social communication were maintained at 3-month follow-up for programs lasting at least 10 weeks",
+      "Adults in the chronic phase of TBI can still meaningfully benefit from social communication intervention",
+      "Both individual and group formats can be effective; group models offer additional benefits through peer interaction and naturalistic practice"
+    ],
+    "clinicalApplication": [
+      "Prioritize context-sensitive social communication interventions for adults with TBI—focus on real-world communication scenarios rather than isolated skill drills",
+      "Group-based social communication training is particularly effective for adults with TBI; consider group formats for social pragmatics goals",
+      "Plan treatment for at least 10 weeks to achieve durable improvements in social communication",
+      "Target chronic-phase TBI patients for social communication treatment—significant gains are achievable even years post-injury",
+      "Address partner and environmental factors in social communication treatment, not just the individual with TBI"
+    ],
+    "sessionStats": {
+      "population": "Adults with cognitive-communication disorders secondary to TBI (all severity levels, chronic phase)",
+      "frequency": "Variable; evidence strongest for programs with sufficient dosage over 10+ weeks",
+      "duration": "Minimum 10 weeks for durable outcomes per systematic review findings",
+      "environment": "Clinic, group setting, community-based",
+      "goals": "Social communication, pragmatic skills, conversational partner interaction, community participation"
+    },
+    "bestFitCriteria": [
+      "Adults with TBI presenting with social communication difficulties (pragmatic impairment, discourse deficits, reduced social participation)",
+      "Clients in chronic phase of TBI seeking meaningful gains in community participation",
+      "Adults with TBI who would benefit from group-based social communication intervention"
+    ]
+  },
+  {
+    "id": "claus-2021-emst-dysphagia-parkinsons",
+    "title": "Expiratory Muscle Strength Training for Therapy of Pharyngeal Dysphagia in Parkinson's Disease",
+    "shortTitle": "EMST for Pharyngeal Dysphagia in Parkinson's Disease RCT (2021)",
+    "authors": "Claus I, Muhle P, Czechowski J, Ahring S, Labeit B, Suntrup-Krueger S, Wiendl H, Dziewas R, Warnecke T",
+    "authorShort": "Claus et al.",
+    "journal": "Movement Disorders",
+    "year": 2021,
+    "pmid": "33650729",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "dysphagia",
+      "swallowing",
+      "Parkinson's disease",
+      "EMST",
+      "expiratory muscle strength training",
+      "pharyngeal residue",
+      "randomized controlled trial",
+      "sham-controlled",
+      "aspiration",
+      "EMST150"
+    ],
+    "summary": "Double-blind, sham-controlled RCT of 50 adults with Parkinson's disease and pharyngeal dysphagia randomized to 4 weeks of active EMST (n=25) or sham EMST (n=25). Active EMST produced significant reduction in pharyngeal residue and overall dysphagia severity, with improvements sustained at 3-month follow-up, providing Level 1b evidence for EMST as a dysphagia intervention in PD.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "4 weeks of active EMST significantly reduced overall dysphagia severity in adults with Parkinson's disease compared to sham training",
+      "The primary mechanism of benefit was reduction in pharyngeal residue—a significant VFSS measure distinguishing active from sham groups",
+      "Treatment effects were sustained at 3-month follow-up, indicating durable swallowing improvements beyond the active training period",
+      "Sham EMST showed no significant benefit, confirming that device load (resistance) is the active therapeutic component",
+      "Double-blind, sham-controlled design provides the highest level of evidence for EMST in PD-related dysphagia"
+    ],
+    "clinicalApplication": [
+      "Prescribe EMST as an evidence-based swallowing intervention for adults with Parkinson's disease and pharyngeal dysphagia",
+      "Use EMST at 75% of maximum expiratory pressure (MEP) with a structured 4-week program of 5 sets of 5 repetitions, 5 days per week",
+      "Target pharyngeal residue as a key outcome—EMST's primary benefit in PD is reducing post-swallow pharyngeal pooling",
+      "Plan for reassessment at 3 months post-treatment; sustained gains justify EMST as a stand-alone maintenance program",
+      "Sham EMST can be useful as a placebo comparator in clinical research; active loading is required for therapeutic benefit"
+    ],
+    "sessionStats": {
+      "population": "Adults with idiopathic Parkinson's disease and pharyngeal dysphagia",
+      "frequency": "5 sets × 5 repetitions, 5 days per week (home-based program)",
+      "duration": "4 weeks active EMST training; 3-month follow-up assessment",
+      "environment": "Home-based EMST device use with clinical monitoring",
+      "goals": "Overall dysphagia severity, pharyngeal residue (VFSS), penetration-aspiration scale"
+    },
+    "bestFitCriteria": [
+      "Adults with Parkinson's disease and confirmed pharyngeal dysphagia on instrumental assessment",
+      "PD patients with pharyngeal residue as the primary swallowing impairment",
+      "Clients motivated for a structured home exercise program targeting respiratory-swallowing coordination"
+    ]
+  },
+  {
+    "id": "ferre-2011-right-hemisphere-communication",
+    "title": "Clinical Focus on Prosodic, Discursive and Pragmatic Treatment for Right Hemisphere Damaged Adults: What's Right?",
+    "shortTitle": "Prosodic, Discursive and Pragmatic Treatment for Right Hemisphere Damage (2011)",
+    "authors": "Ferré P, Fonseca RP, Ska B, Joanette Y",
+    "authorShort": "Ferré et al.",
+    "journal": "Rehabilitation Research and Practice",
+    "year": 2011,
+    "pmid": "22110970",
+    "evidenceLevel": "3",
+    "evidenceType": "Clinical Review",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "right hemisphere damage",
+      "RHD",
+      "cognitive-communication",
+      "prosody",
+      "discourse",
+      "pragmatics",
+      "stroke",
+      "communication",
+      "treatment principles",
+      "language right hemisphere"
+    ],
+    "summary": "Clinical review synthesizing evidence for prosodic, discursive, and pragmatic intervention for adults with right hemisphere brain damage (RHD). At least 50% of individuals with RHD display impairments in prosody, discourse, pragmatics, or lexical semantics. The review identifies structured intervention principles and a clinical framework for targeting these communication deficits in SLP practice.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "At least 50% of adults with right hemisphere damage display impairments in prosody, discourse, pragmatics, or lexical semantics affecting functional communication",
+      "Controlled treatment evidence for RHD communication is most developed for aprosodia; emerging evidence supports structured intervention for discourse and pragmatics",
+      "A structured intervention framework addressing prosodic, discursive, and pragmatic components can be incorporated into SLP clinical practice",
+      "Both impairment-specific and participation-focused approaches can be adapted for adults with RHD communication deficits",
+      "Partner education and environmental modification are important complements to individual treatment for RHD pragmatic impairments"
+    ],
+    "clinicalApplication": [
+      "Screen all adults with right hemisphere stroke for prosodic, discourse, and pragmatic communication deficits—these are frequently missed in standard aphasia testing",
+      "Target prosody (emotional prosody comprehension and expression), discourse organization, and pragmatic appropriateness as distinct clinical goals for RHD",
+      "Use structured conversational interaction tasks and role-play to address pragmatic deficits in naturalistic communication contexts",
+      "Educate communication partners about RHD-related communication changes (tangential speech, poor topic maintenance, reduced humor comprehension)",
+      "Adapt aphasia and cognitive rehabilitation principles to address the unique communication profile of adults with right hemisphere damage"
+    ],
+    "sessionStats": {
+      "population": "Adults with right hemisphere stroke or brain damage",
+      "frequency": "Variable; no single frequency established; treatment integrated with overall post-stroke rehabilitation",
+      "duration": "Ongoing; RHD communication deficits often persist into chronic phase",
+      "environment": "Outpatient, inpatient rehabilitation, community-based",
+      "goals": "Prosody comprehension/production, discourse coherence, pragmatic communication, partner interaction"
+    },
+    "bestFitCriteria": [
+      "Adults with right hemisphere stroke or acquired brain injury presenting with communication difficulties not captured by standard aphasia testing",
+      "Clients with pragmatic communication deficits (tangential speech, poor topic maintenance, difficulty with indirect speech acts) following RHD",
+      "Adults with RHD for whom social communication and participation are priority goals"
+    ]
   }
 ]
