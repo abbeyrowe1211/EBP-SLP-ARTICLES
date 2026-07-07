@@ -4606,5 +4606,1050 @@
       "Individuals where aphasia is significantly limiting participation in life roles and a concentrated intensive effort is desired.",
       "SLPs seeking to refer to an ICAP model or replicate its key components in a modified format within their practice setting."
     ]
+  },
+  {
+    "id": "breitenstein-2017-intensive-aphasia",
+    "title": "Intensive Speech and Language Therapy in Patients with Chronic Aphasia after Stroke: A Randomised, Open-Label, Blinded-Endpoint, Controlled Trial",
+    "shortTitle": "Intensive SLT for Chronic Aphasia (Breitenstein 2017)",
+    "authors": "Breitenstein C, Grewe T, Flöel A, Ziegler W, Springer L, Martus P, Huber W, Willmes K, Ringelstein EB, Haeusler KG, Abel S, Glindemann R, Domahs F, Regenbrecht F, Krupinski JF, Miller N, Billinger M, Knecht S; FCET2EC Study Group",
+    "authorShort": "Breitenstein et al.",
+    "journal": "The Lancet",
+    "year": 2017,
+    "pmid": "28256356",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "aphasia",
+      "intensive therapy",
+      "chronic aphasia",
+      "dosage",
+      "speech-language therapy",
+      "stroke",
+      "functional communication"
+    ],
+    "summary": "First powered multicenter RCT (n=216) demonstrating that intensive SLT (≥10 hours/week for 3 weeks) produces significantly greater language gains in persons with chronic post-stroke aphasia compared to matched-intensity low-frequency therapy. Gains were maintained at 6-month follow-up.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Intensive SLT (≥10 hrs/week) produced significantly greater improvement in naming ability than less-intensive SLT (3.4 vs. 1.5 correct responses, p=0.003)",
+      "Treatment gains were maintained at 6-month follow-up, supporting durability of intensive treatment effects",
+      "Effects were independent of time post-stroke onset, severity, lesion site, or age",
+      "No increased adverse events were associated with intensive therapy delivery"
+    ],
+    "clinicalApplication": [
+      "Prioritize intensive scheduling (≥10 hrs/week) when intensive SLT is clinically appropriate for chronic aphasia",
+      "Intensive treatment can yield meaningful gains even in individuals with long-standing aphasia (chronic, >6 months post-stroke)",
+      "Consider dose when planning aphasia treatment programs: intensity appears more impactful than total duration",
+      "Supports advocacy for higher-frequency SLP sessions in chronic aphasia"
+    ],
+    "sessionStats": {
+      "population": "Adults with chronic post-stroke aphasia (>6 months)",
+      "frequency": "≥10 hours/week (intensive arm)",
+      "duration": "3 weeks (intensive arm)",
+      "environment": "Inpatient/outpatient rehabilitation",
+      "goals": "Naming accuracy, functional communication, language recovery"
+    },
+    "bestFitCriteria": [
+      "Adults with chronic aphasia (>6 months post-stroke) who have plateaued with conventional therapy",
+      "Clients who can tolerate intensive scheduling (physically and cognitively)",
+      "Situations where concentrated treatment block is possible (e.g., rehabilitation admission, intensive outpatient)"
+    ]
+  },
+  {
+    "id": "fager-2019-aac-access",
+    "title": "New and Emerging Access Technologies for Adults with Complex Communication Needs and Severe Motor Impairments: State of the Science",
+    "shortTitle": "Emerging AAC Access Technologies for Severe Motor Impairments (Fager 2019)",
+    "authors": "Fager SK, Beukelman DR, Fried-Oken M, Jakobs T, Baker J",
+    "authorShort": "Fager et al.",
+    "journal": "Augmentative and Alternative Communication",
+    "year": 2019,
+    "pmid": "30663899",
+    "evidenceLevel": "2",
+    "evidenceType": "State-of-the-Science Review",
+    "areas": [
+      "AAC"
+    ],
+    "tags": [
+      "AAC",
+      "access technology",
+      "severe motor impairment",
+      "brain-computer interface",
+      "eye gaze",
+      "switch access",
+      "ALS",
+      "locked-in syndrome"
+    ],
+    "summary": "Comprehensive review of emerging and evidence-based AAC access technologies for adults with severe motor impairments, including individuals with ALS, brainstem stroke, and spinal cord injury. Covers eye gaze, brain-computer interfaces (BCIs), switch access, and neural interfaces, with evidence-based recommendations for clinical decision-making.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Eye gaze technology demonstrates reliable access for individuals with ALS and locked-in syndrome, even in late-stage disease",
+      "Brain-computer interfaces (BCIs) show emerging promise for individuals who cannot use any voluntary movement, though reliability varies across studies",
+      "Switch scanning remains the most widely validated access method across a range of motor abilities",
+      "Partner-assisted scanning and infrared sensor-based access provide viable alternatives when direct selection is not possible"
+    ],
+    "clinicalApplication": [
+      "Conduct comprehensive access assessments for adults with severe motor impairments to identify optimal AAC access method",
+      "Consider eye gaze technology as a primary access option for clients with reliable eye movements (e.g., ALS, brainstem stroke)",
+      "Monitor motor changes over time for progressive conditions; re-evaluate access method as motor function changes",
+      "Educate clients and families about AAC access options and support training with chosen technology"
+    ],
+    "sessionStats": {
+      "population": "Adults with severe motor impairments (ALS, brainstem stroke, high cervical SCI, locked-in syndrome)",
+      "frequency": "Variable; ongoing assessment and support",
+      "duration": "Ongoing; access needs change with disease progression",
+      "environment": "Home, outpatient, inpatient as appropriate",
+      "goals": "Reliable AAC access for functional communication"
+    },
+    "bestFitCriteria": [
+      "Adults with severe motor impairments limiting speech and physical access",
+      "Individuals with ALS or other progressive neurological conditions approaching or at late-stage disease",
+      "Clients with brainstem stroke or high cervical spinal cord injury requiring alternative AAC access"
+    ]
+  },
+  {
+    "id": "cicerone-2019-cognitive-rehab-sr",
+    "title": "Evidence-Based Cognitive Rehabilitation: Systematic Review of the Literature From 2009 Through 2014",
+    "shortTitle": "Evidence-Based Cognitive Rehabilitation SR 2009–2014 (Cicerone 2019)",
+    "authors": "Cicerone KD, Goldin Y, Ganci K, Rosenbaum A, Wethe JV, Langenbahn DM, Malec JF, Bergquist TF, Kingsley K, Nagele D, Trexler L, Fraas M, Bogdanova Y, Harley JP",
+    "authorShort": "Cicerone et al.",
+    "journal": "Archives of Physical Medicine and Rehabilitation",
+    "year": 2019,
+    "pmid": "30926291",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "cognitive rehabilitation",
+      "TBI",
+      "stroke",
+      "attention",
+      "memory",
+      "executive function",
+      "evidence-based practice",
+      "systematic review"
+    ],
+    "summary": "Comprehensive systematic review updating evidence-based recommendations for cognitive rehabilitation in TBI and stroke (covering 2009–2014 literature). Provides practice standards, guidelines, and options across cognitive domains including attention, memory, executive function, social communication, and pragmatics.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Cognitive rehabilitation for attention deficits post-TBI and stroke is supported at the Practice Standard level, particularly attention process training",
+      "Meta-memory and prospective memory training demonstrate effectiveness for individuals with mild-to-moderate TBI",
+      "Metacognitive strategy instruction for executive function and functional outcomes is supported as a Practice Guideline for TBI",
+      "Social communication skills training post-TBI achieves Practice Guideline level support"
+    ],
+    "clinicalApplication": [
+      "Use attention process training and direct attention training interventions as first-line approaches for attention deficits after TBI/stroke",
+      "Implement metacognitive strategy training (e.g., Goal Management Training) for executive function deficits post-TBI",
+      "Target prospective memory using external compensatory strategies (alarms, calendars, checklists) and spaced retrieval",
+      "Address social communication deficits post-TBI using structured group treatment and communication partner training"
+    ],
+    "sessionStats": {
+      "population": "Adults with acquired TBI or stroke with cognitive-communication deficits",
+      "frequency": "Variable based on domain and severity",
+      "duration": "Varies; typically 6–12 weeks for structured cognitive rehab programs",
+      "environment": "Outpatient, inpatient, community-based",
+      "goals": "Attention, memory, executive function, social communication, functional independence"
+    },
+    "bestFitCriteria": [
+      "Adults with TBI or stroke presenting with cognitive-communication impairments",
+      "Clients with attention, memory, or executive function deficits affecting daily functional communication",
+      "Individuals needing evidence-based justification for cognitive rehabilitation treatment planning"
+    ]
+  },
+  {
+    "id": "bahia-2020-effortful-swallow",
+    "title": "Effortful Swallow Maneuver in Adults with Dysphagia: A Systematic Review",
+    "shortTitle": "Effortful Swallow Maneuver Systematic Review (Bahia 2020)",
+    "authors": "Bahia MM, Lowell SY",
+    "authorShort": "Bahia & Lowell",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2020,
+    "pmid": "32463714",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "effortful swallow",
+      "dysphagia",
+      "swallowing maneuver",
+      "pharyngeal contraction",
+      "bolus clearance",
+      "treatment",
+      "neurogenic dysphagia"
+    ],
+    "summary": "Systematic review synthesizing evidence for the effortful swallow maneuver in adults with dysphagia. Examines biomechanical effects (increased hyolaryngeal excursion, tongue base retraction, pharyngeal contraction) and functional outcomes across neurogenic and other etiologies.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Effortful swallow significantly increases tongue base retraction and posterior pharyngeal wall contraction, improving pharyngeal clearance",
+      "Hyolaryngeal excursion is enhanced with effortful swallow in healthy adults, with variable effects in neurogenic populations",
+      "Evidence supports effortful swallow as a compensatory strategy for reducing pharyngeal residue in neurogenic dysphagia",
+      "Therapeutic benefit for long-term use requires further high-quality RCT evidence; most studies are single-session designs"
+    ],
+    "clinicalApplication": [
+      "Trial effortful swallow maneuver for clients with reduced posterior pharyngeal wall contraction and pharyngeal residue",
+      "Teach effortful swallow with clear instruction: 'swallow hard as if squeezing the food down'",
+      "Monitor client effort and fatigue; effortful swallow increases muscular demand and may not be appropriate for all populations",
+      "Use effortful swallow as compensatory strategy; consider its use during meals in combination with postural strategies as appropriate"
+    ],
+    "sessionStats": {
+      "population": "Adults with neurogenic or other dysphagia affecting pharyngeal phase",
+      "frequency": "As part of swallowing treatment sessions; may be trialed per meal",
+      "duration": "Variable; typically integrated into dysphagia treatment program",
+      "environment": "Outpatient, inpatient, long-term care",
+      "goals": "Reduce pharyngeal residue, improve bolus clearance, enhance pharyngeal contraction"
+    },
+    "bestFitCriteria": [
+      "Adults with pharyngeal residue or reduced posterior pharyngeal wall contraction on MBS/FEES",
+      "Neurogenic dysphagia (stroke, TBI, Parkinson's disease) with adequate volitional control",
+      "Clients who can follow verbal instruction and self-monitor effort during swallowing"
+    ]
+  },
+  {
+    "id": "connery-2021-stuttering-meta",
+    "title": "Nonpharmacological Interventions for Stuttering in Adults: A Systematic Review and Meta-Analysis",
+    "shortTitle": "Nonpharmacological Stuttering Interventions Meta-Analysis (Connery 2021)",
+    "authors": "Connery A, Galvin R, Cusack T, Staines A",
+    "authorShort": "Connery et al.",
+    "journal": "Journal of Evidence-Based Medicine",
+    "year": 2021,
+    "pmid": "33242235",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review / Meta-Analysis",
+    "areas": [
+      "Fluency"
+    ],
+    "tags": [
+      "stuttering",
+      "fluency",
+      "nonpharmacological intervention",
+      "meta-analysis",
+      "systematic review",
+      "adults",
+      "speech treatment",
+      "CBT"
+    ],
+    "summary": "Meta-analysis examining the efficacy of nonpharmacological interventions for stuttering in adults, including speech restructuring, fluency shaping, CBT, stuttering modification, and self-help approaches. Provides pooled effect sizes and evidence grades across outcome categories.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Fluency-shaping interventions (e.g., prolonged speech, breathstream management) showed statistically significant reductions in stuttering frequency post-treatment",
+      "CBT and acceptance-based approaches significantly improved quality of life, communication attitudes, and avoidance behaviors",
+      "Combined speech restructuring and psychological approaches produced superior outcomes compared to either alone",
+      "Maintenance of fluency gains at follow-up varied; psychological approaches demonstrated more durable attitudinal change"
+    ],
+    "clinicalApplication": [
+      "Offer combined approaches integrating fluency modification techniques with CBT or acceptance-based strategies for adults who stutter",
+      "Address psychosocial dimensions of stuttering (avoidance, anxiety, quality of life) as core treatment targets alongside speech modifications",
+      "Incorporate self-help and support groups as adjuncts to clinical treatment",
+      "Match treatment approach to individual goals: fluency goals vs. acceptance goals vs. both"
+    ],
+    "sessionStats": {
+      "population": "Adults with developmental stuttering",
+      "frequency": "Variable; typically 1–2 sessions/week in outpatient setting",
+      "duration": "Varies widely by approach: 10–20+ sessions typical",
+      "environment": "Outpatient, group, telehealth",
+      "goals": "Stuttering frequency, communication attitudes, quality of life, avoidance reduction"
+    },
+    "bestFitCriteria": [
+      "Adults with developmental stuttering seeking fluency shaping or modification treatment",
+      "Clients with significant psychosocial impact of stuttering (anxiety, avoidance, reduced QoL)",
+      "Individuals who have not responded to traditional fluency techniques and may benefit from acceptance-based approaches"
+    ]
+  },
+  {
+    "id": "munasinghe-2023-aos-updated-sr",
+    "title": "Apraxia of Speech in Adults: An Updated Systematic Review of the Intervention Literature",
+    "shortTitle": "AOS Treatment Systematic Review Update (Munasinghe 2023)",
+    "authors": "Munasinghe M, Sullivan AM, Ballard KJ",
+    "authorShort": "Munasinghe et al.",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2023,
+    "pmid": "36917788",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review",
+    "areas": [
+      "Motor Speech"
+    ],
+    "tags": [
+      "apraxia of speech",
+      "AOS",
+      "motor speech",
+      "treatment",
+      "systematic review",
+      "sound production treatment",
+      "articulatory-kinematic",
+      "motor learning"
+    ],
+    "summary": "Comprehensive updated systematic review of intervention research for acquired apraxia of speech (AOS) in adults, covering literature through 2021. Reviews articulatory-kinematic, rate/rhythm, LSVT-based, and multimodal treatment approaches with quality appraisal and clinical recommendations.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Articulatory-kinematic approaches (Sound Production Treatment, Repeated Practice) have the strongest evidence base for AOS, with multiple single-subject experimental design studies supporting efficacy",
+      "Rate and rhythm control approaches (metronome, pacing board) demonstrate consistent efficacy for improving intelligibility but may interfere with prosody",
+      "Motor learning principles (variable practice, distributed practice, reduced feedback frequency) are increasingly integrated into AOS treatment with positive outcomes",
+      "Limited high-quality RCT evidence available; most support comes from single-subject experimental designs"
+    ],
+    "clinicalApplication": [
+      "Apply articulatory-kinematic approaches (Sound Production Treatment, Motor Learning Guided treatment) as primary interventions for AOS",
+      "Integrate motor learning principles: practice variability, clinician feedback fading, distributed practice schedules",
+      "Use rate control strategies (pacing board, metronomic pacing) for clients with severely reduced intelligibility",
+      "Consider biofeedback (ultrasound, EPG) as adjunct when available to support articulatory precision"
+    ],
+    "sessionStats": {
+      "population": "Adults with acquired apraxia of speech (post-stroke, TBI, or neurodegenerative onset)",
+      "frequency": "3–5 sessions/week for intensive protocols; 1–3/week for maintenance",
+      "duration": "Typically 8–12 weeks for intensive phase; ongoing for progressive conditions",
+      "environment": "Outpatient, inpatient, home-based practice required",
+      "goals": "Articulatory accuracy, speech rate, intelligibility, generalization to conversation"
+    },
+    "bestFitCriteria": [
+      "Adults with diagnosed or suspected acquired apraxia of speech",
+      "Clients with inconsistent sound production errors, effortful groping, and trial-and-error behavior",
+      "AOS with or without co-occurring aphasia or dysarthria"
+    ]
+  },
+  {
+    "id": "barsties-2023-vfp-meta",
+    "title": "Treatment of Vocal Fold Polyps: A Systematic Review and Meta-Analysis",
+    "shortTitle": "Vocal Fold Polyp Treatment Meta-Analysis (Barsties 2023)",
+    "authors": "Barsties v. Latoszek B, Ulozaitė-Stanienė N, Petrauskas T, Uloza V",
+    "authorShort": "Barsties v. Latoszek et al.",
+    "journal": "Journal of Clinical Medicine",
+    "year": 2023,
+    "pmid": "37240557",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review / Meta-Analysis",
+    "areas": [
+      "Voice & Resonance"
+    ],
+    "tags": [
+      "vocal fold polyp",
+      "voice disorder",
+      "voice therapy",
+      "surgery",
+      "phonosurgery",
+      "treatment",
+      "meta-analysis",
+      "voice outcomes"
+    ],
+    "summary": "Systematic review and meta-analysis comparing outcomes of surgical and conservative (voice therapy) treatment for vocal fold polyps. Evaluates acoustic, aerodynamic, and patient-reported outcomes, and assesses predictors of treatment success.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Surgical intervention (microlaryngoscopy) consistently produced significant improvements in Voice Handicap Index (VHI), jitter, shimmer, and HNR across studies",
+      "Voice therapy alone demonstrated significant improvement for smaller polyps, particularly sessile polyps; effect sizes were moderate to large",
+      "Combined voice therapy plus surgery produced the most comprehensive outcomes, especially for larger or persistent polyps",
+      "Vocal hygiene education and voice rest prior to surgery contributed to better post-surgical outcomes"
+    ],
+    "clinicalApplication": [
+      "Provide voice therapy (vocal hygiene, voice rest, vocal function exercises) as first-line or pre-surgical adjunct for clients with vocal fold polyps",
+      "Collaborate with otolaryngology for surgical referral when voice therapy alone is insufficient, particularly for larger or hemorrhagic polyps",
+      "Post-surgical voice therapy is recommended to prevent recurrence and optimize voice outcomes",
+      "Counsel clients on vocal hygiene, voice rest, and hydration as essential components of polyp management"
+    ],
+    "sessionStats": {
+      "population": "Adults with diagnosed vocal fold polyp(s)",
+      "frequency": "1–2 sessions/week for voice therapy phase",
+      "duration": "Typically 4–8 weeks pre-surgery or as primary treatment",
+      "environment": "Outpatient voice clinic, collaborative ENT setting",
+      "goals": "Voice quality (VHI, jitter, shimmer), voice hygiene adherence, polyp resolution"
+    },
+    "bestFitCriteria": [
+      "Adults with unilateral or bilateral vocal fold polyps confirmed by laryngoscopy",
+      "Clients with dysphonia secondary to vocal fold polyp with or without surgical plan",
+      "Cases where voice therapy may prevent or delay surgical intervention"
+    ]
+  },
+  {
+    "id": "liu-2024-pces-dysphagia",
+    "title": "Pharyngeal Cavity Electrical Stimulation for Post-Stroke Dysphagia: A Systematic Review and Meta-Analysis",
+    "shortTitle": "Pharyngeal Electrical Stimulation for Post-Stroke Dysphagia (Liu 2024)",
+    "authors": "Liu Z, Wang W, Zhong F, Chen W, Wang J",
+    "authorShort": "Liu et al.",
+    "journal": "Dysphagia",
+    "year": 2024,
+    "pmid": "38117313",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review / Meta-Analysis",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "pharyngeal electrical stimulation",
+      "PCES",
+      "post-stroke dysphagia",
+      "dysphagia",
+      "swallowing",
+      "meta-analysis",
+      "neuromodulation",
+      "stroke"
+    ],
+    "summary": "Systematic review and meta-analysis evaluating the efficacy of pharyngeal cavity electrical stimulation (PCES) — delivered via a catheter positioned in the pharynx — for treating post-stroke dysphagia. Pooled analysis of RCTs examining swallowing function outcomes.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "PCES significantly improved swallowing function in post-stroke dysphagia compared to sham stimulation across pooled RCT data",
+      "Significant reduction in aspiration/penetration on videofluoroscopy or FEES following PCES treatment",
+      "Greatest effect sizes observed in subacute stroke patients with moderate-to-severe oropharyngeal dysphagia",
+      "Treatment protocols typically involve 3 sessions of 10-minute stimulation delivered on consecutive days"
+    ],
+    "clinicalApplication": [
+      "Consider PCES as an adjunct treatment option for post-stroke dysphagia in settings where this technology is available",
+      "PCES may be particularly beneficial for subacute stroke patients with moderate-to-severe oropharyngeal dysphagia",
+      "Advocate for access to PCES (marketed as Phagenyx device in some markets) when other dysphagia interventions have limited response",
+      "Combine PCES with behavioral swallowing treatment for comprehensive dysphagia rehabilitation"
+    ],
+    "sessionStats": {
+      "population": "Adults with post-stroke oropharyngeal dysphagia",
+      "frequency": "3 sessions on consecutive days (typical PCES protocol)",
+      "duration": "10 minutes per session; effects evaluated over weeks post-treatment",
+      "environment": "Hospital, medical setting with appropriate equipment",
+      "goals": "Reduce aspiration/penetration, improve swallowing function, advance diet"
+    },
+    "bestFitCriteria": [
+      "Adults with subacute or chronic post-stroke oropharyngeal dysphagia",
+      "Clients with persistent dysphagia not adequately managed with behavioral techniques alone",
+      "Settings with access to pharyngeal electrical stimulation technology"
+    ]
+  },
+  {
+    "id": "wan-2024-cct-mci-dementia",
+    "title": "Computerized Cognitive Training for Older Adults with Mild Cognitive Impairment or Dementia: Systematic Review and Meta-Analysis",
+    "shortTitle": "Computerized Cognitive Training for MCI and Dementia (Wan 2024)",
+    "authors": "Wan Q, Xu Z, Huo M, Li G, Liu Y, Guo L",
+    "authorShort": "Wan et al.",
+    "journal": "npj Digital Medicine",
+    "year": 2024,
+    "pmid": "38172429",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review / Meta-Analysis",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "computerized cognitive training",
+      "MCI",
+      "mild cognitive impairment",
+      "dementia",
+      "cognitive rehabilitation",
+      "digital health",
+      "memory",
+      "executive function"
+    ],
+    "summary": "Systematic review and meta-analysis of computerized cognitive training (CCT) programs for older adults with MCI or dementia. Evaluates effects on global cognition, memory, attention, executive function, and language, with subgroup analyses by training characteristics.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "CCT produced significant improvements in global cognition, memory, and processing speed in individuals with MCI (pooled effect sizes medium)",
+      "Training frequency and duration significantly moderated outcomes: higher-intensity protocols (≥3 sessions/week, ≥8 weeks) showed greatest benefit",
+      "Adaptive difficulty CCT programs outperformed fixed-difficulty programs for cognitive gains",
+      "Benefits were observed for language and verbal learning measures, relevant to cognitive-communication intervention"
+    ],
+    "clinicalApplication": [
+      "Incorporate structured computerized cognitive training programs into treatment plans for adults with MCI affecting cognitive-communication",
+      "Recommend CCT platforms with adaptive difficulty adjustment for optimal cognitive engagement",
+      "Target higher frequency use (≥3 times/week) and longer program duration (≥8 weeks) for meaningful cognitive-communication benefits",
+      "Use CCT as adjunct to direct therapy and functional communication strategies; not a standalone replacement for SLP intervention"
+    ],
+    "sessionStats": {
+      "population": "Older adults with MCI or early-to-moderate dementia",
+      "frequency": "3+ sessions/week (home or clinic-based)",
+      "duration": "8+ weeks; ongoing use beneficial for maintenance",
+      "environment": "Home (tablet/computer), outpatient, memory care",
+      "goals": "Global cognition, memory, processing speed, language, functional communication"
+    },
+    "bestFitCriteria": [
+      "Older adults with diagnosed MCI or early dementia affecting cognitive-communication",
+      "Clients with access to tablet or computer devices for home-based training",
+      "Individuals motivated to engage with technology-based cognitive training"
+    ]
+  },
+  {
+    "id": "safia-2024-injection-laryngoplasty",
+    "title": "Determinants of Clinical Response to Injection Laryngoplasty in Unilateral Vocal Fold Paralysis: A Systematic Review and Meta-Analysis",
+    "shortTitle": "Injection Laryngoplasty for UVFP: Outcomes Meta-Analysis (Safia 2024)",
+    "authors": "Safia A, Abd Elhadi U, Roch M, Kassem K, Safiya R, Zubeidat A, Nofal N, Heib A, Merchavy S, Bishara T",
+    "authorShort": "Safia et al.",
+    "journal": "International Journal of Surgery",
+    "year": 2024,
+    "pmid": "39166956",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review / Meta-Analysis",
+    "areas": [
+      "Voice & Resonance"
+    ],
+    "tags": [
+      "injection laryngoplasty",
+      "vocal fold paralysis",
+      "unilateral vocal fold paralysis",
+      "UVFP",
+      "voice",
+      "dysphonia",
+      "voice handicap",
+      "phonation",
+      "glottic insufficiency"
+    ],
+    "summary": "Systematic review and meta-analysis of 82 studies examining injection laryngoplasty (IL) for unilateral vocal fold paralysis (UVFP). Identifies determinants of treatment response including injection material, volume, and timing, with pooled outcomes for voice quality, aerodynamic, and patient-reported measures.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Injection laryngoplasty significantly improved maximum phonation time (MPT), harmonics-to-noise ratio (HNR), and Voice Handicap Index (VHI) post-injection across 82 pooled studies",
+      "Injection material significantly moderated outcomes: polydimethylsiloxane (PDMS) and autologous fat showed superior effects on MPT and vocal quality",
+      "Injection volume and timing of intervention were significant predictors of phonatory outcomes in meta-regression",
+      "Earlier injection (within 6 months of paralysis onset) was associated with better outcomes for temporary paralysis"
+    ],
+    "clinicalApplication": [
+      "Educate clients with UVFP on injection laryngoplasty as a first-line procedural intervention for glottic insufficiency and dysphonia",
+      "Voice therapy (resonance, projection strategies) can complement injection laryngoplasty to maximize voice outcomes",
+      "Timing matters: advocate for timely referral to laryngologist; early injection (within 6 months) is associated with better outcomes",
+      "Monitor voice outcomes post-injection; voice therapy should continue post-procedure to reinforce gains"
+    ],
+    "sessionStats": {
+      "population": "Adults with unilateral vocal fold paralysis (UVFP) causing dysphonia",
+      "frequency": "Voice therapy: 1–2 sessions/week post-injection",
+      "duration": "4–8 weeks post-injection voice therapy",
+      "environment": "Outpatient voice clinic; collaboration with ENT/laryngology",
+      "goals": "MPT, voice quality (VHI), HNR, breathiness, dysphonia grade"
+    },
+    "bestFitCriteria": [
+      "Adults with confirmed unilateral vocal fold paralysis causing dysphonia",
+      "Clients referred from ENT/laryngology with UVFP who are candidates for or have received injection laryngoplasty",
+      "SLP coordinating care with otolaryngology for voice rehabilitation post-injection"
+    ]
+  },
+  {
+    "id": "hegland-2020-emst-vfs-sr",
+    "title": "Effects of Expiratory Muscle Strength Training on Videofluoroscopic Measures of Swallowing: A Systematic Review",
+    "shortTitle": "EMST Effects on Videofluoroscopic Swallowing Measures (Hegland 2020)",
+    "authors": "Hegland KW, Bolser DC, Davenport PW",
+    "authorShort": "Hegland et al.",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2020,
+    "pmid": "31999193",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "expiratory muscle strength training",
+      "EMST",
+      "dysphagia",
+      "videofluoroscopy",
+      "swallowing",
+      "airway protection",
+      "aspiration",
+      "systematic review"
+    ],
+    "summary": "Systematic review examining the effects of expiratory muscle strength training (EMST) on videofluoroscopic (MBS) swallowing measures across multiple neurological populations. Evaluates penetration-aspiration, hyolaryngeal excursion, and pharyngeal swallowing physiology outcomes.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "EMST protocols (5x5 breaths/day at 50–75% MEP, 4 weeks) were used across reviewed studies with varied populations including PD, MS, stroke, and aging",
+      "Heterogeneous VFS outcomes across studies precluded meta-analysis; several studies showed improvements in Penetration-Aspiration Scale (PAS) scores post-EMST",
+      "Improvements in hyolaryngeal excursion and tongue base retraction were reported in some studies, suggesting biomechanical benefits relevant to airway protection",
+      "Evidence suggests EMST may improve cough effectiveness and airway clearance complementary to direct swallowing improvement"
+    ],
+    "clinicalApplication": [
+      "Implement EMST as adjunct treatment to target expiratory muscle weakness contributing to impaired airway protection and swallowing in neurogenic populations",
+      "Standard EMST protocol: 5 sets of 5 exhalations against calibrated EMST-150 device at 75% maximal expiratory pressure (MEP), 5 days/week for 4 weeks",
+      "Monitor MEP at baseline and weekly; adjust load to 75% MEP weekly to ensure progressive training",
+      "Evaluate swallowing outcomes via instrumental assessment (MBS/FEES) to document change in penetration-aspiration and pharyngeal clearance"
+    ],
+    "sessionStats": {
+      "population": "Adults with neurogenic dysphagia (PD, MS, stroke, ALS, aging)",
+      "frequency": "5 days/week (home-based); weekly clinician monitoring",
+      "duration": "4 weeks minimum; may extend for progressive conditions",
+      "environment": "Home-based training with weekly outpatient check-ins",
+      "goals": "Expiratory muscle strength, Penetration-Aspiration Scale score, hyolaryngeal excursion, cough effectiveness"
+    },
+    "bestFitCriteria": [
+      "Adults with neurogenic dysphagia and suspected expiratory muscle weakness affecting airway protection",
+      "Clients with Parkinson's disease, MS, or stroke with aspiration risk related to inadequate cough and airway clearance",
+      "Individuals able to use handheld EMST device independently or with caregiver support"
+    ]
+  },
+  {
+    "id": "simmons-mackie-2010-partner-training",
+    "title": "Communication Partner Training in Aphasia: A Systematic Review",
+    "shortTitle": "Communication Partner Training in Aphasia SR (Simmons-Mackie 2010)",
+    "authors": "Simmons-Mackie N, Raymer A, Armstrong E, Holland A, Cherney LR",
+    "authorShort": "Simmons-Mackie et al.",
+    "journal": "Archives of Physical Medicine and Rehabilitation",
+    "year": 2010,
+    "pmid": "21112422",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "aphasia",
+      "communication partner training",
+      "CPT",
+      "supported conversation",
+      "caregiver",
+      "functional communication",
+      "participation",
+      "systematic review"
+    ],
+    "summary": "Landmark systematic review of 31 studies examining communication partner training (CPT) for aphasia. Reviews effects on partners' communication skills, psychosocial adjustment, and quality of life, as well as secondary effects on persons with aphasia. Established evidence base for CPT as a distinct evidence-based approach in aphasia rehabilitation.",
+    "isFoundation": true,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Communication partner training produced positive psychosocial outcomes for partners in 21 of 22 studies, including reduced burden and improved confidence",
+      "Trained partners demonstrated improved ability to support communication in persons with aphasia in 20+ studies",
+      "Persons with aphasia showed secondary benefits from partner training including improved participation and communication effectiveness",
+      "Evidence supports CPT as a clinically beneficial, low-cost component of aphasia rehabilitation"
+    ],
+    "clinicalApplication": [
+      "Include communication partner training (family, caregivers, healthcare workers) as a standard component of aphasia rehabilitation",
+      "Train partners to use supported conversation techniques: reduce complexity, use multimodal supports, allow time, verify understanding",
+      "Extend partner training beyond spouses to include paid caregivers, volunteers, and community communication partners",
+      "Monitor partner confidence and communication quality as outcome measures alongside person-with-aphasia outcomes"
+    ],
+    "sessionStats": {
+      "population": "Adults with aphasia and their communication partners",
+      "frequency": "Variable; typically 1–5 training sessions for partners",
+      "duration": "Partner training may be completed in 4–10 hours; ongoing coaching beneficial",
+      "environment": "Outpatient, home, community, hospital",
+      "goals": "Partner communication skills, person with aphasia participation, caregiver QoL"
+    },
+    "bestFitCriteria": [
+      "Adults with aphasia of any severity who have willing communication partners",
+      "Aphasia rehabilitation contexts where family and caregiver involvement is feasible",
+      "Individuals transitioning from acute/inpatient rehabilitation to community living"
+    ]
+  },
+  {
+    "id": "ballard-2015-aos-intervention-sr",
+    "title": "Treatment for Acquired Apraxia of Speech: A Systematic Review of Intervention Research Between 2004 and 2012",
+    "shortTitle": "AOS Intervention Systematic Review 2004–2012 (Ballard 2015)",
+    "authors": "Ballard KJ, Wambaugh JL, Duffy JR, Layfield C, Maas E, Mauszycki S, McNeil MR",
+    "authorShort": "Ballard et al.",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2015,
+    "pmid": "25815778",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review",
+    "areas": [
+      "Motor Speech"
+    ],
+    "tags": [
+      "apraxia of speech",
+      "AOS",
+      "acquired apraxia",
+      "sound production treatment",
+      "motor speech",
+      "systematic review",
+      "evidence-based practice",
+      "ANCDS"
+    ],
+    "summary": "ANCDS-commissioned systematic review of acquired AOS intervention research from 2004–2012. Systematic search of 11 databases identified 215 articles; 26 met inclusion criteria. Reviews articulatory-kinematic, rate/rhythm control, and multimodal approaches, with evidence ratings.",
+    "isFoundation": true,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Articulatory-kinematic approaches (Sound Production Treatment, Repeated Practice) had the strongest evidence base: 24 of 26 studies applied these methods",
+      "Rate and rhythm control approaches (pacing, metronome, biofeedback) received support across multiple studies with consistent positive outcomes",
+      "Evidence quality was predominantly Level V (single-subject experimental design); no Class I RCTs of AOS were identified in this period",
+      "Treatment gains were primarily demonstrated for trained items with limited generalization data available"
+    ],
+    "clinicalApplication": [
+      "Use articulatory-kinematic approaches as the primary evidence-based AOS intervention: Sound Production Treatment (SPT) and Motor Learning Guided (MLG) treatment are well-supported",
+      "Apply principles of motor learning: variable practice, distributed schedules, fading feedback to promote generalization",
+      "Supplement with rate/rhythm control when intelligibility is severely compromised",
+      "Document target behaviors precisely and track generalization probes in clinical practice"
+    ],
+    "sessionStats": {
+      "population": "Adults with acquired AOS (typically post-stroke or TBI)",
+      "frequency": "3–5 sessions/week for intensive AOS treatment",
+      "duration": "8–12 weeks for a treatment block",
+      "environment": "Outpatient, inpatient rehabilitation",
+      "goals": "Articulatory accuracy on trained sounds/words, intelligibility, speech rate"
+    },
+    "bestFitCriteria": [
+      "Adults with confirmed or suspected acquired AOS",
+      "Clients demonstrating effortful, groping speech with inconsistent errors on repeated attempts",
+      "AOS with or without co-occurring aphasia"
+    ]
+  },
+  {
+    "id": "moradi-2023-cbt-magt-stutter",
+    "title": "Comparing the Effectiveness of Cognitive Behavioral Group Therapy and Mindfulness and Acceptance Group Therapy for Adults Who Stutter: A Randomized Clinical Trial",
+    "shortTitle": "CBT vs. Mindfulness-Acceptance Therapy for Stuttering RCT (2023)",
+    "authors": "Rahmani M, Yadegari F, Shirazi TS, Asgari A, Khatir MY",
+    "authorShort": "Rahmani et al.",
+    "journal": "Advanced Biomedical Research",
+    "year": 2023,
+    "pmid": "37057245",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": [
+      "Fluency"
+    ],
+    "tags": [
+      "stuttering",
+      "fluency",
+      "CBT",
+      "cognitive behavioral therapy",
+      "mindfulness",
+      "acceptance",
+      "ACT",
+      "psychological treatment",
+      "social anxiety",
+      "avoidance"
+    ],
+    "summary": "RCT (n=36) comparing Cognitive Behavioral Group Therapy + Speech Therapy (CBGT+ST) vs. Mindfulness and Acceptance Group Therapy + Speech Therapy (MAGT+ST) for adults who stutter, assessing fear of negative evaluation and social avoidance outcomes. Both combined approaches demonstrated significant improvements over speech therapy alone.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Both CBGT+ST and MAGT+ST produced significant reductions in social avoidance and distress (SAD) compared to baseline",
+      "CBGT+ST significantly reduced fear of negative evaluation (FNE), while MAGT+ST showed non-significant trends",
+      "Combined psychosocial and speech therapy approaches outperformed speech therapy alone for psychosocial outcomes",
+      "Gains maintained at 6-month follow-up for both combined treatment groups"
+    ],
+    "clinicalApplication": [
+      "Integrate CBT or mindfulness/acceptance-based techniques into stuttering treatment to target psychosocial impacts",
+      "Refer to psychology or use integrated SLP-CBT approaches for clients with significant social anxiety, fear of negative evaluation, or avoidance related to stuttering",
+      "Group therapy formats (CBGT or MAGT) may be particularly effective for social communication skill practice and peer support",
+      "Address the psychological dimension of stuttering as a co-equal treatment target alongside speech modification techniques"
+    ],
+    "sessionStats": {
+      "population": "Adults with developmental stuttering and significant psychosocial impact",
+      "frequency": "Weekly group sessions (combined with speech therapy)",
+      "duration": "12–16 weeks typical for combined approach",
+      "environment": "Group-based outpatient or telehealth setting",
+      "goals": "Fear of negative evaluation, social avoidance, quality of life, communication participation"
+    },
+    "bestFitCriteria": [
+      "Adults who stutter with notable social anxiety, fear of negative evaluation, or communication avoidance",
+      "Clients who have not achieved psychosocial goals through fluency techniques alone",
+      "Individuals interested in acceptance-based or CBT approaches as alternatives or complements to fluency shaping"
+    ]
+  },
+  {
+    "id": "li-2020-nmes-dysphagia-meta",
+    "title": "Effects of Transcutaneous Neuromuscular Electrical Stimulation on Swallowing Disorders: A Systematic Review and Meta-Analysis",
+    "shortTitle": "Transcutaneous NMES for Dysphagia: Systematic Review and Meta-Analysis (2020)",
+    "authors": "Li AH, Zhang JM, Xiao AL",
+    "authorShort": "Li et al.",
+    "journal": "Dysphagia",
+    "year": 2020,
+    "pmid": "32209833",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review / Meta-Analysis",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "NMES",
+      "neuromuscular electrical stimulation",
+      "transcutaneous",
+      "dysphagia",
+      "swallowing",
+      "meta-analysis",
+      "VitalStim",
+      "acquired brain injury",
+      "stroke"
+    ],
+    "summary": "Systematic review and meta-analysis of 11 RCTs/quasi-RCTs examining transcutaneous NMES (e.g., VitalStim) for swallowing disorders. Pooled effect size was significant and moderate overall, with large effects for acquired brain injury and for combined suprahyoid/infrahyoid stimulation.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Pooled effect of NMES + traditional therapy vs. traditional therapy alone: significant moderate effect size (SMD=0.62; 95% CI 0.06–1.17)",
+      "Largest effect sizes observed for acquired brain injury (SMD=0.95) and combined suprahyoid+infrahyoid stimulation (SMD=1.4)",
+      "Stimulation duration ≤45 minutes per session associated with large, significant effects",
+      "No adverse events were reported across included studies; NMES was well tolerated"
+    ],
+    "clinicalApplication": [
+      "Consider transcutaneous NMES as an adjunct to traditional dysphagia therapy, particularly for acquired brain injury (stroke, TBI)",
+      "Target combined suprahyoid and infrahyoid muscle groups for optimal swallowing effect",
+      "Limit session duration to ≤45 minutes; longer sessions did not show additional benefit",
+      "NMES should be delivered alongside behavioral swallowing strategies, not as a standalone replacement for compensatory and rehabilitative approaches"
+    ],
+    "sessionStats": {
+      "population": "Adults with neurogenic dysphagia (acquired brain injury, stroke, TBI)",
+      "frequency": "Daily or 5 days/week typical for NMES protocols",
+      "duration": "3–4 weeks standard protocol; ≤45 minutes per session",
+      "environment": "Inpatient, outpatient, or long-term care with certified NMES clinician",
+      "goals": "Swallowing function improvement, Penetration-Aspiration Scale, FOIS advancement"
+    },
+    "bestFitCriteria": [
+      "Adults with neurogenic dysphagia post-stroke or acquired brain injury",
+      "Clients who have not adequately responded to behavioral dysphagia treatment alone",
+      "Settings with certified NMES practitioners and appropriate equipment"
+    ]
+  },
+  {
+    "id": "dignam-2015-aphasia-intensity",
+    "title": "Intensive Versus Distributed Aphasia Therapy: A Nonrandomized, Parallel-Group, Dosage-Controlled Study",
+    "shortTitle": "Intensive vs. Distributed Aphasia Therapy Dosage Study (Dignam 2015)",
+    "authors": "Dignam JK, Copland DA, McKinnon E, Burfein P, O'Brien K, Farrell A, Rodriguez AD",
+    "authorShort": "Dignam et al.",
+    "journal": "Stroke",
+    "year": 2015,
+    "pmid": "26106114",
+    "evidenceLevel": "2",
+    "evidenceType": "Controlled Trial",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "aphasia",
+      "therapy intensity",
+      "dosage",
+      "distributed therapy",
+      "intensive therapy",
+      "scheduling",
+      "language impairment",
+      "chronic aphasia"
+    ],
+    "summary": "Dosage-controlled parallel-group study (n=34) comparing intensive (16 hrs/week x 3 weeks) vs. distributed (6 hrs/week x 8 weeks) aphasia therapy, both providing 48 total hours of multimodal treatment (impairment-based, functional, computer, group). Distributed scheduling produced superior language impairment outcomes.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Distributed therapy (6 hrs/week x 8 weeks) produced significantly greater gains on language impairment measures than intensive therapy (16 hrs/week x 3 weeks) despite equal total dose",
+      "No significant between-group differences on functional communication or participation measures",
+      "Intensive scheduling may produce fatigue or reduced learning efficiency over concentrated short periods",
+      "Findings suggest that spaced practice and distributed scheduling may optimize language learning for aphasia"
+    ],
+    "clinicalApplication": [
+      "When total therapy dose is equivalent, distributed scheduling (lower intensity over longer duration) may yield superior language impairment outcomes for chronic aphasia",
+      "Consider spaced practice schedules (e.g., 3x/week over 8 weeks) over highly compressed intensive blocks where possible",
+      "Distributed scheduling aligns with motor learning principles of spaced practice and may reduce fatigue",
+      "Clinical scheduling decisions should also consider client-level factors, access, and goals"
+    ],
+    "sessionStats": {
+      "population": "Adults with chronic post-stroke aphasia (>3 months)",
+      "frequency": "Distributed: ~2 hrs/day, 3 days/week; Intensive: ~3 hrs/day, 5 days/week",
+      "duration": "Total 48 hours; distributed = 8 weeks vs. intensive = 3 weeks",
+      "environment": "Outpatient clinic",
+      "goals": "Language impairment, functional communication, participation"
+    },
+    "bestFitCriteria": [
+      "Adults with chronic aphasia who can attend multiple treatment sessions per week over an extended period",
+      "Clinicians planning treatment scheduling decisions where total dose is comparable",
+      "Aphasia rehabilitation programs comparing short intensive blocks vs. extended outpatient programs"
+    ]
+  },
+  {
+    "id": "togher-2020-social-comm-tbi",
+    "title": "Improved Conversation Outcomes After Social Communication Skills Training for People With Traumatic Brain Injury and Their Communication Partners: A Clinical Trial Investigating In-Person and Telehealth Delivery",
+    "shortTitle": "Social Communication Skills Training for TBI: In-Person vs. Telehealth Trial (Togher 2020)",
+    "authors": "Togher L, Wiseman-Hakes C, Douglas J, Schultz R, Tate RL, Perdices M, McDonald S, Gillett LE, Power E",
+    "authorShort": "Togher et al.",
+    "journal": "Journal of Speech, Language, and Hearing Research",
+    "year": 2020,
+    "pmid": "31996605",
+    "evidenceLevel": "1b",
+    "evidenceType": "Randomized Clinical Trial",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "TBI",
+      "traumatic brain injury",
+      "social communication",
+      "conversation",
+      "treatment",
+      "telehealth",
+      "partner training",
+      "cognitive-communication"
+    ],
+    "summary": "RCT examining social communication skills training (TBIconneCT program) delivered in-person and via telehealth for individuals with TBI and their communication partners. Demonstrated equivalent outcomes across delivery modes with significant gains in conversation quality and participation.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Both in-person and telehealth delivery of TBIconneCT produced significant improvements in conversation quality as rated by blinded observers",
+      "Communication partner involvement in training led to generalized improvements in real-world conversational interaction",
+      "Telehealth delivery achieved equivalent clinical outcomes to in-person delivery, expanding access to treatment",
+      "Gains in conversation quality were maintained at 3-month follow-up"
+    ],
+    "clinicalApplication": [
+      "Use structured social communication skills training programs (e.g., TBIconneCT) for adults with TBI with social communication deficits",
+      "Include communication partners (family, caregivers) in TBI social communication treatment to promote generalization",
+      "Offer telehealth as a clinically valid delivery option for TBI social communication training, particularly for rural or mobility-limited clients",
+      "Target specific conversation behaviors: topic management, turn-taking, relevance, asking questions"
+    ],
+    "sessionStats": {
+      "population": "Adults with moderate-to-severe TBI and social communication deficits",
+      "frequency": "Weekly group sessions (in-person or telehealth)",
+      "duration": "Typically 8–12 weeks for social communication training program",
+      "environment": "Outpatient, telehealth (equivalent outcomes)",
+      "goals": "Conversation quality, turn-taking, topic management, partner-rated communication"
+    },
+    "bestFitCriteria": [
+      "Adults with TBI presenting with pragmatic/social communication deficits",
+      "Clients with communication partners willing to participate in treatment",
+      "TBI clients for whom telehealth access may improve treatment engagement and attendance"
+    ]
+  },
+  {
+    "id": "halpern-2020-lsvt-pd-intelligibility",
+    "title": "The Effects of Intensive Speech Treatment on Intelligibility in Parkinson's Disease: A Randomised Controlled Trial",
+    "shortTitle": "Intensive Speech Treatment and Intelligibility in Parkinson's Disease RCT (2020)",
+    "authors": "Halpern A, Ramig LO, Matos C, Petska-Cable JA, Spielman JL, Pogoda JM, Gilley PM, Sapir S, Bennett JK, McFarland DH",
+    "authorShort": "Halpern et al.",
+    "journal": "eClinicalMedicine (The Lancet)",
+    "year": 2020,
+    "pmid": "32639484",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": [
+      "Motor Speech"
+    ],
+    "tags": [
+      "Parkinson's disease",
+      "dysarthria",
+      "LSVT LOUD",
+      "intensive speech treatment",
+      "intelligibility",
+      "motor speech",
+      "RCT",
+      "voice treatment"
+    ],
+    "summary": "First RCT comparing LSVT LOUD (voice-focused intensive speech treatment) vs. LSVT ARTIC (articulation-focused intensive speech treatment) vs. no treatment (n=64) for hypokinetic dysarthria in Parkinson's disease. LSVT LOUD produced significantly greater improvements in speech intelligibility (transcription accuracy).",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "LSVT LOUD significantly improved transcription accuracy (speech intelligibility) compared to both LSVT ARTIC and no-treatment control groups",
+      "Treatment targeting voice (loudness and vocal function) yielded superior intelligibility gains vs. treatment targeting articulation alone",
+      "LSVT LOUD group showed significant improvements in % words transcribed correctly; gains maintained at 6-month follow-up",
+      "Results provide first RCT evidence supporting LSVT LOUD as the superior intensive speech treatment for improving intelligibility in PD"
+    ],
+    "clinicalApplication": [
+      "Use LSVT LOUD as first-line intensive speech treatment for hypokinetic dysarthria in Parkinson's disease to improve intelligibility",
+      "Prioritize voice-focused treatment (loudness, vocal effort) over articulation-focused treatment alone based on RCT evidence",
+      "Adhere to LSVT LOUD protocol: 4 sessions/week x 4 weeks, targeting maximum phonation time, sustained vowels, reading, and conversation",
+      "Teach 'THINK LOUD' carryover strategy for generalization to daily communication"
+    ],
+    "sessionStats": {
+      "population": "Adults with Parkinson's disease and hypokinetic dysarthria",
+      "frequency": "4 sessions/week for 4 weeks (LSVT LOUD protocol)",
+      "duration": "4 weeks intensive treatment; carryover exercises ongoing",
+      "environment": "Outpatient; home carryover exercises essential",
+      "goals": "Speech intelligibility, vocal loudness, communicative participation"
+    },
+    "bestFitCriteria": [
+      "Adults with Parkinson's disease presenting with hypokinetic dysarthria (reduced loudness, imprecise articulation)",
+      "PD clients with adequate cognition and motivation to participate in intensive 4-week protocol",
+      "Clinicians certified in or trained on LSVT LOUD protocol"
+    ]
+  },
+  {
+    "id": "pitt-2017-hightech-aac-aphasia",
+    "title": "High-Technology Augmentative Communication for Adults with Post-Stroke Aphasia: A Systematic Review",
+    "shortTitle": "High-Technology AAC for Post-Stroke Aphasia Systematic Review (2017)",
+    "authors": "Pitt R, Theodoros D, Hill AJ, Russell T",
+    "authorShort": "Pitt et al.",
+    "journal": "Disability and Rehabilitation: Assistive Technology",
+    "year": 2017,
+    "pmid": "28446056",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic Review",
+    "areas": [
+      "AAC",
+      "Language"
+    ],
+    "tags": [
+      "AAC",
+      "high-technology AAC",
+      "aphasia",
+      "stroke",
+      "speech generating device",
+      "SGD",
+      "tablet",
+      "communication app",
+      "post-stroke"
+    ],
+    "summary": "Systematic review synthesizing evidence for high-technology AAC interventions (tablets, speech-generating devices, communication apps) for adults with post-stroke aphasia. Reviews treatment outcomes for functional communication, language recovery, and quality of life, with recommendations for clinical implementation.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "High-technology AAC improved functional communication outcomes in adults with post-stroke aphasia across multiple single-case and small group studies",
+      "Tablet-based AAC applications (e.g., Lingraphica, Snap Core First) demonstrated feasibility and acceptability in aphasia populations",
+      "Speech generating devices (SGDs) supported multimodal communication and reduced communication breakdown",
+      "Evidence supports high-tech AAC as a compensatory communication approach alongside, not instead of, impairment-based language therapy"
+    ],
+    "clinicalApplication": [
+      "Assess for high-technology AAC for adults with aphasia who have persistent communication impairment affecting functional participation",
+      "Trial tablet-based AAC apps (e.g., aphasia-specific apps with symbol, photo, and text supports) as part of comprehensive aphasia management",
+      "Train both the person with aphasia and communication partners in high-tech AAC device use for maximum benefit",
+      "Consider high-tech AAC alongside, not as a replacement for, language therapy; devices support participation while therapy targets impairment"
+    ],
+    "sessionStats": {
+      "population": "Adults with post-stroke aphasia (moderate-to-severe)",
+      "frequency": "Variable; AAC trials and training integrated into SLP sessions",
+      "duration": "Feature matching and trial period: 2–4 weeks; ongoing training and follow-up",
+      "environment": "Outpatient, home, community-based",
+      "goals": "Functional communication, message transmission, communication confidence, participation"
+    },
+    "bestFitCriteria": [
+      "Adults with moderate-to-severe post-stroke aphasia significantly limiting verbal communication",
+      "Individuals with aphasia interested in or motivated to use high-technology AAC devices",
+      "Clients for whom functional communication is a priority goal alongside or instead of language recovery"
+    ]
+  },
+  {
+    "id": "roy-2003-voice-teacher-rct",
+    "title": "Three Treatments for Teachers With Voice Disorders: A Randomized Clinical Trial",
+    "shortTitle": "Three Treatments for Teacher Voice Disorders RCT (Roy 2003)",
+    "authors": "Roy N, Weinrich B, Gray SD, Tanner K, Stemple JC, Sapienza CM",
+    "authorShort": "Roy et al.",
+    "journal": "Journal of Speech, Language, and Hearing Research",
+    "year": 2003,
+    "pmid": "14696994",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": [
+      "Voice & Resonance"
+    ],
+    "tags": [
+      "voice disorders",
+      "teachers",
+      "vocal hygiene",
+      "resonance therapy",
+      "respiratory muscle training",
+      "voice amplification",
+      "RCT",
+      "occupational voice",
+      "functional voice disorder"
+    ],
+    "summary": "Landmark RCT (n=64 teachers) comparing three voice treatments: voice amplification (VA), resonance therapy (RT), and respiratory muscle training (RMT) for teachers with voice disorders. Resonance therapy and voice amplification produced the greatest improvements in patient-reported voice outcomes.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Resonance therapy significantly improved patient-rated voice quality, handicap, and symptom severity compared to no treatment control",
+      "Voice amplification significantly reduced vocal demands and improved perceived vocal effort for teachers during teaching",
+      "Respiratory muscle training (RMT/threshold IMT) did not demonstrate significant advantage over control for voice outcomes in this group",
+      "Resonance therapy effects were durable at 8-week follow-up, while voice amplification benefits were device-dependent"
+    ],
+    "clinicalApplication": [
+      "Offer resonance therapy (forward-focused phonation) as a primary evidence-based voice treatment for teachers and other occupational voice users with functional dysphonia",
+      "Voice amplification devices can serve as compensatory strategies to reduce phonatory demand for teachers during high-vocal-load periods",
+      "Consider respiratory muscle training as adjunct rather than primary treatment for functional voice disorders in vocal professionals",
+      "Include vocal hygiene education alongside primary voice treatment for occupational voice users"
+    ],
+    "sessionStats": {
+      "population": "Adults (teachers) with occupational voice disorders (functional dysphonia)",
+      "frequency": "1–2 sessions/week typical for voice therapy",
+      "duration": "8 weeks treatment period",
+      "environment": "Outpatient voice clinic",
+      "goals": "Patient-rated voice quality, vocal handicap, symptom severity, phonatory ease"
+    },
+    "bestFitCriteria": [
+      "Adults with functional voice disorders, particularly occupational voice users (teachers, singers, clergy, call center workers)",
+      "Clients with muscle tension dysphonia or functional dysphonia without structural pathology",
+      "Voice patients seeking evidence-based treatment options including resonance approaches"
+    ]
   }
 ]
