@@ -7471,5 +7471,936 @@
       "Clinicians seeking evidence to support reimbursement for telehealth SLP services.",
       "Patients in rural or underserved areas where in-person SLP access is limited."
     ]
+  },
+  {
+    "id": "bice-2024-snf-dysphagia",
+    "title": "Dysphagia and Diets in Skilled Nursing Facilities When Patient's Health Status Changes: The Role of Imaging",
+    "shortTitle": "Dysphagia and Diet Changes in SNFs: Role of Imaging",
+    "authors": "Bice, E., Martin-Harris, B., & Brodsky, M. B.",
+    "authorShort": "Bice et al.",
+    "journal": "Journal of the American Medical Directors Association",
+    "year": 2024,
+    "pmid": "38109943",
+    "evidenceLevel": "2",
+    "evidenceType": "Retrospective chart review (120 records, 25 SNFs)",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "Dysphagia",
+      "Skilled Nursing Facility",
+      "FEES",
+      "Diet Modification",
+      "Instrumental Assessment",
+      "Long-Term Care"
+    ],
+    "summary": "Retrospective review examining clinical decision-making for swallowing in skilled nursing facilities, specifically when patients' health status changes. Argues that a new instrumental assessment is required any time medical status changes—not just at admission.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Only 33% of SNF patients recommended for FEES actually demonstrated dysphagia on imaging.",
+      "Only 4% of patients ultimately required continued alternative nutrition after instrumental assessment.",
+      "Many patients were kept on unnecessarily restricted diets without updated imaging following health status changes.",
+      "A new instrumental assessment is clinically required to inform diet decisions whenever medical status changes significantly.",
+      "Relying solely on clinical swallow evaluation at health status change is insufficient to ensure accurate diet recommendations."
+    ],
+    "clinicalApplication": "In SNF settings, do not assume a patient's dysphagia status remains stable when their medical condition changes. Request updated instrumental assessment (FEES or VFSS) before modifying or maintaining diet restrictions. This study supports advocating for timely imaging access in long-term care and challenges the practice of indefinite diet restrictions without re-evaluation.",
+    "sessionStats": {
+      "frequency": "As indicated by health status change",
+      "sessionLength": "45–60 min (instrumental)",
+      "dose": "Re-evaluate with imaging at each significant status change",
+      "bestFit": "Adult dysphagia in SNF/long-term care"
+    },
+    "bestFitCriteria": [
+      "Adults with dysphagia residing in skilled nursing facilities.",
+      "Patients whose medical status has changed since last swallowing evaluation.",
+      "SLPs making diet modification decisions in long-term care.",
+      "Advocating for FEES program implementation in SNF settings."
+    ]
+  },
+  {
+    "id": "fees-safety-slp-2025",
+    "title": "Safety of FEES Performed by Speech-Language Pathologists and Physicians: Evidence Supporting Task Sharing from a Retrospective Observational Study of 964 Consecutive Examinations",
+    "shortTitle": "Safety of FEES Performed by SLPs vs. Physicians",
+    "authors": "Various (PMC12567526)",
+    "authorShort": "PMC12567526 authors",
+    "journal": "PubMed Central Open Access",
+    "year": 2025,
+    "pmid": "PMC12567526",
+    "evidenceLevel": "2",
+    "evidenceType": "Retrospective observational study (n=964)",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "FEES",
+      "Dysphagia",
+      "Instrumental Assessment",
+      "SLP Scope of Practice",
+      "Task Sharing",
+      "Safety"
+    ],
+    "summary": "Large retrospective observational study examining the safety of FEES performed by SLPs compared to physicians across 964 consecutive examinations. Supports SLP-performed FEES as safe and comparable to physician-performed procedures.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "No statistically significant differences in complication rates were found based on examiner professional background (SLP vs. physician).",
+      "No significant differences were found based on level of endoscopic experience.",
+      "Appropriately trained SLPs can safely perform FEES with a complication profile comparable to that reported internationally.",
+      "Task-sharing of FEES between SLPs and physicians is supported by this evidence base.",
+      "The study adds to the growing literature supporting SLP-performed FEES within appropriate training frameworks."
+    ],
+    "clinicalApplication": "Use this evidence to support SLP-performed FEES programs in your facility. When advocating for SLP scope in instrumental assessment, this study demonstrates that trained SLPs perform FEES as safely as physicians. Supports workforce efficiency and improved patient access to timely swallowing imaging.",
+    "sessionStats": {
+      "frequency": "As clinically indicated",
+      "sessionLength": "30–45 min",
+      "dose": "Single instrumental session per evaluation",
+      "bestFit": "Adults with dysphagia requiring instrumental assessment"
+    },
+    "bestFitCriteria": [
+      "SLPs seeking to establish or expand a FEES program.",
+      "Adults requiring instrumental swallowing assessment.",
+      "Facilities where physician-only FEES creates access barriers.",
+      "Advocating for SLP scope of practice in instrumental assessment."
+    ]
+  },
+  {
+    "id": "analysis-dietary-snf-2025",
+    "title": "Analysis of Patients' Dietary Status/Restrictions Following Instrumental Swallow Evaluations in Skilled Nursing Facilities",
+    "shortTitle": "Dietary Status After Instrumental Evals in SNFs",
+    "authors": "Various (PMC11893628)",
+    "authorShort": "PMC11893628 authors",
+    "journal": "Dysphagia",
+    "year": 2025,
+    "pmid": "PMC11893628",
+    "evidenceLevel": "2",
+    "evidenceType": "Retrospective cohort study",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "Dysphagia",
+      "Skilled Nursing Facility",
+      "Diet Modification",
+      "IDDSI",
+      "Instrumental Assessment",
+      "Long-Term Care"
+    ],
+    "summary": "Examines dietary status and restrictions for patients following instrumental swallow evaluations in skilled nursing facilities, analyzing patterns of diet liberalization or restriction post-VFSS/FEES.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Instrumental swallow evaluation frequently results in diet liberalization rather than restriction in SNF populations.",
+      "Many patients in SNFs are maintained on unnecessarily restrictive diets without current imaging evidence.",
+      "Access to instrumental assessment in SNF settings improves the accuracy of diet recommendations.",
+      "Clinical swallow evaluation alone may over-restrict diets compared to findings on imaging.",
+      "Findings support routine use of instrumental assessment in SNF populations with dysphagia."
+    ],
+    "clinicalApplication": "Advocate for instrumental swallowing assessment access in SNF settings. When patients are placed on modified diets based on clinical exam alone, instrumental follow-up may reveal that liberalization is appropriate. This supports quality of life, nutritional status, and patient-centered care in long-term care settings.",
+    "sessionStats": {
+      "frequency": "As clinically indicated",
+      "sessionLength": "45–60 min (instrumental)",
+      "dose": "Single evaluation with follow-up as needed",
+      "bestFit": "Adults with dysphagia in SNF settings"
+    },
+    "bestFitCriteria": [
+      "Adults with dysphagia in skilled nursing or long-term care settings.",
+      "Patients on modified diets without recent instrumental confirmation.",
+      "SLPs advocating for imaging access in SNF settings.",
+      "Quality improvement efforts targeting diet appropriateness in long-term care."
+    ]
+  },
+  {
+    "id": "mcmaster-2024-aphasia-treatment-modification",
+    "title": "Using and Modifying Standardized Restorative Treatments in Aphasia: Clinician Perspectives",
+    "shortTitle": "Modifying Standardized Aphasia Treatments: Clinician Views",
+    "authors": "McMaster, E., et al.",
+    "authorShort": "McMaster et al.",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2024,
+    "pmid": "39572263",
+    "evidenceLevel": "2",
+    "evidenceType": "Mixed-methods survey study",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "Aphasia",
+      "Treatment Individualization",
+      "SFA",
+      "VNeST",
+      "Clinical Decision Making",
+      "Clinician Perspectives"
+    ],
+    "summary": "Investigates which standardized aphasia treatments clinicians use most frequently, how and why they modify them, and what sources guide their modifications.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Semantic Feature Analysis (SFA) and Verb Network Strengthening Treatment (VNeST) were the most frequently used standardized aphasia treatments.",
+      "Clinicians regularly modify standardized protocols to fit individual client needs, goals, and contexts.",
+      "Little published research describes how clinicians modify protocols or which sources guide those modifications.",
+      "Clinicians reported using client characteristics, treatment response, and clinical experience as primary guides for modification.",
+      "Treatment individualization is a common and necessary practice in aphasia therapy, but the evidence base for specific modifications remains limited."
+    ],
+    "clinicalApplication": "SFA and VNeST are your most evidence-supported starting points for naming/word retrieval treatment in aphasia. When individualizing, document your rationale clearly. This study validates the clinical need for treatment adaptation, but encourages SLPs to evaluate client response systematically when deviating from standardized protocols.",
+    "sessionStats": {
+      "frequency": "2–5x/week",
+      "sessionLength": "45–60 min",
+      "dose": "Individualized based on protocol and client response",
+      "bestFit": "Anomia, fluent and nonfluent aphasia"
+    },
+    "bestFitCriteria": [
+      "Adults with post-stroke or acquired aphasia presenting with word retrieval deficits.",
+      "Clinicians selecting or adapting standardized aphasia treatment protocols.",
+      "SLPs using SFA or VNeST and considering protocol modifications.",
+      "Program evaluation or quality improvement in aphasia rehabilitation settings."
+    ]
+  },
+  {
+    "id": "hong-2024-nmt-aphasia",
+    "title": "Neurologic Music Therapy for Non-Fluent Aphasia: A Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+    "shortTitle": "Neurologic Music Therapy for Non-Fluent Aphasia: Systematic Review",
+    "authors": "Hong, I. S., et al.",
+    "authorShort": "Hong et al.",
+    "journal": "Frontiers in Neurology",
+    "year": 2024,
+    "pmid": "PMC11153767",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review and meta-analysis of RCTs",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "Aphasia",
+      "Melodic Intonation",
+      "Music Therapy",
+      "Nonfluent Aphasia",
+      "Broca's Aphasia",
+      "Neurologic Music Therapy"
+    ],
+    "summary": "Systematic review and meta-analysis of RCTs examining neurologic music therapy (NMT) techniques—including melodic intonation therapy and rhythmic speech cueing—for non-fluent aphasia.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Neurologic music therapy (NMT) techniques demonstrated significant positive effects on language outcomes in non-fluent aphasia.",
+      "Melodic intonation therapy and rhythmic speech cueing showed the strongest evidence within NMT approaches.",
+      "NMT was associated with improvements in verbal fluency, naming, and repetition in Broca's aphasia.",
+      "RCT-level evidence supports NMT as an adjunctive treatment for non-fluent aphasia.",
+      "The efficacy of NMT for non-fluent aphasia is widely accepted by the rehabilitation medical community."
+    ],
+    "clinicalApplication": "Neurologic music therapy—particularly melodic intonation therapy and rhythmic speech cueing—has RCT-level support for non-fluent (Broca's) aphasia. Consider NMT as a complement to traditional language therapy, especially for patients with severe non-fluency who are not responsive to standard verbal approaches.",
+    "sessionStats": {
+      "frequency": "3–5x/week",
+      "sessionLength": "30–60 min",
+      "dose": "Varies by protocol; intensive approaches show stronger effects",
+      "bestFit": "Non-fluent aphasia, Broca's aphasia, severe aphasia"
+    },
+    "bestFitCriteria": [
+      "Adults with non-fluent or Broca's aphasia post-stroke.",
+      "Patients with severe aphasia who show limited response to traditional verbal approaches.",
+      "Clinicians interested in melodic intonation or music-based language treatment.",
+      "Settings where adjunctive music-based therapy is feasible."
+    ]
+  },
+  {
+    "id": "voice-lpr-meta-2025",
+    "title": "Voice Outcomes in Patients With Laryngopharyngeal Reflux: A Systematic Review and Meta-Analysis",
+    "shortTitle": "Voice Outcomes in Laryngopharyngeal Reflux: Meta-Analysis",
+    "authors": "Various (PMC12441754)",
+    "authorShort": "PMC12441754 authors",
+    "journal": "Cureus",
+    "year": 2025,
+    "pmid": "PMC12441754",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review and meta-analysis (2000–2024)",
+    "areas": [
+      "Voice & Resonance"
+    ],
+    "tags": [
+      "Voice",
+      "Laryngopharyngeal Reflux",
+      "LPR",
+      "GERD",
+      "Voice Therapy",
+      "Dysphonia",
+      "Behavioral Intervention"
+    ],
+    "summary": "PRISMA-guided systematic review and meta-analysis examining voice outcomes across pharmacological, behavioral, and diagnostic approaches for laryngopharyngeal reflux (LPR). Covers 2000–2024.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Behavioral interventions (e.g., voice therapy, LSVT) demonstrated robust efficacy for voice outcomes in LPR patients (ES=0.60).",
+      "Proton pump inhibitors (PPIs) showed negligible effects on voice outcomes (ES = -0.15).",
+      "Adjunctive rikkunshito significantly improved outcomes in refractory LPR cases (ES=0.82).",
+      "Voice therapy addressing muscle tension and laryngeal hygiene is more effective than medication alone for voice complaints in LPR.",
+      "Acoustic voice analysis reliably detects changes in LPR patients, with 27 of 33 studies confirming reproducible acoustic voice changes."
+    ],
+    "clinicalApplication": "For patients with voice complaints secondary to LPR, behavioral voice therapy is more effective than PPIs alone. Prioritize voice hygiene, manual circumlaryngeal techniques for muscle tension, and resonant voice approaches. Coordinate with ENT regarding medical management, but advocate for concurrent voice therapy rather than waiting for reflux resolution before initiating treatment.",
+    "sessionStats": {
+      "frequency": "1–2x/week",
+      "sessionLength": "45–60 min",
+      "dose": "6–8 sessions with home practice",
+      "bestFit": "LPR-related dysphonia, muscle tension dysphonia with reflux"
+    },
+    "bestFitCriteria": [
+      "Adults with voice complaints attributed to laryngopharyngeal reflux.",
+      "Patients who have not responded to PPI therapy alone.",
+      "Muscle tension dysphonia with suspected reflux component.",
+      "Multidisciplinary voice clinic patients with ENT/GI referral."
+    ]
+  },
+  {
+    "id": "dementia-caregiver-communication-2024",
+    "title": "Communication Patterns and Characteristics of Family Caregivers and Persons Living With Dementia: Secondary Analysis of Video Observation",
+    "shortTitle": "Caregiver Communication Patterns in Dementia",
+    "authors": "Various (PMC10955794)",
+    "authorShort": "PMC10955794 authors",
+    "journal": "Western Journal of Nursing Research",
+    "year": 2024,
+    "pmid": "PMC10955794",
+    "evidenceLevel": "2",
+    "evidenceType": "Secondary analysis of video observation data",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "Dementia",
+      "Caregiver",
+      "Communication",
+      "Family Training",
+      "Person-Centered Care",
+      "Alzheimer's"
+    ],
+    "summary": "Secondary analysis of video-observed interactions between family caregivers and persons living with dementia. Examines how caregiver burden, depression, and communication competence relate to interaction quality.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "Caregiver burden, depression, and competence in managing burden are significantly related to communication patterns with persons living with dementia.",
+      "Higher caregiver burden was associated with less person-centered communication.",
+      "Persons with dementia were more communicatively engaged when caregivers used supportive, patient-centered strategies.",
+      "Video observation revealed that many problematic interactions stem from caregiver stress rather than intentional communication failures.",
+      "Findings support the need for SLP involvement in caregiver communication training, not just patient-directed treatment."
+    ],
+    "clinicalApplication": "When working with patients with dementia, routinely assess and address family caregiver communication competence and burden. Provide communication partner training targeting specific interaction strategies (open-ended questions, validation, reduced rate). Screening for caregiver depression may be relevant to treatment planning, as it directly impacts communication quality.",
+    "sessionStats": {
+      "frequency": "As part of family training component",
+      "sessionLength": "30–45 min family sessions",
+      "dose": "Ongoing caregiver support integrated with patient treatment",
+      "bestFit": "Family caregivers of adults with dementia"
+    },
+    "bestFitCriteria": [
+      "Family caregivers of adults living with dementia at any stage.",
+      "SLPs providing communication partner training in home or community settings.",
+      "Patients with dementia whose primary communication partners are family members.",
+      "Memory care or home health settings."
+    ]
+  },
+  {
+    "id": "cpt-dementia-review-2024",
+    "title": "The Effectiveness and Characteristics of Communication Partner Training Programs for Families of People With Dementia: A Systematic Review",
+    "shortTitle": "Communication Partner Training in Dementia: Systematic Review",
+    "authors": "Various (PMC10949353)",
+    "authorShort": "PMC10949353 authors",
+    "journal": "The Gerontologist",
+    "year": 2024,
+    "pmid": "PMC10949353",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "Dementia",
+      "Communication Partner Training",
+      "Caregiver",
+      "Family Training",
+      "Alzheimer's",
+      "Person-Centered Care"
+    ],
+    "summary": "Systematic review of communication partner training (CPT) programs for family members of people with dementia. Examines program characteristics, outcomes, and the evidence base for CPT as an essential component of dementia care.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Communication partner training is essential in dementia care and demonstrates positive outcomes for both caregivers and persons with dementia.",
+      "CPT programs that include both skill-building and emotional support components show stronger outcomes.",
+      "Programs targeting specific communication strategies (e.g., simplifying language, using visual cues) are more effective than general education alone.",
+      "CPT can reduce caregiver burden and improve quality of interactions in persons with dementia.",
+      "SLP-led CPT programs are effective and address a gap in dementia care that medication and medical management cannot fill."
+    ],
+    "clinicalApplication": "Incorporate structured communication partner training as a standard component of dementia treatment, not an add-on. Teach specific strategies: speak slowly, use short sentences, avoid corrections, provide visual cues, allow extra processing time. Program should include both a skill-building component (practice) and emotional support/counseling. CPT is reimbursable when integrated into the treatment plan.",
+    "sessionStats": {
+      "frequency": "Weekly family sessions",
+      "sessionLength": "45–60 min",
+      "dose": "4–8 sessions; ongoing reinforcement",
+      "bestFit": "Family caregivers and care partners of adults with dementia"
+    },
+    "bestFitCriteria": [
+      "Family members or paid caregivers of adults with dementia at any stage.",
+      "SLPs establishing dementia care programs.",
+      "Memory care units or home health settings.",
+      "Situations where caregiver communication is a barrier to quality interaction."
+    ]
+  },
+  {
+    "id": "als-asr-technology-2025",
+    "title": "How People Living With Amyotrophic Lateral Sclerosis Use Personalized Automatic Speech Recognition Technology to Support Communication",
+    "shortTitle": "Personalized ASR Technology in ALS Communication",
+    "authors": "Various (PMC12379579)",
+    "authorShort": "PMC12379579 authors",
+    "journal": "PubMed Central Open Access",
+    "year": 2025,
+    "pmid": "PMC12379579",
+    "evidenceLevel": "2",
+    "evidenceType": "Qualitative/descriptive study",
+    "areas": [
+      "AAC"
+    ],
+    "tags": [
+      "ALS",
+      "AAC",
+      "Automatic Speech Recognition",
+      "Voice Banking",
+      "Motor Neuron Disease",
+      "Technology",
+      "Communication"
+    ],
+    "summary": "Examines how individuals living with ALS use personalized automatic speech recognition (ASR) technology to maintain communication as speech deteriorates. Explores user experiences, barriers, and facilitators to AAC technology adoption.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Personalized ASR technology supports continued natural-sounding communication for people with ALS as speech intelligibility declines.",
+      "Early adoption of voice banking and ASR technology is critical before speech deterioration reduces voice recording quality.",
+      "Users reported that personalized ASR felt more natural and person-centered than generic text-to-speech voices.",
+      "Barriers to adoption include technological complexity, limited SLP guidance, and cost.",
+      "Integration of ASR technology with existing AAC devices improved functional communication outcomes."
+    ],
+    "clinicalApplication": "Introduce voice banking and personalized ASR options early in the disease course—before speech deterioration limits recording quality. Services like ModelTalker, VocaliD, and ALS-specific voice preservation programs allow patients to capture their natural voice. SLPs should guide ALS patients through technology options proactively and monitor communication needs at each visit as disease progresses.",
+    "sessionStats": {
+      "frequency": "Ongoing monitoring; proactive technology introduction",
+      "sessionLength": "45–60 min AAC consultation",
+      "dose": "Initiate voice banking early; reassess at each follow-up",
+      "bestFit": "Adults with ALS or progressive motor neuron disease"
+    },
+    "bestFitCriteria": [
+      "Adults with ALS at any stage, especially early to mid-stage when speech is still functional.",
+      "Patients with progressive dysarthria approaching the need for AAC.",
+      "SLPs providing AAC services in ALS multidisciplinary clinics.",
+      "Patients and families exploring voice preservation technology."
+    ]
+  },
+  {
+    "id": "diet-modification-meta-2025",
+    "title": "Effectiveness of Diet Modification on Dietary Nutrient Intake, Aspiration, and Fluid Intake for Adults with Dysphagia: A Meta-Analysis of Randomized Controlled Trials",
+    "shortTitle": "Diet Modification Outcomes in Dysphagia: Meta-Analysis of RCTs",
+    "authors": "Various (PMC12179983)",
+    "authorShort": "PMC12179983 authors",
+    "journal": "PubMed Central Open Access",
+    "year": 2025,
+    "pmid": "PMC12179983",
+    "evidenceLevel": "1a",
+    "evidenceType": "Meta-analysis of randomized controlled trials",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "Dysphagia",
+      "Diet Modification",
+      "IDDSI",
+      "Thickened Liquids",
+      "Aspiration",
+      "Nutrition",
+      "Texture Modified"
+    ],
+    "summary": "Meta-analysis of RCTs examining the effectiveness of diet modification (texture modification and liquid thickening) on aspiration rates, nutritional intake, and fluid intake in adults with dysphagia.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Diet modification reduced aspiration in adults with dysphagia compared to standard diets in RCT evidence.",
+      "Thickened liquids reduced penetration-aspiration but were associated with reduced fluid intake and dehydration risk.",
+      "Texture-modified food was associated with reduced caloric and nutrient intake compared to regular texture.",
+      "The trade-off between aspiration risk reduction and nutritional/fluid adequacy must be central to diet modification decision-making.",
+      "IDDSI-standardized diet levels improve consistency of diet modification across settings."
+    ],
+    "clinicalApplication": "Diet modification reduces aspiration but carries real risks: dehydration with thickened liquids and malnutrition with texture modification. Use IDDSI levels consistently, monitor hydration and nutritional status in modified diet patients, and reassess regularly. Consider the Frazier Free Water Protocol as an adjunct for patients on thickened liquids who struggle with adequate hydration.",
+    "sessionStats": {
+      "frequency": "Ongoing monitoring; diet reassessment as appropriate",
+      "sessionLength": "30–45 min for diet counseling/education",
+      "dose": "Reassess diet appropriateness at regular intervals",
+      "bestFit": "Adults with oropharyngeal dysphagia across settings"
+    },
+    "bestFitCriteria": [
+      "Adults with dysphagia who are on or being considered for modified diet or thickened liquids.",
+      "SLPs making diet modification recommendations using IDDSI framework.",
+      "Patients at risk for dehydration or malnutrition on modified diets.",
+      "Multidisciplinary nutrition and dysphagia teams."
+    ]
+  },
+  {
+    "id": "hnc-dysphagia-radiotherapy-2024",
+    "title": "Evidence Summary on the Rehabilitative Management of Dysphagia During Radiotherapy for Head and Neck Cancer Patients",
+    "shortTitle": "Dysphagia Rehabilitation During Radiotherapy for Head and Neck Cancer",
+    "authors": "Various (PMC11417034)",
+    "authorShort": "PMC11417034 authors",
+    "journal": "PubMed Central Open Access",
+    "year": 2024,
+    "pmid": "PMC11417034",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic evidence summary (17 articles, 28 evidence statements)",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "Head and Neck Cancer",
+      "Dysphagia",
+      "Radiation Therapy",
+      "Chemoradiation",
+      "Prehabilitation",
+      "Rehabilitation",
+      "Swallowing Exercises"
+    ],
+    "summary": "Systematic evidence summary covering rehabilitative management of dysphagia during radiotherapy for head and neck cancer. Reviews 28 evidence statements across six domains.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Preventive (prophylactic) swallowing exercises initiated before and during radiotherapy reduce long-term dysphagia severity.",
+      "SLP input is core to both assessment and management of dysphagia during and after head and neck cancer radiotherapy.",
+      "Most SLPs provide 1–3 pre-radiotherapy sessions, though 3.5 sessions was identified as optimal.",
+      "Integration of device-driven, skill-based, and strengthening exercises with individualized swallow programs yields best outcomes.",
+      "Early and proactive SLP intervention significantly reduces long-term dysphagia burden post-chemoradiation."
+    ],
+    "clinicalApplication": "Initiate swallowing prehabilitation before radiotherapy begins—not after dysphagia develops. Prophylactic swallowing exercises (jaw opening, tongue base retraction, effortful swallow) during radiation maintain range of motion and reduce fibrosis. Coordinate with oncology and radiation teams to integrate SLP visits throughout the treatment course.",
+    "sessionStats": {
+      "frequency": "Weekly during radiotherapy; more intensive pre-treatment",
+      "sessionLength": "45–60 min",
+      "dose": "3–7 sessions pre-radiation; weekly through treatment course",
+      "bestFit": "Adults undergoing radiotherapy or chemoradiation for head and neck cancer"
+    },
+    "bestFitCriteria": [
+      "Adults with head and neck cancer undergoing radiotherapy or chemoradiation.",
+      "Patients in the pre-treatment (prehabilitation) phase of head and neck cancer care.",
+      "Multidisciplinary oncology teams including SLP.",
+      "SLPs advocating for early referral in head and neck cancer pathways."
+    ]
+  },
+  {
+    "id": "motor-speech-treatment-review-2024",
+    "title": "Treatment Approaches to Motor Speech Disorders: A Step Towards Evidence Based Practice",
+    "shortTitle": "EBP Treatment Approaches for Motor Speech Disorders",
+    "authors": "Various (PMC10862440)",
+    "authorShort": "PMC10862440 authors",
+    "journal": "PubMed Central Open Access",
+    "year": 2024,
+    "pmid": "PMC10862440",
+    "evidenceLevel": "2",
+    "evidenceType": "Narrative review (170 articles reviewed, 34 included)",
+    "areas": [
+      "Motor Speech"
+    ],
+    "tags": [
+      "Dysarthria",
+      "Apraxia of Speech",
+      "Motor Speech",
+      "Treatment",
+      "Evidence Based Practice"
+    ],
+    "summary": "Narrative review examining the evidence base for treatment approaches to motor speech disorders including dysarthria and apraxia of speech. Reviews 34 studies published 1998–2023.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "LSVT LOUD has strong evidence for Parkinson's-related dysarthria; evidence for other dysarthria etiologies is more limited.",
+      "Motor learning principles (practice variability, feedback frequency, intensity) are central to effective motor speech treatment.",
+      "Evidence for apraxia of speech treatment includes Sound Production Treatment, DTTC, and MSTP.",
+      "Many motor speech treatment approaches lack RCT-level evidence, highlighting a need for further research.",
+      "Treatment must be tailored to the specific motor speech disorder type, severity, and etiology."
+    ],
+    "clinicalApplication": "Select motor speech treatment approaches based on the specific disorder type and etiology. For dysarthria: rate/rhythm approaches, intelligibility training, and LSVT LOUD (for PD) have best evidence. For acquired apraxia: Sound Production Treatment, DTTC, and Repeated Practice approaches have strong single-subject evidence. Apply motor learning principles across all motor speech treatment.",
+    "sessionStats": {
+      "frequency": "3–5x/week for intensive approaches",
+      "sessionLength": "45–60 min",
+      "dose": "Intensity varies by approach; motor learning principles favor high repetition",
+      "bestFit": "Adults with dysarthria or apraxia of speech"
+    },
+    "bestFitCriteria": [
+      "Adults with acquired dysarthria from neurological etiologies.",
+      "Adults with acquired apraxia of speech post-stroke or TBI.",
+      "SLPs selecting between motor speech treatment approaches.",
+      "Clinicians applying motor learning principles to treatment planning."
+    ]
+  },
+  {
+    "id": "long-covid-communication-2025",
+    "title": "Cognitive Communication, Voice and Swallowing Difficulties Experienced by Adults With Long-COVID: A Scoping Review",
+    "shortTitle": "Long-COVID: Cognitive-Communication, Voice, and Swallowing",
+    "authors": "Various (PMC12895204)",
+    "authorShort": "PMC12895204 authors",
+    "journal": "PubMed Central Open Access",
+    "year": 2025,
+    "pmid": "PMC12895204",
+    "evidenceLevel": "2",
+    "evidenceType": "Scoping review",
+    "areas": [
+      "Cognitive-Communication",
+      "Voice & Resonance",
+      "Swallowing"
+    ],
+    "tags": [
+      "Long COVID",
+      "Post-COVID",
+      "Cognitive Communication",
+      "Dysphagia",
+      "Dysphonia",
+      "Voice",
+      "Fatigue"
+    ],
+    "summary": "Scoping review of cognitive-communication, voice, and swallowing difficulties in adults with long-COVID. Maps the breadth of SLP-relevant symptom presentations and existing evidence for rehabilitation.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "Adults with long-COVID frequently present with cognitive-communication difficulties including word finding, attention, memory, and processing speed deficits.",
+      "Voice disorders in long-COVID include dysphonia, vocal fatigue, and muscle tension dysphonia patterns.",
+      "Dysphagia is reported in post-COVID populations, particularly those with ICU hospitalization or prolonged intubation history.",
+      "No specific treatments have been validated for long-COVID communication/swallowing symptoms; rehabilitation approaches from similar conditions are applied.",
+      "SLPs remain underutilized in long-COVID multidisciplinary care teams.",
+      "Fatigue management is a critical cross-cutting consideration in all SLP interventions for long-COVID patients."
+    ],
+    "clinicalApplication": "Long-COVID patients may present to SLP with a combination of cognitive-communication, voice, and swallowing complaints. Assess all domains and coordinate with the patient's long-COVID care team. Fatigue is a major factor—use energy conservation strategies and pace treatment intensity. Apply evidence from similar populations while monitoring for long-COVID-specific response patterns.",
+    "sessionStats": {
+      "frequency": "1–2x/week initially; adjust based on fatigue tolerance",
+      "sessionLength": "30–45 min (shorter sessions to manage fatigue)",
+      "dose": "Individualized based on symptom profile and fatigue capacity",
+      "bestFit": "Adults with post-COVID cognitive-communication, voice, or swallowing complaints"
+    },
+    "bestFitCriteria": [
+      "Adults with long-COVID presenting with cognitive-communication, voice, or swallowing complaints.",
+      "SLPs in multidisciplinary long-COVID or post-viral rehabilitation programs.",
+      "Patients with post-ICU or post-intubation swallowing or voice sequelae from COVID-19.",
+      "Clinicians navigating treatment selection for post-viral symptom presentations."
+    ]
+  },
+  {
+    "id": "laryngeal-recalibration-2025",
+    "title": "Laryngeal Recalibration Therapy in Clinical Practice for Laryngopharyngeal Symptoms",
+    "shortTitle": "Laryngeal Recalibration Therapy for LPR Symptoms",
+    "authors": "Various (PMC12041300)",
+    "authorShort": "PMC12041300 authors",
+    "journal": "PubMed Central Open Access",
+    "year": 2025,
+    "pmid": "PMC12041300",
+    "evidenceLevel": "2",
+    "evidenceType": "Clinical practice review with outcomes data",
+    "areas": [
+      "Voice & Resonance"
+    ],
+    "tags": [
+      "Laryngopharyngeal Reflux",
+      "LPR",
+      "Voice",
+      "Laryngeal Recalibration",
+      "Muscle Tension Dysphonia",
+      "Behavioral Voice Therapy"
+    ],
+    "summary": "Describes Laryngeal Recalibration Therapy (LRT), an SLP-directed approach for chronic laryngopharyngeal symptoms. LRT provides mechanical desensitization and cognitive recalibration to suppress hyper-responsive laryngeal patterns.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Laryngeal Recalibration Therapy (LRT) is effective for chronic laryngopharyngeal symptoms including chronic cough, globus, throat clearing, and LPR-associated dysphonia.",
+      "LRT reduces laryngeal hypersensitivity through mechanical desensitization and cognitive-behavioral recalibration.",
+      "SLP-directed LRT improves symptom outcomes when incorporated into multidisciplinary management of LPR.",
+      "LRT provides an alternative to or complement for pharmacological management (PPIs) that have limited voice-specific efficacy.",
+      "Cognitive recalibration component addresses the behavioral and sensory hypersensitivity cycle that perpetuates laryngeal symptoms."
+    ],
+    "clinicalApplication": "For patients with chronic laryngopharyngeal symptoms (chronic cough, globus, throat clearing, LPR-related dysphonia), consider LRT as part of the treatment plan. LRT combines manual laryngeal techniques, desensitization hierarchies for sensory triggers, and behavioral modification of maladaptive vocal behaviors. Coordinate with ENT/GI for medical management.",
+    "sessionStats": {
+      "frequency": "1–2x/week",
+      "sessionLength": "45–60 min",
+      "dose": "6–10 sessions; home practice for desensitization hierarchy",
+      "bestFit": "Chronic laryngopharyngeal symptoms, LPR-associated dysphonia, chronic cough"
+    },
+    "bestFitCriteria": [
+      "Adults with chronic laryngopharyngeal symptoms attributed to LPR or laryngeal hypersensitivity.",
+      "Patients with chronic cough, globus, or throat clearing not responding to medical management.",
+      "Voice patients with dysphonia in the context of reflux disease.",
+      "Multidisciplinary voice clinic patients."
+    ]
+  },
+  {
+    "id": "right-hemisphere-pragmatics-2024",
+    "title": "Pragmatic Communication Deficit and Functional Outcome in Patients with Right- and Left-Brain Damage: A Pilot Study",
+    "shortTitle": "Pragmatic Communication Deficits After Right vs. Left Brain Damage",
+    "authors": "Various (PMC11048654)",
+    "authorShort": "PMC11048654 authors",
+    "journal": "PubMed Central Open Access",
+    "year": 2024,
+    "pmid": "PMC11048654",
+    "evidenceLevel": "2",
+    "evidenceType": "Pilot comparative study",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "Right Hemisphere",
+      "Pragmatics",
+      "Social Communication",
+      "Discourse",
+      "Stroke",
+      "Functional Outcomes"
+    ],
+    "summary": "Pilot study comparing pragmatic communication deficits and functional outcomes in patients with right versus left brain damage.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "Pragmatic communication deficits were prominent in both right and left brain damage, but with distinct profiles.",
+      "Right hemisphere damage produced more prominent deficits in nonliteral language, inference, and prosody.",
+      "Pragmatic deficits were significantly associated with functional communication outcomes regardless of lesion side.",
+      "Right hemisphere pragmatic deficits are often underdiagnosed compared to aphasia in left hemisphere damage.",
+      "Assessment of pragmatic communication should be routine for all stroke patients regardless of hemisphere involved."
+    ],
+    "clinicalApplication": "Don't limit communication assessment to aphasia screening in stroke patients. Right hemisphere damage produces distinct pragmatic deficits—difficulty with indirect language, humor, sarcasm, prosody, and discourse organization—that significantly impact functional communication. Use standardized pragmatic assessment tools for right hemisphere stroke patients.",
+    "sessionStats": {
+      "frequency": "2–3x/week",
+      "sessionLength": "45–60 min",
+      "dose": "Individualized; pragmatic treatment often requires longer duration",
+      "bestFit": "Adults with right hemisphere stroke and pragmatic communication deficits"
+    },
+    "bestFitCriteria": [
+      "Adults with right hemisphere stroke or brain injury.",
+      "Patients presenting with subtle communication complaints post-stroke despite passing aphasia screenings.",
+      "SLPs assessing communication after right hemisphere damage.",
+      "Patients with social communication or discourse deficits post-stroke."
+    ]
+  },
+  {
+    "id": "right-hemisphere-icd-2024",
+    "title": "The Right ICD Code, Right Now: A Call to Action for Pragmatic Language Disorders After Right Hemisphere Stroke",
+    "shortTitle": "ICD Coding for Pragmatic Language Disorders: Right Hemisphere Stroke",
+    "authors": "Various (AJSLP 2024)",
+    "authorShort": "AJSLP 2024 authors",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2024,
+    "pmid": "AJSLP-24-00090",
+    "evidenceLevel": "3",
+    "evidenceType": "Clinical practice/expert opinion",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "Right Hemisphere",
+      "Pragmatics",
+      "ICD Coding",
+      "Diagnosis",
+      "Social Communication",
+      "Documentation"
+    ],
+    "summary": "Clinical advocacy article examining how pragmatic language disorders after right hemisphere stroke are under-coded and under-documented, limiting access to SLP services and insurance coverage.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "Pragmatic language disorders after right hemisphere stroke are frequently undercoded or miscoded in clinical documentation.",
+      "Inadequate ICD-10 coding for right hemisphere communication disorders limits reimbursement and patient access to SLP services.",
+      "Correct diagnosis and coding of pragmatic language disorders is essential for clinical advocacy and service delivery.",
+      "Right hemisphere communication disorders remain underrecognized and undertreated compared to aphasia from left hemisphere damage.",
+      "SLPs play a critical role in accurately diagnosing and documenting pragmatic and social communication disorders post-stroke."
+    ],
+    "clinicalApplication": "Use ICD-10 code R48.8 (Other symbolic dysfunctions) or R47.89 (Other speech disturbances) for right hemisphere communication disorders when aphasia codes do not apply. Document pragmatic deficits specifically in the evaluation. Accurate documentation and coding supports reimbursement and validates SLP services for this underserved population.",
+    "sessionStats": {
+      "frequency": "Ongoing documentation practice",
+      "sessionLength": "N/A — coding/documentation guidance",
+      "dose": "N/A",
+      "bestFit": "Adults with right hemisphere stroke and pragmatic language disorders"
+    },
+    "bestFitCriteria": [
+      "SLPs documenting and billing for right hemisphere communication disorder treatment.",
+      "Adults with right hemisphere stroke and pragmatic or social communication deficits.",
+      "Clinicians in inpatient rehabilitation, outpatient, or home health settings.",
+      "Teams seeking to improve documentation and reimbursement for right hemisphere communication services."
+    ]
+  },
+  {
+    "id": "ctar-rct-2022",
+    "title": "Effect of Chin Tuck Against Resistance Exercise in Citizens with Oropharyngeal Dysphagia: A Randomised Controlled Study",
+    "shortTitle": "Chin Tuck Against Resistance (CTAR) for Oropharyngeal Dysphagia: RCT",
+    "authors": "Various (PMC9680398)",
+    "authorShort": "PMC9680398 authors",
+    "journal": "Geriatrics (MDPI)",
+    "year": 2022,
+    "pmid": "PMC9680398",
+    "evidenceLevel": "1b",
+    "evidenceType": "Randomized controlled trial (n=92)",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "Dysphagia",
+      "Chin Tuck Against Resistance",
+      "CTAR",
+      "Suprahyoid",
+      "Swallowing Exercise",
+      "Oropharyngeal Dysphagia"
+    ],
+    "summary": "RCT examining the effectiveness of chin tuck against resistance (CTAR) exercise combined with standard care versus standard care alone in 92 patients with oropharyngeal dysphagia.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "CTAR exercise combined with standard care showed a nonsignificant effect on dysphagia compared to standard care alone in this RCT.",
+      "CTAR activates the suprahyoid and sternocleidomastoid muscles, which are critical for laryngeal elevation during swallowing.",
+      "Prior studies showed CTAR was more effective than the Shaker exercise in activating suprahyoid musculature.",
+      "The CTAR exercise is well tolerated and easy to instruct in clinical and home settings.",
+      "Supplementary outcome measures suggested trends toward improvement in laryngeal elevation and swallowing efficiency."
+    ],
+    "clinicalApplication": "CTAR is a practical suprahyoid strengthening exercise that activates laryngeal elevation musculature. Despite this RCT showing nonsignificant group differences, CTAR remains clinically useful as an adjunct to swallowing rehabilitation—particularly for patients with reduced laryngeal elevation. It can be performed at home with low cost and is well tolerated by older adults.",
+    "sessionStats": {
+      "frequency": "Daily home exercise; 3x/week clinic",
+      "sessionLength": "Sets of 30 repetitions; integrated into session",
+      "dose": "30 reps x 3 sets daily recommended in most protocols",
+      "bestFit": "Oropharyngeal dysphagia with reduced laryngeal elevation"
+    },
+    "bestFitCriteria": [
+      "Adults with oropharyngeal dysphagia and reduced laryngeal elevation or anterior hyoid movement.",
+      "Patients who need home-based dysphagia exercise programs.",
+      "Post-stroke dysphagia rehabilitation.",
+      "Older adults with dysphagia in community or SNF settings."
+    ]
+  },
+  {
+    "id": "incog2-tbi-cognitive-communication-2023",
+    "title": "INCOG 2.0 Guidelines for Cognitive Rehabilitation Following Traumatic Brain Injury, Part IV: Cognitive-Communication and Social Cognition Disorders",
+    "shortTitle": "INCOG 2.0 Guidelines: Cognitive-Communication After TBI",
+    "authors": "Meulenbroek, P., et al.",
+    "authorShort": "Meulenbroek et al.",
+    "journal": "Journal of Head Trauma Rehabilitation",
+    "year": 2023,
+    "pmid": "INCOG2-2023",
+    "evidenceLevel": "1a",
+    "evidenceType": "Clinical practice guideline (systematic evidence review)",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "TBI",
+      "Cognitive Communication",
+      "Social Cognition",
+      "Discourse",
+      "Evidence Based Practice",
+      "Clinical Guidelines"
+    ],
+    "summary": "Part IV of the INCOG 2.0 updated clinical practice guidelines for cognitive rehabilitation after TBI, focusing on cognitive-communication and social cognition disorders.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "More than 75% of adults who sustain a TBI experience a cognitive-communication disorder post-injury.",
+      "Discourse impairment is a hallmark of TBI and should be a primary treatment target.",
+      "Treatment should be individualized, goal-directed, and include group therapy formats where possible.",
+      "Communication partner training and context-sensitive treatment are recommended components.",
+      "Social communication interventions demonstrate promising evidence for improving functional communication outcomes.",
+      "Cognitive-linguistic strategy training and metacognitive approaches have the strongest evidence for complex communication needs post-TBI."
+    ],
+    "clinicalApplication": "Use INCOG 2.0 as a clinical reference for TBI cognitive-communication treatment planning. Prioritize discourse-level assessment and treatment. Individualize treatment with explicit goals, use group therapy to practice social communication skills, and train communication partners. Include metacognitive strategy training for executive communication challenges. Address social cognition as a distinct treatment domain.",
+    "sessionStats": {
+      "frequency": "3–5x/week in acute/subacute; 1–2x/week in community",
+      "sessionLength": "45–60 min",
+      "dose": "Moderate to high intensity recommended; sufficient dose for plasticity",
+      "bestFit": "Adults with TBI and cognitive-communication or social communication disorders"
+    },
+    "bestFitCriteria": [
+      "Adults with mild, moderate, or severe TBI presenting with cognitive-communication deficits.",
+      "Discourse, social communication, or pragmatic impairments post-TBI.",
+      "SLPs developing or evaluating TBI cognitive-communication treatment programs.",
+      "Inpatient rehabilitation, outpatient, or community-based TBI programs."
+    ]
+  },
+  {
+    "id": "cochrane-covid-dysphagia-2023",
+    "title": "Dysphagia, Dysphonia and Olfactory Disease: A Map of Cochrane Evidence Relevant to Rehabilitation for People with Post COVID-19 Condition",
+    "shortTitle": "Cochrane Evidence Map: Dysphagia and Dysphonia in Long-COVID",
+    "authors": "Various (PMC10153549)",
+    "authorShort": "PMC10153549 authors",
+    "journal": "Cochrane Database / PMC Open Access",
+    "year": 2023,
+    "pmid": "PMC10153549",
+    "evidenceLevel": "1a",
+    "evidenceType": "Cochrane evidence mapping review",
+    "areas": [
+      "Swallowing",
+      "Voice & Resonance"
+    ],
+    "tags": [
+      "COVID-19",
+      "Long COVID",
+      "Post-COVID",
+      "Dysphagia",
+      "Dysphonia",
+      "Cochrane",
+      "Rehabilitation"
+    ],
+    "summary": "Cochrane evidence mapping review identifying and mapping existing Cochrane evidence relevant to rehabilitation of dysphagia, dysphonia, and olfactory disease in people with post-COVID-19 condition.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "No Cochrane reviews exist specifically for post-COVID dysphagia or dysphonia rehabilitation.",
+      "Existing Cochrane evidence for dysphagia and dysphonia from other etiologies is applicable but requires adaptation for post-COVID populations.",
+      "Specific SLP interventions for dysphagia and dysphonia are relevant starting points for long-COVID rehabilitation.",
+      "SLPs should draw on best available evidence from stroke, TBI, and functional voice disorder literature when treating long-COVID symptoms.",
+      "A significant research gap exists for RCT-level evidence specific to post-COVID SLP rehabilitation."
+    ],
+    "clinicalApplication": "When treating long-COVID patients with dysphagia or dysphonia, apply evidence from the nearest analogous population. Document treatment rationale clearly given the limited COVID-specific evidence base. Contribute to the evidence base by tracking outcomes systematically.",
+    "sessionStats": {
+      "frequency": "1–2x/week adjusted for fatigue",
+      "sessionLength": "30–45 min",
+      "dose": "Individualized; fatigue-sensitive pacing essential",
+      "bestFit": "Adults with post-COVID dysphagia or dysphonia"
+    },
+    "bestFitCriteria": [
+      "Adults with long-COVID or post-acute COVID-19 syndrome presenting with dysphagia or dysphonia.",
+      "SLPs developing evidence-informed protocols for post-COVID rehabilitation.",
+      "Clinicians navigating treatment decisions for novel post-viral populations.",
+      "Multidisciplinary long-COVID care teams."
+    ]
+  },
+  {
+    "id": "ppa-treatment-review-2025",
+    "title": "Safety and Efficacy of Different Therapeutic Interventions for Primary Progressive Aphasia: A Systematic Review",
+    "shortTitle": "Therapeutic Interventions for Primary Progressive Aphasia: Systematic Review",
+    "authors": "Various (MDPI JCM 2025)",
+    "authorShort": "MDPI JCM authors",
+    "journal": "Journal of Clinical Medicine",
+    "year": 2025,
+    "pmid": "JCM-14-9-3063",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "Primary Progressive Aphasia",
+      "PPA",
+      "Neurodegenerative",
+      "Aphasia",
+      "Speech Therapy",
+      "Dementia"
+    ],
+    "summary": "Systematic review examining the safety and efficacy of behavioral, pharmacological, and neuromodulation interventions for primary progressive aphasia (PPA) across all variants.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Behavioral speech-language interventions show the strongest evidence for PPA, particularly for maintaining word retrieval and functional communication.",
+      "Word retrieval treatments (semantic and phonological approaches) demonstrate short-term gains in naming accuracy in PPA.",
+      "Gains from treatment do not halt disease progression but can slow functional decline and improve quality of life.",
+      "Communication partner training and augmentative communication strategies are increasingly important as disease progresses.",
+      "Pharmacological interventions showed limited evidence for language outcomes in PPA.",
+      "Neuromodulation approaches (tDCS combined with speech therapy) show preliminary positive effects in some PPA variants."
+    ],
+    "clinicalApplication": "Treatment for PPA should begin as early as possible after diagnosis. Prioritize word retrieval treatment targeting personally relevant vocabulary, communication partner training for caregivers, and proactive AAC/low-tech communication strategy introduction. As disease progresses, shift emphasis from restorative to compensatory approaches. Set realistic expectations—treatment maintains function and quality of life rather than reversing decline.",
+    "sessionStats": {
+      "frequency": "1–2x/week; reassess every 3–6 months",
+      "sessionLength": "45–60 min",
+      "dose": "Ongoing with evolving goals as disease progresses",
+      "bestFit": "Adults with primary progressive aphasia (nonfluent, semantic, logopenic variants)"
+    },
+    "bestFitCriteria": [
+      "Adults diagnosed with primary progressive aphasia (any variant).",
+      "Early to mid-stage PPA where word retrieval treatment has the strongest benefit.",
+      "SLPs providing long-term management across the PPA disease course.",
+      "Multidisciplinary memory clinic or neurology teams."
+    ]
   }
 ]
