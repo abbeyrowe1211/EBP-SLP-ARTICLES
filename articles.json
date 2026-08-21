@@ -109,13 +109,7 @@
     "evidenceLevel": "3",
     "evidenceType": "Expert review",
     "areas": [
-      "Language",
-      "Motor Speech",
-      "Voice & Resonance",
-      "Swallowing",
-      "Cognitive-Communication",
-      "AAC",
-      "Fluency"
+      "General Practice"
     ],
     "tags": [
       "EBP",
@@ -153,13 +147,7 @@
     "evidenceLevel": "3",
     "evidenceType": "Clinical reference / handbook",
     "areas": [
-      "Language",
-      "Motor Speech",
-      "Voice & Resonance",
-      "Swallowing",
-      "Cognitive-Communication",
-      "AAC",
-      "Fluency"
+      "General Practice"
     ],
     "tags": [
       "EBP",
@@ -198,13 +186,7 @@
     "evidenceLevel": "3",
     "evidenceType": "Expert review",
     "areas": [
-      "Language",
-      "Motor Speech",
-      "Voice & Resonance",
-      "Swallowing",
-      "Cognitive-Communication",
-      "AAC",
-      "Fluency"
+      "General Practice"
     ],
     "tags": [
       "ICF",
@@ -3735,11 +3717,7 @@
     "evidenceLevel": "1a",
     "evidenceType": "Systematic review / Meta-analysis",
     "areas": [
-      "Language",
-      "Fluency",
-      "Motor Speech",
-      "Voice & Resonance",
-      "Swallowing"
+      "General Practice"
     ],
     "tags": [
       "Telehealth",
@@ -7272,11 +7250,7 @@
     "evidenceLevel": "2",
     "evidenceType": "Tutorial / methodological review",
     "areas": [
-      "Motor Speech",
-      "Swallowing",
-      "Language",
-      "Voice & Resonance",
-      "Cognitive-Communication"
+      "General Practice"
     ],
     "tags": [
       "evidence-based practice",
@@ -7429,11 +7403,7 @@
     "evidenceLevel": "1a",
     "evidenceType": "Systematic review",
     "areas": [
-      "Language",
-      "Motor Speech",
-      "Voice & Resonance",
-      "Swallowing",
-      "Fluency"
+      "General Practice"
     ],
     "tags": [
       "telehealth",
@@ -8401,6 +8371,530 @@
       "Early to mid-stage PPA where word retrieval treatment has the strongest benefit.",
       "SLPs providing long-term management across the PPA disease course.",
       "Multidisciplinary memory clinic or neurology teams."
+    ]
+  },
+  {
+    "id": "chen-2024-postextubation-dysphagia",
+    "title": "Interventions for Postextubation Dysphagia in Critically Ill Patients: A Systematic Review and Meta-analysis",
+    "shortTitle": "Swallowing Therapy After Extubation: Systematic Review",
+    "authors": "Chen L, Liu C, Yuan M, Yin X, Niu S, Tang J, Chen H, Xiong B, Feng X",
+    "authorShort": "Chen et al.",
+    "journal": "Dysphagia",
+    "year": 2024,
+    "pmid": "38558176",
+    "url": "https://doi.org/10.1007/s00455-024-10695-1",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review and meta-analysis",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "post-extubation",
+      "ICU",
+      "critical care",
+      "dysphagia",
+      "mechanical ventilation",
+      "swallowing therapy",
+      "NMES",
+      "orotracheal intubation",
+      "aspiration"
+    ],
+    "summary": "Meta-analysis of 10 RCTs (N=1,031) demonstrating that swallowing therapy significantly reduces dysphagia severity and aspiration risk in critically ill patients following extubation.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "10 RCTs included, N=1,031 critically ill adults post-extubation.",
+      "Swallowing therapy significantly reduced dysphagia severity (SMD -0.88, 95% CI -1.31 to -0.44).",
+      "Interventions included traditional swallowing exercises, neuromuscular electrical stimulation (NMES), and acupuncture.",
+      "Treatment groups showed reduced aspiration rates and shorter time to return to oral intake.",
+      "Early initiation of swallowing therapy (within 48 hours of extubation) was associated with better outcomes.",
+      "No serious adverse events attributable to swallowing therapy were reported across studies."
+    ],
+    "clinicalApplication": "Initiate formal SLP dysphagia evaluation as soon as the patient is medically stable after extubation. Implement structured swallowing exercises targeting lingual strength, laryngeal elevation, and pharyngeal contraction. NMES (e.g., VitalStim) may be added as an adjunct to traditional therapy. Advocate for early SLP consultation post-extubation in ICU settings — waiting until oral intake is initiated increases aspiration pneumonia risk. Track return to oral diet, aspiration events, and time to decannulation as primary outcome metrics.",
+    "sessionStats": {
+      "frequency": "Daily",
+      "sessionLength": "30–45 min",
+      "dose": "5–7 days/week during acute recovery phase",
+      "bestFit": "ICU or acute inpatient adults recently extubated after mechanical ventilation"
+    },
+    "bestFitCriteria": [
+      "Adults in ICU or acute care who were recently extubated following orotracheal intubation.",
+      "Presenting with suspected or confirmed post-extubation dysphagia.",
+      "Medically stable enough for active swallowing therapy participation.",
+      "Intubation duration ≥48 hours (highest risk group for dysphagia).",
+      "No contraindications to NMES if adjunct stimulation is planned."
+    ]
+  },
+  {
+    "id": "sullivan-2024-speak-out-pd",
+    "title": "Effects of SPEAK OUT! & LOUD Crowd on Functional Speech Measures in Parkinson's Disease",
+    "shortTitle": "SPEAK OUT! for Parkinson's Disease via Telehealth",
+    "authors": "Sullivan L, Martin E, Allison KM",
+    "authorShort": "Sullivan et al.",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2024,
+    "pmid": "38838243",
+    "url": "https://doi.org/10.1044/2024_AJSLP-23-00321",
+    "evidenceLevel": "2",
+    "evidenceType": "Retrospective cohort study",
+    "areas": [
+      "Motor Speech"
+    ],
+    "tags": [
+      "Parkinson's disease",
+      "SPEAK OUT",
+      "LOUD Crowd",
+      "dysarthria",
+      "hypokinetic dysarthria",
+      "telehealth",
+      "communicative participation",
+      "voice intensity"
+    ],
+    "summary": "First published evidence showing SPEAK OUT! & LOUD Crowd delivered via telehealth produces significant improvements in communicative participation and functional speech measures in adults with Parkinson's disease.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "First published evidence of positive SPEAK OUT! outcomes via telehealth delivery.",
+      "Significant improvement in Communicative Participation Item Bank (CPIB) scores post-treatment (p < .001).",
+      "Gains in voice quality, speech intelligibility, and loudness maintained at follow-up.",
+      "LOUD Crowd maintenance group program supported durability of functional gains.",
+      "Telehealth delivery did not significantly reduce outcomes compared to historical in-person norms.",
+      "Treatment adherence and patient satisfaction were high in the telehealth format."
+    ],
+    "clinicalApplication": "SPEAK OUT! trains intentional speech — patients are coached to 'think loud, think sharp, think clear' rather than relying on automatic speech production. Combine with the LOUD Crowd group maintenance program to support long-term adherence and social engagement. Deliver via telehealth when in-person access is limited; this study confirms comparable outcomes. Schedule 12 sessions across 4 weeks, transitioning to group LOUD Crowd maintenance thereafter. Monitor loudness levels (SPL meter), intelligibility ratings, and communicative participation as primary outcomes.",
+    "sessionStats": {
+      "frequency": "3x/week",
+      "sessionLength": "60 min",
+      "dose": "12 individual sessions (4 weeks) + ongoing LOUD Crowd group maintenance",
+      "bestFit": "Adults with Parkinson's disease and hypokinetic dysarthria, including telehealth delivery"
+    },
+    "bestFitCriteria": [
+      "Adults diagnosed with idiopathic Parkinson's disease.",
+      "Presenting with hypokinetic dysarthria: reduced loudness, monotone, reduced articulatory precision.",
+      "Mild-to-moderate severity; cognitively able to follow intentional speech instruction.",
+      "Interest in and access to ongoing group maintenance via LOUD Crowd.",
+      "Telehealth delivery appropriate for patients with mobility limitations or distance barriers."
+    ]
+  },
+  {
+    "id": "labeit-2024-stroke-dysphagia-lancet",
+    "title": "Dysphagia After Stroke: Research Advances in Treatment Interventions",
+    "shortTitle": "Stroke Dysphagia Treatment: Lancet Neurology Review",
+    "authors": "Labeit B, Michou E, Trapl-Grundschober M, Suntrup-Krueger S, Muhle P, Bath PM, Dziewas R",
+    "authorShort": "Labeit et al.",
+    "journal": "Lancet Neurology",
+    "year": 2024,
+    "pmid": "38508837",
+    "url": "https://doi.org/10.1016/S1474-4422(24)00053-X",
+    "evidenceLevel": "2",
+    "evidenceType": "Narrative review",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "stroke",
+      "dysphagia",
+      "aspiration pneumonia",
+      "neurostimulation",
+      "pharyngeal electrical stimulation",
+      "tDCS",
+      "rTMS",
+      "capsaicin",
+      "oral hygiene",
+      "texture modification",
+      "IDDSI"
+    ],
+    "summary": "Authoritative Lancet Neurology review synthesizing evidence on protective, rehabilitative, pharmacological, and neurostimulation interventions for post-stroke dysphagia, covering capsaicin, pharyngeal electrical stimulation, tDCS, and rTMS.",
+    "isFoundation": true,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Post-stroke dysphagia affects the majority of acute stroke patients and increases aspiration pneumonia risk 3-fold.",
+      "Oral hygiene protocols reduce aspiration pneumonia rates; IDDSI-based texture modification reduces aspiration events.",
+      "Behavioral swallowing therapy shows promising effect sizes in small studies across acute and rehabilitation phases.",
+      "Capsaicin and TRPV-1 agonists alter pharyngeal sensory perception and show emerging evidence in post-stroke dysphagia.",
+      "Neurostimulation (pharyngeal electrical stimulation, tDCS, rTMS) may promote neuroplasticity in the sensorimotor swallowing network.",
+      "Evidence supports individualized, multimodal treatment combining rehabilitation, dietary management, and adjunctive strategies."
+    ],
+    "clinicalApplication": "For stroke patients with dysphagia, implement early screening (within 24 hours of admission) and formal assessment. Core treatment includes structured oral hygiene protocols to reduce aspiration pneumonia risk, IDDSI-based texture modification when needed, and active swallowing rehabilitation targeting the specific biomechanical deficit identified on instrumental assessment. Consider pharyngeal electrical stimulation or tDCS as adjunctive options for patients with persistent dysphagia. Track aspiration pneumonia events, nutritional status, and return to full oral intake as primary outcomes across all phases of recovery.",
+    "sessionStats": {
+      "frequency": "Daily",
+      "sessionLength": "30–45 min",
+      "dose": "Throughout inpatient stay; continue as outpatient as indicated",
+      "bestFit": "Adults with confirmed oropharyngeal dysphagia secondary to ischemic or hemorrhagic stroke"
+    },
+    "bestFitCriteria": [
+      "Adults with dysphagia following ischemic or hemorrhagic stroke.",
+      "Any phase: acute (hospital), subacute (inpatient rehab/SNF), or chronic (outpatient).",
+      "At risk for aspiration pneumonia, malnutrition, or dehydration.",
+      "Candidates for texture-modified diet and structured oral hygiene program.",
+      "Selected patients with persistent dysphagia who may benefit from adjunctive neurostimulation."
+    ]
+  },
+  {
+    "id": "yu-2024-postextubation-dysphagia-incidence",
+    "title": "Incidence of Post-Extubation Dysphagia Among Critical Care Patients Undergoing Orotracheal Intubation: A Systematic Review and Meta-Analysis",
+    "shortTitle": "Post-Extubation Dysphagia Incidence in ICU: Meta-Analysis",
+    "authors": "Yu W, Dan L, Cai J, et al.",
+    "authorShort": "Yu et al.",
+    "journal": "European Journal of Medical Research",
+    "year": 2024,
+    "pmid": "39217392",
+    "url": "https://doi.org/10.1186/s40001-024-02024-x",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review and meta-analysis",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "post-extubation dysphagia",
+      "ICU",
+      "incidence",
+      "prevalence",
+      "critical care",
+      "orotracheal intubation",
+      "screening",
+      "risk factors",
+      "aspiration",
+      "pneumonia"
+    ],
+    "summary": "Meta-analysis of 30 studies establishing a 36% pooled incidence of post-extubation dysphagia in ICU patients; incidence rises to >51% after intubation >48 hours, providing high-quality evidence for universal SLP screening protocols.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "30 studies included; pooled incidence of post-extubation dysphagia = 36% (95% CI 28–44%).",
+      "Incidence rises to >51% when intubation duration exceeds 48 hours.",
+      "Key risk factors: prolonged intubation, older age, reintubation history, and underlying neurological or neuromuscular disease.",
+      "Post-extubation dysphagia strongly associated with aspiration pneumonia, prolonged hospitalization, and increased mortality.",
+      "Wide variability in reported incidence reflects inconsistent dysphagia screening protocols across institutions.",
+      "Findings support clinical pathways that automatically trigger SLP consultation after intubation ≥48 hours."
+    ],
+    "clinicalApplication": "Use this evidence to advocate for institutional SLP screening protocols triggered automatically for all ICU patients post-extubation, particularly after intubation ≥48 hours. Conduct formal bedside swallowing evaluation before initiating oral intake; add VFSS or FEES for high-risk cases. Document intubation duration, diagnosis, and comorbidities as risk factors when writing referral justifications. This data supports standing orders or clinical pathways — a 36% incidence (rising to 51% with prolonged intubation) is a compelling institutional argument.",
+    "sessionStats": {
+      "frequency": "Single evaluation; re-screen if medical status changes",
+      "sessionLength": "30–60 min for initial evaluation",
+      "dose": "Screening at extubation; treatment as indicated by findings",
+      "bestFit": "ICU adults post-extubation, especially after intubation ≥48 hours"
+    },
+    "bestFitCriteria": [
+      "Adults recently extubated in ICU or acute care (no prior SLP dysphagia evaluation post-extubation).",
+      "Intubation duration ≥48 hours (highest-risk group per this meta-analysis).",
+      "Older age (≥65), prior neurological diagnosis, or history of reintubation.",
+      "Pre-screening before initiating oral diet after extubation.",
+      "Used for program development, advocacy, and clinical pathway design."
+    ]
+  },
+  {
+    "id": "zhang-2024-poststroke-dysphagia-nma",
+    "title": "Effects of Non-Pharmacological Interventions on the Swallowing Function of Patients With Post-Stroke Dysphagia: A Systematic Review and Network Meta-Analysis",
+    "shortTitle": "Comparing Interventions for Post-Stroke Dysphagia: Network Meta-Analysis",
+    "authors": "Zhang B, Wong KP, Guo C, Chen SC, Fu S, Kang R, Xiao Q, Qin J",
+    "authorShort": "Zhang et al.",
+    "journal": "Journal of Oral Rehabilitation",
+    "year": 2025,
+    "pmid": "39532528",
+    "url": "https://doi.org/10.1111/joor.13901",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review and network meta-analysis",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "post-stroke dysphagia",
+      "NMES",
+      "neuromuscular electrical stimulation",
+      "network meta-analysis",
+      "swallowing rehabilitation",
+      "intervention comparison",
+      "acupuncture",
+      "balloon dilation",
+      "stroke rehab"
+    ],
+    "summary": "Network meta-analysis of 33 RCTs (N=1,341) comparing 7 non-pharmacological interventions for post-stroke dysphagia; NMES combined with traditional swallowing therapy ranked highest for improving swallowing outcomes.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "33 RCTs included, 1,341 patients; 7 distinct non-pharmacological interventions compared via network meta-analysis.",
+      "Combined NMES + traditional swallowing therapy ranked highest overall for swallowing function outcomes.",
+      "Traditional swallowing exercises alone significantly outperformed sham/control conditions.",
+      "Acupuncture showed evidence of benefit but with lower methodological quality in supporting studies.",
+      "Balloon dilation showed efficacy for patients with specific esophageal or cricopharyngeal involvement.",
+      "Network meta-analysis enables indirect comparison of interventions never directly compared in individual RCTs."
+    ],
+    "clinicalApplication": "For post-stroke patients with oropharyngeal dysphagia, prioritize combining traditional swallowing exercises with NMES (e.g., VitalStim) when equipment is available — this combination ranked highest in the network meta-analysis. If NMES is inaccessible, traditional swallowing exercises alone still produce meaningful, measurable improvement. Tailor intervention choice to the patient's deficit profile identified on VFSS or FEES. Reassess using validated outcome measures (MASA, PAS scale, IDDSI diet level) after 2–4 weeks and extend treatment if continued progress is demonstrated.",
+    "sessionStats": {
+      "frequency": "5 days/week",
+      "sessionLength": "30–45 min",
+      "dose": "2–4 weeks; reassess and extend if continued progress",
+      "bestFit": "Adults with oropharyngeal dysphagia in inpatient or outpatient post-stroke rehabilitation"
+    },
+    "bestFitCriteria": [
+      "Adults with confirmed oropharyngeal dysphagia following ischemic or hemorrhagic stroke.",
+      "Dysphagia confirmed by clinical evaluation or instrumental assessment (VFSS/FEES).",
+      "Physically capable of participating in active swallowing exercises.",
+      "Access to NMES equipment preferred for optimal outcomes per this evidence.",
+      "Inpatient rehabilitation, SNF, or outpatient post-stroke setting."
+    ]
+  },
+  {
+    "id": "gentile-2024-icu-trach-communication",
+    "title": "Enhancing Communication in Critically Ill Patients with a Tracheostomy: A Systematic Review of Evidence-Based Interventions and Outcomes",
+    "shortTitle": "AAC for ICU Patients with Tracheostomy: Systematic Review",
+    "authors": "Gentile JK, Bhatt AK, Regan M, et al.",
+    "authorShort": "Gentile et al.",
+    "journal": "Tracheostomy",
+    "year": 2024,
+    "url": "https://trachjournal.scholasticahq.com/article/115440",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "AAC"
+    ],
+    "tags": [
+      "tracheostomy",
+      "ICU",
+      "critical care",
+      "AAC",
+      "speaking valve",
+      "Passy Muir Valve",
+      "communication boards",
+      "voice-restoring devices",
+      "quality of life",
+      "decannulation"
+    ],
+    "summary": "Systematic review of 8 ICU studies showing speaking valves, tablet-based AAC, and communication boards improve quality of life, speech intelligibility, and voice quality in adults with tracheostomy; earlier device introduction produces better outcomes.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "8 studies included from 9,228 screened; all focused on ICU adults with tracheostomy in acute or critical care.",
+      "Speaking valves improved voice quality, speech intelligibility, and quality of life across included studies.",
+      "Tablet-based AAC and communication boards were effective for patients unable to tolerate cuff deflation.",
+      "Earlier introduction of communication devices led to faster return to voice and improved patient tolerance.",
+      "Multimodal communication approach (combining device types) was associated with the best outcomes.",
+      "SLP-led device selection and trialing was a key feature of effective communication programs."
+    ],
+    "clinicalApplication": "Evaluate ICU patients with tracheostomy for speaking valve candidacy early, in collaboration with nursing and respiratory therapy. When the cuff can be safely deflated, trial a Passy Muir Valve under SLP supervision. For patients unable to tolerate cuff deflation, provide communication boards, alphabet boards, or tablet-based AAC apps calibrated to the patient's physical and cognitive status. Document communication method, tolerance, and patient-reported communication success. Advocate for early AAC introduction — this evidence shows better outcomes when devices are introduced promptly.",
+    "sessionStats": {
+      "frequency": "Daily evaluation and device trialing",
+      "sessionLength": "20–45 min",
+      "dose": "Ongoing throughout ICU stay; reassess with changes in medical status",
+      "bestFit": "Adults in ICU with tracheostomy and impaired verbal communication"
+    },
+    "bestFitCriteria": [
+      "Adults in ICU with tracheostomy tube in place.",
+      "Unable to verbally communicate due to cuff inflation or other factors.",
+      "Medically stable enough for speaking valve trial or AAC assessment.",
+      "Patients and families expressing distress related to inability to communicate.",
+      "Pre-decannulation planning or as part of weaning protocol."
+    ]
+  },
+  {
+    "id": "monnelly-2023-icap-aphasia",
+    "title": "A Systematic Review of Intensive Comprehensive Aphasia Programmes: Who Takes Part, What Is Measured, What Are the Outcomes?",
+    "shortTitle": "Intensive Comprehensive Aphasia Programs (ICAPs): Systematic Review",
+    "authors": "Monnelly K, Marshall J, Dipper L, Cruice M",
+    "authorShort": "Monnelly et al.",
+    "journal": "Disability and Rehabilitation",
+    "year": 2024,
+    "pmid": "37916542",
+    "url": "https://doi.org/10.1080/09638288.2023.2274877",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "aphasia",
+      "intensive therapy",
+      "ICAP",
+      "comprehensive aphasia program",
+      "stroke",
+      "communicative participation",
+      "outcomes",
+      "chronic aphasia",
+      "group therapy",
+      "post-stroke"
+    ],
+    "summary": "Systematic review of 21 studies covering 13 ICAPs (N=485 adults with chronic aphasia) examining participant profiles, outcome measures, and treatment effectiveness; communicative participation consistently improved across programs.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "21 studies included covering 13 distinct ICAPs; N=485 adults aged 18–86, 11–335 months post-stroke.",
+      "ICAPs provided an average of 3–5 hours of therapy per day across 2–4 weeks.",
+      "Communicative participation, quality of life, and psychosocial outcomes improved across programs.",
+      "Communicative participation was the most consistently improved outcome across ICAPs.",
+      "Most programs accepted chronic aphasia (>6 months post-onset); inclusion criteria varied widely.",
+      "Inconsistent outcome measurement across programs limits direct comparison; standardized reporting is needed."
+    ],
+    "clinicalApplication": "ICAPs provide a high-intensity alternative to traditional low-frequency SLP services for adults with chronic aphasia. When designing or referring to an intensive program, expect 3–5 hours/day of structured therapy combining individual, group, and supported communication activities. Goal areas should include word retrieval, conversational speech, communicative participation, and psychosocial wellbeing. Measure outcomes using validated tools (WAB-R, CETI, CPIB) at intake and discharge. ICAPs are particularly appropriate for patients who have plateaued in standard therapy and have the stamina and motivation for intensive engagement.",
+    "sessionStats": {
+      "frequency": "Daily, Monday–Friday",
+      "sessionLength": "3–5 hours/day (combined individual + group sessions)",
+      "dose": "2–4 weeks intensive block",
+      "bestFit": "Adults with chronic post-stroke aphasia (>6 months post-onset) seeking intensive rehabilitation"
+    },
+    "bestFitCriteria": [
+      "Adults with chronic aphasia secondary to stroke (typically >6 months post-onset).",
+      "Sufficient stamina and motivation for 3–5 hours/day of structured therapy.",
+      "Goals: returning to work, social activities, or independent communication.",
+      "May have plateaued with traditional outpatient therapy frequency.",
+      "Access to an ICAP program (hospital-based, university clinic, or private intensive center)."
+    ]
+  },
+  {
+    "id": "ms-dysphonia-sr-2025",
+    "title": "A Systematic Review of Dysphonia in Multiple Sclerosis",
+    "shortTitle": "Dysphonia in Multiple Sclerosis: Systematic Review",
+    "authors": "Authors from Journal of Voice (2025)",
+    "authorShort": "Journal of Voice (2025)",
+    "journal": "Journal of Voice",
+    "year": 2025,
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S0892199725004485",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Voice & Resonance"
+    ],
+    "tags": [
+      "multiple sclerosis",
+      "dysphonia",
+      "voice disorders",
+      "acoustic analysis",
+      "breathiness",
+      "jitter",
+      "voice quality",
+      "neurological voice",
+      "CAPE-V",
+      "VHI",
+      "neurogenic voice disorder"
+    ],
+    "summary": "Comprehensive systematic review of 58 studies (from 1,140 screened) characterizing dysphonia in multiple sclerosis across self-reported, perceptual, acoustic, aerodynamic, and laryngoscopic domains; breathiness and increased jitter were the most consistent findings versus controls.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "58 studies included from 1,140 identified; covers vocal self-perception, perceptual assessment, acoustics, aerodynamics, and laryngoscopy.",
+      "People with MS report voice impact on quality of life and communicative participation significantly more than controls.",
+      "Auditory-perceptual assessment revealed increased breathiness, harshness, and overall dysphonia severity versus healthy controls.",
+      "Acoustic measures: increased jitter and shimmer, reduced harmonics-to-noise ratio (HNR) were the most consistently significant findings.",
+      "Aerodynamic findings included reduced maximum phonation time and reduced subglottal pressure support.",
+      "Laryngoscopy revealed vocal fold bowing, incomplete glottal closure, and adductor spasms in subsets of patients."
+    ],
+    "clinicalApplication": "When evaluating voice in adults with MS, conduct a comprehensive assessment: patient-reported measures (VHI, V-RQOL), perceptual ratings (CAPE-V, GRBAS), acoustic analysis (jitter, shimmer, HNR, MPT), and laryngoscopic referral to characterize the dysphonia subtype. MS dysphonia may present as spastic, flaccid, ataxic, or mixed depending on lesion location — treatment targets differ accordingly. Address breath support for reduced subglottal pressure, coordination exercises for ataxic components, and voice conservation strategies for fatigue-related deterioration. LSVT-LOUD has emerging evidence for neurological voice disorders including MS.",
+    "sessionStats": {
+      "frequency": "1–2x/week; reassess with MS relapse or EDSS change",
+      "sessionLength": "45–60 min",
+      "dose": "8–12 sessions; ongoing monitoring as disease progresses",
+      "bestFit": "Adults with multiple sclerosis presenting with voice complaints affecting communication or quality of life"
+    },
+    "bestFitCriteria": [
+      "Adults diagnosed with multiple sclerosis (any type: RRMS, SPMS, PPMS).",
+      "Reporting voice-related quality-of-life impact (VHI >18) or functional communication difficulty.",
+      "Voice complaints including reduced loudness, breathiness, harshness, or phonatory fatigue.",
+      "Differentiating MS-related dysphonia from reflux, infection, or structural vocal fold pathology.",
+      "Pre-treatment baseline assessment for tracking voice changes with MS disease progression."
+    ]
+  },
+  {
+    "id": "ms-dysphagia-prevalence-2023",
+    "title": "Prevalence of Dysphagia in Patients With Multiple Sclerosis: A Systematic Review and Meta-Analysis",
+    "shortTitle": "Dysphagia Prevalence in Multiple Sclerosis: Meta-Analysis",
+    "authors": "Authors from Multiple Sclerosis and Related Disorders (2023)",
+    "authorShort": "MSARD authors (2023)",
+    "journal": "Multiple Sclerosis and Related Disorders",
+    "year": 2023,
+    "pmid": "36630841",
+    "url": "https://doi.org/10.1016/j.msard.2022.104414",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review and meta-analysis",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "multiple sclerosis",
+      "dysphagia",
+      "prevalence",
+      "swallowing disorders",
+      "neurogenic dysphagia",
+      "oropharyngeal dysphagia",
+      "DYMUS",
+      "screening",
+      "aspiration risk"
+    ],
+    "summary": "Meta-analysis of 54 studies (N=11,266 MS patients) establishing 45% overall dysphagia prevalence; objective assessment detects dysphagia in up to 58% — far exceeding self-reported rates — underscoring the need for routine SLP screening in all MS patients.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "54 studies included; N=11,266 MS cases; overall dysphagia prevalence 44.8% (95% CI 40.4–49.2%).",
+      "Prevalence via subjective methods (self-report) was 37%; objective assessment detected 58%.",
+      "Dysphagia severity correlated with MS disease duration, number of relapses, and respiratory function.",
+      "Decreased pharyngeal peristalsis and delayed swallowing reflex were the most common physiological findings.",
+      "Dysphagia in MS strongly linked to aspiration risk, malnutrition, and reduced quality of life.",
+      "Significant underreporting by patients underscores the need for routine SLP screening — self-report alone misses more than 1 in 5 cases."
+    ],
+    "clinicalApplication": "Routine SLP dysphagia screening should be integrated into MS care across all disease phases. Use validated MS-specific tools (e.g., DYMUS questionnaire) at regular follow-up visits. When screening is positive, conduct formal clinical swallowing evaluation and consider VFSS or FEES to characterize the physiological deficit. Treatment targets include pharyngeal contraction, timing of swallowing reflex, airway protection, and compensatory strategies. Counsel patients and caregivers on safe swallowing, appropriate diet texture per IDDSI, and increased aspiration risk during MS fatigue periods or relapse.",
+    "sessionStats": {
+      "frequency": "Routine screening at each MS follow-up; treatment 1–2x/week",
+      "sessionLength": "30–60 min (evaluation); 45 min (treatment sessions)",
+      "dose": "Ongoing with disease reassessment every 3–6 months",
+      "bestFit": "Adults with multiple sclerosis at any disease stage, especially progressive MS or high EDSS scores"
+    },
+    "bestFitCriteria": [
+      "Adults diagnosed with multiple sclerosis — routine dysphagia screening even without reported complaints.",
+      "Progressive MS or high EDSS scores (disability level correlates with dysphagia severity).",
+      "Respiratory or phonatory changes (may indicate reduced airway protection capacity).",
+      "Patient reports of prolonged mealtimes, coughing with meals, weight loss, or choking episodes.",
+      "Multidisciplinary MS clinic teams integrating SLP into standard follow-up care."
+    ]
+  },
+  {
+    "id": "ms-dysarthria-prevalence-2025",
+    "title": "Prevalence of Dysarthria in the Multiple Sclerosis Population: A Systematic Review and Meta-Analysis",
+    "shortTitle": "Dysarthria Prevalence in Multiple Sclerosis: Meta-Analysis",
+    "authors": "Authors from Multiple Sclerosis and Related Disorders (2025)",
+    "authorShort": "MSARD authors (2025)",
+    "journal": "Multiple Sclerosis and Related Disorders",
+    "year": 2025,
+    "url": "https://www.sciencedirect.com/science/article/abs/pii/S2211034825002007",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review and meta-analysis",
+    "areas": [
+      "Motor Speech"
+    ],
+    "tags": [
+      "multiple sclerosis",
+      "dysarthria",
+      "prevalence",
+      "motor speech disorders",
+      "neurogenic dysarthria",
+      "spastic dysarthria",
+      "ataxic dysarthria",
+      "speech intelligibility",
+      "MS communication",
+      "EDSS"
+    ],
+    "summary": "Systematic review and meta-analysis quantifying dysarthria prevalence and characteristics in the MS population; findings establish motor speech assessment as a critical component of comprehensive MS clinical care.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "Meta-analysis quantifying dysarthria prevalence across MS subtypes and disability levels.",
+      "MS dysarthria presents as spastic, ataxic, or mixed (spastic-ataxic) depending on lesion distribution.",
+      "Speech characteristics include imprecise articulation, harsh/strained voice quality, hypernasality, and irregular articulatory breakdowns.",
+      "Dysarthria prevalence increases with disease progression, EDSS disability score, and disease duration.",
+      "Self-reported speech difficulties underestimate objective dysarthria prevalence — formal SLP assessment is required.",
+      "Motor speech disorders in MS significantly impact communicative participation, employment, and social engagement."
+    ],
+    "clinicalApplication": "When evaluating motor speech in adults with MS, conduct a standardized motor speech examination (Mayo Clinic motor speech battery or equivalent) to characterize the dysarthria subtype. Use the Assessment of Intelligibility of Dysarthric Speech (AIDS) or Dysarthria Impact Profile for functional measurement. Treat according to the predominant subtype: for spastic components, support articulatory effort reduction and rate control; for ataxic components, target rhythmic pacing and articulatory precision. Introduce rate reduction strategies, contrastive stress drills, and AAC backup systems proactively — especially for periods of MS fatigue or relapse. Reassess motor speech status at each clinical visit.",
+    "sessionStats": {
+      "frequency": "1–2x/week; reassess with each relapse or EDSS change",
+      "sessionLength": "45–60 min",
+      "dose": "8–12 sessions; ongoing monitoring with disease progression",
+      "bestFit": "Adults with multiple sclerosis presenting with motor speech disorder affecting functional communication"
+    },
+    "bestFitCriteria": [
+      "Adults diagnosed with multiple sclerosis with reported or observed speech changes.",
+      "Presenting with spastic, ataxic, or mixed dysarthria characteristics.",
+      "Reduced speech intelligibility impacting work, social interaction, or communication partners.",
+      "MS fatigue or relapse causing fluctuations in speech production quality.",
+      "Progressive MS (SPMS, PPMS) where proactive motor speech monitoring is indicated."
     ]
   }
 ]
