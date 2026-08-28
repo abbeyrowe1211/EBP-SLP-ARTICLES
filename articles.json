@@ -8896,5 +8896,214 @@
       "MS fatigue or relapse causing fluctuations in speech production quality.",
       "Progressive MS (SPMS, PPMS) where proactive motor speech monitoring is indicated."
     ]
+  },
+  {
+    "id": "wilson-2019-autism-adult-expressive-communication",
+    "title": "Interventions Targeting Expressive Communication in Adults With Autism Spectrum Disorders: A Systematic Review",
+    "shortTitle": "Expressive Communication Interventions in Autistic Adults",
+    "authors": "Wilson KP, Steinbrenner JR, Kaur Dhillon G, Van Vliet M",
+    "authorShort": "Wilson et al.",
+    "journal": "Journal of Speech, Language, and Hearing Research",
+    "year": 2019,
+    "pmid": "31091173",
+    "evidenceLevel": "2",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "autism",
+      "adult autism",
+      "expressive communication",
+      "ASD"
+    ],
+    "summary": "A systematic review of 22 studies (256 autistic adults) found generally positive but highly variable effects of expressive communication interventions, with single-case designs showing medium-to-large effects.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "22 studies met inclusion criteria: 14 single-case design and 8 group design studies, totaling 256 autistic adults.",
+      "Single-case designs demonstrated medium-to-large treatment effects, with gains generally maintained over time.",
+      "Effects varied considerably across studies and intervention types, and overall study quality was rated as limited.",
+      "The review identifies a clear need for higher-quality, adult-specific intervention research in this population."
+    ],
+    "clinicalApplication": "Evidence for expressive communication intervention in autistic adults is encouraging but still developing. Because the evidence base is limited and heterogeneous, individualize intervention selection to the adult's specific communication profile and goals rather than assuming a single approach generalizes across the population. Track outcomes closely given the variability seen in the underlying research, and favor interventions with the strongest individual-study support (typically structured, single-case-validated approaches) until more robust adult-focused trials emerge.",
+    "sessionStats": {
+      "frequency": "Varies by intervention; most reviewed studies used 2-3x/week structured sessions",
+      "sessionLength": "20-45 min, intervention-dependent",
+      "bestFit": "Autistic adults with expressive communication goals in medical, community, or vocational settings"
+    },
+    "bestFitCriteria": [
+      "Adult with autism spectrum disorder",
+      "Expressive communication goals (verbal or AAC-supported)",
+      "Able to participate in structured, individualized intervention"
+    ]
+  },
+  {
+    "id": "gormley-2025-autism-inpatient-communication-access",
+    "title": "Exploring the Communication Access and Participation of a Young Adult With Autism Spectrum Disorder With Limited Speech and Inpatient Nursing Staff",
+    "shortTitle": "Autistic Adult's Communication Access in Inpatient Care",
+    "authors": "Gormley J, Brittlebank S, Light J",
+    "authorShort": "Gormley et al.",
+    "journal": "Disability and Rehabilitation: Assistive Technology",
+    "year": 2025,
+    "pmid": "39488823",
+    "evidenceLevel": "3",
+    "evidenceType": "Observational study",
+    "areas": [
+      "Cognitive-Communication",
+      "AAC"
+    ],
+    "tags": [
+      "autism",
+      "adult autism",
+      "AAC",
+      "inpatient",
+      "communication access",
+      "acute care"
+    ],
+    "summary": "An observational study of a limited-speech autistic adult's interactions with 14 inpatient providers found providers took 93% of conversational turns, and the patient's AAC system was made available in only 4% of interactions — yet participation rose sharply whenever it was.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "Across observed interactions with 14 different inpatient healthcare providers, providers took 93% of conversational turns, leaving minimal space for patient-initiated communication.",
+      "The patient's communication (AAC) system was made accessible in only 4% of interactions.",
+      "Participation and turn-taking increased significantly in the interactions where the communication system was available.",
+      "Most providers showed limited reciprocal engagement or accommodation of the patient's communication needs."
+    ],
+    "clinicalApplication": "This is a stark, real-world illustration of a solvable acute-care gap: consistently making an autistic adult's AAC system physically accessible (bedside, within reach, charged) and deliberately slowing conversational pace to allow turn-taking meaningfully increases patient participation. For medical-based SLPs, this supports two concrete actions: (1) build AAC-accessibility checks into inpatient care plans and nursing handoff communication, and (2) provide brief, targeted in-service training for nursing/medical staff on turn-taking and communication accommodation for patients with limited speech.",
+    "sessionStats": {
+      "bestFit": "Autistic adults with limited speech in acute/inpatient medical settings"
+    },
+    "bestFitCriteria": [
+      "Autistic adult with limited natural speech",
+      "Uses or could benefit from an AAC system",
+      "Currently in or entering an inpatient/acute care setting"
+    ]
+  },
+  {
+    "id": "rogalski-2025-communication-bridge2-ppa",
+    "title": "Efficacy of Communication Bridge-2 for Primary Progressive Aphasia: A Randomized Controlled Trial of Communication Intervention",
+    "shortTitle": "Communication Bridge-2 RCT for Primary Progressive Aphasia",
+    "authors": "Rogalski E, et al.",
+    "authorShort": "Rogalski et al.",
+    "journal": "Alzheimer's & Dementia",
+    "year": 2025,
+    "pmid": "40145390",
+    "url": "https://doi.org/10.1002/alz.70088",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": [
+      "Cognitive-Communication"
+    ],
+    "tags": [
+      "dementia",
+      "primary progressive aphasia",
+      "PPA",
+      "telehealth",
+      "communication intervention"
+    ],
+    "summary": "A randomized controlled trial found that the telehealth-delivered Communication Bridge-2 program produced meaningful communication benefits for people with primary progressive aphasia compared to usual care.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Randomized, controlled design comparing telehealth-delivered structured communication intervention (Communication Bridge-2) against a control condition in people with primary progressive aphasia.",
+      "The intervention group showed measurable improvements in communication outcomes attributable to the program.",
+      "Findings support telehealth as a viable, effective delivery model for sustained communication intervention in progressive neurodegenerative conditions.",
+      "Builds on the original Communication Bridge trial, adding a larger, more rigorously controlled sample."
+    ],
+    "clinicalApplication": "For adults with primary progressive aphasia — a dementia-spectrum diagnosis where communication decline is the presenting and often primary symptom — this trial supports offering structured, individualized communication intervention delivered via telehealth rather than assuming in-person delivery is required for benefit. This is particularly useful for maintaining consistent intervention access for patients with mobility limitations, rural/distance barriers, or caregiver transportation constraints.",
+    "sessionStats": {
+      "frequency": "Weekly, telehealth-delivered",
+      "sessionLength": "45-60 min",
+      "bestFit": "Adults with primary progressive aphasia (mild-moderate stage) with telehealth access"
+    },
+    "bestFitCriteria": [
+      "Diagnosis of primary progressive aphasia",
+      "Mild-to-moderate stage of communication decline",
+      "Access to telehealth technology and willing communication partner support"
+    ]
+  },
+  {
+    "id": "gonzalez-lindh-2021-copd-exacerbation-dysphagia",
+    "title": "Swallowing Dysfunction in Patients Hospitalised Due to a COPD Exacerbation",
+    "shortTitle": "Swallowing Dysfunction in Hospitalized COPD Exacerbation",
+    "authors": "Gonzalez Lindh M, Janson C, Blom Johansson M, Jonsson M, Mälberg E, Allansson E, Holm C, Jennische M, Koyi H",
+    "authorShort": "Gonzalez Lindh et al.",
+    "journal": "ERJ Open Research",
+    "year": 2021,
+    "pmid": "34109239",
+    "evidenceLevel": "2",
+    "evidenceType": "Cohort study",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "COPD",
+      "respiratory",
+      "dysphagia",
+      "aspiration risk",
+      "chest",
+      "pulmonary"
+    ],
+    "summary": "Hospitalized patients with a COPD exacerbation had much higher rates of both self-reported and clinically observed swallowing difficulty than cardiac controls (67% vs. 23% self-reported; 80% vs. 37% clinical signs), and worse lung function tracked with worse swallowing complaints.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Self-reported swallowing dysfunction: 67% in COPD-exacerbation patients vs. 23% in cardiac controls.",
+      "Clinically identified signs of swallowing dysfunction: 80% in COPD-exacerbation patients vs. 37% in cardiac controls.",
+      "Reduced lung function correlated with more severe subjective swallowing complaints.",
+      "Supports COPD exacerbation as a distinct, underrecognized dysphagia risk period, not just a stable-disease consideration."
+    ],
+    "clinicalApplication": "Patients admitted for a COPD exacerbation should be screened for dysphagia as a routine part of the admission workup, not only when overt aspiration signs are already present — this population's swallowing-difficulty rate rivals or exceeds many classic dysphagia populations. Coordinate closely with respiratory therapy and nursing on diet texture, positioning, and breath-swallow coordination strategies during the acute exacerbation window, and reassess as lung function trends toward baseline.",
+    "sessionStats": {
+      "frequency": "Screen on admission; reassess with clinical status changes",
+      "bestFit": "Patients hospitalized for acute COPD exacerbation, especially with self-reported eating/swallowing complaints"
+    },
+    "bestFitCriteria": [
+      "Acute hospitalization for COPD exacerbation",
+      "Self-reported or observed difficulty eating/drinking",
+      "Reduced lung function or increased work of breathing during meals"
+    ]
+  },
+  {
+    "id": "britton-2018-pulse-oximetry-aspiration",
+    "title": "Utility of Pulse Oximetry to Detect Aspiration: An Evidence-Based Systematic Review",
+    "shortTitle": "Pulse Oximetry Is Not a Reliable Aspiration Indicator",
+    "authors": "Britton D, Roeske A, Ennis SK, Benditt JO, Quinn C, Graville D",
+    "authorShort": "Britton et al.",
+    "journal": "Dysphagia",
+    "year": 2018,
+    "pmid": "29243086",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "oxygen saturation",
+      "pulse oximetry",
+      "aspiration",
+      "respiratory",
+      "diagnostic accuracy",
+      "COPD"
+    ],
+    "summary": "A systematic review of 10 studies found pulse oximetry's sensitivity for detecting aspiration ranged wildly (10-87%) with confounding variables in every study — the evidence does not support using oxygen desaturation as a reliable aspiration indicator.",
+    "isFoundation": true,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "10 studies reviewed; sensitivity of pulse oximetry for detecting aspiration ranged from 10% to 87% across studies.",
+      "Potentially confounding variables (e.g. comorbid respiratory disease, supplemental oxygen use) were present in every study reviewed.",
+      "The majority of studies failed to demonstrate a reliable relationship between aspiration events and oxygen desaturation.",
+      "Authors conclude current evidence does not support relying on pulse oximetry to detect aspiration."
+    ],
+    "clinicalApplication": "This is an important myth-correction for bedside practice: a drop in oxygen saturation during a swallow trial should not be treated as a reliable stand-alone sign of aspiration, and a stable oxygen level should not be used to rule aspiration out — especially in patients with underlying respiratory disease like COPD, where desaturation has many causes unrelated to swallowing. Continue to rely on validated clinical/instrumental assessment (e.g. cervical auscultation findings alongside FEES or MBSS) rather than pulse oximetry trends as your primary aspiration indicator.",
+    "sessionStats": {
+      "bestFit": "Any patient undergoing bedside swallow evaluation, particularly those with comorbid respiratory disease"
+    },
+    "bestFitCriteria": [
+      "Bedside swallow evaluation in progress or being planned",
+      "Comorbid respiratory disease (e.g. COPD) that could confound oximetry readings",
+      "Clinician currently using or considering pulse oximetry as part of aspiration risk assessment"
+    ]
   }
 ]
