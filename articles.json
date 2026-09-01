@@ -9105,5 +9105,175 @@
       "Comorbid respiratory disease (e.g. COPD) that could confound oximetry readings",
       "Clinician currently using or considering pulse oximetry as part of aspiration risk assessment"
     ]
+  },
+  {
+    "id": "peters-2024-aac-als-survey",
+    "title": "A recent survey of augmentative and alternative communication use and service delivery experiences of people with amyotrophic lateral sclerosis in the United States",
+    "shortTitle": "AAC Use & Service Delivery in ALS",
+    "authors": "Peters B, O'Brien K, Fried-Oken M",
+    "authorShort": "Peters et al.",
+    "journal": "Disability and Rehabilitation: Assistive Technology",
+    "year": 2024,
+    "pmid": "36448513",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36448513/",
+    "evidenceLevel": "3",
+    "evidenceType": "Survey study",
+    "areas": [
+      "AAC"
+    ],
+    "tags": [
+      "ALS",
+      "AAC",
+      "service delivery",
+      "device use",
+      "adult"
+    ],
+    "summary": "Survey of 216 adults with ALS on their AAC device use and service delivery experiences, identifying gaps in timing, access, and follow-up support.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "Surveyed 216 people with ALS in the U.S. about real-world AAC use and service delivery",
+      "Identified patterns in how and when AAC was introduced relative to disease progression",
+      "Surfaced gaps between clinical AAC service delivery and what device users actually needed day to day"
+    ],
+    "clinicalApplication": "Use this to inform AAC service delivery timing and follow-up practices with ALS patients — the survey highlights where standard AAC introduction/support workflows commonly fall short of patient need, which can guide when to introduce device trials and how to structure ongoing device support rather than a one-time evaluation.",
+    "sessionStats": {
+      "frequency": "N/A — survey study, not a treatment protocol",
+      "sessionLength": "N/A",
+      "dose": "N/A",
+      "bestFit": "Adults with ALS at any stage being considered for AAC evaluation or already using AAC"
+    },
+    "bestFitCriteria": [
+      "Adult with ALS or progressive motor speech decline",
+      "Clinician evaluating when/how to introduce AAC",
+      "Program looking to improve AAC service delivery workflow"
+    ]
+  },
+  {
+    "id": "grout-brown-2025-acquired-stuttering",
+    "title": "Assessment and treatment of acquired stuttering: A single subject study",
+    "shortTitle": "Assessment & Tx of Acquired Stuttering",
+    "authors": "Grout-Brown W, Theys C",
+    "authorShort": "Grout-Brown & Theys",
+    "journal": "Journal of Fluency Disorders",
+    "year": 2025,
+    "pmid": "40373652",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40373652/",
+    "evidenceLevel": "3",
+    "evidenceType": "Single-subject case study",
+    "areas": [
+      "Fluency"
+    ],
+    "tags": [
+      "acquired stuttering",
+      "functional stuttering",
+      "adult onset",
+      "case study"
+    ],
+    "summary": "Single-subject case study of an adult with nine months of acquired functional stuttering, tracking assessment findings and outcomes of targeted treatment.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Comprehensive baseline assessment supported a diagnosis of acquired functional stuttering",
+      "Stuttered syllable frequency reduced across all speech tasks following targeted treatment",
+      "Client achieved fluency restoration and returned to work"
+    ],
+    "clinicalApplication": "For adults presenting with new-onset stuttering (no developmental history), this case supports a structured assessment-first approach to distinguish functional/acquired stuttering from neurogenic or developmental stuttering, followed by targeted, hierarchy-based treatment tracking stuttered syllables across tasks as the outcome measure.",
+    "sessionStats": {
+      "frequency": "1-2x/week",
+      "sessionLength": "45-60 min",
+      "dose": "Structured hierarchy from baseline speech tasks through generalization",
+      "bestFit": "Adults with acute/subacute acquired or functional stuttering onset"
+    },
+    "bestFitCriteria": [
+      "Adult with new-onset stuttering, no childhood stuttering history",
+      "Neurogenic and organic causes ruled out or being assessed concurrently",
+      "Motivated for structured behavioral intervention"
+    ]
+  },
+  {
+    "id": "bakhtiar-johari-2025-stuttering-neuromod",
+    "title": "The application of non-invasive neuromodulation in stuttering: Current status and future directions",
+    "shortTitle": "Neuromodulation for Stuttering",
+    "authors": "Bakhtiar M, Johari K",
+    "authorShort": "Bakhtiar & Johari",
+    "journal": "Journal of Fluency Disorders",
+    "year": 2025,
+    "pmid": "39879702",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39879702/",
+    "evidenceLevel": "3",
+    "evidenceType": "Narrative review",
+    "areas": [
+      "Fluency"
+    ],
+    "tags": [
+      "stuttering",
+      "tDCS",
+      "TMS",
+      "neuromodulation",
+      "adult"
+    ],
+    "summary": "Narrative review of non-invasive neuromodulation (tDCS/TMS) as an adjunct to stuttering treatment, covering stimulation parameters and combined behavioral training.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "Reviews how stimulation site, polarity, intensity, and duration affect neuromodulation outcomes for stuttering",
+      "Discusses neuromodulation as an adjunct to, not replacement for, behavioral fluency treatment",
+      "Proposes future research directions addressing fluency alongside cognitive/psychological factors in people who stutter"
+    ],
+    "clinicalApplication": "Background reading for clinicians curious about emerging adjunctive neuromodulation approaches to stuttering treatment — useful context for counseling clients who ask about tDCS/TMS, though this is not itself a session protocol.",
+    "sessionStats": {
+      "frequency": "N/A — narrative review, not a treatment protocol",
+      "sessionLength": "N/A",
+      "dose": "N/A",
+      "bestFit": "Clinicians researching adjunctive/emerging stuttering interventions"
+    },
+    "bestFitCriteria": [
+      "Clinician or client asking about non-invasive brain stimulation for stuttering",
+      "Programs considering research participation or adjunctive protocols"
+    ]
+  },
+  {
+    "id": "cosentino-2026-tdcs-poststroke-dysphagia",
+    "title": "Intensive Rehabilitation With Adjunctive Bilateral Anodal tDCS in Post-Stroke Dysphagia: A Multicenter Randomized Controlled Trial",
+    "shortTitle": "tDCS + Rehab for Post-Stroke Dysphagia",
+    "authors": "Cosentino G, et al.",
+    "authorShort": "Cosentino et al.",
+    "journal": "European Journal of Neurology",
+    "year": 2026,
+    "pmid": "42383625",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42383625/",
+    "evidenceLevel": "1b",
+    "evidenceType": "RCT",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "dysphagia",
+      "stroke",
+      "tDCS",
+      "neuromodulation",
+      "adult",
+      "RCT"
+    ],
+    "summary": "Multicenter RCT testing intensive swallowing rehabilitation combined with bilateral anodal tDCS versus intensive rehabilitation alone in adults with post-stroke dysphagia.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Multicenter randomized design comparing intensive dysphagia rehab plus bilateral anodal tDCS vs. intensive rehab alone",
+      "Adds to a growing RCT evidence base for tDCS as an adjunct in post-stroke dysphagia recovery"
+    ],
+    "clinicalApplication": "Supports considering bilateral anodal tDCS as an adjunct to intensive swallowing rehabilitation in post-stroke dysphagia when tDCS equipment/protocols are available; otherwise reinforces the value of an intensive rehab dosing approach on its own.",
+    "sessionStats": {
+      "frequency": "Intensive protocol (multiple sessions/week per intensive rehab arm)",
+      "sessionLength": "Per intensive dysphagia rehab protocol",
+      "dose": "Intensive rehab +/- adjunctive bilateral anodal tDCS",
+      "bestFit": "Adults with post-stroke dysphagia in an intensive rehab setting"
+    },
+    "bestFitCriteria": [
+      "Adult post-stroke with confirmed dysphagia",
+      "Access to intensive rehab dosing and, optionally, tDCS equipment",
+      "No tDCS contraindications"
+    ]
   }
 ]
