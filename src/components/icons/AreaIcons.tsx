@@ -90,6 +90,17 @@ export const MotorSpeechIcon: React.FC<IconProps> = ({ color = '#0F766E', size =
   </Svg>
 );
 
+export const GeneralPracticeIcon: React.FC<IconProps> = ({ color = '#4338CA', size = 26 }) => (
+  <Svg width={size} height={size} viewBox="0 0 32 32">
+    {/* Clipboard body */}
+    <Path d="M 11 6 L 8 6 Q 5 6 5 9 L 5 26 Q 5 28 8 28 L 24 28 Q 27 28 27 26 L 27 9 Q 27 6 24 6 L 21 6" {...baseProps(color)} />
+    {/* Clipboard top clip */}
+    <Path d="M 11 5 Q 11 3 16 3 Q 21 3 21 5 L 21 7 Q 21 9 16 9 Q 11 9 11 7 Z" {...baseProps(color)} />
+    {/* Checkmark */}
+    <Path d="M 10 18 L 14 22 L 22 13" {...baseProps(color, 2)} />
+  </Svg>
+);
+
 export const PillarsIcon: React.FC<IconProps> = ({ color = '#5B21B6', size = 26 }) => (
   <Svg width={size} height={size} viewBox="0 0 24 24">
     <Path d="M 3 6 L 21 6" {...baseProps(color)} />

@@ -21,6 +21,8 @@ export const colors = {
   pastelLavenderDeep: '#7E22CE',
   pastelTeal: '#CCFBF1',
   pastelTealDeep: '#0F766E',
+  pastelIndigo: '#E0E7FF',
+  pastelIndigoDeep: '#4338CA',
 
   // Neutrals
   bg: '#FAFAFC',

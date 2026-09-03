@@ -2,7 +2,7 @@
   "expo": {
     "name": "EBP SLP",
     "slug": "ebp-slp",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "scheme": "ebpslp",
     "userInterfaceStyle": "light",
@@ -15,7 +15,7 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.ebpslp.app",
+      "bundleIdentifier": "com.abbeyrowe.ebpslp",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
@@ -35,7 +35,15 @@
     },
     "plugins": [
       "expo-router",
-      "expo-font"
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#5B21B6",
+          "sounds": []
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

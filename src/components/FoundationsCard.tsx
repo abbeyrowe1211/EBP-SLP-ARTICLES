@@ -10,9 +10,20 @@ interface Props {
   onPressArticle: (id: string) => void;
 }
 
+// Always show exactly these 5 pillar articles in this order
+const PILLAR_IDS = [
+  'maas-2008',
+  'kleim-jones-2008',
+  'dollaghan-2004',
+  'dollaghan-2007',
+  'threats-2006',
+];
+
 export const FoundationsCard: React.FC<Props> = ({ onPressArticle }) => {
   const { articles } = useArticles();
-  const foundationArticles = articles.filter((a) => a.isFoundation);
+  const foundationArticles = PILLAR_IDS
+    .map((id) => articles.find((a) => a.id === id))
+    .filter((a): a is NonNullable<typeof a> => !!a);
   return (
   <LinearGradient
     colors={[colors.pastelLavender, colors.primaryLight, colors.pastelPeach]}

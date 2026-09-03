@@ -11,10 +11,11 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useLocalSearchParams } from 'expo-router';
+import * as Print from 'expo-print';
 import { colors } from '@/theme/colors';
 import { text } from '@/theme/typography';
 import { CUE_LABELS, type StepSummary } from '@/types/sessionData';
-import { generateDocPhrase } from '@/services/claude';
+// generateDocPhrase removed — doc phrase is now generated locally for consistency with the SOAP note
 
 // ─── Step result card ─────────────────────────────────────────────────────────
 
@@ -87,36 +88,153 @@ export const DataSummaryScreen: React.FC = () => {
     planJson?: string;
   }>();
 
-  const [docPhrase, setDocPhrase]       = useState('');
-  const [generatingDoc, setGeneratingDoc] = useState(false);
   const [copied, setCopied]             = useState(false);
+  const [printingSOAP, setPrintingSOAP] = useState(false);
 
   let summary: { stepSummaries: StepSummary[]; overallAccuracy: number; totalTrials: number } | null = null;
   try { summary = JSON.parse(summaryJson ?? ''); } catch { /* handled below */ }
 
-  const handleGenerateDoc = async () => {
+  const handlePrintSOAP = async () => {
     if (!summary) return;
-    setGeneratingDoc(true);
+    setPrintingSOAP(true);
     try {
-      const phrase = await generateDocPhrase({
-        sessionTitle: sessionTitle ?? 'Session',
-        totalTrials: summary.totalTrials,
-        overallAccuracy: summary.overallAccuracy,
-        stepSummaries: summary.stepSummaries.map((s) => ({
-          stepTitle: s.stepTitle,
-          totalTrials: s.totalTrials,
-          correctTrials: s.correctTrials,
-          accuracy: s.accuracy,
-          dominantCueLevel: s.dominantCueLevel,
-        })),
-      });
-      setDocPhrase(phrase);
-    } catch {
-      Alert.alert('Error', 'Could not generate documentation phrase. Try again.');
+      const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      const pct = summary.overallAccuracy;
+      const performanceInterp =
+        pct >= 80
+          ? 'Patient demonstrated strong performance within functional accuracy targets.'
+          : pct >= 60
+          ? 'Patient demonstrated emerging skills with moderate cueing support.'
+          : 'Patient required significant cueing support. Consider adjusting step difficulty or hierarchy.';
+
+      const stepRows = summary.stepSummaries
+        .filter((s) => s.totalTrials > 0)
+        .map((s) => `
+          <tr>
+            <td>${s.stepTitle}</td>
+            <td style="text-align:center">${s.totalTrials}</td>
+            <td style="text-align:center">${s.correctTrials}</td>
+            <td style="text-align:center;font-weight:bold;color:${s.accuracy >= 80 ? '#16A34A' : s.accuracy >= 60 ? '#D97706' : '#DC2626'}">${s.accuracy}%</td>
+            <td>${s.dominantCueLevel ? CUE_LABELS[s.dominantCueLevel as keyof typeof CUE_LABELS] ?? s.dominantCueLevel : '—'}</td>
+          </tr>`)
+        .join('');
+
+      const html = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; padding: 36px; color: #1a1a1a; font-size: 13px; }
+    .header { border-bottom: 2.5px solid #5b3fa6; padding-bottom: 14px; margin-bottom: 20px; }
+    .header h1 { font-size: 22px; color: #3d2876; margin-bottom: 6px; }
+    .meta { font-size: 12px; color: #555; display: flex; gap: 24px; flex-wrap: wrap; }
+    .meta span strong { color: #3d2876; }
+    h2 { font-size: 14px; color: #3d2876; border-left: 4px solid #5b3fa6; padding-left: 10px;
+         margin-top: 22px; margin-bottom: 10px; }
+    p { line-height: 1.65; margin-bottom: 8px; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 12px; }
+    th { background: #f0ebfc; color: #3d2876; padding: 8px 10px; text-align: left; font-size: 11px;
+         text-transform: uppercase; letter-spacing: 0.04em; }
+    td { padding: 8px 10px; border-bottom: 1px solid #e8e0f7; vertical-align: top; }
+    .overall { background: #f0ebfc; border-radius: 8px; padding: 12px 16px; margin: 12px 0;
+               display: inline-block; }
+    .overall .pct { font-size: 32px; font-weight: bold; color: ${pct >= 80 ? '#16A34A' : pct >= 60 ? '#D97706' : '#DC2626'}; }
+    .overall .lbl { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer { margin-top: 36px; font-size: 10.5px; color: #999; border-top: 1px solid #e8e0f7;
+              padding-top: 12px; text-align: center; }
+    .signature-block { margin-top: 28px; display: flex; gap: 60px; }
+    .sig-line { border-top: 1px solid #555; padding-top: 4px; width: 240px; font-size: 11px; color: #555; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>SOAP Note</h1>
+    <div class="meta">
+      <span><strong>Session protocol:</strong> ${sessionTitle ?? 'Session'}</span>
+      <span><strong>Treatment label:</strong> ${patientLabel ?? '—'}</span>
+      <span><strong>Date:</strong> ${today}</span>
+    </div>
+  </div>
+
+  <h2>S — Subjective</h2>
+  <p>Patient presented for individual speech-language treatment. Session was conducted using the evidence-based protocol: <em>${sessionTitle ?? 'Session'}</em>. Patient tolerated the session. Background, goals, and clinical history are documented in the treatment plan on file.</p>
+
+  <h2>O — Objective</h2>
+  <p><strong>${patientLabel ?? 'Patient'}</strong> completed ${summary.stepSummaries.filter(s => s.totalTrials > 0).length} treatment step(s) with a total of <strong>${summary.totalTrials} trials</strong>.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Step / Target</th>
+        <th style="text-align:center">Trials</th>
+        <th style="text-align:center">Correct</th>
+        <th style="text-align:center">Accuracy</th>
+        <th>Primary Cue Used</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${stepRows || '<tr><td colspan="5" style="color:#999;font-style:italic">No trials recorded</td></tr>'}
+    </tbody>
+  </table>
+
+  <div class="overall">
+    <div class="pct">${pct}%</div>
+    <div class="lbl">Overall Accuracy</div>
+  </div>
+
+  <h2>A — Assessment</h2>
+  <p>${performanceInterp} Overall accuracy was <strong>${pct}%</strong> across ${summary.totalTrials} total trial(s). Cueing hierarchy and response patterns are detailed above.</p>
+
+  <h2>P — Plan</h2>
+  <p>Continue evidence-based treatment protocol per established plan of care. Review accuracy trends across sessions and adjust cueing level, session targets, or step difficulty as clinically indicated. Consider increasing complexity if accuracy is consistently ≥ 80%, or providing additional modeling and scaffolding if accuracy remains below 60%.</p>
+
+  <div class="signature-block">
+    <div>
+      <div class="sig-line">Clinician Signature</div>
+    </div>
+    <div>
+      <div class="sig-line">Date</div>
+    </div>
+    <div>
+      <div class="sig-line">Credentials / License #</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated by EBP-SLP · For authorized clinical use only · Contains no patient PHI · Review and customize before filing
+  </div>
+</body>
+</html>`;
+
+      await Print.printAsync({ html });
+    } catch (e: any) {
+      if (e?.message !== 'Printing did not complete') {
+        Alert.alert('Error', 'Could not open print dialog. Try again.');
+      }
     } finally {
-      setGeneratingDoc(false);
+      setPrintingSOAP(false);
     }
   };
+
+  // Deterministic doc phrase — matches the SOAP note's O and A language exactly
+  const buildDocPhrase = (): string => {
+    if (!summary) return '';
+    const pct = summary.overallAccuracy;
+    const stepsWithTrials = summary.stepSummaries.filter((s) => s.totalTrials > 0);
+    const performanceInterp =
+      pct >= 80
+        ? 'Patient demonstrated strong performance within functional accuracy targets.'
+        : pct >= 60
+        ? 'Patient demonstrated emerging skills with moderate cueing support.'
+        : 'Patient required significant cueing support; consider adjusting step difficulty or hierarchy.';
+    const s1 = `Patient completed ${stepsWithTrials.length} treatment step(s) via ${sessionTitle ?? 'session'} with ${summary.totalTrials} total trial(s).`;
+    const s2 = `Patient achieved ${pct}% overall accuracy across ${summary.totalTrials} trial(s).`;
+    return `${s1} ${s2} ${performanceInterp}`;
+  };
+
+  const docPhrase = buildDocPhrase();
 
   const handleCopy = () => {
     Clipboard.setString(docPhrase);
@@ -154,7 +272,7 @@ export const DataSummaryScreen: React.FC = () => {
             <Text style={styles.sessionInfoBold}>Session: </Text>{sessionTitle}
           </Text>
           <Text style={styles.sessionInfoText}>
-            <Text style={styles.sessionInfoBold}>Saved to: </Text>{patientLabel} in Caseload
+            <Text style={styles.sessionInfoBold}>Saved to: </Text>{patientLabel} in Plans
           </Text>
         </View>
 
@@ -168,39 +286,37 @@ export const DataSummaryScreen: React.FC = () => {
           </>
         )}
 
-        {/* Documentation phrase */}
+        {/* Documentation */}
         {summary && summary.totalTrials > 0 && (
           <View style={styles.docSection}>
             <Text style={styles.sectionLabel}>DOCUMENTATION</Text>
-            {!docPhrase && (
+
+            {/* SOAP note */}
+            <Pressable
+              style={[styles.soapBtn, printingSOAP && styles.docBtnDisabled]}
+              onPress={handlePrintSOAP}
+              disabled={printingSOAP}
+            >
+              {printingSOAP ? (
+                <ActivityIndicator color={colors.primaryDark} size="small" />
+              ) : (
+                <Text style={styles.soapBtnText}>📋  Print SOAP note</Text>
+              )}
+            </Pressable>
+
+            {/* Documentation phrase — same content as SOAP note O + A */}
+            <View style={styles.docCard}>
+              <Text style={styles.docCardLabel}>Documentation phrase</Text>
+              <Text style={styles.docText}>{docPhrase}</Text>
               <Pressable
-                style={[styles.docBtn, generatingDoc && styles.docBtnDisabled]}
-                onPress={handleGenerateDoc}
-                disabled={generatingDoc}
+                style={[styles.copyBtn, copied && styles.copyBtnDone]}
+                onPress={handleCopy}
               >
-                {generatingDoc ? (
-                  <ActivityIndicator color={colors.surface} size="small" />
-                ) : (
-                  <Text style={styles.docBtnText}>✍️  Generate documentation phrase</Text>
-                )}
+                <Text style={styles.copyBtnText}>
+                  {copied ? '✓  Copied!' : 'Copy to clipboard'}
+                </Text>
               </Pressable>
-            )}
-            {docPhrase !== '' && (
-              <View style={styles.docCard}>
-                <Text style={styles.docText}>{docPhrase}</Text>
-                <Pressable
-                  style={[styles.copyBtn, copied && styles.copyBtnDone]}
-                  onPress={handleCopy}
-                >
-                  <Text style={styles.copyBtnText}>
-                    {copied ? '✓  Copied!' : 'Copy to clipboard'}
-                  </Text>
-                </Pressable>
-                <Pressable onPress={handleGenerateDoc} style={styles.regenerateBtn}>
-                  <Text style={styles.regenerateBtnText}>Regenerate</Text>
-                </Pressable>
-              </View>
-            )}
+            </View>
           </View>
         )}
 
@@ -211,7 +327,7 @@ export const DataSummaryScreen: React.FC = () => {
               style={styles.libraryBtn}
               onPress={() => router.back()}
             >
-              <Text style={styles.libraryBtnText}>← Back to Caseload</Text>
+              <Text style={styles.libraryBtnText}>← Back to Plans</Text>
             </Pressable>
           ) : (
             <>
@@ -219,11 +335,11 @@ export const DataSummaryScreen: React.FC = () => {
                 style={styles.libraryBtn}
                 onPress={() => router.replace('/(tabs)/library')}
               >
-                <Text style={styles.libraryBtnText}>View in Caseload →</Text>
+                <Text style={styles.libraryBtnText}>View in Plans →</Text>
               </Pressable>
               <Pressable
                 style={styles.homeBtn}
-                onPress={() => router.replace('/(tabs)/index')}
+                onPress={() => router.replace('/(tabs)')}
               >
                 <Text style={styles.homeBtnText}>Back to home</Text>
               </Pressable>
@@ -331,6 +447,21 @@ const styles = StyleSheet.create({
   noDataText: { ...text.caption, color: colors.textMuted, fontStyle: 'italic' },
 
   docSection: { marginBottom: 16 },
+  soapBtn: {
+    backgroundColor: colors.primaryLighter,
+    borderWidth: 1.5,
+    borderColor: colors.primary,
+    borderRadius: 14,
+    paddingVertical: 14,
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  soapBtnText: { ...text.h4, color: colors.primaryDark },
+  docCardLabel: {
+    ...text.label,
+    color: colors.textMuted,
+    marginBottom: 8,
+  },
   docBtn: {
     backgroundColor: colors.primaryDark,
     borderRadius: 14,
@@ -358,6 +489,7 @@ const styles = StyleSheet.create({
   copyBtnText: { ...text.bodySmall, color: colors.surface, fontFamily: 'Quicksand_700Bold' },
   regenerateBtn: { alignItems: 'center', paddingVertical: 4 },
   regenerateBtnText: { ...text.caption, color: colors.textMuted, fontFamily: 'Quicksand_600SemiBold' },
+  regeneratingText: { ...text.caption, color: colors.primary, fontFamily: 'Quicksand_600SemiBold' },
 
   actions: { gap: 10, marginTop: 8 },
   libraryBtn: {

@@ -1,7 +1,6 @@
 // ─── Claude API Service ───────────────────────────────────────────────────────
-// Calls the Anthropic API directly from the app using fetch.
-// API key is read from the EXPO_PUBLIC_ANTHROPIC_API_KEY environment variable.
-// To set your key: add it to the .env file in the project root.
+// Calls the EBP SLP proxy server, which forwards to Anthropic.
+// No API key is needed in the app — the key lives on the server.
 
 import { type Article } from '@/data/articles';
 
@@ -32,7 +31,9 @@ export interface GeneratedPlan {
   clinicianNotes: string;
 }
 
-const ANTHROPIC_API_URL = 'https://api.anthropic.com/v1/messages';
+// ⚠️  After deploying to Netlify, replace this with your actual Netlify URL.
+//     e.g. 'https://ebp-slp-proxy.netlify.app/.netlify/functions/claude'
+const PROXY_URL = 'https://curious-macaron-9d259c.netlify.app/.netlify/functions/claude';
 const MODEL = 'claude-haiku-4-5-20251001';
 
 // ─── Foundation Principles ────────────────────────────────────────────────────
@@ -58,27 +59,18 @@ Experience-Dependent Neural Plasticity Principles (Kleim & Jones, 2008 — JSLHR
 These principles should be reflected in HOW steps are designed (trial counts, feedback schedules, practice variability) and in the whyNote fields — not added as a separate step or disclaimer.
 `.trim();
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-const KEY_API_KEY = 'ebp_slp_api_key_v1';
-
-async function getApiKey(): Promise<string | null> {
-  // Prefer the key saved in Profile; fall back to .env
-  try {
-    const stored = await AsyncStorage.getItem(KEY_API_KEY);
-    if (stored && stored.startsWith('sk-ant-')) return stored;
-  } catch { /* ignore */ }
-  return process.env.EXPO_PUBLIC_ANTHROPIC_API_KEY ?? null;
-}
-
+// No API key needed in the app — always available via proxy
 export async function hasApiKey(): Promise<boolean> {
-  const key = await getApiKey();
-  return !!key && key.length > 10 && key.startsWith('sk-ant-');
+  return true;
 }
 
 function buildPrompt(article: Article, params: SessionParams): string {
   const materialsStr =
     params.materials.length > 0 ? params.materials.join(', ') : 'none specified';
+
+  // Estimate number of steps based on session length
+  const sessionMinutes = parseInt(params.sessionLength) || 45;
+  const targetSteps = sessionMinutes <= 30 ? 3 : sessionMinutes <= 45 ? 4 : sessionMinutes <= 60 ? 5 : 6;
 
   return `You are generating a clinical session plan for a medical speech-language pathologist.
 
@@ -86,7 +78,7 @@ ${FOUNDATION_PRINCIPLES}
 
 ---
 
-TREATMENT PROTOCOL (the selected article for this session):
+TREATMENT PROTOCOL:
 Title: ${article.title}
 Authors: ${article.authors} (${article.year})
 Evidence level: ${article.evidenceLevel}
@@ -95,69 +87,88 @@ Clinical areas: ${article.areas.join(', ')}
 Protocol description:
 ${article.clinicalApplication}
 
-Research findings to stay faithful to:
+Research findings:
 ${article.researchFindings.map((f, i) => `${i + 1}. ${f}`).join('\n')}
 
-PATIENT PARAMETERS (no PHI — clinical descriptors only):
-- Session length: ${params.sessionLength}
+PATIENT PARAMETERS:
+- Session length: ${params.sessionLength} (generate exactly ${targetSteps} steps that sum to this duration)
 - Severity: ${params.severity}
 - Setting: ${params.setting}
 - Time post-onset: ${params.timePostOnset}
 - Functional goal target: ${params.functionalGoal}
 - Materials available: ${materialsStr}
 
-Generate a structured session plan adapted to these parameters. The plan must:
-1. Be faithful to the protocol above — do not invent clinical steps not described in the evidence
-2. Allocate time across steps so they sum to the session length
-3. Adapt complexity and cueing to the stated severity
-4. Use only the listed materials
-5. Include a functional carryover step tied to the stated goal
-6. Include a brief home program recommendation
-7. Reflect motor learning principles in every drill step: specify trial counts, note when feedback should be faded, and include at least one variable practice element
-8. Reflect neural plasticity principles: every step must have a trial count or time target; minimize clinician monologue; tasks should be as functionally relevant as possible
+INSTRUCTIONS:
+1. Stay faithful to the protocol — only use clinical techniques described in the evidence above
+2. If the functional goal does not perfectly match the protocol, adapt the goal to fit within the protocol's scope rather than inventing techniques outside the evidence
+3. Steps must sum exactly to ${params.sessionLength} — assign minutes to each step adding up to ${sessionMinutes} total
+4. Adapt cueing density and complexity to ${params.severity} severity
+5. Use ONLY the listed materials
+6. Final step must be a functional carryover activity tied to the goal
+7. Every drill step must specify trial count and feedback schedule (motor learning principles)
 
-IMPORTANT: Return ONLY valid JSON with no additional text, markdown, or explanation. Use this exact structure:
+CRITICAL: Your entire response must be ONLY the JSON object below — no other text, no markdown, no code fences.
+
 {
-  "sessionTitle": "short title for this session",
+  "sessionTitle": "3-6 word title describing this specific session",
   "totalDuration": "${params.sessionLength}",
-  "protocolFidelityNote": "one sentence noting which protocol this adapts and how",
+  "protocolFidelityNote": "One sentence: which protocol, how adapted",
   "steps": [
     {
       "number": 1,
-      "title": "step title",
+      "title": "Step title",
       "duration": "X min",
-      "instructions": "clear clinician-facing instructions for this step",
-      "whyNote": "brief evidence rationale for this step"
+      "instructions": "Clinician-facing instructions. Include trial counts and feedback schedule.",
+      "whyNote": "One sentence evidence rationale"
     }
   ],
-  "cueingHierarchy": "describe the cueing hierarchy to use across all steps",
-  "homeProgram": "brief home practice recommendation",
-  "clinicianNotes": "any additional clinical notes specific to these patient parameters"
+  "cueingHierarchy": "Cueing sequence to use across all steps for ${params.severity} severity",
+  "homeProgram": "1-2 sentence home practice recommendation",
+  "clinicianNotes": "Clinical notes specific to ${params.severity} severity, ${params.setting} setting, ${params.timePostOnset}"
 }`;
 }
 
-export async function generateSessionPlan(
-  article: Article,
-  params: SessionParams
-): Promise<GeneratedPlan> {
-  const apiKey = await getApiKey();
-  if (!apiKey) {
-    throw new Error('NO_API_KEY');
+// ─── Plan validation & normalization ─────────────────────────────────────────
+// Ensures every field exists even if Claude returned a partial response.
+function normalizePlan(raw: Partial<GeneratedPlan>, params: SessionParams): GeneratedPlan {
+  const steps: SessionStep[] = Array.isArray(raw.steps)
+    ? raw.steps.map((s: Partial<SessionStep>, i: number) => ({
+        number: typeof s.number === 'number' ? s.number : i + 1,
+        title: s.title ?? `Step ${i + 1}`,
+        duration: s.duration ?? '',
+        instructions: s.instructions ?? '',
+        whyNote: s.whyNote ?? '',
+      }))
+    : [];
+
+  return {
+    sessionTitle: raw.sessionTitle ?? 'Session Plan',
+    totalDuration: raw.totalDuration ?? params.sessionLength,
+    protocolFidelityNote: raw.protocolFidelityNote ?? '',
+    steps,
+    cueingHierarchy: raw.cueingHierarchy ?? '',
+    homeProgram: raw.homeProgram ?? '',
+    clinicianNotes: raw.clinicianNotes ?? '',
+  };
+}
+
+function extractJson(rawText: string): string {
+  const firstBrace = rawText.indexOf('{');
+  const lastBrace = rawText.lastIndexOf('}');
+  if (firstBrace !== -1 && lastBrace > firstBrace) {
+    return rawText.slice(firstBrace, lastBrace + 1);
   }
+  return rawText.trim();
+}
 
-  const prompt = buildPrompt(article, params);
-
-  const response = await fetch(ANTHROPIC_API_URL, {
+async function callClaude(prompt: string): Promise<string> {
+  const response = await fetch(PROXY_URL, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       model: MODEL,
-      max_tokens: 4096,
-      system: 'You are a clinical session plan generator. You output ONLY valid JSON — no prose, no markdown, no code fences, no explanation before or after. Your entire response must be a single parseable JSON object.',
+      max_tokens: 6000,
+      system: 'You are a clinical session plan generator for speech-language pathologists. You output ONLY valid JSON — no prose, no markdown, no code fences, no explanation. Your entire response must be a single parseable JSON object matching the schema provided.',
       messages: [{ role: 'user', content: prompt }],
     }),
   });
@@ -169,22 +180,38 @@ export async function generateSessionPlan(
   }
 
   const data = await response.json();
-  const rawText: string = data?.content?.[0]?.text ?? '';
+  return data?.content?.[0]?.text ?? '';
+}
 
-  // Extract JSON robustly: grab from first { to last }
-  const firstBrace = rawText.indexOf('{');
-  const lastBrace = rawText.lastIndexOf('}');
-  const extracted = firstBrace !== -1 && lastBrace > firstBrace
-    ? rawText.slice(firstBrace, lastBrace + 1)
-    : rawText.trim();
+export async function generateSessionPlan(
+  article: Article,
+  params: SessionParams
+): Promise<GeneratedPlan> {
+  const prompt = buildPrompt(article, params);
 
-  try {
-    const plan: GeneratedPlan = JSON.parse(extracted);
-    return plan;
-  } catch {
-    console.error('Failed to parse plan JSON:', extracted);
-    throw new Error('PARSE_ERROR');
+  // Try up to 2 times before giving up
+  let lastError: Error | null = null;
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const rawText = await callClaude(prompt);
+      const extracted = extractJson(rawText);
+      const parsed: Partial<GeneratedPlan> = JSON.parse(extracted);
+      const plan = normalizePlan(parsed, params);
+
+      // Require at least one step — if empty, retry
+      if (plan.steps.length === 0) {
+        throw new Error('EMPTY_STEPS');
+      }
+
+      return plan;
+    } catch (err) {
+      lastError = err instanceof Error ? err : new Error('UNKNOWN');
+      if (lastError.message.startsWith('API_ERROR')) break; // don't retry network errors
+      console.warn(`Session plan attempt ${attempt} failed:`, lastError.message);
+    }
   }
+
+  throw lastError ?? new Error('PARSE_ERROR');
 }
 
 // ─── Documentation phrase generator ──────────────────────────────────────────
@@ -203,9 +230,6 @@ export interface DocPhraseInput {
 }
 
 export async function generateDocPhrase(input: DocPhraseInput): Promise<string> {
-  const apiKey = await getApiKey();
-  if (!apiKey) throw new Error('NO_API_KEY');
-
   const stepLines = input.stepSummaries
     .filter((s) => s.totalTrials > 0)
     .map((s) =>
@@ -233,12 +257,10 @@ Rules:
 - Do not cite any research articles
 - Return only the 3 sentences, no labels, no formatting`;
 
-  const response = await fetch(ANTHROPIC_API_URL, {
+  const response = await fetch(PROXY_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
     },
     body: JSON.stringify({
       model: MODEL,

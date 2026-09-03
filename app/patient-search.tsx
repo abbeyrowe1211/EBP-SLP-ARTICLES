@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'expo-router';
-import { SessionBuilderScreen } from '@/screens/SessionBuilderScreen';
+import { PatientScenarioScreen } from '@/screens/PatientScenarioScreen';
 import { isPremium } from '@/config/premium';
 
-export default function Builder() {
+export default function PatientSearch() {
   const router = useRouter();
 
   useEffect(() => {
@@ -13,5 +13,5 @@ export default function Builder() {
   }, []);
 
   if (!isPremium()) return null;
-  return <SessionBuilderScreen />;
+  return <PatientScenarioScreen />;
 }

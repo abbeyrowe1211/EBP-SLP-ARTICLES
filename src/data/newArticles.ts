@@ -1,61 +1,72 @@
-// ─── Recently added articles ──────────────────────────────────────────────────
-// Update this list whenever new articles are added to articles.ts.
-// IDs here drive the bell notification panel on the Home screen.
+// ─── Recently added articles tracking ─────────────────────────────────────────
+// Automatically detects which articles are new since the app last checked in,
+// by diffing the live (remote-synced) article list against the set of IDs
+// we've seen before. Nothing to hand-maintain anymore — this updates itself
+// the moment new articles are pushed to the GitHub article feed, no app
+// update required. Drives the bell dot / "Recently added" panel on Home.
 
-export const NEW_ARTICLE_IDS: string[] = [
-  'thompson-2007-tuf',
-  'kagan-2001-sca',
-  'boyle-2004-sfa',
-  'cherney-2010-orla',
-  'nickels-2002-naming',
-  'logemann-2008-thin-liquids',
-  'langmore-1998-pneumonia',
-  'martin-harris-2008-mbsimp',
-  'crary-2004-mdtp',
-  'langmore-1988-fees',
-  'robbins-2007-tongue',
-  'jacobson-1997-vhi',
-  'hogikyan-1999-vrqol',
-  'verdolini-2012-lmrvt',
-  'smith-1998-voice-teachers',
-  'darley-1969-dysarthria',
-  'yorkston-2010-dysarthria-management',
-  'spencer-2003-dysarthria-evidence',
-  'cannito-1997-spasmodic',
-  'togher-2013-social-comm-tbi',
-  'ylvisaker-2007-context-tbi',
-  'sohlberg-2001-apt',
-  'turkstra-2015-social-tbi',
-  'yaruss-2004-oases',
-  'obrian-2003-webcam-stuttering',
-  'iverach-2017-anxiety-stuttering',
-  'beukelman-2011-acquired-aac',
-  'baxter-2012-aac-als',
-  'mcnaughton-2013-ipad-aac',
-  'lasker-2001-aac-acceptance',
-  // Motor Speech additions
-  'wambaugh-2006-spt',
-  'strand-2006-dttc',
-  'yorkston-1999-rate-control',
-  'ramig-2001-lsvt-rct',
-  'west-2000-clear-speech',
-  'beukelman-2011-als-speech',
-  'nip-2009-motor-feedback',
-  'duffy-2013-motor-speech-assessment',
-  // May 2026 additions
-  'grasso-2026',
-  'srp-2026',
-  'banco-2025',
-  // Foundational / pillar articles
-  'rosenbek-1973-aos',
-  'yorkston-1996-dysarthria-efficacy',
-  'wertz-1986-va-aphasia',
-  'albert-1973-mit',
-  'ramage-2024-discourse-aphasia',
-  'andrews-1983-stuttering-review',
-  'verdolini-1998-resonant-voice',
-  'logemann-1994-chin-tuck',
-];
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { type Article } from './articles';
 
-// Storage key for tracking which IDs the user has already seen
-export const NEW_ARTICLES_SEEN_KEY = 'ebp_slp_seen_articles_v1';
+const KEY_KNOWN_IDS = 'ebp_slp_known_article_ids_v1';
+const KEY_PENDING_NEW_IDS = 'ebp_slp_pending_new_ids_v1';
+export const NEW_ARTICLES_SEEN_KEY = 'ebp_slp_seen_articles_v2';
+
+// Cap how many "new" articles stay queued at once so the panel never floods.
+const MAX_PENDING = 30;
+
+/**
+ * Call whenever a fresh remote article list loads. Diffs it against the
+ * previously known ID set and records any genuinely new IDs.
+ *
+ * Returns the newly-detected articles (empty on the very first run for a
+ * given device — including right after this feature ships to existing
+ * users — since there's nothing to compare against yet, and we don't want
+ * to flag the entire existing catalog as "new").
+ */
+export async function detectNewArticles(articles: Article[]): Promise<Article[]> {
+  try {
+    const knownRaw = await AsyncStorage.getItem(KEY_KNOWN_IDS);
+    const currentIds = articles.map((a) => a.id);
+
+    if (!knownRaw) {
+      // First time this device has run the detector — seed the known set
+      // with everything currently in the library and stop there.
+      await AsyncStorage.setItem(KEY_KNOWN_IDS, JSON.stringify(currentIds));
+      return [];
+    }
+
+    const known = new Set<string>(JSON.parse(knownRaw));
+    const newlyAppeared = articles.filter((a) => !known.has(a.id));
+    if (newlyAppeared.length === 0) return [];
+
+    currentIds.forEach((id) => known.add(id));
+    await AsyncStorage.setItem(KEY_KNOWN_IDS, JSON.stringify([...known]));
+
+    const pendingRaw = await AsyncStorage.getItem(KEY_PENDING_NEW_IDS);
+    const pendingSet = new Set<string>(pendingRaw ? JSON.parse(pendingRaw) : []);
+    newlyAppeared.forEach((a) => pendingSet.add(a.id));
+    const nextPending = [...pendingSet].slice(-MAX_PENDING);
+    await AsyncStorage.setItem(KEY_PENDING_NEW_IDS, JSON.stringify(nextPending));
+
+    return newlyAppeared;
+  } catch {
+    return [];
+  }
+}
+
+/** Current pending "new" article IDs — feeds the bell dot / panel. */
+export async function getPendingNewArticleIds(): Promise<string[]> {
+  try {
+    const raw = await AsyncStorage.getItem(KEY_PENDING_NEW_IDS);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+export async function clearAllPendingNewArticles(): Promise<void> {
+  try {
+    await AsyncStorage.setItem(KEY_PENDING_NEW_IDS, JSON.stringify([]));
+  } catch {}
+}

@@ -37,11 +37,16 @@ export const SessionsIcon: React.FC<IconProps> = ({ color = '#7C7595', size = 22
 
 export const LibraryIcon: React.FC<IconProps> = ({ color = '#7C7595', size = 22 }) => (
   <Svg width={size} height={size} viewBox="0 0 24 24">
-    <Path d="M 6 4 L 18 4 L 18 21 L 12 16.5 L 6 21 Z" {...baseProps(color)} />
+    {/* Clipboard board */}
+    <Path d="M 6 5 L 18 5 L 18 21 L 6 21 Z" {...baseProps(color)} />
+    {/* Clip tab at top center */}
     <Path
-      d="M 12 8.5 L 13 10.5 L 15 10.5 L 13.5 12 L 14 14 L 12 13 L 10 14 L 10.5 12 L 9 10.5 L 11 10.5 Z"
+      d="M 9 3 Q 9 2 12 2 Q 15 2 15 3 L 15 5 L 9 5 Z"
       fill={color}
+      stroke="none"
     />
+    {/* Lines on clipboard */}
+    <Path d="M 9 10 L 15 10 M 9 13 L 15 13 M 9 16 L 12.5 16" {...baseProps(color, 1.5)} />
   </Svg>
 );
 

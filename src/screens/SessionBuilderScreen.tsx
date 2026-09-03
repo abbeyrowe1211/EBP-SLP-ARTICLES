@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,7 @@ import {
   StyleSheet,
   ActivityIndicator,
   Alert,
+  Animated,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useLocalSearchParams } from 'expo-router';
@@ -21,8 +22,9 @@ import {
   TIME_POST_ONSET,
   MATERIALS,
   getGoalsForAreas,
+  profileSettingToBuilderSetting,
 } from '@/data/sessionOptions';
-import { generateSessionPlan, hasApiKey, type SessionParams } from '@/services/claude';
+import { generateSessionPlan, type SessionParams } from '@/services/claude';
 
 // ─── Pill selector (single) ───────────────────────────────────────────────────
 const PillGroup: React.FC<{
@@ -91,6 +93,62 @@ const DropdownSelect: React.FC<{
   </View>
 );
 
+// ─── Progress bar (fake animated) ────────────────────────────────────────────
+
+const LOADING_MESSAGES = [
+  'Reviewing the research…',
+  'Tailoring to your settings…',
+  'Building your session steps…',
+  'Applying evidence-based protocol…',
+  'Almost there…',
+];
+
+const GeneratingBar: React.FC<{ visible: boolean }> = ({ visible }) => {
+  const progress = useRef(new Animated.Value(0)).current;
+  const [msgIndex, setMsgIndex] = useState(0);
+
+  useEffect(() => {
+    if (!visible) {
+      progress.setValue(0);
+      setMsgIndex(0);
+      return;
+    }
+    // Animate to ~85% over 14s, leaving room for the real finish
+    Animated.timing(progress, {
+      toValue: 0.85,
+      duration: 14000,
+      useNativeDriver: false,
+    }).start();
+
+    // Rotate messages every ~3s
+    const interval = setInterval(() => {
+      setMsgIndex((i) => (i + 1) % LOADING_MESSAGES.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [visible]);
+
+  if (!visible) return null;
+
+  return (
+    <View style={styles.progressWrapper}>
+      <Text style={styles.progressMsg}>{LOADING_MESSAGES[msgIndex]}</Text>
+      <View style={styles.progressTrack}>
+        <Animated.View
+          style={[
+            styles.progressFill,
+            {
+              width: progress.interpolate({
+                inputRange: [0, 1],
+                outputRange: ['0%', '100%'],
+              }),
+            },
+          ]}
+        />
+      </View>
+    </View>
+  );
+};
+
 // ─── Session Builder Screen ───────────────────────────────────────────────────
 export const SessionBuilderScreen: React.FC = () => {
   const router = useRouter();
@@ -102,19 +160,33 @@ export const SessionBuilderScreen: React.FC = () => {
   const [sessionLength, setSessionLength] = useState('45 min');
   const [severity, setSeverity] = useState('Moderate');
   const [setting, setSetting] = useState('Outpatient');
-  const [goal, setGoal] = useState(goals[0] ?? '');
+  const [selectedGoals, setSelectedGoals] = useState<string[]>(goals[0] ? [goals[0]] : []);
   const [timePostOnset, setTimePostOnset] = useState('Chronic (>6 mo)');
   const [materials, setMaterials] = useState<string[]>(['Picture cards', 'Worksheets']);
   const [loading, setLoading] = useState(false);
 
-  // Pull default session length from Profile settings
+  // Pull default session length + clinical setting from stored preferences / profile
   useEffect(() => {
-    AsyncStorage.getItem('ebp_slp_settings_v1').then((raw) => {
-      if (raw) {
-        const s = JSON.parse(raw);
-        if (s.defaultSessionLength) setSessionLength(s.defaultSessionLength);
-      }
-    });
+    const loadDefaults = async () => {
+      try {
+        const [settingsRaw, profileRaw] = await Promise.all([
+          AsyncStorage.getItem('ebp_slp_settings_v1'),
+          AsyncStorage.getItem('ebp_slp_profile_v1'),
+        ]);
+
+        if (settingsRaw) {
+          const s = JSON.parse(settingsRaw);
+          if (s.defaultSessionLength) setSessionLength(s.defaultSessionLength);
+        }
+
+        if (profileRaw) {
+          const p = JSON.parse(profileRaw);
+          const mapped = profileSettingToBuilderSetting(p.setting);
+          if (mapped) setSetting(mapped);
+        }
+      } catch {}
+    };
+    loadDefaults();
   }, []);
 
   const toggleMaterial = (m: string) => {
@@ -123,15 +195,16 @@ export const SessionBuilderScreen: React.FC = () => {
     );
   };
 
+  const toggleGoal = (g: string) => {
+    setSelectedGoals((prev) =>
+      prev.includes(g) ? prev.filter((x) => x !== g) : [...prev, g]
+    );
+  };
+
   const handleGenerate = async () => {
     if (!article) return;
-
-    if (!(await hasApiKey())) {
-      Alert.alert(
-        'API Key Required',
-        'To generate session plans, add your Anthropic API key in the Profile tab.\n\nGet your key at console.anthropic.com',
-        [{ text: 'OK' }]
-      );
+    if (selectedGoals.length === 0) {
+      Alert.alert('Select a goal', 'Please select at least one functional goal target.');
       return;
     }
 
@@ -139,7 +212,7 @@ export const SessionBuilderScreen: React.FC = () => {
       sessionLength,
       severity,
       setting,
-      functionalGoal: goal,
+      functionalGoal: selectedGoals.join(', '),
       timePostOnset,
       materials,
     };
@@ -156,10 +229,8 @@ export const SessionBuilderScreen: React.FC = () => {
       });
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : 'Unknown error';
-      if (message === 'NO_API_KEY') {
-        Alert.alert('API Key Missing', 'Add your Anthropic API key to the .env file.');
-      } else if (message.startsWith('API_ERROR')) {
-        Alert.alert('API Error', 'Could not reach the Claude API. Check your key and network connection.');
+      if (message.startsWith('API_ERROR')) {
+        Alert.alert('Connection Error', 'Could not reach the server. Please check your network and try again.');
       } else {
         Alert.alert('Error', 'Something went wrong generating the plan. Please try again.');
       }
@@ -230,12 +301,37 @@ export const SessionBuilderScreen: React.FC = () => {
           <PillGroup options={SETTINGS} selected={setting} onSelect={setSetting} />
         </View>
 
-        {/* Functional goal */}
+        {/* Functional goal — multi-select */}
         <View style={styles.formGroup}>
-          <Text style={styles.label}>Functional goal target</Text>
-          <DropdownSelect options={goals} selected={goal} onSelect={setGoal} />
+          <Text style={styles.label}>Functional goal targets</Text>
+          <Text style={[styles.helperText, { marginBottom: 10 }]}>
+            Select one or more goal areas for this session.
+          </Text>
+          <View style={styles.dropdownWrap}>
+            {goals.map((g, i) => {
+              const active = selectedGoals.includes(g);
+              return (
+                <Pressable
+                  key={g}
+                  style={[
+                    styles.dropdownRow,
+                    active && styles.dropdownRowActive,
+                    i === goals.length - 1 && { borderBottomWidth: 0 },
+                  ]}
+                  onPress={() => toggleGoal(g)}
+                >
+                  <View style={[styles.checkBox, active && styles.checkBoxActive]}>
+                    {active && <Text style={styles.checkMark}>✓</Text>}
+                  </View>
+                  <Text style={[styles.dropdownText, active && styles.dropdownTextActive]}>
+                    {g}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </View>
           <Text style={styles.helperText}>
-            Choose from clinical goal categories. EBP-SLP never stores free-text patient details.
+            EBP-SLP never stores free-text patient details.
           </Text>
         </View>
 
@@ -259,6 +355,14 @@ export const SessionBuilderScreen: React.FC = () => {
           />
         </View>
 
+        {/* AI disclaimer — always visible */}
+        <View style={styles.aiDisclaimerBanner}>
+          <Text style={styles.aiDisclaimerIcon}>⚠️</Text>
+          <Text style={styles.aiDisclaimerText}>
+            AI can make mistakes. As the licensed SLP, you are responsible for all clinical decisions. Always review the generated plan before use.
+          </Text>
+        </View>
+
         {/* Generate button */}
         <Pressable
           style={[styles.generateBtn, loading && styles.generateBtnDisabled]}
@@ -268,12 +372,14 @@ export const SessionBuilderScreen: React.FC = () => {
           {loading ? (
             <View style={styles.loadingRow}>
               <ActivityIndicator color={colors.surface} size="small" />
-              <Text style={styles.generateBtnText}>Generating plan…</Text>
+              <Text style={styles.generateBtnText}>Generating…</Text>
             </View>
           ) : (
             <Text style={styles.generateBtnText}>⚡  Generate session plan</Text>
           )}
         </Pressable>
+
+        <GeneratingBar visible={loading} />
 
         <View style={{ height: 40 }} />
       </ScrollView>
@@ -358,6 +464,26 @@ const styles = StyleSheet.create({
   },
   radioCircleActive: { borderColor: colors.primary },
   radioDot: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors.primary },
+  checkBox: {
+    width: 20,
+    height: 20,
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: colors.border,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+  },
+  checkBoxActive: {
+    backgroundColor: colors.primary,
+    borderColor: colors.primary,
+  },
+  checkMark: {
+    color: colors.surface,
+    fontSize: 12,
+    fontFamily: 'Quicksand_700Bold',
+    lineHeight: 16,
+  },
   dropdownText: { ...text.body, color: colors.textMuted, flex: 1 },
   dropdownTextActive: { color: colors.primaryDeep, fontFamily: 'Quicksand_600SemiBold' },
   helperText: { ...text.caption, color: colors.textMuted, marginTop: 8, lineHeight: 16 },
@@ -371,4 +497,46 @@ const styles = StyleSheet.create({
   generateBtnDisabled: { backgroundColor: colors.textMuted },
   generateBtnText: { ...text.h4, color: colors.surface },
   loadingRow: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  aiDisclaimerBanner: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 10,
+    backgroundColor: '#FFFBEB',
+    borderWidth: 1,
+    borderColor: '#FCD34D',
+    borderRadius: 12,
+    padding: 12,
+    marginTop: 12,
+  },
+  aiDisclaimerIcon: { fontSize: 16, marginTop: 1 },
+  aiDisclaimerText: {
+    flex: 1,
+    ...text.caption,
+    color: '#92400E',
+    lineHeight: 18,
+    fontFamily: 'Quicksand_500Medium',
+  },
+
+  // ── Progress bar ──
+  progressWrapper: {
+    marginTop: 16,
+    gap: 8,
+  },
+  progressMsg: {
+    ...text.bodySmall,
+    color: colors.primaryDeep,
+    fontFamily: 'Quicksand_600SemiBold',
+    textAlign: 'center',
+  },
+  progressTrack: {
+    height: 6,
+    backgroundColor: colors.primaryLighter,
+    borderRadius: 999,
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    backgroundColor: colors.primary,
+    borderRadius: 999,
+  },
 });

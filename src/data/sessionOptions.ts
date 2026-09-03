@@ -2,7 +2,25 @@ import { type AshaArea } from './articles';
 
 export const SESSION_LENGTHS = ['30 min', '45 min', '60 min', '90 min'];
 export const SEVERITIES = ['Mild', 'Moderate', 'Severe'];
-export const SETTINGS = ['Acute', 'IPR', 'SNF', 'Home health', 'Outpatient'];
+export const SETTINGS = ['Acute', 'IPR', 'SNF', 'Home health', 'Outpatient', 'School', 'Private practice', 'Telepractice'];
+
+// Maps the profile "Primary work setting" value to the closest session builder setting.
+const PROFILE_SETTING_MAP: Record<string, string> = {
+  'Acute care':        'Acute',
+  'Inpatient rehab':   'IPR',
+  'Skilled nursing':   'SNF',
+  'Home health':       'Home health',
+  'Outpatient':        'Outpatient',
+  'School':            'School',
+  'Private practice':  'Private practice',
+  'Telepractice':      'Telepractice',
+};
+
+/** Convert a profile work-setting label to a session-builder SETTINGS value. */
+export function profileSettingToBuilderSetting(profileSetting: string | undefined): string | null {
+  if (!profileSetting) return null;
+  return PROFILE_SETTING_MAP[profileSetting] ?? null;
+}
 export const TIME_POST_ONSET = ['Acute (<1 mo)', 'Subacute (1–6 mo)', 'Chronic (>6 mo)'];
 export const MATERIALS = [
   'Whiteboard',
@@ -72,6 +90,14 @@ export const GOALS_BY_AREA: Record<AshaArea, string[]> = {
     'Speech naturalness with fluency techniques',
     'Stuttering modification in conversation',
     'Self-advocacy and disclosure in social settings',
+  ],
+  'General Practice': [
+    'Functional communication for daily needs',
+    'Caregiver / staff education on communication strategies',
+    'Cognitive-communication screening and monitoring',
+    'Safe swallowing precautions and diet adherence',
+    'Compensatory strategy use across settings',
+    'Patient / family education on plan of care',
   ],
 };
 

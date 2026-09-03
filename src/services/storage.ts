@@ -59,6 +59,22 @@ export async function deleteSavedPlan(id: string): Promise<void> {
   await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
 }
 
+/** Rename all plans that share oldLabel to newLabel. */
+export async function renamePatientLabel(oldLabel: string, newLabel: string): Promise<void> {
+  const existing = await getSavedPlans();
+  const updated = existing.map((p) =>
+    p.patientLabel === oldLabel ? { ...p, patientLabel: newLabel.trim() } : p
+  );
+  await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+}
+
+/** Delete all plans belonging to a patient label. */
+export async function deletePatientGroup(label: string): Promise<void> {
+  const existing = await getSavedPlans();
+  const updated = existing.filter((p) => p.patientLabel !== label);
+  await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+}
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 /** Returns unique patient labels from saved plans, most-recently-used first. */

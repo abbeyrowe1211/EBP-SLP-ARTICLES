@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { colors } from '@/theme/colors';
 import { text } from '@/theme/typography';
-import { ARTICLES } from '@/data/articles';
+import { useArticles } from '@/context/ArticlesContext';
+import { isPremium } from '@/config/premium';
 
 // Sessions tab — shows a prompt to pick an article and build a session.
-// Phase 6 will add saved sessions list here.
+// Hidden from tab bar (href: null in _layout) — reached via router.push.
 export default function Sessions() {
   const router = useRouter();
+  // Pull from the live (remote-synced) article list so this stays current as
+  // new articles are pushed — previously read the static bundled list, which
+  // meant "recent articles" was frozen to whatever shipped in the last build.
+  const { articles } = useArticles();
+  const recentArticles = useMemo(
+    () => [...articles].sort((a, b) => b.year - a.year).slice(0, 3),
+    [articles]
+  );
 
   return (
     <SafeAreaView edges={['top']} style={styles.container}>
@@ -28,16 +37,17 @@ export default function Sessions() {
 
         <Text style={styles.quickLabel}>QUICK START — RECENT ARTICLES</Text>
 
-        {ARTICLES.slice(0, 3).map((article) => (
+        {recentArticles.map((article) => (
           <Pressable
             key={article.id}
             style={styles.quickCard}
-            onPress={() =>
+            onPress={() => {
+              if (!isPremium()) { router.push('/paywall'); return; }
               router.push({
                 pathname: '/session/builder',
                 params: { articleId: article.id },
-              })
-            }
+              });
+            }}
           >
             <View style={styles.quickCardInner}>
               <Text style={styles.quickCardTitle} numberOfLines={2}>
