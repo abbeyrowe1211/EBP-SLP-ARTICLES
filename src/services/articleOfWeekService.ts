@@ -35,7 +35,11 @@ export function getArticleOfWeek(articles: Article[], weekOffset: number = 0): A
       + Math.max(0, 3 - Math.floor((curYear - a.year) / 5)),
   }));
   const top = scored.sort((a, b) => b.score - a.score).slice(0, 24);
-  const weekIdx = Math.floor(Date.now() / (7 * 24 * 60 * 60 * 1000)) + weekOffset;
+  // Anchor week boundaries to Monday 00:00 UTC. Jan 1 1970 was a Thursday,
+  // so a flat epoch-ms/week division rotates on Thursdays instead -- this
+  // +3 day offset shifts the boundary to Monday.
+  const daysSinceEpoch = Math.floor(Date.now() / (24 * 60 * 60 * 1000));
+ const weekIdx = Math.floor((daysSinceEpoch + 3) / 7) + weekOffset;
   return top[((weekIdx % top.length) + top.length) % top.length].article;
 }
 
