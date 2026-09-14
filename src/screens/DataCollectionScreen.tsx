@@ -96,11 +96,10 @@ function formatRelativeTime(iso: string): string {
 
 const AccuracyDisplay: React.FC<{ correct: number; total: number }> = ({ correct, total }) => {
   const pct = total > 0 ? Math.round((correct / total) * 100) : null;
-  const color =
-    pct === null ? colors.textMuted
-    : pct >= 80 ? '#16A34A'
-    : pct >= 60 ? '#D97706'
-    : '#DC2626';
+  // Accuracy is always shown in green (not red/orange) — the target % is
+  // patient-specific, so a lower number can still mean the patient is
+  // right on goal. Color-coding by an arbitrary threshold would be misleading.
+  const color = pct === null ? colors.textMuted : '#16A34A';
 
   return (
     <View style={styles.accuracyBox}>
@@ -126,7 +125,7 @@ const CueChip: React.FC<{
     style={[styles.cueChip, selected && styles.cueChipActive, style]}
     onPress={onPress}
   >
-    <Text style={[styles.cueChipLabel, selected && styles.cueChipLabelActive]} numberOfLines={1}>
+    <Text style={[styles.cueChipLabel, selected && styles.cueChipLabelActive]}>
       {label}
     </Text>
   </Pressable>
@@ -458,7 +457,6 @@ export const DataCollectionScreen: React.FC = () => {
                     </Text>
                     <Text
                       style={[styles.stepChipText, currentStep === idx && styles.stepChipTextActive]}
-                      numberOfLines={1}
                     >
                       {title}
                     </Text>
@@ -580,7 +578,7 @@ export const DataCollectionScreen: React.FC = () => {
                       onPress={() => toggleCustomCue(label)}
                       onLongPress={() => removeCustomCue(label)}
                     >
-                      <Text style={[styles.cueChipLabel, selectedCustomCues.has(label) && styles.cueChipLabelActive]} numberOfLines={1}>
+                      <Text style={[styles.cueChipLabel, selectedCustomCues.has(label) && styles.cueChipLabelActive]}>
                         {label}
                       </Text>
                     </Pressable>

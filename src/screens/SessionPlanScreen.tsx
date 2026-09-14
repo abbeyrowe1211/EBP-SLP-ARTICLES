@@ -36,31 +36,103 @@ const StepCard: React.FC<{
   instructions: string;
   whyNote: string;
   showWhyNotes: boolean;
-}> = ({ number, title, duration, instructions, whyNote, showWhyNotes }) => (
+  editable?: boolean;
+  onChangeTitle?: (v: string) => void;
+  onChangeDuration?: (v: string) => void;
+  onChangeInstructions?: (v: string) => void;
+  onChangeWhyNote?: (v: string) => void;
+}> = ({
+  number,
+  title,
+  duration,
+  instructions,
+  whyNote,
+  showWhyNotes,
+  editable,
+  onChangeTitle,
+  onChangeDuration,
+  onChangeInstructions,
+  onChangeWhyNote,
+}) => (
   <View style={styles.stepCard}>
     <View style={styles.stepHeader}>
       <View style={styles.stepNumCircle}>
         <Text style={styles.stepNum}>{number}</Text>
       </View>
-      <Text style={styles.stepTitle}>{title}</Text>
+      {editable ? (
+        <TextInput
+          style={[styles.stepTitle, styles.editableInput, { flex: 1 }]}
+          value={title}
+          onChangeText={onChangeTitle}
+          multiline
+        />
+      ) : (
+        <Text style={styles.stepTitle}>{title}</Text>
+      )}
       <View style={styles.stepTimeBadge}>
-        <Text style={styles.stepTimeText}>{duration}</Text>
+        {editable ? (
+          <TextInput
+            style={styles.stepTimeInput}
+            value={duration}
+            onChangeText={onChangeDuration}
+          />
+        ) : (
+          <Text style={styles.stepTimeText}>{duration}</Text>
+        )}
       </View>
     </View>
-    <Text style={styles.stepInstructions}>{instructions}</Text>
-    {showWhyNotes && !!whyNote && (
+    {editable ? (
+      <TextInput
+        style={[styles.stepInstructions, styles.editableInput]}
+        value={instructions}
+        onChangeText={onChangeInstructions}
+        multiline
+        textAlignVertical="top"
+      />
+    ) : (
+      <Text style={styles.stepInstructions}>{instructions}</Text>
+    )}
+    {(showWhyNotes || editable) && (!!whyNote || editable) && (
       <View style={styles.whyRow}>
         <Text style={styles.whyLabel}>Why: </Text>
-        <Text style={styles.whyText}>{whyNote}</Text>
+        {editable ? (
+          <TextInput
+            style={[styles.whyText, styles.editableInput, { flex: 1 }]}
+            value={whyNote}
+            onChangeText={onChangeWhyNote}
+            multiline
+            placeholder="Optional rationale"
+            placeholderTextColor={colors.textMuted}
+          />
+        ) : (
+          <Text style={styles.whyText}>{whyNote}</Text>
+        )}
       </View>
     )}
   </View>
 );
 
-const InfoPanel: React.FC<{ title: string; body: string }> = ({ title, body }) => (
+const InfoPanel: React.FC<{
+  title: string;
+  body: string;
+  editable?: boolean;
+  onChangeBody?: (v: string) => void;
+}> = ({ title, body, editable, onChangeBody }) => (
   <View style={styles.infoPanel}>
     <Text style={styles.infoPanelTitle}>{title}</Text>
-    <Text style={styles.infoPanelBody}>{body}</Text>
+    {editable ? (
+      <TextInput
+        style={[styles.infoPanelBody, styles.editableInput]}
+        value={body}
+        onChangeText={onChangeBody}
+        multiline
+        textAlignVertical="top"
+        placeholder="Add optional notes…"
+        placeholderTextColor={colors.textMuted}
+      />
+    ) : (
+      <Text style={styles.infoPanelBody}>{body}</Text>
+    )}
   </View>
 );
 
@@ -508,17 +580,46 @@ export const SessionPlanScreen: React.FC = () => {
     }
   };
 
-  // ── Parse plan ──
-  let plan: GeneratedPlan | null = null;
-  try {
-    const parsed = JSON.parse(planJson ?? '');
-    // Guard against plans with missing or empty steps array
-    if (parsed && Array.isArray(parsed.steps) && parsed.steps.length > 0) {
-      plan = parsed;
+  // ── Parse plan (once) into editable state — the clinician can edit any
+  // field of the generated plan right in the app; edits are reflected in
+  // Save to Plans, Save / Print, and Start data collection ──
+  const [plan, setPlan] = useState<GeneratedPlan | null>(() => {
+    try {
+      const parsed = JSON.parse(planJson ?? '');
+      // Guard against plans with missing or empty steps array
+      if (parsed && Array.isArray(parsed.steps) && parsed.steps.length > 0) {
+        return parsed;
+      }
+    } catch {
+      // handled below
     }
-  } catch {
-    // handled below
-  }
+    return null;
+  });
+
+  const [editMode, setEditMode] = useState(false);
+
+  const updateStepField = (
+    index: number,
+    field: 'title' | 'duration' | 'instructions' | 'whyNote',
+    value: string
+  ) => {
+    setPlan((prev) => {
+      if (!prev) return prev;
+      const steps = prev.steps.map((s, i) => (i === index ? { ...s, [field]: value } : s));
+      return { ...prev, steps };
+    });
+  };
+
+  const updatePlanField = (
+    field: 'cueingHierarchy' | 'homeProgram' | 'clinicianNotes',
+    value: string
+  ) => {
+    setPlan((prev) => (prev ? { ...prev, [field]: value } : prev));
+  };
+
+  // Keep the planJson we hand off to other screens (data collection, saved
+  // plan) in sync with any edits the clinician has made here.
+  const currentPlanJson = plan ? JSON.stringify(plan) : planJson;
 
   if (!plan) {
     return (
@@ -546,7 +647,9 @@ export const SessionPlanScreen: React.FC = () => {
           <Text style={styles.backText}>{backLabel}</Text>
         </Pressable>
         <Text style={styles.screenTitle}>Today's session</Text>
-        <View style={{ width: 60 }} />
+        <Pressable onPress={() => setEditMode((v) => !v)} hitSlop={8}>
+          <Text style={styles.editToggleText}>{editMode ? 'Done' : 'Edit'}</Text>
+        </Pressable>
       </View>
 
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
@@ -579,7 +682,7 @@ export const SessionPlanScreen: React.FC = () => {
         </View>
 
         {/* Steps */}
-        {plan.steps.map((step) => (
+        {plan.steps.map((step, idx) => (
           <StepCard
             key={step.number}
             number={step.number}
@@ -588,11 +691,16 @@ export const SessionPlanScreen: React.FC = () => {
             instructions={step.instructions}
             whyNote={step.whyNote}
             showWhyNotes={showWhyNotes}
+            editable={editMode}
+            onChangeTitle={(v) => updateStepField(idx, 'title', v)}
+            onChangeDuration={(v) => updateStepField(idx, 'duration', v)}
+            onChangeInstructions={(v) => updateStepField(idx, 'instructions', v)}
+            onChangeWhyNote={(v) => updateStepField(idx, 'whyNote', v)}
           />
         ))}
 
         {/* ─── Additional Information divider ─── */}
-        {(!!plan.cueingHierarchy || !!plan.homeProgram || !!plan.clinicianNotes) && (
+        {(!!plan.cueingHierarchy || !!plan.homeProgram || !!plan.clinicianNotes || editMode) && (
           <View style={styles.sectionDivider}>
             <View style={styles.sectionDividerLine} />
             <Text style={styles.sectionDividerLabel}>ADDITIONAL INFORMATION</Text>
@@ -601,18 +709,33 @@ export const SessionPlanScreen: React.FC = () => {
         )}
 
         {/* Cueing hierarchy */}
-        {!!plan.cueingHierarchy && (
-          <InfoPanel title="Cueing hierarchy" body={plan.cueingHierarchy} />
+        {(!!plan.cueingHierarchy || editMode) && (
+          <InfoPanel
+            title="Cueing hierarchy"
+            body={plan.cueingHierarchy ?? ''}
+            editable={editMode}
+            onChangeBody={(v) => updatePlanField('cueingHierarchy', v)}
+          />
         )}
 
         {/* Home program */}
-        {!!plan.homeProgram && (
-          <InfoPanel title="Home program" body={plan.homeProgram} />
+        {(!!plan.homeProgram || editMode) && (
+          <InfoPanel
+            title="Home program"
+            body={plan.homeProgram ?? ''}
+            editable={editMode}
+            onChangeBody={(v) => updatePlanField('homeProgram', v)}
+          />
         )}
 
         {/* Clinician notes */}
-        {!!plan.clinicianNotes && (
-          <InfoPanel title="Clinician notes" body={plan.clinicianNotes} />
+        {(!!plan.clinicianNotes || editMode) && (
+          <InfoPanel
+            title="Clinician notes"
+            body={plan.clinicianNotes ?? ''}
+            editable={editMode}
+            onChangeBody={(v) => updatePlanField('clinicianNotes', v)}
+          />
         )}
 
         {/* Article credit */}
@@ -637,7 +760,7 @@ export const SessionPlanScreen: React.FC = () => {
                 router.push({
                   pathname: '/session/data',
                   params: {
-                    planJson,
+                    planJson: currentPlanJson,
                     articleId,
                     savedPlanId,
                     patientLabel: savedLabel,
@@ -666,7 +789,7 @@ export const SessionPlanScreen: React.FC = () => {
                 router.push({
                   pathname: '/session/data',
                   params: {
-                    planJson,
+                    planJson: currentPlanJson,
                     articleId,
                     savedPlanId: savedPlanIdParam,
                     patientLabel: patientLabelParam ?? '',
@@ -721,7 +844,25 @@ const styles = StyleSheet.create({
   },
   backText: { ...text.body, color: colors.primary, fontFamily: 'Quicksand_600SemiBold' },
   screenTitle: { ...text.h3, color: colors.text },
+  editToggleText: { ...text.body, color: colors.primary, fontFamily: 'Quicksand_700Bold' },
   scroll: { paddingHorizontal: 20 },
+
+  // ── Editable plan fields ──
+  editableInput: {
+    borderWidth: 1,
+    borderColor: colors.primary,
+    borderStyle: 'dashed',
+    borderRadius: 8,
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    backgroundColor: colors.primaryLighter,
+  },
+  stepTimeInput: {
+    ...text.badge,
+    color: colors.primaryDeep,
+    minWidth: 44,
+    padding: 0,
+  },
 
   citationBanner: {
     backgroundColor: colors.primaryLighter,

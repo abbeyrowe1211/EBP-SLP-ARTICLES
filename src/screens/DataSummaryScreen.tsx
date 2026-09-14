@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
+  TextInput,
   ScrollView,
   Pressable,
   StyleSheet,
@@ -21,7 +22,9 @@ import { CUE_LABELS, type StepSummary } from '@/types/sessionData';
 
 const StepResultCard: React.FC<{ summary: StepSummary }> = ({ summary }) => {
   const pct = summary.accuracy;
-  const barColor = pct >= 80 ? '#16A34A' : pct >= 60 ? '#D97706' : '#DC2626';
+  // Always green — target accuracy is patient-specific, so a lower % can
+  // still mean the patient is right on goal. No red/orange threshold.
+  const barColor = '#16A34A';
 
   return (
     <View style={styles.stepCard}>
@@ -100,12 +103,6 @@ export const DataSummaryScreen: React.FC = () => {
     try {
       const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
       const pct = summary.overallAccuracy;
-      const performanceInterp =
-        pct >= 80
-          ? 'Patient demonstrated strong performance within functional accuracy targets.'
-          : pct >= 60
-          ? 'Patient demonstrated emerging skills with moderate cueing support.'
-          : 'Patient required significant cueing support. Consider adjusting step difficulty or hierarchy.';
 
       const stepRows = summary.stepSummaries
         .filter((s) => s.totalTrials > 0)
@@ -114,7 +111,7 @@ export const DataSummaryScreen: React.FC = () => {
             <td>${s.stepTitle}</td>
             <td style="text-align:center">${s.totalTrials}</td>
             <td style="text-align:center">${s.correctTrials}</td>
-            <td style="text-align:center;font-weight:bold;color:${s.accuracy >= 80 ? '#16A34A' : s.accuracy >= 60 ? '#D97706' : '#DC2626'}">${s.accuracy}%</td>
+            <td style="text-align:center;font-weight:bold;color:#16A34A">${s.accuracy}%</td>
             <td>${s.dominantCueLevel ? CUE_LABELS[s.dominantCueLevel as keyof typeof CUE_LABELS] ?? s.dominantCueLevel : '—'}</td>
           </tr>`)
         .join('');
@@ -140,7 +137,7 @@ export const DataSummaryScreen: React.FC = () => {
     td { padding: 8px 10px; border-bottom: 1px solid #e8e0f7; vertical-align: top; }
     .overall { background: #f0ebfc; border-radius: 8px; padding: 12px 16px; margin: 12px 0;
                display: inline-block; }
-    .overall .pct { font-size: 32px; font-weight: bold; color: ${pct >= 80 ? '#16A34A' : pct >= 60 ? '#D97706' : '#DC2626'}; }
+    .overall .pct { font-size: 32px; font-weight: bold; color: #16A34A; }
     .overall .lbl { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 0.05em; }
     .footer { margin-top: 36px; font-size: 10.5px; color: #999; border-top: 1px solid #e8e0f7;
               padding-top: 12px; text-align: center; }
@@ -185,7 +182,7 @@ export const DataSummaryScreen: React.FC = () => {
   </div>
 
   <h2>A — Assessment</h2>
-  <p>${performanceInterp} Overall accuracy was <strong>${pct}%</strong> across ${summary.totalTrials} total trial(s). Cueing hierarchy and response patterns are detailed above.</p>
+  <p>${docPhrase}</p>
 
   <h2>P — Plan</h2>
   <p>Continue evidence-based treatment protocol per established plan of care. Review accuracy trends across sessions and adjust cueing level, session targets, or step difficulty as clinically indicated. Consider increasing complexity if accuracy is consistently ≥ 80%, or providing additional modeling and scaffolding if accuracy remains below 60%.</p>
@@ -234,7 +231,10 @@ export const DataSummaryScreen: React.FC = () => {
     return `${s1} ${s2} ${performanceInterp}`;
   };
 
-  const docPhrase = buildDocPhrase();
+  // Documentation phrase is editable — starts from the auto-generated text,
+  // but the clinician can change it right in the app. The SOAP note's
+  // Assessment section reuses this same state, so both stay identical.
+  const [docPhrase, setDocPhrase] = useState<string>(buildDocPhrase);
 
   const handleCopy = () => {
     Clipboard.setString(docPhrase);
@@ -242,10 +242,13 @@ export const DataSummaryScreen: React.FC = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const overallColor =
-    !summary ? colors.textMuted :
-    summary.overallAccuracy >= 80 ? '#16A34A' :
-    summary.overallAccuracy >= 60 ? '#D97706' : '#DC2626';
+  const handleResetDocPhrase = () => {
+    setDocPhrase(buildDocPhrase());
+  };
+
+  // Accuracy is always shown in green — the target % is patient-specific,
+  // so a lower number can still mean the patient is right on goal.
+  const overallColor = !summary ? colors.textMuted : '#16A34A';
 
   return (
     <SafeAreaView edges={['top']} style={styles.container}>
@@ -304,10 +307,21 @@ export const DataSummaryScreen: React.FC = () => {
               )}
             </Pressable>
 
-            {/* Documentation phrase — same content as SOAP note O + A */}
+            {/* Documentation phrase — same text used in the SOAP note's Assessment section, editable */}
             <View style={styles.docCard}>
               <Text style={styles.docCardLabel}>Documentation phrase</Text>
-              <Text style={styles.docText}>{docPhrase}</Text>
+              <TextInput
+                style={styles.docText}
+                value={docPhrase}
+                onChangeText={setDocPhrase}
+                multiline
+                textAlignVertical="top"
+                placeholder="Documentation phrase"
+                placeholderTextColor={colors.textMuted}
+              />
+              <Pressable style={styles.regenerateBtn} onPress={handleResetDocPhrase}>
+                <Text style={styles.regenerateBtnText}>Reset to auto-generated text</Text>
+              </Pressable>
               <Pressable
                 style={[styles.copyBtn, copied && styles.copyBtnDone]}
                 onPress={handleCopy}
@@ -478,7 +492,7 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 12,
   },
-  docText: { ...text.bodySmall, color: colors.text, lineHeight: 22 },
+  docText: { ...text.bodySmall, color: colors.text, lineHeight: 22, minHeight: 90, padding: 0 },
   copyBtn: {
     backgroundColor: colors.primaryDark,
     borderRadius: 10,
