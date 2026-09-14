@@ -680,10 +680,14 @@ export const SavedArticlesScreen: React.FC = () => {
     setSavedArticles(articles.filter((a) => ids.has(a.id)));
     setAllSavedIds(ids);
     setGroups(grps);
-    if (notesRaw) {
-      const notes = JSON.parse(notesRaw) as Record<string, string>;
-      setNotedIds(new Set(Object.keys(notes).filter((k) => !!notes[k]?.trim())));
-    } else {
+    try {
+      if (notesRaw) {
+        const notes = JSON.parse(notesRaw) as Record<string, string>;
+        setNotedIds(new Set(Object.keys(notes).filter((k) => !!notes[k]?.trim())));
+      } else {
+        setNotedIds(new Set());
+      }
+    } catch {
       setNotedIds(new Set());
     }
   }, [articles]);

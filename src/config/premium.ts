@@ -53,7 +53,10 @@ export const PREMIUM_FEATURES = [
 
 // ─── Free features (shown on paywall for contrast) ────────────────────────────
 export const FREE_FEATURES = [
-  'Full article library (180+ EBP articles)',
+  // No hardcoded article count here — it grows every week as new research
+  // is added, so a fixed number goes stale fast. Onboarding shows the live
+  // count (computed from the actual article list); this stays evergreen.
+  'Full, growing library of EBP articles',
   'Browse & search by area, evidence level, or keyword',
   'Save articles & take clinical notes',
   'Export article summaries',

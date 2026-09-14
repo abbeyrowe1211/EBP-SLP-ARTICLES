@@ -1,0 +1,112 @@
+[
+  {
+    "id": "pulvermuller-2026-ilat-aphasia",
+    "title": "Communication makes intensive language therapy more efficient: a randomized controlled trial in chronic post-stroke aphasia",
+    "shortTitle": "ILAT vs. Conventional Therapy for Chronic Aphasia",
+    "authors": "Pulvermüller, F., Jäger, A. T., Osterloh, M. R., Knechtges, J., Arndt, V., Sadlon, A., Berthier, M. L., & Mohr, B.",
+    "authorShort": "Pulvermüller et al.",
+    "journal": "Brain Communications",
+    "year": 2026,
+    "pmid": "42488756",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42488756/",
+    "evidenceLevel": "1b",
+    "evidenceType": "Randomized controlled trial",
+    "areas": ["Language"],
+    "tags": ["Aphasia", "Post-Stroke Aphasia", "ILAT", "Intensive Language Action Therapy", "Chronic Aphasia"],
+    "summary": "A parallel-group RCT in 44 adults with chronic post-stroke aphasia found that Intensive Language Action Therapy (ILAT) — a communicative, game-based approach — produced significantly greater language gains and reduced depression compared to matched-intensity conventional naming/description therapy.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "44 adults with chronic aphasia (≥12 months post-stroke) were randomized to ILAT (n=23) or conventional therapy (CONV, n=21), both delivered at identical intensity: 2.5 hours/day, 5 days/week, for 2 weeks (12.5 hours/week).",
+      "ILAT used communicative language games (requesting, conversational planning) in small groups; CONV used matched picture-naming, description, and comprehension tasks.",
+      "Primary language outcome (Aachen Aphasia Test) showed a significant Time × Therapy interaction (F(1,42)=7.42, P=0.009) — ILAT improved significantly (P<0.001) while CONV did not reach significance.",
+      "ILAT also produced a significant reduction in depression symptoms (BDI, P<0.001), with no significant change in the CONV group.",
+      "Everyday communication measures (ANELT, ACT) favored ILAT over CONV."
+    ],
+    "clinicalApplication": "For chronic post-stroke aphasia patients who have plateaued on traditional naming/description drills, ILAT offers an equally intensive but more communicatively-oriented alternative — structured requesting and conversational games delivered in small groups — that this trial found produced larger language gains and, notably, meaningfully reduced depression symptoms alongside communication improvement. Because both arms were matched for total treatment intensity, the comparison isolates the value of the communicative/game-based format itself, not just \"more therapy.\" Consider ILAT-style small-group, request-based games when a patient's engagement or mood has been a barrier to progress, not just their naming accuracy.",
+    "sessionStats": {
+      "frequency": "5 days/week",
+      "sessionLength": "2.5 hours/day (small groups of 3 patients + therapist)",
+      "dose": "2 weeks intensive (12.5 hours/week total)",
+      "bestFit": "Chronic post-stroke aphasia (≥12 months post-onset)"
+    },
+    "bestFitCriteria": [
+      "Adults with chronic post-stroke aphasia, at least 12 months post-onset.",
+      "Patients who can tolerate an intensive 2-week, small-group therapy schedule.",
+      "Patients whose engagement, mood, or functional communication has plateaued with traditional naming/description therapy.",
+      "Settings that can support small-group (3:1) intensive scheduling."
+    ]
+  },
+  {
+    "id": "kim-2026-digital-dysarthria-noninferiority",
+    "title": "Efficacy of Digital Speech Therapy for Poststroke Dysarthria: Randomized Noninferiority Trial",
+    "shortTitle": "Digital vs. Workbook Therapy for Poststroke Dysarthria",
+    "authors": "Kim, Y., Kim, M., Kim, S., Kim, J., Shin, J.-H., Chang, Y., Na, J.-Y., Kim, J., & Song, T.-J.",
+    "authorShort": "Kim et al.",
+    "journal": "Journal of Medical Internet Research",
+    "year": 2026,
+    "pmid": "42149971",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42149971/",
+    "evidenceLevel": "1b",
+    "evidenceType": "Randomized noninferiority trial",
+    "areas": ["Motor Speech"],
+    "tags": ["Dysarthria", "Poststroke Dysarthria", "Telepractice", "Digital Health", "Speech Intelligibility"],
+    "summary": "A South Korean multicenter RCT (n=73) found a smartphone-based speech therapy app was noninferior to traditional workbook-based dysarthria therapy for improving speech intelligibility in cognitively-intact poststroke patients without aphasia, over 4 weeks.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "73 poststroke patients with dysarthria (acute to chronic phases, cognitively intact, without aphasia) were randomized to a smartphone app-based therapy or traditional workbook-based therapy over 4 weeks.",
+      "Intelligibility scores rose from approximately 80 to 92 points in the digital group, meeting noninferiority criteria versus conventional workbook therapy.",
+      "The app scored 89.6/100 on usability measures, suggesting strong patient acceptance of the self-directed digital format.",
+      "Findings held across acute, subacute, and chronic stroke phases in this cognitively-intact sample."
+    ],
+    "clinicalApplication": "This trial supports offering a self-directed smartphone app as a legitimate alternative to paper workbook homework for dysarthria therapy in cognitively intact stroke patients without co-occurring aphasia — intelligibility gains were comparable and patient-rated usability was high. Particularly useful for extending practice dose between sessions or supporting patients with limited direct SLP contact time (early discharge, rural/telehealth caseloads), while reserving direct clinician time for patients needing more hands-on cueing or with cognitive-linguistic complexity a self-directed app can't accommodate.",
+    "sessionStats": {
+      "frequency": "Self-directed app practice",
+      "sessionLength": "Not specified in abstract",
+      "dose": "4 weeks",
+      "bestFit": "Poststroke dysarthria, cognitively intact, without aphasia"
+    },
+    "bestFitCriteria": [
+      "Adults with poststroke dysarthria across acute to chronic phases.",
+      "Cognitively intact patients without co-occurring aphasia (population studied).",
+      "Patients comfortable with smartphone-based, self-directed home practice.",
+      "Settings looking to extend practice dose beyond direct clinician contact time."
+    ]
+  },
+  {
+    "id": "romer-2026-gaze-sgd-design-features",
+    "title": "Effects of design features in gaze-based use of speech-generating devices",
+    "shortTitle": "Design Features in Gaze-Based Speech-Generating Devices",
+    "authors": "Römer, N., Schmidt, M., Scholz, M., & Tempel, T.",
+    "authorShort": "Römer et al.",
+    "journal": "Disability and Rehabilitation: Assistive Technology",
+    "year": 2026,
+    "pmid": "42422925",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42422925/",
+    "evidenceLevel": "3",
+    "evidenceType": "Controlled experimental study",
+    "areas": ["AAC"],
+    "tags": ["AAC", "Eye Gaze", "Speech-Generating Device", "Device Configuration", "Usability"],
+    "summary": "A controlled usability study found that grid size (32 vs. 50 icons) and background color interact to affect message-construction speed on gaze-controlled speech-generating devices — colored backgrounds erased the speed advantage of smaller grids, and grid-size effects only emerged from the second word onward.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "Participants constructed multi-word messages by selecting pictorial symbols via eye-gaze, using either a 32-icon or 50-icon grid layout, with varying background treatments (colored vs. plain).",
+      "A significant interaction emerged between grid size and background color: colored backgrounds diminished the selection-speed advantage that smaller (32-icon) grids otherwise provided.",
+      "Grid-size effects on selection speed only appeared for the second and third words in a message — not the first word — suggesting layout effects compound as message length increases."
+    ],
+    "clinicalApplication": "When configuring a gaze-controlled speech-generating device, grid size and background styling aren't independent choices — a busier/colored background can cancel out the speed benefit of a simpler, smaller grid. For users composing longer, multi-word messages (where the effect was strongest), prioritize a smaller grid with a plain background rather than assuming a colorful, more \"engaging\" interface is neutral. Worth factoring into AAC device trials and configuration for adults using eye-gaze access, particularly those for whom selection speed and fatigue are limiting factors (e.g., ALS, severe motor impairment).",
+    "sessionStats": {
+      "frequency": "N/A — device configuration study, not a treatment protocol",
+      "sessionLength": "N/A",
+      "dose": "N/A",
+      "bestFit": "Adults using or being evaluated for gaze-controlled AAC/speech-generating devices"
+    },
+    "bestFitCriteria": [
+      "Adults using or being fitted for eye-gaze-controlled speech-generating devices.",
+      "Especially relevant for users composing longer, multi-word messages rather than single-word selections.",
+      "Useful during AAC device trials/configuration decisions, not a clinical treatment protocol."
+    ]
+  }
+]

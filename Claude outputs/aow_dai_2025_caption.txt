@@ -1,0 +1,17 @@
+📖 ARTICLE OF THE WEEK
+
+"A Meta-Analysis and Systematic Review of the Effects of Sensory Modulation Treatments for Neurogenic Oropharyngeal Dysphagia"
+Dai et al., 2025 — CNS Neuroscience & Therapeutics
+
+If you treat neurogenic dysphagia, this one's worth your time. A meta-analysis of 16 RCTs (620 participants) found oropharyngeal sensory stimulation produced a significant improvement in swallow function (SMD 0.80).
+
+The breakdown:
+🔹 Pharyngeal electrical stimulation (PES) — clear, consistent benefit across studies. Most protocols: ~10 min/session, 3 consecutive days.
+🔹 Gustatory stimulation (capsaicin) — biologically plausible (TRPV1 activation), but evidence is still inconclusive.
+🔹 In tracheostomised patients with severe dysphagia, sensory stimulation significantly improved readiness for decannulation (OR 6.47) — a meaningful finding for your most complex cases.
+
+Clinical takeaway: PES has the strongest evidence base of the sensory modulation approaches right now. Worth knowing where your local pathway sends patients for it, or whether it's something your setting could bring in-house.
+
+⚠️ Contraindication to flag: cardiac pacemakers.
+
+#SpeechTherapy #SLP #Dysphagia #NeurogenicDysphagia #EvidenceBasedPractice #MedSLP #SwallowingDisorders #Neurorehab #SpeechLanguagePathology #DysphagiaTherapy #StrokeRehab #ClinicalResearch

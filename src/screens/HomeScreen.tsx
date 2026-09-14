@@ -55,12 +55,19 @@ async function trackAndGetStreak(): Promise<number> {
     await AsyncStorage.setItem(KEY_DAYS, JSON.stringify({ streak: 1, last: today }));
     return 1;
   }
-  const { streak, last } = JSON.parse(raw) as { streak: number; last: string };
-  if (last === today) return streak;
-  const prev = new Date(Date.now() - 86_400_000).toISOString().slice(0, 10);
-  const next = last === prev ? streak + 1 : 1;
-  await AsyncStorage.setItem(KEY_DAYS, JSON.stringify({ streak: next, last: today }));
-  return next;
+  try {
+    const { streak, last } = JSON.parse(raw) as { streak: number; last: string };
+    if (last === today) return streak;
+    const prev = new Date(Date.now() - 86_400_000).toISOString().slice(0, 10);
+    const next = last === prev ? streak + 1 : 1;
+    await AsyncStorage.setItem(KEY_DAYS, JSON.stringify({ streak: next, last: today }));
+    return next;
+  } catch {
+    // Corrupted data — reset the streak rather than let this throw and
+    // break the rest of Home screen's load().
+    await AsyncStorage.setItem(KEY_DAYS, JSON.stringify({ streak: 1, last: today }));
+    return 1;
+  }
 }
 
 // ─── Article of the week ──────────────────────────────────────────────────────
@@ -276,24 +283,35 @@ export const HomeScreen = () => {
     setNewArticleIds(pendingNewIds);
     setDraftSession(draft && draft.trials.length > 0 ? draft : null);
 
-    const seen: string[] = seenRaw ? JSON.parse(seenRaw) : [];
-    const seenSet = new Set(seen);
-    setSeenIds(seenSet);
-    setHasUnseen(pendingNewIds.some((id) => !seenSet.has(id)));
-
-    if (profileRaw) {
-      const p = JSON.parse(profileRaw);
-      setProfileName(p.name ?? '');
+    try {
+      const seen: string[] = seenRaw ? JSON.parse(seenRaw) : [];
+      const seenSet = new Set(seen);
+      setSeenIds(seenSet);
+      setHasUnseen(pendingNewIds.some((id) => !seenSet.has(id)));
+    } catch {
+      setSeenIds(new Set());
+      setHasUnseen(pendingNewIds.length > 0);
     }
 
-    if (notesRaw) {
-      const notes = JSON.parse(notesRaw) as Record<string, string>;
-      const noted = Object.entries(notes)
-        .filter(([, n]) => n.trim())
-        .map(([id, n]) => ({ article: getArticleById(id), note: n }))
-        .filter((x): x is { article: Article; note: string } => !!x.article);
-      setNotedArticles(noted);
-    } else {
+    try {
+      if (profileRaw) {
+        const p = JSON.parse(profileRaw);
+        setProfileName(p.name ?? '');
+      }
+    } catch {}
+
+    try {
+      if (notesRaw) {
+        const notes = JSON.parse(notesRaw) as Record<string, string>;
+        const noted = Object.entries(notes)
+          .filter(([, n]) => n.trim())
+          .map(([id, n]) => ({ article: getArticleById(id), note: n }))
+          .filter((x): x is { article: Article; note: string } => !!x.article);
+        setNotedArticles(noted);
+      } else {
+        setNotedArticles([]);
+      }
+    } catch {
       setNotedArticles([]);
     }
   }, []);
