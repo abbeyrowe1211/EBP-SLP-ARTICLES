@@ -75,7 +75,16 @@
         <span class="badge-line2">App Store</span>
       </span>
     </div>
-    <a class="notify-link" href="mailto:info@ebpslp.app?subject=Notify%20me%20when%20EBP-SLP%20launches&body=Please%20let%20me%20know%20when%20EBP-SLP%20is%20live%20on%20the%20App%20Store.">Get notified at launch &rarr;</a>
+    <form class="notify-form" id="notify-form" name="notify" method="POST" data-netlify="true" netlify-honeypot="company">
+      <input type="hidden" name="form-name" value="notify" />
+      <p class="hp-field"><label>Leave this field blank: <input name="company" tabindex="-1" autocomplete="off" /></label></p>
+      <label class="notify-label" for="notify-email">Get notified at launch</label>
+      <div class="notify-row">
+        <input class="notify-input" type="email" id="notify-email" name="email" placeholder="you@email.com" autocomplete="email" required />
+        <button class="notify-submit" type="submit">Notify me &rarr;</button>
+      </div>
+      <p class="notify-status" id="notify-status" role="status" aria-live="polite"></p>
+    </form>
   </div>
 
   <div class="meta">
@@ -98,7 +107,40 @@
   </div>
 
   <footer>
-    <p class="notice">Updated website coming soon.</p>
     <p>&copy; 2026 Rowe to Recovery LLC</p>
   </footer>
 </div>
+
+<script>
+  (function () {
+    var form = document.getElementById('notify-form');
+    if (!form) return;
+    var status = document.getElementById('notify-status');
+    var row = form.querySelector('.notify-row');
+    var label = form.querySelector('.notify-label');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.querySelector('input[name="company"]').value) return; // honeypot tripped
+
+      var submitBtn = form.querySelector('.notify-submit');
+      submitBtn.disabled = true;
+      status.textContent = 'Sending…';
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+        .then(function () {
+          row.style.display = 'none';
+          label.textContent = "You're on the list — we'll email you when EBP‑SLP launches.";
+          status.textContent = '';
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          status.textContent = 'Something went wrong — try again, or email info@ebpslp.app.';
+        });
+    });
+  })();
+</script>
