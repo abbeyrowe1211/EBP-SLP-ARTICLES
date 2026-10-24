@@ -2,7 +2,7 @@ import { type AshaArea } from './articles';
 
 export const SESSION_LENGTHS = ['30 min', '45 min', '60 min', '90 min'];
 export const SEVERITIES = ['Mild', 'Moderate', 'Severe'];
-export const SETTINGS = ['Acute', 'IPR', 'SNF', 'Home health', 'Outpatient', 'School', 'Private practice', 'Telepractice'];
+export const SETTINGS = ['Acute', 'IPR', 'SNF', 'Home health', 'Outpatient', 'Private practice', 'Telepractice'];
 
 // Maps the profile "Primary work setting" value to the closest session builder setting.
 const PROFILE_SETTING_MAP: Record<string, string> = {
@@ -11,7 +11,6 @@ const PROFILE_SETTING_MAP: Record<string, string> = {
   'Skilled nursing':   'SNF',
   'Home health':       'Home health',
   'Outpatient':        'Outpatient',
-  'School':            'School',
   'Private practice':  'Private practice',
   'Telepractice':      'Telepractice',
 };

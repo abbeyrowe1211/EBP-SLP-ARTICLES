@@ -8,6 +8,8 @@ import {
   TextInput,
   Alert,
   Switch,
+  ActivityIndicator,
+  Linking,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect, useRouter } from 'expo-router';
@@ -16,6 +18,7 @@ import { colors } from '@/theme/colors';
 import { text } from '@/theme/typography';
 import { getSavedPlans } from '@/services/storage';
 import { getAllSessionData } from '@/services/sessionDataStorage';
+import { exportBackup, importBackup } from '@/services/backupService';
 import {
   type NotifFrequency,
   getNotifFrequency,
@@ -155,6 +158,8 @@ export const ProfileScreen: React.FC = () => {
   const [editingProfile, setEditingProfile] = useState(false);
   const [draftProfile, setDraftProfile]     = useState<ProfileData>({ name: '', credentials: '', setting: '' });
   const [cueVisibility, setCueVisibility]   = useState<Record<string, boolean>>({});
+  const [backingUp, setBackingUp]           = useState(false);
+  const [restoring, setRestoring]           = useState(false);
 
   // Helper — is a cue enabled? Defaults to true
   const isCueOn = (level: string) => cueVisibility[level] !== false;
@@ -297,6 +302,74 @@ export const ProfileScreen: React.FC = () => {
         },
       },
     ]);
+  };
+
+  const formatBackupDate = (iso: string) => {
+    try {
+      return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    } catch {
+      return 'an earlier date';
+    }
+  };
+
+  const handleExportBackup = async () => {
+    setBackingUp(true);
+    try {
+      const { keyCount } = await exportBackup();
+      if (keyCount === 0) {
+        Alert.alert(
+          'Nothing to back up yet',
+          'Once you save articles, build plans, or log sessions, there will be data to back up.',
+        );
+      }
+    } catch (e: any) {
+      if (e?.message === 'sharing_unavailable') {
+        Alert.alert("Can't share right now", 'Sharing isn’t available on this device.');
+      } else {
+        Alert.alert('Backup failed', 'Something went wrong creating your backup. Try again.');
+      }
+    } finally {
+      setBackingUp(false);
+    }
+  };
+
+  const handleRestoreBackup = () => {
+    Alert.alert(
+      'Restore from backup?',
+      'This will overwrite your current saved articles, plans, session data, and notes with whatever is in the backup file. This can’t be undone.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Choose file…',
+          onPress: async () => {
+            setRestoring(true);
+            try {
+              const result = await importBackup();
+              if (result) {
+                Alert.alert(
+                  'Backup restored',
+                  `Restored ${result.keyCount} item${result.keyCount === 1 ? '' : 's'} from a backup made on ${formatBackupDate(result.exportedAt)}. Close and reopen the app to make sure everything reloads.`,
+                );
+                load().catch(() => {});
+              }
+            } catch (e: any) {
+              if (e?.message === 'invalid_file') {
+                Alert.alert(
+                  'Not a valid backup',
+                  'That file doesn’t look like an EBP-SLP backup. Make sure you picked the right .json file.',
+                );
+              } else if (e?.message === 'empty_backup') {
+                Alert.alert('Nothing to restore', 'That backup file doesn’t contain any data.');
+              } else {
+                Alert.alert('Restore failed', 'Something went wrong reading that file. Try again.');
+              }
+            } finally {
+              setRestoring(false);
+            }
+          },
+        },
+      ],
+    );
   };
 
   const handleAowToggle = async (value: boolean) => {
@@ -528,6 +601,38 @@ export const ProfileScreen: React.FC = () => {
           </View>
         </Section>
 
+        {/* ── Data backup ── */}
+        <Section title="DATA BACKUP">
+          <View style={styles.backupCard}>
+            <Text style={styles.backupBody}>
+              Your saved articles, plans, session data, and notes live only on this device — there's no account
+              or server sync. Back them up so you don't lose anything if you lose your phone or reinstall the app.
+            </Text>
+            <Pressable
+              style={[styles.backupBtn, (backingUp || restoring) && styles.backupBtnDisabled]}
+              onPress={handleExportBackup}
+              disabled={backingUp || restoring}
+            >
+              {backingUp ? (
+                <ActivityIndicator color={colors.surface} size="small" />
+              ) : (
+                <Text style={styles.backupBtnText}>Export backup</Text>
+              )}
+            </Pressable>
+            <Pressable
+              style={[styles.backupBtnSecondary, (backingUp || restoring) && styles.backupBtnDisabled]}
+              onPress={handleRestoreBackup}
+              disabled={backingUp || restoring}
+            >
+              {restoring ? (
+                <ActivityIndicator color={colors.primaryDark} size="small" />
+              ) : (
+                <Text style={styles.backupBtnSecondaryText}>Restore from backup</Text>
+              )}
+            </Pressable>
+          </View>
+        </Section>
+
         {/* ── App settings ── */}
         <Section title="APP SETTINGS">
           <Row label="Default session length">
@@ -603,6 +708,8 @@ export const ProfileScreen: React.FC = () => {
                         onPress={() => handleDeleteCustomCue(cue)}
                         hitSlop={8}
                         style={styles.cueDeleteBtn}
+                        accessibilityLabel={`Delete ${cue}`}
+                        accessibilityRole="button"
                       >
                         <Text style={styles.cueDeleteBtnText}>✕</Text>
                       </Pressable>
@@ -797,8 +904,13 @@ export const ProfileScreen: React.FC = () => {
             </Row>
           </Pressable>
           <Pressable onPress={() => router.push('/disclaimer')}>
-            <Row label="Clinical disclaimer" last>
+            <Row label="Clinical disclaimer">
               <Text style={styles.linkText}>View →</Text>
+            </Row>
+          </Pressable>
+          <Pressable onPress={() => Linking.openURL('https://ebpslp.app')}>
+            <Row label="For more info" last>
+              <Text style={styles.linkText}>ebpslp.app →</Text>
             </Row>
           </Pressable>
         </Section>
@@ -988,6 +1100,35 @@ const styles = StyleSheet.create({
   segmentActive: { backgroundColor: colors.primaryLighter, borderColor: colors.primary },
   segmentText: { ...text.caption, color: colors.textMuted, fontFamily: 'Quicksand_600SemiBold' },
   segmentTextActive: { color: colors.primaryDeep },
+
+  // ── Data backup ──
+  backupCard: {
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+    gap: 12,
+  },
+  backupBody: {
+    ...text.bodySmall,
+    color: colors.textMuted,
+    lineHeight: 18,
+  },
+  backupBtn: {
+    backgroundColor: colors.primaryDark,
+    borderRadius: 14,
+    paddingVertical: 14,
+    alignItems: 'center',
+  },
+  backupBtnText: { ...text.bodySmall, color: colors.surface, fontFamily: 'Quicksand_700Bold' },
+  backupBtnSecondary: {
+    backgroundColor: colors.bg,
+    borderWidth: 1.5,
+    borderColor: colors.border,
+    borderRadius: 14,
+    paddingVertical: 14,
+    alignItems: 'center',
+  },
+  backupBtnSecondaryText: { ...text.bodySmall, color: colors.primaryDark, fontFamily: 'Quicksand_700Bold' },
+  backupBtnDisabled: { opacity: 0.6 },
 
   // ── Meta text ──
   metaText: { ...text.bodySmall, color: colors.textMuted },

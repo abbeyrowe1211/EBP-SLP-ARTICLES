@@ -8,6 +8,7 @@ import {
   ActivityIndicator,
   Alert,
   Animated,
+  TextInput,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useLocalSearchParams } from 'expo-router';
@@ -163,6 +164,8 @@ export const SessionBuilderScreen: React.FC = () => {
   const [selectedGoals, setSelectedGoals] = useState<string[]>(goals[0] ? [goals[0]] : []);
   const [timePostOnset, setTimePostOnset] = useState('Chronic (>6 mo)');
   const [materials, setMaterials] = useState<string[]>(['Picture cards', 'Worksheets']);
+  const [customMaterials, setCustomMaterials] = useState<string[]>([]);
+  const [customMaterialInput, setCustomMaterialInput] = useState('');
   const [loading, setLoading] = useState(false);
 
   // Pull default session length + clinical setting from stored preferences / profile
@@ -193,6 +196,21 @@ export const SessionBuilderScreen: React.FC = () => {
     setMaterials((prev) =>
       prev.includes(m) ? prev.filter((x) => x !== m) : [...prev, m]
     );
+  };
+
+  const addCustomMaterial = () => {
+    const trimmed = customMaterialInput.trim();
+    if (!trimmed) return;
+    const alreadyExists = [...MATERIALS, ...customMaterials].some(
+      (m) => m.toLowerCase() === trimmed.toLowerCase()
+    );
+    if (alreadyExists) {
+      setCustomMaterialInput('');
+      return;
+    }
+    setCustomMaterials((prev) => [...prev, trimmed]);
+    setMaterials((prev) => [...prev, trimmed]);
+    setCustomMaterialInput('');
   };
 
   const toggleGoal = (g: string) => {
@@ -349,10 +367,28 @@ export const SessionBuilderScreen: React.FC = () => {
         <View style={styles.formGroup}>
           <Text style={styles.label}>Materials available</Text>
           <MultiPillGroup
-            options={MATERIALS}
+            options={[...MATERIALS, ...customMaterials]}
             selected={materials}
             onToggle={toggleMaterial}
           />
+          <View style={styles.customMaterialRow}>
+            <TextInput
+              style={styles.customMaterialInput}
+              placeholder="Add your own (e.g. kitchen utensils)"
+              placeholderTextColor={colors.textMuted}
+              value={customMaterialInput}
+              onChangeText={setCustomMaterialInput}
+              onSubmitEditing={addCustomMaterial}
+              returnKeyType="done"
+            />
+            <Pressable
+              style={[styles.addMaterialButton, !customMaterialInput.trim() && styles.addMaterialButtonDisabled]}
+              onPress={addCustomMaterial}
+              disabled={!customMaterialInput.trim()}
+            >
+              <Text style={styles.addMaterialButtonText}>+ Add</Text>
+            </Pressable>
+          </View>
         </View>
 
         {/* AI disclaimer — always visible */}
@@ -436,6 +472,27 @@ const styles = StyleSheet.create({
   pillActive: { backgroundColor: colors.primary, borderColor: colors.primary },
   pillText: { ...text.bodySmall, color: colors.textMuted, fontFamily: 'Quicksand_600SemiBold' },
   pillTextActive: { color: colors.surface },
+  customMaterialRow: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 10 },
+  customMaterialInput: {
+    flex: 1,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 999,
+    backgroundColor: colors.surface,
+    borderWidth: 1.5,
+    borderColor: colors.border,
+    color: colors.text,
+    ...text.bodySmall,
+    fontFamily: 'Quicksand_600SemiBold',
+  },
+  addMaterialButton: {
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 999,
+    backgroundColor: colors.primary,
+  },
+  addMaterialButtonDisabled: { backgroundColor: colors.border },
+  addMaterialButtonText: { ...text.bodySmall, color: colors.surface, fontFamily: 'Quicksand_600SemiBold' },
   dropdownWrap: {
     backgroundColor: colors.surface,
     borderWidth: 1.5,

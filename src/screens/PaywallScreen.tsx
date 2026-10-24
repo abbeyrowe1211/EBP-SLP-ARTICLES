@@ -14,7 +14,7 @@ import {
   Alert,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import { colors } from '@/theme/colors';
 import { text } from '@/theme/typography';
 import Purchases, { PurchasesPackage } from 'react-native-purchases';
@@ -22,6 +22,7 @@ import { setCustomerInfo, PREMIUM_FEATURES, FREE_FEATURES, ENTITLEMENT_ID } from
 
 export const PaywallScreen: React.FC = () => {
   const router = useRouter();
+  const { redirect } = useLocalSearchParams<{ redirect?: string }>();
   const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'annual'>('annual');
   const [loading, setLoading] = useState(false);
   const [packagesLoading, setPackagesLoading] = useState(true);
@@ -70,7 +71,15 @@ export const PaywallScreen: React.FC = () => {
       }
       const { customerInfo } = await Purchases.purchasePackage(pkg);
       setCustomerInfo(customerInfo);
-      router.back(); // success — close the paywall
+      // If we got here from a full-screen gate (e.g. session builder, My
+      // Patient search), that screen was replaced out of the stack, so
+      // `back()` would miss it entirely. Send the user straight into the
+      // feature they just paid for instead of wherever they came from.
+      if (redirect) {
+        router.replace(redirect as any);
+      } else {
+        router.back(); // success — close the paywall
+      }
     } catch (e: any) {
       if (!e.userCancelled) {
         Alert.alert('Purchase failed', 'Something went wrong. Please try again.');
@@ -87,7 +96,11 @@ export const PaywallScreen: React.FC = () => {
       setCustomerInfo(customerInfo);
       const isActive = !!customerInfo.entitlements.active[ENTITLEMENT_ID];
       if (isActive) {
-        router.back();
+        if (redirect) {
+          router.replace(redirect as any);
+        } else {
+          router.back();
+        }
       } else {
         Alert.alert('No purchases found', 'No active subscription was found for your Apple ID.');
       }
@@ -106,7 +119,12 @@ export const PaywallScreen: React.FC = () => {
         bounces={false}
       >
         {/* Close / back */}
-        <Pressable onPress={() => router.back()} style={styles.closeBtn}>
+        <Pressable
+          onPress={() => router.back()}
+          style={styles.closeBtn}
+          accessibilityLabel="Close"
+          accessibilityRole="button"
+        >
           <Text style={styles.closeBtnText}>✕</Text>
         </Pressable>
 
