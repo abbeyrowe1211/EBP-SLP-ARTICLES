@@ -717,53 +717,6 @@
     ]
   },
   {
-    "id": "roy-2003",
-    "title": "Three treatments for teachers with voice disorders: a randomized clinical trial",
-    "shortTitle": "Three Voice Treatments for Teachers RCT",
-    "authors": "Roy, N., Weinrich, B., Gray, S. D., Tanner, K., Toledo, S. W., Dove, H., Corbin-Lewis, K., & Stemple, J. C.",
-    "authorShort": "Roy et al.",
-    "journal": "Journal of Speech, Language, and Hearing Research",
-    "year": 2003,
-    "pmid": "12828463",
-    "evidenceLevel": "1b",
-    "evidenceType": "RCT (3-arm)",
-    "areas": [
-      "Voice & Resonance"
-    ],
-    "tags": [
-      "Voice",
-      "Teachers",
-      "Resonant voice therapy",
-      "Vocal hygiene",
-      "Voice amplification",
-      "VHI",
-      "Phonotrauma"
-    ],
-    "summary": "Three-arm RCT (n=64 teachers) comparing resonant voice therapy, vocal hygiene instruction, and voice amplification. Resonant voice therapy produced the greatest VHI reductions and vocal symptom improvement.",
-    "isFoundation": false,
-    "researchFindings": [
-      "Three-arm RCT with 64 teachers randomly assigned to: resonant voice therapy (RVT), vocal hygiene education (VHE), or voice amplification device.",
-      "Resonant voice therapy produced significantly greater reductions in Voice Handicap Index (VHI) scores than vocal hygiene or amplification.",
-      "VHI improvement: RVT group showed approximately 10-point greater reduction in total VHI than either comparison group.",
-      "Voice amplification reduced vocal demand but did not produce equivalent therapeutic benefit \u2014 the device compensates rather than rehabilitates.",
-      "Vocal hygiene showed the smallest effects, consistent with Behrman et al. (2008) finding that hygiene alone is insufficient as a primary treatment.",
-      "All three interventions were relatively brief (8 sessions); RVT achieved the strongest outcomes in this limited dose."
-    ],
-    "clinicalApplication": "For teachers and other professional voice users with hyperfunctional voice disorders or phonotraumatic lesions, resonant voice therapy (forward-focused tone production using resonant voice strategies) is the most evidence-supported direct voice treatment. SOVT (semi-occluded vocal tract) exercises, lip trills, straw phonation, and humming are common resonant voice tools. Vocal hygiene is a useful supplement but should not stand alone as a primary treatment \u2014 pair it with direct voice production work. Voice amplification may be appropriate as a workplace accommodation to reduce vocal demand, but should be prescribed alongside, not instead of, voice therapy.",
-    "sessionStats": {
-      "frequency": "1\u20132x/week",
-      "sessionLength": "45\u201360 min",
-      "dose": "8 sessions (study protocol); clinical programs often extend to 12\u201316",
-      "bestFit": "Professional voice users, hyperfunctional voice disorders"
-    },
-    "bestFitCriteria": [
-      "Adult professional voice users (teachers, singers, clergy, call center workers) with hyperfunctional voice disorders or vocal fatigue.",
-      "Benign phonotraumatic lesions (vocal nodules, polyps, edema) in adults with high vocal demand occupations.",
-      "Voice clients where treatment selection between resonant voice therapy, hygiene counseling, and environmental modification is under consideration.",
-      "Any voice client where VHI is used as a primary outcome measure to track progress."
-    ]
-  },
-  {
     "id": "stemple-1994-vfe",
     "title": "Efficacy of Vocal Function Exercises as a method of improving voice production",
     "shortTitle": "Vocal Function Exercises (VFE) Efficacy",
@@ -2995,54 +2948,6 @@
       "Patients with sufficient sustained attention to engage in brief structured recall practice.",
       "Dysphagia treatment in dementia: teaching and reinforcing compensatory swallowing techniques when motor learning is impaired.",
       "Any dementia client where caregiver training in a structured, evidence-based memory technique is a component of the intervention plan."
-    ]
-  },
-  {
-    "id": "woods-2012-cst",
-    "title": "Cognitive Stimulation to Improve Cognitive Functioning in People With Dementia",
-    "shortTitle": "Cognitive Stimulation Therapy for Dementia: Cochrane Review",
-    "authors": "Woods, B., Aguirre, E., Spector, A. E., & Orrell, M.",
-    "authorShort": "Woods et al.",
-    "journal": "Cochrane Database of Systematic Reviews",
-    "year": 2012,
-    "pmid": "22336813",
-    "evidenceLevel": "1a",
-    "evidenceType": "Cochrane systematic review (15 RCTs)",
-    "areas": [
-      "Cognitive-Communication"
-    ],
-    "tags": [
-      "Dementia",
-      "Cognitive stimulation",
-      "CST",
-      "Group therapy",
-      "Quality of life",
-      "Cognitive intervention",
-      "Cochrane"
-    ],
-    "summary": "Cochrane systematic review of 15 RCTs showing cognitive stimulation therapy (CST) significantly improves cognition and quality of life in mild-to-moderate dementia \u2014 and enhances the effects of cholinesterase inhibitor medication. The only non-pharmacological dementia intervention recommended by UK NICE guidelines.",
-    "isFoundation": false,
-    "isTreatmentFocused": true,
-    "researchFindings": [
-      "Meta-analysis of 15 RCTs found CST produced statistically and clinically significant improvements in cognitive function compared to control conditions.",
-      "Quality of life also improved significantly with CST \u2014 making CST one of the few non-pharmacological dementia interventions with concurrent evidence for both cognition and QoL.",
-      "CST enhanced the effects of acetylcholinesterase inhibitor (AChEI) medications \u2014 participants on AChEIs who also received CST showed greater cognitive gains than those on medication alone.",
-      "Standard CST protocol: 14 twice-weekly sessions in groups of 5\u20138 participants, each 45 minutes, structured around themed activities (current affairs, word association, categorization, sensory tasks).",
-      "Benefits were found across dementia etiologies and mild-to-moderate severity levels.",
-      "Maintenance CST (weekly follow-up sessions beyond the 14-session program) has been shown to sustain and extend initial cognitive and QoL gains."
-    ],
-    "clinicalApplication": "CST is the highest-level non-pharmacological cognitive intervention for dementia within SLP scope. The 14-session twice-weekly group format is feasible in SNF, adult day programs, outpatient memory clinics, and community settings. SLPs are particularly suited to lead CST groups given the communication-rich format \u2014 sessions use verbal discussion, categorization, word tasks, reminiscence, and group interaction to stimulate cognitive processing. Beyond cognition and QoL, SLPs can simultaneously track communication participation outcomes (turn-taking, topic maintenance, initiation) within each session. After the 14-session program, schedule maintenance CST (weekly sessions) to sustain gains. Pair with individual spaced retrieval training (Brush & Camp) for clients who also need specific functional memory goals alongside group stimulation. Document CST as skilled SLP service targeting cognitive-communication deficits and group participation.",
-    "sessionStats": {
-      "frequency": "2x/week (active phase); 1x/week (maintenance phase)",
-      "sessionLength": "45 min",
-      "dose": "14 sessions (7 weeks); then maintenance CST ongoing",
-      "bestFit": "Mild\u2013moderate dementia; group-capable patients in SNF, day programs, or memory clinics"
-    },
-    "bestFitCriteria": [
-      "Adults with mild-to-moderate dementia (any etiology) who are able to engage in a small group setting.",
-      "SNF, adult day programs, memory clinics, or outpatient settings where group cognitive programming is feasible.",
-      "Dementia patients on cholinesterase inhibitor medication where augmenting pharmacological treatment with behavioral intervention is a goal.",
-      "Any dementia client where cognitive functioning, quality of life, and social engagement are treatment priorities."
     ]
   },
   {
