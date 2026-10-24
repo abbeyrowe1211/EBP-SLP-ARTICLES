@@ -9409,5 +9409,195 @@
       "Especially relevant for users composing longer, multi-word messages rather than single-word selections.",
       "Useful during AAC device trials/configuration decisions, not a clinical treatment protocol."
     ]
-  }
+  },
+  {
+    "id": "robbins-2008-pneumonia",
+    "title": "Comparison of 2 Interventions for Liquid Aspiration on Pneumonia Incidence: A Randomized Trial",
+    "shortTitle": "Chin-Down vs. Thickened Liquids for Pneumonia Prevention: RCT",
+    "authors": "Robbins, J., Gensler, G., Hind, J., Logemann, J. A., Lindblad, A. S., Brandt, D., Baum, H., Lilienfeld, D., Kosek, S., Lundy, D., Dikeman, K., Kazandjian, M., Gramigna, G. D., McGarvey-Toler, S., & Miller Gardner, P. J.",
+    "authorShort": "Robbins et al.",
+    "journal": "Annals of Internal Medicine",
+    "year": 2008,
+    "pmid": "18378947",
+    "evidenceLevel": "1b",
+    "evidenceType": "Multi-site RCT",
+    "areas": [
+      "Swallowing"
+    ],
+    "tags": [
+      "Dysphagia",
+      "Aspiration",
+      "Pneumonia",
+      "Thin liquids",
+      "Chin tuck",
+      "Thickened liquids",
+      "Dementia",
+      "Parkinson's disease",
+      "Compensatory strategies"
+    ],
+    "summary": "Large multi-site RCT (n=515) testing whether chin-down posture or thickened liquids (nectar- vs. honey-thick) reduce 3-month pneumonia incidence in adults 50+ with dementia or Parkinson's disease who aspirate thin liquids. No intervention significantly outperformed another on pneumonia rates, and thickened liquids carried higher dehydration, UTI, and fever risk. Companion outcome paper to Logemann et al. 2008, from the same multi-site trial program.",
+    "isFoundation": false,
+    "researchFindings": [
+      "Multi-site RCT (n=515: chin-down n=259, nectar-thick n=133, honey-thick n=123) enrolled June 1998\u2013Sept 2005 across 47 hospitals and 79 subacute facilities.",
+      "Participants were adults 50+ with dementia or Parkinson's disease who showed thin liquid aspiration on videofluoroscopy.",
+      "Overall 3-month pneumonia incidence across all groups was 11%.",
+      "Chin-down posture vs. thickened liquids: 9.8% vs. 11.6% pneumonia incidence (HR 0.84, 95% CI 0.49\u20131.45, p=0.53) \u2014 not a statistically significant difference.",
+      "Nectar-thick vs. honey-thick liquids: 8.4% vs. 15.0% pneumonia incidence (HR 0.50, 95% CI 0.23\u20131.09, p=0.083) \u2014 a trend favoring nectar-thick that did not reach statistical significance.",
+      "Thickened-liquid groups had higher rates of dehydration (6% vs. 2%), urinary tract infection (6% vs. 3%), and fever (4% vs. 2%) compared to chin-down posture.",
+      "Study did not find a definitive superior intervention for reducing pneumonia incidence among the three compensatory strategies tested.",
+      "Limitations: no untreated control group, only 3 months of follow-up, unblinded treating clinicians, and wide confidence intervals limiting statistical power."
+    ],
+    "clinicalApplication": "This is the primary pneumonia-outcome paper from the same multi-site trial that produced Logemann et al. 2008 \u2014 use the two together. Where Logemann 2008 showed honey-thick liquids reduced in-the-moment aspiration on videofluoroscopy, this trial's actual clinical outcome (3-month pneumonia incidence) showed no compensatory strategy was clearly superior, and thickened liquids came with a higher burden of dehydration, UTI, and fever. This is a key counterpoint when a family or care team assumes thicker liquids are automatically \"safer\": reduced aspiration on imaging did not translate into fewer pneumonias, and thickened liquids carry their own real medical risk. Use this evidence to support individualized decision-making \u2014 weighing aspiration risk, hydration status, palatability/compliance, and quality of life \u2014 rather than defaulting to maximal thickening. Document the rationale for whichever strategy is chosen in terms of this full risk-benefit picture.",
+    "sessionStats": {
+      "frequency": "Compensatory strategy \u2014 implemented daily at meals",
+      "bestFit": "Adults 50+ with dementia or PD and confirmed thin liquid aspiration on videofluoroscopy"
+    },
+    "bestFitCriteria": [
+      "Adults 50+ with dementia or Parkinson's disease and confirmed thin liquid aspiration on instrumental assessment.",
+      "Clinical decision-making between chin-down posture and liquid thickening as compensatory strategies.",
+      "Counseling conversations with families/care teams about pneumonia risk, hydration tradeoffs, and the limits of aspiration-reduction-as-proxy-for-pneumonia-prevention.",
+      "Goals-of-care discussions weighing quality of life against modest, non-significant risk differences between strategies."
+    ]
+  },{
+  "id": "harvey-2025-pheed-dysphagia-stroke",
+  "title": "Pharyngeal Electrical Stimulation to Treat Dysphagia in Acute Stroke: Learnings From Cases in the PhEED Clinical Trial",
+  "shortTitle": "PhEED Trial: PES for Acute Stroke Dysphagia",
+  "authors": "Harvey, R. L., Smith, R., Bathula, R., Everton, L., Rup, N., Saver, J., Martin-Harris, B., Dziewas, R., Mistry, S., Hamdy, S., & Bath, P.",
+  "authorShort": "Harvey et al.",
+  "journal": "Journal of Rehabilitation Medicine",
+  "year": 2025,
+  "pmid": "PMC12427991",
+  "url": "https://doi.org/10.2340/jrm.v57.43538",
+  "evidenceLevel": "1b",
+  "evidenceType": "Randomized controlled trial (sham-controlled pilot, stopped early)",
+  "areas": ["Swallowing"],
+  "tags": ["Dysphagia", "Acute Stroke", "Pharyngeal Electrical Stimulation", "Neurostimulation", "Acute Care"],
+  "summary": "A small, blinded, sham-controlled multicentre pilot RCT found that pharyngeal electrical stimulation (PES) significantly reduced dysphagia severity by day 83 in patients with acute stroke, though the trial was halted early due to low recruitment.",
+  "isFoundation": false,
+  "isTreatmentFocused": true,
+  "researchFindings": [
+    "17 adults with acute ischemic or hemorrhagic stroke and dysphagia (Penetration-Aspiration Scale 4-8 on VFSS) were randomized to active PES (n=15) or sham (n=2); the trial stopped early for low recruitment.",
+    "Active PES was associated with a significantly greater reduction in dysphagia severity at day 83 compared with sham (difference -4, p=0.027).",
+    "Improvements were also seen in diet level, supervision needs, and functional oral intake scores among actively treated patients.",
+    "67% of treated patients were discharged home.",
+    "No serious adverse events attributable to the stimulation occurred in either group, supporting the safety of the approach.",
+    "The very small sample, early termination, heavily imbalanced group sizes (15 active vs. 2 sham), and a mid-study change to the primary outcome all limit how strongly these results can be interpreted; the authors call for larger confirmatory trials."
+  ],
+  "clinicalApplication": "For medical SLPs working in acute stroke units where PES (e.g., Phagenyx-type devices) is available, this trial adds early safety and efficacy signal for reducing dysphagia severity and may support advocating for or coordinating PES as an adjunct to standard swallowing therapy in appropriately selected patients with VFSS-confirmed penetration/aspiration. Given the small sample and early stopping, use this as supporting rather than definitive evidence, and discuss with the medical/ENT team whether PES access is realistic at your facility. PES is typically delivered via a transnasal catheter by a trained clinician (often SLP, ENT, or specially trained nursing staff) as a brief daily course alongside — not instead of — standard dysphagia rehabilitation (diet modification, compensatory strategies, exercise-based therapy).",
+  "sessionStats": {
+    "frequency": "Once daily for 3 consecutive days (standard PES protocol)",
+    "sessionLength": "Approximately 10 minutes per session",
+    "dose": "Stimulation intensity individualized to each patient's sensory/pain threshold",
+    "bestFit": "Acute ischemic or hemorrhagic stroke with VFSS-confirmed penetration-aspiration (PAS 4-8)"
+  },
+  "bestFitCriteria": [
+    "Adults in the acute phase of stroke with confirmed oropharyngeal dysphagia on instrumental swallow exam.",
+    "Facilities with access to pharyngeal electrical stimulation equipment and trained staff to deliver it.",
+    "Used as an adjunct to, not a replacement for, standard swallowing rehabilitation.",
+    "Clinicians building the case for adopting neurostimulation technology in an acute stroke/inpatient rehab program."
+  ]
+},
+{
+  "id": "cheng-2025-pes-predictors-nonstroke-dysphagia",
+  "title": "Clinical Predictors of Outcome After Pharyngeal Electrical Stimulation (PES) in Non-Stroke Related Neurogenic Dysphagia After Mechanical Ventilation and Tracheotomy: Results From Subgroup Analysis of PHADER Study",
+  "shortTitle": "PHADER Subgroup: Predictors of PES Response in ICU Dysphagia",
+  "authors": "Cheng, I., Bath, P. M., Hamdy, S., Dziewas, R., Muhle, P., Mistry, S., Suntrup-Krueger, S., et al.",
+  "authorShort": "Cheng et al.",
+  "journal": "Neurological Research and Practice",
+  "year": 2025,
+  "pmid": "40189593",
+  "url": "https://doi.org/10.1186/s42466-025-00380-5",
+  "evidenceLevel": "2",
+  "evidenceType": "Subgroup analysis of a prospective multicentre observational cohort",
+  "areas": ["Swallowing"],
+  "tags": ["Dysphagia", "ICU", "Tracheotomy", "Mechanical Ventilation", "Pharyngeal Electrical Stimulation", "Acute Care", "Neurogenic Dysphagia"],
+  "summary": "A subgroup analysis of the PHADER cohort (14 centres, Austria/Germany/UK) in 57 adults with non-stroke neurogenic dysphagia after mechanical ventilation and tracheotomy found that a lower PES sensory threshold and earlier initiation of PES both predicted greater swallowing improvement.",
+  "isFoundation": false,
+  "isTreatmentFocused": true,
+  "researchFindings": [
+    "57 adults (mean age 63.6 years, 70.2% male) with non-stroke neurogenic oropharyngeal dysphagia requiring mechanical ventilation and tracheotomy were analyzed; etiologies included traumatic brain injury (38.6%), critical illness polyneuropathy (26.4%), and other neurological conditions (35.0%).",
+    "A lower PES perceptual sensory threshold at the first session (mean 15.3 mA) predicted greater Dysphagia Severity Rating Scale (DSRS) improvement at day 9 (p=0.027), suggesting better-preserved pharyngeal sensation drives faster early response.",
+    "Earlier initiation of PES after injury was associated with greater DSRS improvement at 3 months (p=0.004).",
+    "Findings support that earlier PES initiation in ICU-acquired, non-stroke neurogenic dysphagia is associated with better longer-term swallowing outcomes.",
+    "Limitations: no control group, small and heterogeneous etiology subgroups, limited data on disease trajectory/progression, and no standardized timing protocol for starting PES across sites."
+  ],
+  "clinicalApplication": "In ICU, LTACH, or inpatient rehab settings managing tracheostomized, mechanically-ventilated patients with neurogenic dysphagia from TBI, critical illness polyneuropathy, or other non-stroke etiologies, this analysis supports advocating for earlier referral to a PES-capable team once the patient is medically stable, rather than waiting until late in the ICU course. A quick bedside check of pharyngeal sensory threshold during the first PES session may also help the team set expectations: patients with lower (better-preserved) sensory thresholds may show faster early gains. This is real-world, non-randomized predictor data (not a treatment protocol in itself), so it is most useful for timing/referral decisions and discussions with the medical team about when to pursue PES, rather than as a standalone session plan.",
+  "sessionStats": {
+    "frequency": "Once daily for 3 consecutive days (standard PES protocol)",
+    "sessionLength": "Approximately 10 minutes per session",
+    "dose": "Stimulation intensity individualized to sensory/pain threshold at first session",
+    "bestFit": "Non-stroke neurogenic dysphagia after prolonged mechanical ventilation and tracheotomy (TBI, critical illness polyneuropathy, other etiologies)"
+  },
+  "bestFitCriteria": [
+    "Adults with tracheostomy and ventilator-associated neurogenic dysphagia from non-stroke causes (TBI, ICU-acquired polyneuropathy, etc.).",
+    "ICU, LTACH, or inpatient rehab teams deciding when to refer for pharyngeal electrical stimulation.",
+    "Clinicians needing real-world predictor data (not just RCT efficacy data) to support timing of a neurostimulation referral.",
+    "Teams tracking PES response who want an early signal (sensory threshold) for likely trajectory."
+  ]
+},
+{
+  "id": "grigoriou-2025-aac-crqol-scoping",
+  "title": "Communication-Related Quality of Life in Adults With Acquired Neurological Disorders Who Use Augmentative and Alternative Communication: A Scoping Review of Existing Tools",
+  "shortTitle": "AAC & Communication-Related QoL: Scoping Review",
+  "authors": "Grigoriou, S., LaValley, M., Kola, E., Koul, R., & Pampoulou, E.",
+  "authorShort": "Grigoriou et al.",
+  "journal": "Augmentative and Alternative Communication",
+  "year": 2025,
+  "pmid": "40551418",
+  "url": "https://doi.org/10.1080/07434618.2025.2516146",
+  "evidenceLevel": "3",
+  "evidenceType": "Scoping review",
+  "areas": ["AAC"],
+  "tags": ["AAC", "Quality of Life", "Acquired Neurological Disorders", "Outcome Measurement", "Aphasia", "ALS"],
+  "summary": "A scoping review of 10 studies identifies which tools exist to measure communication-related quality of life in adults with acquired neurological conditions who use AAC, and finds major gaps in how communication partners and accessibility accommodations are addressed.",
+  "isFoundation": false,
+  "isTreatmentFocused": false,
+  "researchFindings": [
+    "Searched six databases and identified 10 studies that used tools to measure communication-related quality of life (CRQoL) in adults with acquired neurological disorders (e.g., aphasia, ALS, TBI) who use AAC.",
+    "Existing CRQoL tools provide little information on how communication partners are involved in the assessment process.",
+    "Few tools explain how AAC users with co-occurring physical, cognitive, or language impairments can access the measure itself with adaptations or partner support — creating a validity gap for the very population being assessed.",
+    "The authors call for development of CRQoL tools, and accessible administration methods, designed explicitly for AAC users rather than adapted from general quality-of-life measures."
+  ],
+  "clinicalApplication": "When selecting an outcome measure to document communication-related quality of life for an adult AAC user (post-stroke aphasia, ALS, TBI, etc.), be aware that most available tools were not designed with AAC access needs in mind — review how a tool will actually be administered (self-report vs. proxy/partner-report) and whether format adaptations (e.g., larger print, partner-assisted scanning, simplified language) are needed before use. Document informally when a partner or facilitator was involved in completing a CRQoL measure, since this is rarely standardized across tools and affects how results should be interpreted. This review is a resource for choosing or critiquing QoL outcome measures, not a treatment protocol.",
+  "sessionStats": {},
+  "bestFitCriteria": [
+    "Adults with acquired neurological AAC needs (post-stroke aphasia, ALS, TBI, etc.) where quality-of-life outcome tracking is part of the care plan.",
+    "SLPs selecting or critiquing a communication-related quality-of-life measure for documentation or research.",
+    "Programs building AAC outcome-measurement protocols who need to know current tool limitations.",
+    "Clinicians advocating for partner-inclusive or accessible administration of outcome measures."
+  ]
+},
+{
+  "id": "gattie-2025-adult-stuttering-prevalence",
+  "title": "Adult Stuttering Prevalence I: Systematic Review and Identification of Stuttering in Large Populations",
+  "shortTitle": "Adult Stuttering Prevalence: Systematic Review",
+  "authors": "Gattie, M., Lieven, E., & Kluk, K.",
+  "authorShort": "Gattie et al.",
+  "journal": "Journal of Fluency Disorders",
+  "year": 2025,
+  "pmid": "39708697",
+  "url": "https://doi.org/10.1016/j.jfludis.2024.106085",
+  "evidenceLevel": "1a",
+  "evidenceType": "Systematic review (epidemiology/prevalence)",
+  "areas": ["Fluency"],
+  "tags": ["Stuttering", "Prevalence", "Epidemiology", "Adults", "Screening"],
+  "summary": "A PRISMA systematic review evaluating methods for identifying stuttering in large populations estimates adult stuttering prevalence at roughly 0.6-0.7%, and highlights that because stuttering is rare, screening tools need very high specificity to avoid being swamped by false positives.",
+  "isFoundation": false,
+  "isTreatmentFocused": false,
+  "researchFindings": [
+    "Of 15 large-population datasets assessed for quality, only 3 met inclusion criteria, yielding adult prevalence estimates of 0.67% (ages 14-17), 0.21% (ages 16-20), and 0.63% (over 21).",
+    "The authors conclude best-estimate adult stuttering prevalence is between 0.6-0.7%, below the commonly cited ~1% figure.",
+    "Because stuttering is rare in the general population, even a small false-positive rate can outnumber true cases in large-scale screening; the authors recommend very high specificity (around 99.9%) for identification tools, with somewhat more tolerance for lower sensitivity (~90%).",
+    "Covert stuttering is likely under-captured by existing identification methods; a companion analysis by the same authors estimated prevalence at 0.96% after adjusting for this.",
+    "One outlier estimate (from military conscript/healthcare screening data) was flagged as likely biased by its sampling source rather than reflecting true population prevalence."
+  ],
+  "clinicalApplication": "This review is useful context rather than a treatment protocol: it helps medical SLPs and program administrators correctly estimate how many adults with stuttering to expect in a given population (e.g., when justifying caseload, staffing, or screening programs), and cautions against relying on screening or self-report tools with low specificity, which can substantially overestimate true prevalence. It is also useful for patient/family education — many adults who stutter are not aware of how common (or uncommon) the condition is, and accurate prevalence figures can help normalize their experience without overstating it.",
+  "sessionStats": {},
+  "bestFitCriteria": [
+    "SLPs or administrators estimating expected caseload/prevalence of adults who stutter in a given population.",
+    "Clinicians or researchers designing or evaluating a large-scale stuttering screening or identification method.",
+    "Patient education contexts where accurate prevalence information is requested.",
+    "Programs building epidemiological or public-health-facing materials about stuttering."
+  ]
+}
 ]
