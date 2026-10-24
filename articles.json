@@ -9586,5 +9586,232 @@
       "Patient education contexts where accurate prevalence information is requested.",
       "Programs building epidemiological or public-health-facing materials about stuttering."
     ]
+  },
+  {
+    "id": "dignam-2025-chat-aphasia",
+    "title": "Clinical Effectiveness of the Comprehensive, High-Dose Aphasia Treatment Program for People With Poststroke Aphasia",
+    "shortTitle": "CHAT Program: High-Dose Aphasia Treatment Effectiveness",
+    "authors": "Dignam, J., Burfein, P., Campbell, J., Coleman, A., Fraser, C., Halpin, J., Hill, A., O'Brien, K., O'Neill, E., Roxas, K., Short, K., Shrubsole, K., Stuckey, R., Wedley, H., & Copland, D. A.",
+    "authorShort": "Dignam et al.",
+    "journal": "Journal of Speech, Language, and Hearing Research",
+    "year": 2025,
+    "pmid": "41202268",
+    "url": "https://doi.org/10.1044/2025_JSLHR-25-00336",
+    "evidenceLevel": "2",
+    "evidenceType": "Nonrandomized Type II hybrid implementation-effectiveness study",
+    "areas": [
+      "Language"
+    ],
+    "tags": [
+      "Aphasia",
+      "Intensive Treatment",
+      "ICAP",
+      "High Dose",
+      "Post-Stroke",
+      "Implementation Science",
+      "Public Health System"
+    ],
+    "summary": "A real-world implementation study of the Comprehensive, High-Dose Aphasia Treatment (CHAT) program \u2014 about 50 hours of goal-directed therapy over 8 weeks \u2014 in an Australian public rehabilitation hospital found significant, durable gains in language, communication participation, and quality of life across 14 cohorts totaling 65 adults with post-stroke aphasia.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "67 adults with post-stroke aphasia consented and 65 completed the CHAT program across 14 cohorts run between February 2021 and December 2023 at a public rehabilitation facility in Brisbane, Australia.",
+      "Participants received an average of 46.6 hours of therapy against a target dose of 50 hours over 8 weeks, combining individual therapy, group therapy, and self-management practice \u2014 a modified, system-feasible version of the Intensive Comprehensive Aphasia Programme (ICAP) model.",
+      "Group-level analyses showed statistically significant improvements in language impairment, communication activity and participation, and quality-of-life measures both immediately post-therapy and at 3-month follow-up (p < .05).",
+      "89% of participants showed significant improvement on at least one outcome measure.",
+      "The study demonstrates that a high-dose, ICAP-style program can be feasibly delivered within standard public health care resourcing, not just in specialized research clinics.",
+      "This is an implementation/effectiveness study (not a randomized controlled trial), so causal claims are more limited than an RCT, though the real-world, public-hospital setting strengthens its relevance to typical clinical practice."
+    ],
+    "clinicalApplication": "For medical SLPs in hospital or public rehabilitation settings considering whether an intensive, high-dose aphasia program is feasible outside a specialized research clinic, CHAT offers a replicable, system-tested model: roughly 50 hours of combined individual and group therapy delivered over 8 weeks, run in repeating cohorts to manage caseload. Programs do not need to hit the full target dose to see meaningful change \u2014 this cohort averaged 46.6 of 50 target hours and still saw significant, durable gains. Use this as a template for proposing or structuring an intensive aphasia program within existing hospital resourcing, and to set realistic expectations with administrators about dose, cohort size, and staffing needed to replicate these outcomes.",
+    "sessionStats": {
+      "frequency": "Repeating 8-week cohorts combining daily individual and group therapy",
+      "sessionLength": "Varies by component (individual + group + self-management)",
+      "dose": "Target 50 hours over 8 weeks (cohort average: 46.6 hours delivered)",
+      "bestFit": "Adults with post-stroke aphasia who can commit to an 8-week intensive program in a public hospital/rehab system"
+    },
+    "bestFitCriteria": [
+      "Adults with post-stroke aphasia, at any severity or chronicity, able to tolerate an intensive multi-week program.",
+      "Hospital or public rehabilitation systems evaluating whether an ICAP-style program is feasible with existing staffing and resources.",
+      "Administrators or program managers who need real-world (not just research-clinic) evidence that high-dose aphasia treatment is deliverable at scale.",
+      "SLPs designing a cohort-based intensive therapy model rather than 1:1 scheduling."
+    ]
+  },
+  {
+    "id": "pourliaka-2025-laryngectomy-voice-qol",
+    "title": "Voice-Related Quality of Life After Total Laryngectomy: A Scoping Review of Recent Evidence",
+    "shortTitle": "Laryngectomy Voice-Related QoL: Scoping Review",
+    "authors": "Pourliaka, T., Panagopoulou, E., & Siafaka, V.",
+    "authorShort": "Pourliaka et al.",
+    "journal": "Health and Quality of Life Outcomes",
+    "year": 2025,
+    "url": "https://doi.org/10.1186/s12955-025-02334-6",
+    "evidenceLevel": "3",
+    "evidenceType": "Scoping review",
+    "areas": [
+      "Voice & Resonance"
+    ],
+    "tags": [
+      "Laryngectomy",
+      "Voice Rehabilitation",
+      "Quality of Life",
+      "Tracheoesophageal Speech",
+      "Electrolarynx",
+      "Head and Neck Cancer"
+    ],
+    "summary": "A scoping review of 11 recent studies (participants aged 30-91) finds that total laryngectomy substantially reduces voice-related quality of life regardless of rehabilitation method, with tracheoesophageal speech generally outperforming esophageal speech on socio-emotional and functional measures, and pre-operative SLP counseling linked to lower patient distress.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "Reviewed 11 studies following the Arksey and O'Malley scoping review framework and PRISMA-ScR reporting guidelines; included participants were adults aged 30-91 who underwent total laryngectomy (pediatric populations were excluded).",
+      "Voice-related quality of life is substantially reduced after total laryngectomy across all rehabilitation methods studied: tracheoesophageal (TEP) speech, esophageal speech, pneumatic devices, and electrolarynx.",
+      "Common patient-reported problems include difficulty communicating in noisy environments, social withdrawal, anxiety about being understood, and difficulty with voice-dependent daily tasks.",
+      "Tracheoesophageal speech was associated with better socio-emotional and functional outcomes than esophageal speech in several included studies, though at least one study found no significant difference between pneumatic and esophageal speakers.",
+      "Pre-operative speech-language pathology counseling was linked to lower patient distress after surgery.",
+      "The reviewed population was predominantly male (~89%), and heterogeneous outcome measurement tools across studies limited direct comparison."
+    ],
+    "clinicalApplication": "Use this review to set realistic expectations with patients and families before and after total laryngectomy: voice-related quality of life drops substantially regardless of which alaryngeal speech method is ultimately chosen, so counseling should address psychosocial adjustment (social withdrawal, communication anxiety in noise) alongside speech method selection. Prioritize pre-operative SLP counseling when surgical timing allows, since this is associated with lower post-operative distress. When discussing method selection, tracheoesophageal speech has the strongest socio-emotional and functional evidence among the options reviewed, but patient candidacy, preference, and access to care all still matter in the final decision.",
+    "sessionStats": {},
+    "bestFitCriteria": [
+      "Adults scheduled for or recovering from total laryngectomy due to head and neck cancer.",
+      "SLPs providing pre-operative counseling and alaryngeal speech method education.",
+      "Clinicians selecting or justifying a quality-of-life outcome measure for laryngectomy patients.",
+      "Programs building a pre- and post-laryngectomy counseling pathway."
+    ]
+  },
+  {
+    "id": "menzies-2019-stuttering-cbt",
+    "title": "Supplementing Stuttering Treatment With Online Cognitive Behavior Therapy: An Experimental Trial",
+    "shortTitle": "Adding Online CBT to Stuttering Treatment: Experimental Trial",
+    "authors": "Menzies, R., O'Brian, S., Packman, A., Jones, M., Helgad\u00f3ttir, F. D., & Onslow, M.",
+    "authorShort": "Menzies et al.",
+    "journal": "Journal of Communication Disorders",
+    "year": 2019,
+    "url": "https://doi.org/10.1016/j.jcomdis.2019.04.003",
+    "evidenceLevel": "1b",
+    "evidenceType": "Randomized controlled trial",
+    "areas": [
+      "Fluency"
+    ],
+    "tags": [
+      "Stuttering",
+      "Cognitive Behavioral Therapy",
+      "Anxiety",
+      "Quality of Life",
+      "Speech Restructuring",
+      "Telehealth"
+    ],
+    "summary": "A two-arm RCT in 32 adults who stutter found that adding a 5-month internet-based CBT program for stuttering-related anxiety (iGlebe) to standard speech restructuring treatment produced clinically significant improvements in self-reported stuttering severity and quality of life at 12 months, compared with speech restructuring alone.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "32 adults seeking stuttering treatment were randomized to speech restructuring alone or speech restructuring plus 5 months of access to iGlebe, an internet-delivered CBT program targeting anxiety in adults who stutter.",
+      "Outcome assessments were blinded and conducted at 6 and 12 months post-randomization.",
+      "At 12 months, the group that received supplementary CBT showed clinically significant improvements in self-reported stuttering severity and quality of life compared with speech restructuring alone.",
+      "The authors describe this as the first trial evidence that adding CBT targeting speech-related anxiety can improve speech outcomes themselves, not just psychosocial measures.",
+      "Sample size is small (n=32), which limits precision and generalizability; the authors frame this as a step toward a fuller internet-based anxiety program for people who stutter."
+    ],
+    "clinicalApplication": "For adults who stutter with co-occurring social or speaking-related anxiety, consider pairing standard speech restructuring treatment with a structured CBT component targeting that anxiety, rather than treating speech fluency and anxiety as entirely separate tracks. Where in-person psychological services aren't available or practical, an internet-delivered CBT program is a reasonable lower-barrier option to layer on top of standard fluency treatment. Monitor both stuttering severity and self-reported quality of life as outcomes, since this trial found CBT improved both domains, not just anxiety symptoms. Given the small sample, treat this as promising supporting evidence rather than a mandate, and refer to or coordinate with mental health providers when anxiety is significant.",
+    "sessionStats": {
+      "frequency": "5 months of self-paced online CBT access, alongside standard speech restructuring treatment",
+      "sessionLength": "Self-paced online modules (iGlebe/CBTPsych platform)",
+      "dose": "5-month course, supplementing (not replacing) standard speech restructuring",
+      "bestFit": "Adults who stutter with clinically significant speaking-related or social anxiety"
+    },
+    "bestFitCriteria": [
+      "Adults who stutter who also report significant anxiety related to speaking or social situations.",
+      "Clinics already delivering speech restructuring treatment looking to add a low-cost psychosocial component.",
+      "Settings without easy in-person access to psychology services, where an internet-delivered CBT option may be more feasible.",
+      "SLPs wanting outcome evidence that addressing anxiety can improve speech fluency outcomes, not just well-being."
+    ]
+  },
+  {
+    "id": "munasinghe-2023-apraxia-systematic-review",
+    "title": "Speech Therapy Interventions for Acquired Apraxia of Speech: An Updated Systematic Review",
+    "shortTitle": "Acquired Apraxia of Speech Interventions: Updated Systematic Review",
+    "authors": "Munasinghe, T. U., Ariyasena, A. D. K., & Siriwardhana, D. D.",
+    "authorShort": "Munasinghe et al.",
+    "journal": "American Journal of Speech-Language Pathology",
+    "year": 2023,
+    "url": "https://doi.org/10.1044/2022_AJSLP-21-00236",
+    "evidenceLevel": "1a",
+    "evidenceType": "Systematic review",
+    "areas": [
+      "Motor Speech"
+    ],
+    "tags": [
+      "Apraxia of Speech",
+      "Articulatory Kinematic Treatment",
+      "Acquired Neurological",
+      "Evidence Synthesis"
+    ],
+    "summary": "An updated systematic review of 27 studies on treatment for acquired apraxia of speech finds articulatory kinematic approaches remain the dominant and most-studied treatment category, with newer developments including self-administered, technology-delivered therapy and combined apraxia-plus-aphasia treatment protocols.",
+    "isFoundation": false,
+    "isTreatmentFocused": true,
+    "researchFindings": [
+      "Screened 3,070 records and included 27 studies on treatment for acquired apraxia of speech.",
+      "22 of the 27 studies used articulatory kinematic treatment approaches; 4 used intersystemic facilitation/reorganization approaches; 1 used another approach entirely.",
+      "Evidence quality across the included studies was: 1 Class II, 10 Class III, 10 Class III-b, and 5 Class IV \u2014 indicating most evidence remains at a moderate-to-lower certainty level despite the volume of studies.",
+      "By treatment research phase, 1 study was Phase III, 10 were Phase II, and 15 were Phase I \u2014 meaning most of the literature is still in earlier-stage treatment development rather than large-scale confirmatory trials.",
+      "Newer directions identified include self-administered therapy, technology-based treatment delivery, and protocols that target apraxia of speech and co-occurring aphasia simultaneously.",
+      "Methodological quality, clinical research phase, and level of evidence have improved over the period the review covers, but the authors call for larger-scale randomized controlled trials of articulatory kinematic approaches specifically."
+    ],
+    "clinicalApplication": "This review confirms articulatory kinematic treatment (e.g., Dynamic Temporal and Tactile Cueing, Sound Production Treatment, PROMPT-style approaches) as the best-supported treatment category for acquired apraxia of speech, and should anchor first-line treatment selection for adults with post-stroke or other acquired AOS. Where a client also has co-occurring aphasia, consider protocols that explicitly target both conditions together rather than treating them as fully separate goals. Self-administered or technology-delivered home practice is an emerging, reasonable way to increase practice dose between sessions, though the evidence base for this is still developing. Because most included studies are early-phase (Phase I-II) rather than large confirmatory trials, document and monitor individual client response closely rather than assuming any single protocol will generalize uniformly.",
+    "sessionStats": {
+      "frequency": "Varies by specific articulatory kinematic protocol",
+      "sessionLength": "Varies by specific protocol",
+      "dose": "Early-phase evidence base; dosing parameters not yet standardized across studies",
+      "bestFit": "Adults with acquired (post-stroke or other neurological) apraxia of speech"
+    },
+    "bestFitCriteria": [
+      "Adults with acquired apraxia of speech from stroke or other acquired neurological injury.",
+      "Clinicians selecting a first-line treatment approach and wanting the current evidence landscape summarized.",
+      "SLPs treating a client with combined apraxia of speech and aphasia who want protocols addressing both.",
+      "Programs considering self-administered or technology-delivered home practice as a supplement to in-clinic AOS treatment."
+    ]
+  },
+  {
+    "id": "judge-2026-aac-timing-als",
+    "title": "Timing of Communication and Technology Control Support in ALS: A Systematic Review",
+    "shortTitle": "When to Introduce AAC in ALS: Systematic Review",
+    "authors": "Judge, S., Ballesteros, K., McDermott, C., & Bloch, S.",
+    "authorShort": "Judge et al.",
+    "journal": "Amyotrophic Lateral Sclerosis and Frontotemporal Degeneration",
+    "year": 2026,
+    "url": "https://doi.org/10.1080/21678421.2026.2627899",
+    "evidenceLevel": "2",
+    "evidenceType": "Systematic review (mixed study designs, descriptive/thematic synthesis)",
+    "areas": [
+      "AAC"
+    ],
+    "tags": [
+      "ALS",
+      "Amyotrophic Lateral Sclerosis",
+      "AAC Timing",
+      "Referral Triggers",
+      "Assistive Technology",
+      "Speaking Rate",
+      "Communication Support",
+      "Motor Neurone Disease"
+    ],
+    "summary": "A pre-registered systematic review of 28 studies on timing of communication and technology support in ALS/MND finds that current clinical guidelines give no concrete triggers for when to refer for AAC, and proposes speaking rate (below roughly 120 words per minute) and early ALSFRS-R speech-score decline as practical signals for timely referral.",
+    "isFoundation": false,
+    "isTreatmentFocused": false,
+    "researchFindings": [
+      "Pre-registered on the Open Science Framework; used a mixed-methods convergent design to synthesize 28 studies of varying designs (no single study type required, and no formal quality-grading was applied).",
+      "A communication aid is typically needed 1 to 5 years after ALS diagnosis, with substantial individual variation and differences by site of symptom onset (bulbar vs. limb onset).",
+      "Speaking rate and speech intelligibility are strongly correlated; the review proposes a speaking rate below approximately 120 words per minute as a practical trigger for initiating communication support, noting this threshold is drawn from North American speaker data and may not generalize to all populations.",
+      "People living with ALS consistently report wanting referral for communication support before noticeable speech changes occur; one included study linked earlier introduction of tablet-based communication software to better quality of life when initiated while the ALSFRS-R speech subscore was still relatively high (2 or 3).",
+      "Procurement and funding delays for communication devices are a recurring problem, and some people with ALS died before a device could be provided \u2014 the review ties this directly to late referral.",
+      "Existing clinical guidelines recommend early assessment in general terms but provide no specific triggers for when professionals should act, which the review concludes leaves clinicians without concrete decision support; remote speech monitoring is suggested as one way to help close this gap.",
+      "The review found no evidence addressing timing for alternative access methods or environmental control systems specifically \u2014 only communication support timing was well covered."
+    ],
+    "clinicalApplication": "Use this review to build or refine a proactive AAC referral pathway for ALS patients rather than waiting for a crisis point: introduce the topic of communication support early in the disease course (ideally well before speech deteriorates), and consider tracking speaking rate over time as an objective, low-burden signal \u2014 a drop toward roughly 120 words per minute (adjust if your population or regional speech norms differ) is a reasonable point to escalate referral urgency. For bulbar-onset patients in particular, don't wait for a formal diagnosis-to-referral protocol from your facility if one doesn't already specify timing \u2014 start the conversation and the funding/procurement process early, since device delays are a well-documented failure point that can leave patients without any communication option. Frame early AAC conversations around maintaining autonomy and quality of life, not as a sign of imminent loss of speech, since patients consistently report wanting this discussion before they feel they need it.",
+    "sessionStats": {},
+    "bestFitCriteria": [
+      "Adults recently diagnosed with ALS/MND, particularly those with bulbar-onset presentation.",
+      "SLPs and ALS/MND multidisciplinary clinics building or revising an AAC referral and funding pathway.",
+      "Clinicians needing an evidence-informed objective trigger (e.g., speaking rate) to time AAC referral conversations.",
+      "Programs evaluating remote speech monitoring as an early-warning tool for AAC referral timing."
+    ]
   }
 ]
