@@ -2038,52 +2038,6 @@
     ]
   },
   {
-    "id": "ramig-2001-lsvt-rct",
-    "title": "Intensive Voice Treatment (LSVT LOUD) for Patients with Parkinson's Disease: A 2-Year Follow-Up",
-    "shortTitle": "LSVT LOUD \u2014 Motor Speech Application and Protocol",
-    "authors": "Ramig, L. O., Countryman, S., Thompson, L. L., & Horii, Y.",
-    "authorShort": "Ramig et al.",
-    "journal": "Journal of Speech, Language, and Hearing Research",
-    "year": 1995,
-    "evidenceLevel": "1b",
-    "evidenceType": "RCT",
-    "areas": [
-      "Motor Speech"
-    ],
-    "tags": [
-      "LSVT",
-      "LSVT LOUD",
-      "Parkinson's disease",
-      "Hypokinetic dysarthria",
-      "Loudness treatment",
-      "Intensive treatment",
-      "Motor calibration",
-      "PD"
-    ],
-    "summary": "The landmark RCT establishing LSVT LOUD as the primary evidence-based treatment for hypokinetic dysarthria in Parkinson's disease, demonstrating that targeting vocal loudness as the single intensive treatment target recalibrates the internal amplitude scaling deficit in PD.",
-    "isFoundation": false,
-    "researchFindings": [
-      "LSVT LOUD is delivered in 16 sessions over 4 weeks (4x/week, 1 hour each) \u2014 intensive massing is a defining feature of the protocol and cannot be reduced without compromising outcomes.",
-      "The single treatment target is \"LOUD\" \u2014 Think LOUD, Speak LOUD \u2014 not loudness paired with other targets. Simplicity and intensity of focus drive internal recalibration.",
-      "PD clients perceive their reduced loudness as normal due to impaired internal amplitude calibration (the basal ganglia-cortical loop governing effort scaling). LSVT targets this recalibration directly.",
-      "RCT demonstrated significantly greater SPL gains for LSVT compared to respiratory treatment alone, maintained at 1- and 2-year follow-up.",
-      "Loudness gains generalize to improved articulation, intonation, and overall intelligibility without directly treating those features.",
-      "Carryover practice is mandatory: daily home practice exercises (sustained phonation, maximum pitch range, functional phrases at loud level) during and after the treatment block."
-    ],
-    "clinicalApplication": "LSVT LOUD requires certification for formal delivery, but the motor principles apply broadly: intensive practice volume, single-target focus to avoid attention fragmentation, and recalibration of sensory awareness as a therapeutic mechanism. For clients with hypokinetic dysarthria (PD), target loudness first \u2014 improvements in articulation and intelligibility follow without additional direct treatment. Embed the LOUD target in personally functional phrases (not scripted carrier phrases). Address the internal calibration deficit explicitly: clients need to know that their \"normal\" loudness perception is inaccurate, and that what sounds too loud to them is actually appropriate. Daily home practice (not just clinic sessions) is non-negotiable for LSVT outcomes. For non-PD dysarthria types, LSVT principles of intensive, high-repetition treatment with explicit sensory recalibration apply even when the protocol itself is not used.",
-    "sessionStats": {
-      "frequency": "4x/week \u00d7 4 weeks (16 sessions) \u2014 mandatory intensive schedule",
-      "sessionLength": "60 min",
-      "dose": "16 sessions minimum per LSVT protocol",
-      "bestFit": "Hypokinetic dysarthria in Parkinson's disease"
-    },
-    "bestFitCriteria": [
-      "Adults with Parkinson's disease presenting with hypokinetic dysarthria: reduced loudness, monopitch, monoloudness, and reduced speech intelligibility in conversation.",
-      "PD clients with preserved cognition sufficient to participate in an intensive 4-week outpatient program.",
-      "Clients post-LSVT who need maintenance therapy \u2014 the booster session protocol can re-establish gains after decline."
-    ]
-  },
-  {
     "id": "west-2000-clear-speech",
     "title": "Intelligibility Enhancement with Clear Speech in Dysarthria",
     "shortTitle": "Clear Speech Strategy for Dysarthria",
@@ -6307,54 +6261,6 @@
       "frequency": "1\u20132x/week",
       "sessionLength": "45\u201360 min",
       "bestFit": "Adults with any PPA variant, particularly early-to-mid stage where psychosocial adjustment to a progressive diagnosis is ongoing"
-    }
-  },
-  {
-    "id": "simmons-mackie-2016-partner",
-    "title": "Communication Partner Training in Aphasia: An Updated Systematic Review",
-    "shortTitle": "Communication Partner Training in Aphasia: Systematic Review",
-    "authors": "Simmons-Mackie, N., Raymer, A., & Cherney, L. R.",
-    "authorShort": "Simmons-Mackie et al.",
-    "journal": "Archives of Physical Medicine and Rehabilitation",
-    "evidenceLevel": "1a",
-    "evidenceType": "Systematic review",
-    "year": 2016,
-    "isFoundation": false,
-    "isTreatmentFocused": true,
-    "url": "https://doi.org/10.1016/j.apmr.2016.03.023",
-    "areas": [
-      "Language"
-    ],
-    "tags": [
-      "Aphasia",
-      "Communication partner training",
-      "Caregiver training",
-      "Functional communication",
-      "Life participation",
-      "Conversation",
-      "Supported conversation"
-    ],
-    "researchFindings": [
-      "Twenty-five articles met inclusion criteria for this updated systematic review, a substantial expansion from the original 2009 review of 13 articles.",
-      "Communication partner training (CPT) was probably effective for improving communication participation and functional communication in adults with chronic aphasia.",
-      "Outcomes extended beyond communication impairment to include psychosocial adjustment, quality of life, and communication burden reduction for communication partners themselves.",
-      "CPT approaches varied widely \u2014 from formal Supported Conversation for Adults with Aphasia (SCA) to informal coaching, video-based feedback, and group partner training programs.",
-      "Training communication partners improved both the partner's communication strategies AND the aphasia patient's participation \u2014 benefits were documented in both members of the dyad.",
-      "Structured feedback components (active coaching with modeling, practice, and reflection) were associated with stronger outcomes than information-only sessions."
-    ],
-    "bestFitCriteria": [
-      "Adults with chronic aphasia of any severity who have a regular communication partner willing to participate in training.",
-      "Family members or caregivers reporting communication frustration, withdrawal, or reduced participation in the person with aphasia.",
-      "Patients with chronic aphasia who have plateaued in impairment-level treatment but whose functional communication could improve through better partner support.",
-      "Discharge planning for transition home \u2014 CPT ensures communication partners are equipped to maintain treatment progress and support ongoing participation."
-    ],
-    "summary": "Updated systematic review of 25 studies concluding that communication partner training is probably effective for improving functional communication and participation for people with chronic aphasia \u2014 establishing partner training as a distinct evidence-based component of comprehensive aphasia care.",
-    "clinicalApplication": "Communication partner training should be a standard component of aphasia rehabilitation \u2014 not an optional supplement. This systematic review gives you the evidence to justify including family members, caregivers, and significant communication partners in formal treatment sessions. Effective approaches include: Supported Conversation for Adults with Aphasia (SCA) \u2014 teaching partners to acknowledge competence and reveal competence through natural conversation facilitators; video-based partner feedback sessions reviewing interaction patterns; and group partner training combining instruction, practice, and reflection. Do not rely on information pamphlets or brief verbal instructions alone \u2014 active coaching with modeling and feedback is what drives meaningful partner behavior change. Bill CPT as patient treatment time when the partner is being trained specifically to serve the patient's identified communication needs. Document the functional communication goals the partner training directly supports.",
-    "sessionStats": {
-      "frequency": "4\u201312 training sessions depending on approach and partner need",
-      "sessionLength": "60 min",
-      "dose": "Structured coaching with practice and feedback; more intensive training produces stronger outcomes than information alone",
-      "bestFit": "Any adult with chronic aphasia who has a willing, consistent communication partner (family, caregiver, coworker)"
     }
   },
   {
