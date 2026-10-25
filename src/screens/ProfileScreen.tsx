@@ -219,7 +219,7 @@ export const ProfileScreen: React.FC = () => {
     const trimmed: ProfileData = {
       name: draftProfile.name.trim(),
       credentials: draftProfile.credentials.trim(),
-      setting: draftProfile.setting,
+      setting: draftProfile.setting.trim(),
     };
     await AsyncStorage.setItem(KEY_PROFILE, JSON.stringify(trimmed));
     setProfile(trimmed);
