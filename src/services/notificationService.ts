@@ -11,7 +11,8 @@ const KEY_FREQ         = 'ebp_slp_notif_frequency_v2';
 const KEY_DAY          = 'ebp_slp_notif_day_v1';        // 1–7 (1=Sun, 2=Mon … 7=Sat)
 const KEY_HOUR         = 'ebp_slp_notif_hour_v1';       // 0–23
 const KEY_MOTIV_HOUR   = 'ebp_slp_notif_motiv_hour_v1'; // separate hour for motivation nudges
-const KEY_MOTIV_DAY    = 'ebp_slp_notif_motiv_day_v1';  // 1–7 (default 4 = Wednesday)
+const KEY_MOTIV_DAY    = 'ebp_slp_notif_motiv_day_v1';  // legacy single-day key (migrated from)
+const KEY_MOTIV_DAYS   = 'ebp_slp_notif_motiv_days_v1'; // JSON array of 1–7, supports multiple days/week
 const KEY_MOTIVATION   = 'ebp_slp_notif_motivation_v1';
 const KEY_MOTIV_IDX    = 'ebp_slp_notif_motivation_idx_v1';
 
@@ -62,7 +63,7 @@ const MOTIVATION_POOL: { title: string; body: string }[] = [
   { title: 'EBP-SLP', body: "You don't have to read every study. Just the right ones. We've curated them." },
 ];
 
-const MOTIVATION_BATCH = 8; // weeks of notifications to schedule ahead
+const MOTIVATION_WEEKS_AHEAD = 4; // weeks of notifications to schedule ahead, per selected day
 const MOTIVATION_REFILL_THRESHOLD = 3; // refill when fewer than this remain
 
 // Handle foreground notification display
@@ -194,22 +195,38 @@ export async function setMotivHour(hour: number): Promise<void> {
   }
 }
 
-export async function getMotivDay(): Promise<number> {
+export async function getMotivDays(): Promise<number[]> {
   try {
-    const raw = await AsyncStorage.getItem(KEY_MOTIV_DAY);
-    return raw ? parseInt(raw, 10) : 4; // default Wednesday (4 in 1–7 convention)
+    const raw = await AsyncStorage.getItem(KEY_MOTIV_DAYS);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+    // Migrate from the old single-day setting if present
+    const legacy = await AsyncStorage.getItem(KEY_MOTIV_DAY);
+    if (legacy) return [parseInt(legacy, 10)];
+    return [4]; // default Wednesday
   } catch {
-    return 4;
+    return [4];
   }
 }
 
-export async function setMotivDay(day: number): Promise<void> {
-  await AsyncStorage.setItem(KEY_MOTIV_DAY, String(day));
+export async function setMotivDays(days: number[]): Promise<void> {
+  const unique = Array.from(new Set(days)).sort((a, b) => a - b);
+  if (unique.length === 0) return; // require at least one day selected
+  await AsyncStorage.setItem(KEY_MOTIV_DAYS, JSON.stringify(unique));
   const enabled = await getMotivationNotifEnabled();
   if (enabled) {
     await cancelMotivationNotifications();
     await scheduleMotivationBatch();
   }
+}
+
+// Back-compat single-day helpers (used nowhere in the UI anymore, kept in
+// case anything else still imports them)
+export async function getMotivDay(): Promise<number> {
+  const days = await getMotivDays();
+  return days[0] ?? 4;
 }
 
 // ─── On-update trigger ────────────────────────────────────────────────────────
@@ -265,7 +282,7 @@ export async function cancelMotivationNotifications(): Promise<void> {
   } catch {}
 }
 
-async function nextMotivationContents(): Promise<{ title: string; body: string }[]> {
+async function nextMotivationContents(count: number): Promise<{ title: string; body: string }[]> {
   let idx = 0;
   try {
     const raw = await AsyncStorage.getItem(KEY_MOTIV_IDX);
@@ -274,42 +291,48 @@ async function nextMotivationContents(): Promise<{ title: string; body: string }
   } catch { idx = 0; }
 
   const contents: { title: string; body: string }[] = [];
-  for (let i = 0; i < MOTIVATION_BATCH; i++) {
+  for (let i = 0; i < count; i++) {
     contents.push(MOTIVATION_POOL[(idx + i) % MOTIVATION_POOL.length]);
   }
 
-  await AsyncStorage.setItem(KEY_MOTIV_IDX, String((idx + MOTIVATION_BATCH) % MOTIVATION_POOL.length));
+  await AsyncStorage.setItem(KEY_MOTIV_IDX, String((idx + count) % MOTIVATION_POOL.length));
   return contents;
 }
 
 async function scheduleMotivationBatch(): Promise<void> {
-  const contents = await nextMotivationContents();
-  const [hour, storedDay] = await Promise.all([getMotivHour(), getMotivDay()]);
-  const jsWeekday = storedDay - 1; // convert 1–7 → 0–6
+  const [hour, days] = await Promise.all([getMotivHour(), getMotivDays()]);
+  const activeDays = days.length > 0 ? days : [4];
+  const contents = await nextMotivationContents(MOTIVATION_WEEKS_AHEAD * activeDays.length);
 
   const now = new Date();
-  const daysUntilTarget = ((jsWeekday - now.getDay() + 7) % 7) || 7; // at least 1 day ahead
-  const firstTarget = new Date(now);
-  firstTarget.setDate(now.getDate() + daysUntilTarget);
-  firstTarget.setHours(hour, 0, 0, 0);
+  let contentIdx = 0;
 
-  for (let i = 0; i < contents.length; i++) {
-    const fireMs = firstTarget.getTime() + i * 7 * 24 * 60 * 60 * 1000;
-    const secondsFromNow = Math.floor((fireMs - Date.now()) / 1000);
-    if (secondsFromNow <= 0) continue;
+  for (const storedDay of activeDays) {
+    const jsWeekday = storedDay - 1; // convert 1–7 → 0–6
+    const daysUntilTarget = ((jsWeekday - now.getDay() + 7) % 7) || 7; // at least 1 day ahead
+    const firstTarget = new Date(now);
+    firstTarget.setDate(now.getDate() + daysUntilTarget);
+    firstTarget.setHours(hour, 0, 0, 0);
 
-    await Notifications.scheduleNotificationAsync({
-      content: {
-        title: contents[i].title,
-        body: contents[i].body,
-        data: { type: 'motivation' },
-      },
-      trigger: {
-        type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
-        seconds: secondsFromNow,
-        repeats: false,
-      },
-    });
+    for (let w = 0; w < MOTIVATION_WEEKS_AHEAD; w++) {
+      const fireMs = firstTarget.getTime() + w * 7 * 24 * 60 * 60 * 1000;
+      const secondsFromNow = Math.floor((fireMs - Date.now()) / 1000);
+      const content = contents[contentIdx++];
+      if (secondsFromNow <= 0 || !content) continue;
+
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: content.title,
+          body: content.body,
+          data: { type: 'motivation' },
+        },
+        trigger: {
+          type: Notifications.SchedulableTriggerInputTypes.TIME_INTERVAL,
+          seconds: secondsFromNow,
+          repeats: false,
+        },
+      });
+    }
   }
 }
 

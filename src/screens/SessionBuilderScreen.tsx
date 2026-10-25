@@ -9,6 +9,8 @@ import {
   Alert,
   Animated,
   TextInput,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useLocalSearchParams } from 'expo-router';
@@ -53,15 +55,20 @@ const MultiPillGroup: React.FC<{
   options: string[];
   selected: string[];
   onToggle: (v: string) => void;
-}> = ({ options, selected, onToggle }) => (
+  deletable?: string[];
+  onDelete?: (v: string) => void;
+}> = ({ options, selected, onToggle, deletable, onDelete }) => (
   <View style={styles.pillGroup}>
     {options.map((opt) => {
       const active = selected.includes(opt);
+      const canDelete = !!deletable?.includes(opt);
       return (
         <Pressable
           key={opt}
           style={[styles.pill, active && styles.pillActive]}
           onPress={() => onToggle(opt)}
+          onLongPress={canDelete ? () => onDelete?.(opt) : undefined}
+          delayLongPress={400}
         >
           <Text style={[styles.pillText, active && styles.pillTextActive]}>{opt}</Text>
         </Pressable>
@@ -213,6 +220,24 @@ export const SessionBuilderScreen: React.FC = () => {
     setCustomMaterialInput('');
   };
 
+  const deleteCustomMaterial = (m: string) => {
+    Alert.alert(
+      'Remove material?',
+      `Remove "${m}" from your materials?`,
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Remove',
+          style: 'destructive',
+          onPress: () => {
+            setCustomMaterials((prev) => prev.filter((x) => x !== m));
+            setMaterials((prev) => prev.filter((x) => x !== m));
+          },
+        },
+      ]
+    );
+  };
+
   const toggleGoal = (g: string) => {
     setSelectedGoals((prev) =>
       prev.includes(g) ? prev.filter((x) => x !== g) : [...prev, g]
@@ -276,7 +301,16 @@ export const SessionBuilderScreen: React.FC = () => {
         <View style={{ width: 60 }} />
       </View>
 
-      <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 10 : 0}
+      >
+      <ScrollView
+        contentContainerStyle={styles.scroll}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
 
         {/* Citation banner */}
         <View style={styles.citationBanner}>
@@ -370,7 +404,10 @@ export const SessionBuilderScreen: React.FC = () => {
             options={[...MATERIALS, ...customMaterials]}
             selected={materials}
             onToggle={toggleMaterial}
+            deletable={customMaterials}
+            onDelete={deleteCustomMaterial}
           />
+          <Text style={styles.helperText}>Press and hold a material you typed in to remove it.</Text>
           <View style={styles.customMaterialRow}>
             <TextInput
               style={styles.customMaterialInput}
@@ -419,6 +456,7 @@ export const SessionBuilderScreen: React.FC = () => {
 
         <View style={{ height: 40 }} />
       </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };

@@ -10,6 +10,7 @@ import {
   Image,
   Animated,
   PanResponder,
+  Alert,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -48,25 +49,94 @@ const KEY_NOTES      = 'ebp_article_notes_v1';
 
 // ─── Days-active streak ───────────────────────────────────────────────────────
 
+interface StreakRecord {
+  streak: number;        // current streak count
+  last: string;           // last active date (YYYY-MM-DD)
+  streakStart: string;    // date the current streak began
+  longest: number;        // longest streak ever recorded
+  longestStart: string;   // start date of the longest streak
+  longestEnd: string;     // end date (last day) of the longest streak
+}
+
+export interface LongestStreakInfo {
+  longest: number;
+  longestStart: string;
+  longestEnd: string;
+}
+
 async function trackAndGetStreak(): Promise<number> {
   const today = new Date().toISOString().slice(0, 10);
   const raw   = await AsyncStorage.getItem(KEY_DAYS);
   if (!raw) {
-    await AsyncStorage.setItem(KEY_DAYS, JSON.stringify({ streak: 1, last: today }));
+    const record: StreakRecord = {
+      streak: 1, last: today, streakStart: today,
+      longest: 1, longestStart: today, longestEnd: today,
+    };
+    await AsyncStorage.setItem(KEY_DAYS, JSON.stringify(record));
     return 1;
   }
   try {
-    const { streak, last } = JSON.parse(raw) as { streak: number; last: string };
+    const parsed = JSON.parse(raw) as Partial<StreakRecord>;
+    const streak = parsed.streak ?? 1;
+    const last = parsed.last ?? today;
+    const streakStart = parsed.streakStart ?? last;
+    let longest = parsed.longest ?? streak;
+    let longestStart = parsed.longestStart ?? streakStart;
+    let longestEnd = parsed.longestEnd ?? last;
+
     if (last === today) return streak;
+
     const prev = new Date(Date.now() - 86_400_000).toISOString().slice(0, 10);
-    const next = last === prev ? streak + 1 : 1;
-    await AsyncStorage.setItem(KEY_DAYS, JSON.stringify({ streak: next, last: today }));
-    return next;
+    const continuing = last === prev;
+    const nextStreak = continuing ? streak + 1 : 1;
+    const nextStreakStart = continuing ? streakStart : today;
+
+    if (nextStreak > longest) {
+      longest = nextStreak;
+      longestStart = nextStreakStart;
+      longestEnd = today;
+    }
+
+    const record: StreakRecord = {
+      streak: nextStreak, last: today, streakStart: nextStreakStart,
+      longest, longestStart, longestEnd,
+    };
+    await AsyncStorage.setItem(KEY_DAYS, JSON.stringify(record));
+    return nextStreak;
   } catch {
     // Corrupted data — reset the streak rather than let this throw and
     // break the rest of Home screen's load().
-    await AsyncStorage.setItem(KEY_DAYS, JSON.stringify({ streak: 1, last: today }));
+    const record: StreakRecord = {
+      streak: 1, last: today, streakStart: today,
+      longest: 1, longestStart: today, longestEnd: today,
+    };
+    await AsyncStorage.setItem(KEY_DAYS, JSON.stringify(record));
     return 1;
+  }
+}
+
+async function getLongestStreakInfo(): Promise<LongestStreakInfo | null> {
+  try {
+    const raw = await AsyncStorage.getItem(KEY_DAYS);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as Partial<StreakRecord>;
+    if (!parsed.longest) return null;
+    return {
+      longest: parsed.longest,
+      longestStart: parsed.longestStart ?? parsed.last ?? '',
+      longestEnd: parsed.longestEnd ?? parsed.last ?? '',
+    };
+  } catch {
+    return null;
+  }
+}
+
+function formatStreakDate(iso: string): string {
+  try {
+    const d = new Date(iso + 'T00:00:00');
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  } catch {
+    return iso;
   }
 }
 
@@ -332,6 +402,24 @@ export const HomeScreen = () => {
     setPanelVisible(true);
   };
 
+  const handleStreakPress = async () => {
+    const info = await getLongestStreakInfo();
+    if (!info || info.longest <= 1) {
+      Alert.alert('🔥 Daily streak', `You're on a ${daysActive}-day streak. Keep opening EBP-SLP daily to build your longest streak!`);
+      return;
+    }
+    const isCurrent = info.longest === daysActive;
+    const range = info.longestStart === info.longestEnd
+      ? formatStreakDate(info.longestStart)
+      : `${formatStreakDate(info.longestStart)} – ${formatStreakDate(info.longestEnd)}`;
+    Alert.alert(
+      '🔥 Longest streak recorded',
+      isCurrent
+        ? `You're on your best streak yet — ${info.longest} days straight, from ${range}!`
+        : `Your longest streak is ${info.longest} days, from ${range}. You're currently on a ${daysActive}-day streak — keep going!`,
+    );
+  };
+
   const persistSeen = async (next: Set<string>) => {
     setSeenIds(next);
     await AsyncStorage.setItem(NEW_ARTICLES_SEEN_KEY, JSON.stringify([...next]));
@@ -385,12 +473,17 @@ export const HomeScreen = () => {
 
         <View style={styles.appBarRight}>
           {daysActive > 0 && (
-            <View style={styles.streakChip}>
+            <Pressable style={styles.streakChip} onPress={handleStreakPress} hitSlop={6}>
               <Text style={styles.streakText}>🔥 {daysActive}</Text>
-            </View>
+            </Pressable>
           )}
           {/* Bell with unseen dot */}
-          <Pressable style={styles.iconBtn} onPress={openPanel}>
+          <Pressable
+            style={styles.iconBtn}
+            onPress={openPanel}
+            accessibilityLabel="View new articles"
+            accessibilityRole="button"
+          >
             <BellIcon color={colors.primaryDark} size={18} />
             {hasUnseen && <View style={styles.unreadDot} />}
           </Pressable>

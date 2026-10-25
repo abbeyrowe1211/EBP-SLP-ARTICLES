@@ -10,6 +10,7 @@ import {
   Modal,
   KeyboardAvoidingView,
   Platform,
+  Share,
 } from 'react-native';
 import { SearchIcon } from '@/components/icons/NavIcons';
 import Svg, { Line, Circle, Polyline, Text as SvgText } from 'react-native-svg';
@@ -163,6 +164,8 @@ const SessionRow: React.FC<{
           style={styles.deleteBtn}
           onPress={(e) => { e.stopPropagation?.(); onDelete(); }}
           hitSlop={8}
+          accessibilityLabel="Delete session"
+          accessibilityRole="button"
         >
           <Text style={styles.deleteBtnText}>✕</Text>
         </Pressable>
@@ -184,6 +187,17 @@ const PlanCard: React.FC<{
 }> = ({ item, sessions, onOpen, onDelete, onOpenSession, onDeleteSession, onStartSession }) => {
   const [showSessions, setShowSessions] = useState(false);
 
+  const APP_STORE_URL = 'https://apps.apple.com/us/app/ebp-slp/id6785711543';
+
+  const handleShare = () => {
+    Share.share({
+      message:
+        `Check out this evidence-based session plan from EBP-SLP: "${item.plan.sessionTitle}" (built from ${item.articleAuthorShort}, ${item.articleYear}). ` +
+        "I've been using EBP-SLP for evidence-based treatment articles and session planning — download it here:",
+      url: APP_STORE_URL,
+    });
+  };
+
   return (
     <View style={styles.planCard}>
       {/* Plan info + delete */}
@@ -201,6 +215,8 @@ const PlanCard: React.FC<{
           style={styles.deleteBtn}
           onPress={onDelete}
           hitSlop={8}
+          accessibilityLabel="Delete plan"
+          accessibilityRole="button"
         >
           <Text style={styles.deleteBtnText}>✕</Text>
         </Pressable>
@@ -213,6 +229,9 @@ const PlanCard: React.FC<{
         </Pressable>
         <Pressable style={styles.newSessionBtnCard} onPress={onStartSession}>
           <Text style={styles.newSessionBtnCardText}>＋ New session</Text>
+        </Pressable>
+        <Pressable style={styles.shareBtnCard} onPress={handleShare}>
+          <Text style={styles.shareBtnCardText}>📤 Share</Text>
         </Pressable>
       </View>
 
@@ -295,6 +314,8 @@ const PatientGroupCard: React.FC<{
             style={[styles.groupMenuBtn]}
             onPress={(e) => { e.stopPropagation?.(); onRenameGroup(); }}
             hitSlop={8}
+            accessibilityLabel="Rename patient"
+            accessibilityRole="button"
           >
             <Text style={styles.groupMenuBtnText}>✎</Text>
           </Pressable>
@@ -302,6 +323,8 @@ const PatientGroupCard: React.FC<{
             style={[styles.groupMenuBtn, styles.groupDeleteBtn]}
             onPress={(e) => { e.stopPropagation?.(); onDeleteGroup(); }}
             hitSlop={8}
+            accessibilityLabel="Delete patient group"
+            accessibilityRole="button"
           >
             <Text style={[styles.groupMenuBtnText, styles.groupDeleteBtnText]}>🗑</Text>
           </Pressable>
@@ -676,13 +699,13 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
     borderRadius: 12,
     paddingHorizontal: 12,
-    paddingVertical: 8,
+    paddingVertical: 10,
   },
   searchInput: {
     flex: 1,
     ...text.bodySmall,
     color: colors.text,
-    paddingVertical: 0,
+    paddingVertical: 2,
   },
   noResults: {
     flex: 1,
@@ -787,6 +810,20 @@ const styles = StyleSheet.create({
   newSessionBtnCardText: {
     ...text.bodySmall,
     color: colors.primaryDeep,
+    fontFamily: 'Quicksand_700Bold',
+  },
+  shareBtnCard: {
+    flex: 1,
+    backgroundColor: colors.surface,
+    borderRadius: 10,
+    paddingVertical: 9,
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  shareBtnCardText: {
+    ...text.bodySmall,
+    color: colors.textMuted,
     fontFamily: 'Quicksand_700Bold',
   },
 

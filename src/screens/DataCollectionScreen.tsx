@@ -27,7 +27,7 @@ import {
 // ─── Cueing helpers ───────────────────────────────────────────────────────────
 
 const VERBAL_LEVELS: CueLevel[] = ['Min Verbal', 'Mod Verbal', 'Max Verbal'];
-const ADDITIONAL_LEVELS: CueLevel[] = ['Direct Model', 'Gestural', 'Tactile', 'Other'];
+const ADDITIONAL_LEVELS: CueLevel[] = ['Direct Model', 'Gestural', 'Tactile'];
 // Levels that are mutually exclusive (selecting one clears everything else)
 const EXCLUSIVE_LEVELS: CueLevel[] = ['Independent', 'Dependent'];
 
@@ -170,7 +170,6 @@ export const DataCollectionScreen: React.FC = () => {
   // ── State ──
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedCues, setSelectedCues] = useState<Set<CueLevel>>(new Set<CueLevel>(['Independent']));
-  const [otherCueText, setOtherCueText] = useState('');
   const [trials, setTrials] = useState<TrialEntry[]>([]);
   const [saving, setSaving] = useState(false);
   const [customCues, setCustomCues] = useState<string[]>([]);
@@ -315,8 +314,11 @@ export const DataCollectionScreen: React.FC = () => {
     const hasCustom = selectedCustomCues.size > 0;
     const primaryCue = hasCustom ? 'Other' : getPrimaryCue(selectedCues);
     const allCues = [...selectedCues];
-    const customNote = hasCustom ? [...selectedCustomCues].join(', ') : undefined;
-    const note = customNote ?? (selectedCues.has('Other') ? otherCueText.trim() : undefined);
+    // Sort so the same combination of custom cues always produces the same
+    // label, regardless of the order they were tapped in (otherwise "dog, cat"
+    // and "cat, dog" would show up as two different scorecard categories).
+    const customNote = hasCustom ? [...selectedCustomCues].sort().join(', ') : undefined;
+    const note = customNote;
     setTrials((prev) => [
       ...prev,
       {
@@ -330,21 +332,16 @@ export const DataCollectionScreen: React.FC = () => {
         timestamp: new Date().toISOString(),
       },
     ]);
-  }, [currentStep, selectedCues, otherCueText, selectedCustomCues, stepTitles]);
+  }, [currentStep, selectedCues, selectedCustomCues, stepTitles]);
 
   const recordTrial = useCallback((correct: boolean) => {
-    // Require text when "Other" is selected
-    if (selectedCues.has('Other') && !otherCueText.trim() && selectedCustomCues.size === 0) {
-      setWarningText('Type what cue you used in the field below before recording a trial.');
-      return;
-    }
     // Warn when marking Dependent as incorrect (unless user suppressed for this session)
     if (!correct && selectedCues.has('Dependent') && !skipDependentWarning) {
       setDependentIncorrectVisible(true);
       return;
     }
     doRecordTrial(correct);
-  }, [selectedCues, otherCueText, selectedCustomCues, skipDependentWarning, doRecordTrial]);
+  }, [selectedCues, selectedCustomCues, skipDependentWarning, doRecordTrial]);
 
   const undoLast = useCallback(() => {
     setTrials((prev) => {
@@ -551,19 +548,6 @@ export const DataCollectionScreen: React.FC = () => {
                   ))}
                 </View>
               </>
-            )}
-
-            {/* Free text — only shows when Other is selected */}
-            {selectedCues.has('Other') && (
-              <TextInput
-                style={styles.otherInput}
-                value={otherCueText}
-                onChangeText={setOtherCueText}
-                placeholder="Describe the cue (e.g. written cue, repetition request…)"
-                placeholderTextColor={colors.textMuted}
-                autoCapitalize="none"
-                returnKeyType="done"
-              />
             )}
 
             {/* Custom cues — wraps to new lines; respects visibility toggle from Profile */}

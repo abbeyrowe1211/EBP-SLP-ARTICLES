@@ -10,6 +10,8 @@ import {
   Switch,
   ActivityIndicator,
   Linking,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFocusEffect, useRouter } from 'expo-router';
@@ -31,8 +33,9 @@ import {
   setMotivationNotifEnabled,
   getMotivHour,
   setMotivHour,
-  getMotivDay,
-  setMotivDay,
+  getMotivDays,
+  setMotivDays,
+  DAY_LABELS,
   DAY_FULL_LABELS,
 } from '@/services/notificationService';
 import {
@@ -87,6 +90,7 @@ const WORK_SETTINGS = [
   'School',
   'Private practice',
   'Telepractice',
+  'Other',
 ];
 
 // ─── Section wrapper ──────────────────────────────────────────────────────────
@@ -148,7 +152,7 @@ export const ProfileScreen: React.FC = () => {
   const [notifHour, setNotifHourState] = useState<number>(9); // 0–23
   const [motivationEnabled, setMotivationEnabled] = useState(false);
   const [motivHour, setMotivHourState] = useState<number>(9);
-  const [motivDay, setMotivDayState] = useState<number>(4);  // default Wednesday
+  const [motivDays, setMotivDaysState] = useState<number[]>([4]);  // default Wednesday
   const [aowEnabled, setAowEnabledState] = useState(false);
   const [aowDay, setAowDayState] = useState<number>(2);  // default Monday
   const [aowHour, setAowHourState] = useState<number>(9);
@@ -160,6 +164,7 @@ export const ProfileScreen: React.FC = () => {
   const [cueVisibility, setCueVisibility]   = useState<Record<string, boolean>>({});
   const [backingUp, setBackingUp]           = useState(false);
   const [restoring, setRestoring]           = useState(false);
+  const [customSettingMode, setCustomSettingMode] = useState(false);
 
   // Helper — is a cue enabled? Defaults to true
   const isCueOn = (level: string) => cueVisibility[level] !== false;
@@ -172,14 +177,14 @@ export const ProfileScreen: React.FC = () => {
 
   // ── Load persisted data ──
   const load = useCallback(async () => {
-    const [profileRaw, settingsRaw, freq, day, hour, motivHourVal, motivDayVal, plans, sessions, cueVisRaw, motEnabled, cuesRaw, aowOn, aowDayVal, aowHourVal] = await Promise.all([
+    const [profileRaw, settingsRaw, freq, day, hour, motivHourVal, motivDaysVal, plans, sessions, cueVisRaw, motEnabled, cuesRaw, aowOn, aowDayVal, aowHourVal] = await Promise.all([
       AsyncStorage.getItem(KEY_PROFILE),
       AsyncStorage.getItem(KEY_SETTINGS),
       getNotifFrequency(),
       getNotifDay(),
       getNotifHour(),
       getMotivHour(),
-      getMotivDay(),
+      getMotivDays(),
       getSavedPlans(),
       getAllSessionData(),
       AsyncStorage.getItem(KEY_CUE_VIS),
@@ -198,7 +203,7 @@ export const ProfileScreen: React.FC = () => {
     setNotifDayState(day);
     setNotifHourState(hour);
     setMotivHourState(motivHourVal);
-    setMotivDayState(motivDayVal);
+    setMotivDaysState(motivDaysVal);
     setMotivationEnabled(motEnabled);
     setAowEnabledState(aowOn);
     setAowDayState(aowDayVal);
@@ -225,6 +230,8 @@ export const ProfileScreen: React.FC = () => {
 
   const openEditProfile = () => {
     setDraftProfile({ ...profile });
+    const isKnownSetting = !profile.setting || WORK_SETTINGS.includes(profile.setting);
+    setCustomSettingMode(!isKnownSetting);
     setEditingProfile(true);
   };
 
@@ -249,6 +256,21 @@ export const ProfileScreen: React.FC = () => {
       } else {
         Alert.alert('Error', 'Could not update notification settings. Try again.');
       }
+    }
+  };
+
+  // Article Reminders uses a 3-way frequency (weekly/monthly/on-update) rather
+  // than a plain boolean, but the header switch just needs an on/off view of
+  // it — off turns it off, on restores whatever frequency was last chosen
+  // (defaulting to weekly the very first time).
+  const lastNotifFreqRef = React.useRef<NotifFrequency>('weekly');
+  const handleNotifToggle = async (value: boolean) => {
+    if (value) {
+      const restore = lastNotifFreqRef.current !== 'off' ? lastNotifFreqRef.current : 'weekly';
+      await handleNotifFreq(restore);
+    } else {
+      if (notifFreq !== 'off') lastNotifFreqRef.current = notifFreq;
+      await handleNotifFreq('off');
     }
   };
 
@@ -482,20 +504,19 @@ export const ProfileScreen: React.FC = () => {
     ]);
   };
 
-  const handlePickMotivDay = () => {
-    const buttons = DAY_FULL_LABELS.map((d, idx) => ({
-      text: (idx + 1 === motivDay ? '✓ ' : '') + d,
-      onPress: async () => {
-        try {
-          await setMotivDay(idx + 1);
-          setMotivDayState(idx + 1);
-        } catch {}
-      },
-    }));
-    Alert.alert('Nudge day', 'Which day should motivation nudges send?', [
-      ...buttons,
-      { text: 'Cancel', style: 'cancel' as const },
-    ]);
+  const toggleMotivDay = async (day: number) => {
+    const isLastSelected = motivDays.length === 1 && motivDays.includes(day);
+    if (isLastSelected) {
+      Alert.alert('Select at least one day', 'Motivation nudges need at least one day of the week.');
+      return;
+    }
+    const next = motivDays.includes(day)
+      ? motivDays.filter((d) => d !== day)
+      : [...motivDays, day];
+    try {
+      await setMotivDays(next);
+      setMotivDaysState(next.slice().sort((a, b) => a - b));
+    } catch {}
   };
 
   const formatHour = (h: number) => {
@@ -511,7 +532,16 @@ export const ProfileScreen: React.FC = () => {
         <Text style={styles.screenTitle}>Profile</Text>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 10 : 0}
+      >
+      <ScrollView
+        contentContainerStyle={styles.scroll}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
 
         {/* ── Avatar / name banner ── */}
         <View style={styles.avatarBanner}>
@@ -564,18 +594,39 @@ export const ProfileScreen: React.FC = () => {
 
             <Text style={styles.fieldLabel}>Primary work setting</Text>
             <View style={styles.chipGrid}>
-              {WORK_SETTINGS.map((s) => (
-                <Pressable
-                  key={s}
-                  style={[styles.chip, draftProfile.setting === s && styles.chipActive]}
-                  onPress={() => setDraftProfile((p) => ({ ...p, setting: p.setting === s ? '' : s }))}
-                >
-                  <Text style={[styles.chipText, draftProfile.setting === s && styles.chipTextActive]}>
-                    {s}
-                  </Text>
-                </Pressable>
-              ))}
+              {WORK_SETTINGS.map((s) => {
+                const active = s === 'Other' ? customSettingMode : (!customSettingMode && draftProfile.setting === s);
+                return (
+                  <Pressable
+                    key={s}
+                    style={[styles.chip, active && styles.chipActive]}
+                    onPress={() => {
+                      if (s === 'Other') {
+                        setCustomSettingMode(true);
+                        setDraftProfile((p) => ({ ...p, setting: '' }));
+                      } else {
+                        setCustomSettingMode(false);
+                        setDraftProfile((p) => ({ ...p, setting: p.setting === s ? '' : s }));
+                      }
+                    }}
+                  >
+                    <Text style={[styles.chipText, active && styles.chipTextActive]}>
+                      {s}
+                    </Text>
+                  </Pressable>
+                );
+              })}
             </View>
+            {customSettingMode && (
+              <TextInput
+                style={[styles.fieldInput, { marginTop: 10 }]}
+                value={draftProfile.setting}
+                onChangeText={(v) => setDraftProfile((p) => ({ ...p, setting: v }))}
+                placeholder="Type your work setting"
+                placeholderTextColor={colors.textMuted}
+                returnKeyType="done"
+              />
+            )}
 
             <View style={styles.editActions}>
               <Pressable style={styles.cancelBtn} onPress={() => setEditingProfile(false)}>
@@ -737,48 +788,57 @@ export const ProfileScreen: React.FC = () => {
               <View style={[styles.sectionCard, { marginBottom: 10 }]}>
                 <View style={styles.notifCardHeader}>
                   <Text style={styles.notifCardTitle}>📅  Article Reminders</Text>
+                  <Switch
+                    value={notifFreq !== 'off'}
+                    onValueChange={handleNotifToggle}
+                    trackColor={{ false: colors.border, true: colors.primary }}
+                    thumbColor={colors.surface}
+                  />
                 </View>
-                <View style={[styles.notifCardBody, { borderTopWidth: 1, borderTopColor: colors.border }]}>
-                  <View style={styles.notifFreqRow}>
-                    {(['off', 'weekly', 'monthly', 'on-update'] as NotifFrequency[]).map((f) => (
-                      <Pressable
-                        key={f}
-                        style={[styles.segment, notifFreq === f && styles.segmentActive]}
-                        onPress={() => handleNotifFreq(f)}
-                      >
-                        <Text style={[styles.segmentText, notifFreq === f && styles.segmentTextActive]}>
-                          {f === 'off' ? 'Off' : f === 'weekly' ? 'Weekly' : f === 'monthly' ? 'Monthly' : 'On Update'}
-                        </Text>
-                      </Pressable>
-                    ))}
-                  </View>
-                  {notifFreq === 'weekly' && (
-                    <View style={styles.notifPickerRow}>
-                      <View style={styles.notifPickerGroup}>
-                        <Text style={styles.notifPickerLabel}>Day</Text>
-                        <Pressable onPress={handlePickDay} style={styles.pickerChip}>
-                          <Text style={styles.pickerChipText}>{DAY_FULL_LABELS[notifDay - 1]} ▾</Text>
+                <Text style={styles.notifCardCaption}>
+                  Get notified when new research articles are added to EBP-SLP.
+                </Text>
+                {notifFreq !== 'off' && (
+                  <View style={[styles.notifCardBody, { borderTopWidth: 1, borderTopColor: colors.border }]}>
+                    <View style={styles.notifFreqRow}>
+                      {(['weekly', 'monthly', 'on-update'] as NotifFrequency[]).map((f) => (
+                        <Pressable
+                          key={f}
+                          style={[styles.segment, notifFreq === f && styles.segmentActive]}
+                          onPress={() => handleNotifFreq(f)}
+                        >
+                          <Text style={[styles.segmentText, notifFreq === f && styles.segmentTextActive]}>
+                            {f === 'weekly' ? 'Weekly' : f === 'monthly' ? 'Monthly' : 'On Update'}
+                          </Text>
                         </Pressable>
-                      </View>
-                      <View style={styles.notifPickerGroup}>
-                        <Text style={styles.notifPickerLabel}>Time</Text>
-                        <Pressable onPress={handlePickTime} style={styles.pickerChip}>
-                          <Text style={styles.pickerChipText}>{formatHour(notifHour)} ▾</Text>
-                        </Pressable>
-                      </View>
+                      ))}
                     </View>
-                  )}
-                  {notifFreq === 'monthly' && (
-                    <View style={styles.notifPickerRow}>
-                      <View style={styles.notifPickerGroup}>
-                        <Text style={styles.notifPickerLabel}>Time</Text>
-                        <Pressable onPress={handlePickTime} style={styles.pickerChip}>
-                          <Text style={styles.pickerChipText}>{formatHour(notifHour)} ▾</Text>
-                        </Pressable>
+                    {notifFreq === 'weekly' && (
+                      <View style={styles.notifPickerRow}>
+                        <View style={styles.notifPickerGroup}>
+                          <Text style={styles.notifPickerLabel}>Day</Text>
+                          <Pressable onPress={handlePickDay} style={styles.pickerChip}>
+                            <Text style={styles.pickerChipText}>{DAY_FULL_LABELS[notifDay - 1]} ▾</Text>
+                          </Pressable>
+                        </View>
+                        <View style={styles.notifPickerGroup}>
+                          <Text style={styles.notifPickerLabel}>Time</Text>
+                          <Pressable onPress={handlePickTime} style={styles.pickerChip}>
+                            <Text style={styles.pickerChipText}>{formatHour(notifHour)} ▾</Text>
+                          </Pressable>
+                        </View>
                       </View>
-                    </View>
-                  )}
-                  {notifFreq !== 'off' && (
+                    )}
+                    {notifFreq === 'monthly' && (
+                      <View style={styles.notifPickerRow}>
+                        <View style={styles.notifPickerGroup}>
+                          <Text style={styles.notifPickerLabel}>Time</Text>
+                          <Pressable onPress={handlePickTime} style={styles.pickerChip}>
+                            <Text style={styles.pickerChipText}>{formatHour(notifHour)} ▾</Text>
+                          </Pressable>
+                        </View>
+                      </View>
+                    )}
                     <Text style={styles.notifSummary}>
                       🔔{'  '}{notifFreq === 'weekly'
                         ? `Every ${DAY_FULL_LABELS[notifDay - 1]} at ${formatHour(notifHour)}`
@@ -786,8 +846,8 @@ export const ProfileScreen: React.FC = () => {
                         ? `1st of each month at ${formatHour(notifHour)}`
                         : 'Fires when new articles are added to EBP-SLP'}
                     </Text>
-                  )}
-                </View>
+                  </View>
+                )}
               </View>
 
               {/* Card 2 — Article of the Week */}
@@ -801,6 +861,9 @@ export const ProfileScreen: React.FC = () => {
                     thumbColor={colors.surface}
                   />
                 </View>
+                <Text style={styles.notifCardCaption}>
+                  Get alerted when a new article is selected as the focus of the week.
+                </Text>
                 {aowEnabled && (
                   <View style={[styles.notifCardBody, { borderTopWidth: 1, borderTopColor: colors.border }]}>
                     <View style={styles.notifPickerRow}>
@@ -835,15 +898,32 @@ export const ProfileScreen: React.FC = () => {
                     thumbColor={colors.surface}
                   />
                 </View>
+                <Text style={styles.notifCardCaption}>
+                  Quotes and encouragement to keep you checking the evidence.
+                </Text>
                 {motivationEnabled && (
                   <View style={[styles.notifCardBody, { borderTopWidth: 1, borderTopColor: colors.border }]}>
-                    <View style={styles.notifPickerRow}>
-                      <View style={styles.notifPickerGroup}>
-                        <Text style={styles.notifPickerLabel}>Day</Text>
-                        <Pressable onPress={handlePickMotivDay} style={styles.pickerChip}>
-                          <Text style={styles.pickerChipText}>{DAY_FULL_LABELS[motivDay - 1]} ▾</Text>
-                        </Pressable>
+                    <View style={styles.notifPickerGroup}>
+                      <Text style={styles.notifPickerLabel}>Days</Text>
+                      <View style={styles.dayToggleRow}>
+                        {DAY_LABELS.map((label, idx) => {
+                          const dayNum = idx + 1;
+                          const active = motivDays.includes(dayNum);
+                          return (
+                            <Pressable
+                              key={dayNum}
+                              style={[styles.dayToggleChip, active && styles.dayToggleChipActive]}
+                              onPress={() => toggleMotivDay(dayNum)}
+                            >
+                              <Text style={[styles.dayToggleChipText, active && styles.dayToggleChipTextActive]}>
+                                {label}
+                              </Text>
+                            </Pressable>
+                          );
+                        })}
                       </View>
+                    </View>
+                    <View style={[styles.notifPickerRow, { marginTop: 10 }]}>
                       <View style={styles.notifPickerGroup}>
                         <Text style={styles.notifPickerLabel}>Time</Text>
                         <Pressable onPress={handlePickMotivTime} style={styles.pickerChip}>
@@ -852,7 +932,7 @@ export const ProfileScreen: React.FC = () => {
                       </View>
                     </View>
                     <Text style={styles.notifSummary}>
-                      🔔{'  '}Every {DAY_FULL_LABELS[motivDay - 1]} at {formatHour(motivHour)} — quotes &amp; tips
+                      🔔{'  '}Every {motivDays.map((d) => DAY_FULL_LABELS[d - 1]).join(', ')} at {formatHour(motivHour)} — quotes &amp; tips
                     </Text>
                   </View>
                 )}
@@ -924,6 +1004,7 @@ export const ProfileScreen: React.FC = () => {
 
         <View style={{ height: 40 }} />
       </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
@@ -1167,12 +1248,40 @@ const styles = StyleSheet.create({
     fontFamily: 'Quicksand_700Bold',
     color: colors.text,
   },
+  notifCardCaption: {
+    ...text.caption,
+    color: colors.textMuted,
+    paddingHorizontal: 16,
+    paddingBottom: 12,
+    lineHeight: 16,
+  },
   notifCardBody: {
     paddingHorizontal: 16,
     paddingTop: 12,
     paddingBottom: 14,
     gap: 10,
   },
+  dayToggleRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+  },
+  dayToggleChip: {
+    width: 40,
+    paddingVertical: 7,
+    borderRadius: 8,
+    borderWidth: 1.5,
+    borderColor: colors.border,
+    backgroundColor: colors.surface,
+    alignItems: 'center',
+  },
+  dayToggleChipActive: { backgroundColor: colors.primary, borderColor: colors.primary },
+  dayToggleChipText: {
+    ...text.bodySmall,
+    color: colors.textMuted,
+    fontFamily: 'Quicksand_600SemiBold',
+  },
+  dayToggleChipTextActive: { color: colors.surface },
   notifFreqRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',

@@ -13,6 +13,8 @@ import {
   StyleSheet,
   Keyboard,
   ActivityIndicator,
+  Alert,
+  Linking,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -169,14 +171,18 @@ function runSearch(query: string, articles: Article[]): ScoredArticle[] {
 // Show only articles whose score is at least 35% of the top score,
 // capped at 8 and floored at 3.
 
-function getTopResults(results: ScoredArticle[], min = 3, max = 8): ScoredArticle[] {
+function getTopResults(results: ScoredArticle[], max = 8): ScoredArticle[] {
   if (results.length === 0) return [];
-  if (results.length <= min) return results;
   const topScore = results[0].score;
-  const threshold = topScore * 0.35;
+  // Require a decent score both relative to the best match AND in absolute
+  // terms (e.g. a real area/tag/best-fit hit, not just one stray title word),
+  // so weakly-related articles don't get padded in just to hit a minimum count.
+  const threshold = Math.max(topScore * 0.45, 4);
   const filtered = results.filter((r) => r.score >= threshold);
-  // Always return at least min results even if they fall below threshold
-  return filtered.length >= min ? filtered.slice(0, max) : results.slice(0, min);
+  if (filtered.length > 0) return filtered.slice(0, max);
+  // Nothing clears the bar — show the single best match only if it's a
+  // genuinely meaningful hit, otherwise report no matches at all.
+  return topScore >= 4 ? results.slice(0, 1) : [];
 }
 
 // ─── Detect relevant areas from query tokens ──────────────────────────────────
@@ -276,6 +282,8 @@ export const PatientScenarioScreen: React.FC = () => {
   const [suggestedAreas, setSuggestedAreas] = useState<string[]>([]);
   const [hasSearched, setHasSearched] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
+  const [feedbackText, setFeedbackText] = useState('');
+  const [feedbackSent, setFeedbackSent] = useState(false);
   const inputRef = useRef<TextInput>(null);
 
   const EXAMPLES = [
@@ -320,8 +328,23 @@ export const PatientScenarioScreen: React.FC = () => {
       setSuggestedAreas(mergedAreas.slice(0, 4));
       setHasSearched(true);
       setIsSearching(false);
+      setFeedbackText('');
+      setFeedbackSent(false);
     }, 80);
   }, [articles]);
+
+  const handleSendFeedback = () => {
+    const trimmed = feedbackText.trim();
+    if (!trimmed) return;
+    const subject = encodeURIComponent('EBP-SLP: Article request');
+    const body = encodeURIComponent(
+      `A clinician searched "My Patient" and didn't find a match.\n\nSearch query: ${query}\n\nWhat they were looking for: ${trimmed}`
+    );
+    Linking.openURL(`mailto:info@ebpslpapp.com?subject=${subject}&body=${body}`).catch(() => {
+      Alert.alert('Could not open Mail', 'Please email info@ebpslpapp.com directly with your suggestion.');
+    });
+    setFeedbackSent(true);
+  };
 
   const handleExample = (ex: string) => {
     setQuery(ex);
@@ -437,6 +460,34 @@ export const PatientScenarioScreen: React.FC = () => {
                     </View>
                   </View>
                 )}
+
+                {/* Feedback — send what they were looking for straight to EBP-SLP */}
+                <View style={styles.feedbackSection}>
+                  {feedbackSent ? (
+                    <Text style={styles.feedbackSentText}>
+                      ✓ Thanks — your note was sent to EBP-SLP.
+                    </Text>
+                  ) : (
+                    <>
+                      <Text style={styles.feedbackLabel}>What kind of article were you looking for?</Text>
+                      <TextInput
+                        style={styles.feedbackInput}
+                        value={feedbackText}
+                        onChangeText={setFeedbackText}
+                        placeholder="e.g. memory strategies for early-stage dementia"
+                        placeholderTextColor={colors.textMuted}
+                        multiline
+                      />
+                      <Pressable
+                        style={[styles.feedbackSendBtn, !feedbackText.trim() && styles.feedbackSendBtnDisabled]}
+                        onPress={handleSendFeedback}
+                        disabled={!feedbackText.trim()}
+                      >
+                        <Text style={styles.feedbackSendBtnText}>✉️  Send to EBP-SLP</Text>
+                      </Pressable>
+                    </>
+                  )}
+                </View>
               </View>
             ) : (
               <>
@@ -651,5 +702,50 @@ const styles = StyleSheet.create({
     ...text.bodySmall,
     color: colors.primaryDark,
     fontFamily: 'Quicksand_600SemiBold',
+  },
+  feedbackSection: {
+    marginTop: 24,
+    width: '100%',
+    backgroundColor: colors.surface,
+    borderWidth: 1.5,
+    borderColor: colors.border,
+    borderRadius: 14,
+    padding: 14,
+  },
+  feedbackLabel: {
+    ...text.bodySmall,
+    color: colors.text,
+    fontFamily: 'Quicksand_600SemiBold',
+    marginBottom: 8,
+  },
+  feedbackInput: {
+    borderWidth: 1.5,
+    borderColor: colors.border,
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    minHeight: 44,
+    color: colors.text,
+    ...text.bodySmall,
+    marginBottom: 10,
+  },
+  feedbackSendBtn: {
+    backgroundColor: colors.primaryDark,
+    borderRadius: 10,
+    paddingVertical: 11,
+    alignItems: 'center',
+  },
+  feedbackSendBtnDisabled: { backgroundColor: colors.textMuted },
+  feedbackSendBtnText: {
+    ...text.bodySmall,
+    color: colors.surface,
+    fontFamily: 'Quicksand_700Bold',
+  },
+  feedbackSentText: {
+    ...text.bodySmall,
+    color: colors.primaryDark,
+    fontFamily: 'Quicksand_600SemiBold',
+    textAlign: 'center',
+    paddingVertical: 6,
   },
 });

@@ -11,6 +11,7 @@ import {
   Alert,
   KeyboardAvoidingView,
   Platform,
+  Share,
 } from 'react-native';
 import * as Print from 'expo-print';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -538,6 +539,31 @@ export const SessionPlanScreen: React.FC = () => {
     }
   };
 
+  const APP_STORE_URL = 'https://apps.apple.com/us/app/ebp-slp/id6785711543';
+
+  const handleExportPress = () => {
+    Alert.alert(
+      'Spread the word! 📣',
+      'Know another SLP who could use evidence-based session plans like this one?',
+      [
+        {
+          text: 'Maybe later',
+          style: 'cancel',
+          onPress: () => handleExport(),
+        },
+        {
+          text: 'Share with a colleague',
+          onPress: () =>
+            Share.share({
+              message:
+                "I've been using EBP-SLP to build evidence-based session plans — it's been a game changer for my clinical practice! Download it here:",
+              url: APP_STORE_URL,
+            }),
+        },
+      ],
+    );
+  };
+
   // ── Delete plan (when opened from library) ──
   const handleDeleteFromPlan = () => {
     if (!savedPlanIdParam) return;
@@ -770,7 +796,7 @@ export const SessionPlanScreen: React.FC = () => {
             >
               <Text style={styles.dataBtnText}>📊  Start data collection</Text>
             </Pressable>
-            <Pressable style={styles.exportBtn} onPress={handleExport}>
+            <Pressable style={styles.exportBtn} onPress={handleExportPress}>
               <Text style={styles.exportBtnText}>🖨  Save / Print plan</Text>
             </Pressable>
             <Pressable
@@ -799,7 +825,7 @@ export const SessionPlanScreen: React.FC = () => {
             >
               <Text style={styles.dataBtnText}>📊  Start data collection</Text>
             </Pressable>
-            <Pressable style={styles.exportBtn} onPress={handleExport}>
+            <Pressable style={styles.exportBtn} onPress={handleExportPress}>
               <Text style={styles.exportBtnText}>🖨  Save / Print plan</Text>
             </Pressable>
             <Pressable style={styles.deletePlanBtn} onPress={handleDeleteFromPlan}>
@@ -811,7 +837,7 @@ export const SessionPlanScreen: React.FC = () => {
             <Pressable style={styles.saveBtn} onPress={handleOpenSave}>
               <Text style={styles.saveBtnText}>📋  Save to Plans</Text>
             </Pressable>
-            <Pressable style={styles.exportBtn} onPress={handleExport}>
+            <Pressable style={styles.exportBtn} onPress={handleExportPress}>
               <Text style={styles.exportBtnText}>🖨  Save / Print plan</Text>
             </Pressable>
           </View>
@@ -909,15 +935,17 @@ const styles = StyleSheet.create({
   },
   stepHeader: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 10 },
   stepNumCircle: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
+    minWidth: 28,
+    minHeight: 28,
+    paddingHorizontal: 4,
+    paddingVertical: 2,
+    borderRadius: 999,
     backgroundColor: colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
   },
-  stepNum: { ...text.bodySmall, color: colors.surface, fontFamily: 'Quicksand_700Bold' },
+  stepNum: { ...text.bodySmall, color: colors.surface, fontFamily: 'Quicksand_700Bold', textAlign: 'center' },
   stepTitle: { ...text.h4, color: colors.text, flex: 1 },
   stepTimeBadge: {
     backgroundColor: colors.primaryLighter,
