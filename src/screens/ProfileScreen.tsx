@@ -20,6 +20,7 @@ import { colors } from '@/theme/colors';
 import { text } from '@/theme/typography';
 import { getSavedPlans } from '@/services/storage';
 import { getAllSessionData } from '@/services/sessionDataStorage';
+import { PROFILE_WORK_SETTINGS } from '@/data/sessionOptions';
 import { exportBackup, importBackup } from '@/services/backupService';
 import {
   type NotifFrequency,
@@ -81,17 +82,7 @@ const DEFAULT_SETTINGS: AppSettings = {
 
 const SESSION_LENGTHS = ['30 min', '45 min', '60 min', '90 min'];
 
-const WORK_SETTINGS = [
-  'Acute care',
-  'Inpatient rehab',
-  'Skilled nursing',
-  'Home health',
-  'Outpatient',
-  'School',
-  'Private practice',
-  'Telepractice',
-  'Other',
-];
+const WORK_SETTINGS = [...PROFILE_WORK_SETTINGS, 'Other'];
 
 // ─── Section wrapper ──────────────────────────────────────────────────────────
 const Section: React.FC<{
@@ -199,7 +190,14 @@ export const ProfileScreen: React.FC = () => {
     try { if (settingsRaw) setSettings({ ...DEFAULT_SETTINGS, ...JSON.parse(settingsRaw) }); } catch {}
     try { if (cueVisRaw) setCueVisibility(JSON.parse(cueVisRaw)); } catch {}
     try { if (cuesRaw) setCustomCues(JSON.parse(cuesRaw)); } catch {}
-    setNotifFreq(freq);
+    // Weekly reminders were retired in favor of Monthly / On Update —
+    // migrate anyone still on 'weekly' so their schedule stays in sync.
+    if (freq === 'weekly') {
+      setNotifFrequency('monthly').catch(() => {});
+      setNotifFreq('monthly');
+    } else {
+      setNotifFreq(freq);
+    }
     setNotifDayState(day);
     setNotifHourState(hour);
     setMotivHourState(motivHourVal);
@@ -263,10 +261,10 @@ export const ProfileScreen: React.FC = () => {
   // than a plain boolean, but the header switch just needs an on/off view of
   // it — off turns it off, on restores whatever frequency was last chosen
   // (defaulting to weekly the very first time).
-  const lastNotifFreqRef = React.useRef<NotifFrequency>('weekly');
+  const lastNotifFreqRef = React.useRef<NotifFrequency>('monthly');
   const handleNotifToggle = async (value: boolean) => {
     if (value) {
-      const restore = lastNotifFreqRef.current !== 'off' ? lastNotifFreqRef.current : 'weekly';
+      const restore = lastNotifFreqRef.current !== 'off' ? lastNotifFreqRef.current : 'monthly';
       await handleNotifFreq(restore);
     } else {
       if (notifFreq !== 'off') lastNotifFreqRef.current = notifFreq;
@@ -801,34 +799,18 @@ export const ProfileScreen: React.FC = () => {
                 {notifFreq !== 'off' && (
                   <View style={[styles.notifCardBody, { borderTopWidth: 1, borderTopColor: colors.border }]}>
                     <View style={styles.notifFreqRow}>
-                      {(['weekly', 'monthly', 'on-update'] as NotifFrequency[]).map((f) => (
+                      {(['monthly', 'on-update'] as NotifFrequency[]).map((f) => (
                         <Pressable
                           key={f}
                           style={[styles.segment, notifFreq === f && styles.segmentActive]}
                           onPress={() => handleNotifFreq(f)}
                         >
                           <Text style={[styles.segmentText, notifFreq === f && styles.segmentTextActive]}>
-                            {f === 'weekly' ? 'Weekly' : f === 'monthly' ? 'Monthly' : 'On Update'}
+                            {f === 'monthly' ? 'Monthly' : 'On Update'}
                           </Text>
                         </Pressable>
                       ))}
                     </View>
-                    {notifFreq === 'weekly' && (
-                      <View style={styles.notifPickerRow}>
-                        <View style={styles.notifPickerGroup}>
-                          <Text style={styles.notifPickerLabel}>Day</Text>
-                          <Pressable onPress={handlePickDay} style={styles.pickerChip}>
-                            <Text style={styles.pickerChipText}>{DAY_FULL_LABELS[notifDay - 1]} ▾</Text>
-                          </Pressable>
-                        </View>
-                        <View style={styles.notifPickerGroup}>
-                          <Text style={styles.notifPickerLabel}>Time</Text>
-                          <Pressable onPress={handlePickTime} style={styles.pickerChip}>
-                            <Text style={styles.pickerChipText}>{formatHour(notifHour)} ▾</Text>
-                          </Pressable>
-                        </View>
-                      </View>
-                    )}
                     {notifFreq === 'monthly' && (
                       <View style={styles.notifPickerRow}>
                         <View style={styles.notifPickerGroup}>
@@ -840,9 +822,7 @@ export const ProfileScreen: React.FC = () => {
                       </View>
                     )}
                     <Text style={styles.notifSummary}>
-                      🔔{'  '}{notifFreq === 'weekly'
-                        ? `Every ${DAY_FULL_LABELS[notifDay - 1]} at ${formatHour(notifHour)}`
-                        : notifFreq === 'monthly'
+                      🔔{'  '}{notifFreq === 'monthly'
                         ? `1st of each month at ${formatHour(notifHour)}`
                         : 'Fires when new articles are added to EBP-SLP'}
                     </Text>

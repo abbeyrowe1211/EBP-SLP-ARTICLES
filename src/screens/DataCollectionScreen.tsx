@@ -494,7 +494,6 @@ export const DataCollectionScreen: React.FC = () => {
                     onPress={() => {
                       setSelectedCues(new Set<CueLevel>(['Independent']));
                       setSelectedCustomCues(new Set());
-                      setOtherCueText('');
                     }}
                     style={styles.cueChipHalf}
                   />
@@ -506,7 +505,6 @@ export const DataCollectionScreen: React.FC = () => {
                     onPress={() => {
                       setSelectedCues(new Set<CueLevel>(['Dependent']));
                       setSelectedCustomCues(new Set());
-                      setOtherCueText('');
                     }}
                     style={[styles.cueChipHalf, selectedCues.has('Dependent') && styles.cueChipDependentActive]}
                   />

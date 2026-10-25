@@ -26,6 +26,7 @@ import {
   MATERIALS,
   getGoalsForAreas,
   profileSettingToBuilderSetting,
+  isCustomWorkSetting,
 } from '@/data/sessionOptions';
 import { generateSessionPlan, type SessionParams } from '@/services/claude';
 
@@ -173,6 +174,7 @@ export const SessionBuilderScreen: React.FC = () => {
   const [materials, setMaterials] = useState<string[]>(['Picture cards', 'Worksheets']);
   const [customMaterials, setCustomMaterials] = useState<string[]>([]);
   const [customMaterialInput, setCustomMaterialInput] = useState('');
+  const [customSetting, setCustomSetting] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   // Pull default session length + clinical setting from stored preferences / profile
@@ -192,7 +194,14 @@ export const SessionBuilderScreen: React.FC = () => {
         if (profileRaw) {
           const p = JSON.parse(profileRaw);
           const mapped = profileSettingToBuilderSetting(p.setting);
-          if (mapped) setSetting(mapped);
+          if (mapped) {
+            setSetting(mapped);
+          } else if (p.setting && isCustomWorkSetting(p.setting)) {
+            // Clinician typed their own work setting via "Other" on Profile —
+            // show it as its own Setting option here and select it by default.
+            setCustomSetting(p.setting);
+            setSetting(p.setting);
+          }
         }
       } catch {}
     };
@@ -350,7 +359,11 @@ export const SessionBuilderScreen: React.FC = () => {
         {/* Setting */}
         <View style={styles.formGroup}>
           <Text style={styles.label}>Setting</Text>
-          <PillGroup options={SETTINGS} selected={setting} onSelect={setSetting} />
+          <PillGroup
+            options={customSetting && !SETTINGS.includes(customSetting) ? [...SETTINGS, customSetting] : SETTINGS}
+            selected={setting}
+            onSelect={setSetting}
+          />
         </View>
 
         {/* Functional goal — multi-select */}

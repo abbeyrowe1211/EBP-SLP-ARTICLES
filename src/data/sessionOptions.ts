@@ -4,6 +4,19 @@ export const SESSION_LENGTHS = ['30 min', '45 min', '60 min', '90 min'];
 export const SEVERITIES = ['Mild', 'Moderate', 'Severe'];
 export const SETTINGS = ['Acute', 'IPR', 'SNF', 'Home health', 'Outpatient', 'Private practice', 'Telepractice'];
 
+// The fixed list of options on the Profile screen's "Primary work setting"
+// picker (plus an 'Other' chip there that lets someone type their own).
+export const PROFILE_WORK_SETTINGS = [
+  'Acute care',
+  'Inpatient rehab',
+  'Skilled nursing',
+  'Home health',
+  'Outpatient',
+  'School',
+  'Private practice',
+  'Telepractice',
+];
+
 // Maps the profile "Primary work setting" value to the closest session builder setting.
 const PROFILE_SETTING_MAP: Record<string, string> = {
   'Acute care':        'Acute',
@@ -19,6 +32,16 @@ const PROFILE_SETTING_MAP: Record<string, string> = {
 export function profileSettingToBuilderSetting(profileSetting: string | undefined): string | null {
   if (!profileSetting) return null;
   return PROFILE_SETTING_MAP[profileSetting] ?? null;
+}
+
+/**
+ * True when the profile's work setting is something the clinician typed in
+ * themselves via the "Other" option (not one of the fixed Profile choices).
+ * Those should show up as their own selectable option in the session
+ * builder's Setting picker, since there's nothing sensible to map them to.
+ */
+export function isCustomWorkSetting(profileSetting: string | undefined): boolean {
+  return !!profileSetting && !PROFILE_WORK_SETTINGS.includes(profileSetting);
 }
 export const TIME_POST_ONSET = ['Acute (<1 mo)', 'Subacute (1–6 mo)', 'Chronic (>6 mo)'];
 export const MATERIALS = [
