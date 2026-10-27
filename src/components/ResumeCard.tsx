@@ -28,11 +28,11 @@ function timeAgo(ts?: number): string {
 export const ResumeCard: React.FC<Props> = ({ label, title, authors, lastOpenedAt, onPress }) => (
   <Pressable onPress={onPress}>
     <LinearGradient colors={[colors.primary, '#B794F6']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.card}>
-      <Text style={styles.label}>{label}</Text>
-      <Text style={styles.title}>{title}</Text>
+      <Text allowFontScaling={false} style={styles.label}>{label}</Text>
+      <Text allowFontScaling={false} style={styles.title}>{title}</Text>
       <View style={styles.metaRow}>
-        <Text style={styles.meta}>{authors}</Text>
-        <Text style={styles.meta}>{timeAgo(lastOpenedAt)}</Text>
+        <Text allowFontScaling={false} style={styles.meta}>{authors}</Text>
+        <Text allowFontScaling={false} style={styles.meta}>{timeAgo(lastOpenedAt)}</Text>
       </View>
     </LinearGradient>
   </Pressable>

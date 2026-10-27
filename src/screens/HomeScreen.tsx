@@ -221,8 +221,8 @@ const SwipeableArticleRow: React.FC<{
     <View style={{ overflow: 'hidden' }}>
       {/* Green reveal — only visible once swiping starts */}
       <Animated.View style={[styles.swipeActionBg, { opacity: actionOpacity }]}>
-        <Text style={styles.swipeActionIcon}>✓</Text>
-        <Text style={styles.swipeActionLabel}>Done</Text>
+        <Text allowFontScaling={false} style={styles.swipeActionIcon}>✓</Text>
+        <Text allowFontScaling={false} style={styles.swipeActionLabel}>Done</Text>
       </Animated.View>
 
       <Animated.View
@@ -232,19 +232,19 @@ const SwipeableArticleRow: React.FC<{
         <Pressable style={styles.articleRowInner} onPress={onPress}>
           <View style={styles.unreadArticleDot} />
           <View style={[styles.evBadge, { backgroundColor: evColor.bg }]}>
-            <Text style={[styles.evBadgeText, { color: evColor.text }]}>
+            <Text allowFontScaling={false} style={[styles.evBadgeText, { color: evColor.text }]}>
               {EVIDENCE_LABELS[article.evidenceLevel]}
             </Text>
           </View>
           <View style={styles.articleRowBody}>
-            <Text style={styles.articleRowTitle} numberOfLines={2}>
+            <Text allowFontScaling={false} style={styles.articleRowTitle} numberOfLines={2}>
               {article.shortTitle}
             </Text>
-            <Text style={styles.articleRowMeta}>
+            <Text allowFontScaling={false} style={styles.articleRowMeta}>
               {article.authorShort} · {article.year} · {article.areas[0]}
             </Text>
           </View>
-          <Text style={styles.articleRowArrow}>›</Text>
+          <Text allowFontScaling={false} style={styles.articleRowArrow}>›</Text>
         </Pressable>
       </Animated.View>
     </View>
@@ -279,23 +279,23 @@ const NewArticlesPanel: React.FC<{
       <View style={styles.panel}>
         <View style={styles.panelHandle} />
         <View style={styles.panelHeader}>
-          <Text style={styles.panelTitle}>Recently added</Text>
+          <Text allowFontScaling={false} style={styles.panelTitle}>Recently added</Text>
           <View style={styles.panelHeaderRight}>
             {visibleArticles.length > 0 && (
               <Pressable onPress={onClearAll} hitSlop={8}>
-                <Text style={styles.panelClearAll}>Clear all</Text>
+                <Text allowFontScaling={false} style={styles.panelClearAll}>Clear all</Text>
               </Pressable>
             )}
             {visibleArticles.length > 0 && (
-              <Text style={styles.panelCount}>{visibleArticles.length} new</Text>
+              <Text allowFontScaling={false} style={styles.panelCount}>{visibleArticles.length} new</Text>
             )}
           </View>
         </View>
 
         {visibleArticles.length === 0 ? (
           <View style={styles.panelEmpty}>
-            <Text style={styles.panelEmptyIcon}>✓</Text>
-            <Text style={styles.panelEmptyText}>All caught up!</Text>
+            <Text allowFontScaling={false} style={styles.panelEmptyIcon}>✓</Text>
+            <Text allowFontScaling={false} style={styles.panelEmptyText}>All caught up!</Text>
           </View>
         ) : (
           <ScrollView showsVerticalScrollIndicator={false} style={styles.panelScroll}>
@@ -466,15 +466,15 @@ export const HomeScreen = () => {
             style={styles.logoImg}
           />
           <View>
-            <Text style={styles.greetTitle}>Hi{profileName ? `, ${profileName.split(' ')[0]}` : ''}</Text>
-            <Text style={styles.greetSub}>{todayNudge}</Text>
+            <Text allowFontScaling={false} style={styles.greetTitle}>Hi{profileName ? `, ${profileName.split(' ')[0]}` : ''}</Text>
+            <Text allowFontScaling={false} style={styles.greetSub}>{todayNudge}</Text>
           </View>
         </View>
 
         <View style={styles.appBarRight}>
           {daysActive > 0 && (
             <Pressable style={styles.streakChip} onPress={handleStreakPress} hitSlop={6}>
-              <Text style={styles.streakText}>🔥 {daysActive}</Text>
+              <Text allowFontScaling={false} style={styles.streakText}>🔥 {daysActive}</Text>
             </Pressable>
           )}
           {/* Bell with unseen dot */}
@@ -494,7 +494,7 @@ export const HomeScreen = () => {
         {/* Search */}
         <Pressable style={styles.searchBar} onPress={() => searchText.trim() && handleSearch()}>
           <SearchIcon color={colors.textMuted} size={18} />
-          <TextInput
+          <TextInput allowFontScaling={false}
             placeholder="Search treatments, conditions, authors…"
             placeholderTextColor={colors.textMuted}
             style={styles.searchInput}
@@ -520,14 +520,14 @@ export const HomeScreen = () => {
               },
             })}
           >
-            <Text style={styles.draftBannerIcon}>💾</Text>
+            <Text allowFontScaling={false} style={styles.draftBannerIcon}>💾</Text>
             <View style={styles.draftBannerBody}>
-              <Text style={styles.draftBannerTitle}>Unsaved session — tap to resume</Text>
-              <Text style={styles.draftBannerSub}>
+              <Text allowFontScaling={false} style={styles.draftBannerTitle}>Unsaved session — tap to resume</Text>
+              <Text allowFontScaling={false} style={styles.draftBannerSub}>
                 {draftSession.trials.length} trial{draftSession.trials.length !== 1 ? 's' : ''} for "{draftSession.patientLabel}" wasn't saved
               </Text>
             </View>
-            <Text style={styles.draftBannerArrow}>›</Text>
+            <Text allowFontScaling={false} style={styles.draftBannerArrow}>›</Text>
           </Pressable>
         )}
 
@@ -545,18 +545,18 @@ export const HomeScreen = () => {
                 end={{ x: 1, y: 1 }}
                 style={styles.weekGradient}
               >
-                <Text style={styles.weekLabel}>⭐  ARTICLE OF THE WEEK</Text>
+                <Text allowFontScaling={false} style={styles.weekLabel}>⭐  ARTICLE OF THE WEEK</Text>
                 <View style={[styles.weekEvBadge, { backgroundColor: evColor.bg }]}>
-                  <Text style={[styles.weekEvText, { color: evColor.text }]}>
+                  <Text allowFontScaling={false} style={[styles.weekEvText, { color: evColor.text }]}>
                     {EVIDENCE_LABELS[weekArticle.evidenceLevel]}
                   </Text>
                 </View>
-                <Text style={styles.weekTitle} numberOfLines={2}>{weekArticle.shortTitle}</Text>
-                <Text style={styles.weekMeta}>
+                <Text allowFontScaling={false} style={styles.weekTitle} numberOfLines={2}>{weekArticle.shortTitle}</Text>
+                <Text allowFontScaling={false} style={styles.weekMeta}>
                   {weekArticle.authorShort} · {weekArticle.year} · {weekArticle.areas[0]}
                 </Text>
                 <View style={styles.weekReadBtn}>
-                  <Text style={styles.weekReadText}>Read article →</Text>
+                  <Text allowFontScaling={false} style={styles.weekReadText}>Read article →</Text>
                 </View>
               </LinearGradient>
             </Pressable>
@@ -567,7 +567,7 @@ export const HomeScreen = () => {
         {lastArticle && (
           <>
             <View style={styles.sectionLabel}>
-              <Text style={styles.sectionLabelText}>Continue reading</Text>
+              <Text allowFontScaling={false} style={styles.sectionLabelText}>Continue reading</Text>
             </View>
             <ResumeCard
               label="Last opened"
@@ -583,9 +583,9 @@ export const HomeScreen = () => {
         {recentIds.length > 1 && (
           <>
             <View style={styles.sectionLabel}>
-              <Text style={styles.sectionLabelText}>Recently viewed</Text>
+              <Text allowFontScaling={false} style={styles.sectionLabelText}>Recently viewed</Text>
               <Pressable onPress={() => goToBrowse()}>
-                <Text style={styles.sectionLink}>Browse all</Text>
+                <Text allowFontScaling={false} style={styles.sectionLink}>Browse all</Text>
               </Pressable>
             </View>
             <ScrollView
@@ -604,12 +604,12 @@ export const HomeScreen = () => {
                     onPress={() => router.push({ pathname: '/article/[id]', params: { id } })}
                   >
                     <View style={[styles.recentBadge, { backgroundColor: evColor.bg }]}>
-                      <Text style={[styles.recentBadgeText, { color: evColor.text }]}>
+                      <Text allowFontScaling={false} style={[styles.recentBadgeText, { color: evColor.text }]}>
                         {EVIDENCE_LABELS[a.evidenceLevel]}
                       </Text>
                     </View>
-                    <Text style={styles.recentTitle} numberOfLines={2}>{a.shortTitle}</Text>
-                    <Text style={styles.recentMeta}>{a.authorShort} · {a.year}</Text>
+                    <Text allowFontScaling={false} style={styles.recentTitle} numberOfLines={2}>{a.shortTitle}</Text>
+                    <Text allowFontScaling={false} style={styles.recentMeta}>{a.authorShort} · {a.year}</Text>
                   </Pressable>
                 );
               })}
@@ -619,9 +619,9 @@ export const HomeScreen = () => {
 
         {/* Browse by area */}
         <View style={styles.sectionLabel}>
-          <Text style={styles.sectionLabelText}>Browse by area</Text>
+          <Text allowFontScaling={false} style={styles.sectionLabelText}>Browse by area</Text>
           <Pressable onPress={() => goToBrowse()}>
-            <Text style={styles.sectionLink}>See all</Text>
+            <Text allowFontScaling={false} style={styles.sectionLink}>See all</Text>
           </Pressable>
         </View>
         <View style={styles.areaGrid}>
@@ -707,8 +707,8 @@ export const HomeScreen = () => {
         {notedArticles.length > 0 && (
           <>
             <View style={styles.sectionLabel}>
-              <Text style={styles.sectionLabelText}>My notes</Text>
-              <Text style={styles.sectionLink}>{notedArticles.length} annotated</Text>
+              <Text allowFontScaling={false} style={styles.sectionLabelText}>My notes</Text>
+              <Text allowFontScaling={false} style={styles.sectionLink}>{notedArticles.length} annotated</Text>
             </View>
             <ScrollView
               horizontal
@@ -721,9 +721,9 @@ export const HomeScreen = () => {
                   style={styles.noteCard}
                   onPress={() => router.push({ pathname: '/article/[id]', params: { id: a.id } })}
                 >
-                  <Text style={styles.noteCardEmoji}>📝</Text>
-                  <Text style={styles.noteCardTitle} numberOfLines={2}>{a.shortTitle}</Text>
-                  <Text style={styles.noteCardPreview} numberOfLines={3}>{note}</Text>
+                  <Text allowFontScaling={false} style={styles.noteCardEmoji}>📝</Text>
+                  <Text allowFontScaling={false} style={styles.noteCardTitle} numberOfLines={2}>{a.shortTitle}</Text>
+                  <Text allowFontScaling={false} style={styles.noteCardPreview} numberOfLines={3}>{note}</Text>
                 </Pressable>
               ))}
             </ScrollView>
@@ -732,7 +732,7 @@ export const HomeScreen = () => {
 
         {/* Foundations */}
         <View style={styles.sectionLabel}>
-          <Text style={styles.sectionLabelText}>Foundations of practice</Text>
+          <Text allowFontScaling={false} style={styles.sectionLabelText}>Foundations of practice</Text>
         </View>
         <FoundationsCard onPressArticle={(id) => router.push({ pathname: '/article/[id]', params: { id } })} />
 

@@ -76,7 +76,7 @@ const AccuracyTrendChart: React.FC<{ sessions: SessionDataRecord[] }> = ({ sessi
 
   return (
     <View style={chartStyles.container}>
-      <Text style={chartStyles.title}>Accuracy trend</Text>
+      <Text allowFontScaling={false} style={chartStyles.title}>Accuracy trend</Text>
       <Svg width="100%" height={H} viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet">
         {/* Baseline */}
         <Line
@@ -146,12 +146,12 @@ const SessionRow: React.FC<{
     <Pressable style={styles.sessionRow} onPress={onPress}>
       {/* Accuracy dot */}
       <View style={[styles.accuracyDot, { backgroundColor: color }]}>
-        <Text style={styles.accuracyDotText}>{pct}%</Text>
+        <Text allowFontScaling={false} style={styles.accuracyDotText}>{pct}%</Text>
       </View>
 
       <View style={styles.sessionInfo}>
-        <Text style={styles.sessionDate}>{formatSessionDate(session.date)}</Text>
-        <Text style={styles.sessionMeta}>
+        <Text allowFontScaling={false} style={styles.sessionDate}>{formatSessionDate(session.date)}</Text>
+        <Text allowFontScaling={false} style={styles.sessionMeta}>
           {session.totalTrials} trial{session.totalTrials !== 1 ? 's' : ''}
           {' · '}
           {session.stepSummaries.length} step{session.stepSummaries.length !== 1 ? 's' : ''}
@@ -159,7 +159,7 @@ const SessionRow: React.FC<{
       </View>
 
       <View style={styles.sessionActions}>
-        <Text style={styles.sessionArrow}>→</Text>
+        <Text allowFontScaling={false} style={styles.sessionArrow}>→</Text>
         <Pressable
           style={styles.deleteBtn}
           onPress={(e) => { e.stopPropagation?.(); onDelete(); }}
@@ -167,7 +167,7 @@ const SessionRow: React.FC<{
           accessibilityLabel="Delete session"
           accessibilityRole="button"
         >
-          <Text style={styles.deleteBtnText}>✕</Text>
+          <Text allowFontScaling={false} style={styles.deleteBtnText}>✕</Text>
         </Pressable>
       </View>
     </Pressable>
@@ -203,13 +203,13 @@ const PlanCard: React.FC<{
       {/* Plan info + delete */}
       <View style={styles.planCardHeader}>
         <View style={styles.planCardInner}>
-          <Text style={styles.planCardTitle} numberOfLines={2}>
+          <Text allowFontScaling={false} style={styles.planCardTitle} numberOfLines={2}>
             {item.plan.sessionTitle}
           </Text>
-          <Text style={styles.planCardMeta}>
+          <Text allowFontScaling={false} style={styles.planCardMeta}>
             {item.articleAuthorShort} · {item.articleYear}
           </Text>
-          <Text style={styles.planCardDate}>{formatSavedDate(item.savedAt)}</Text>
+          <Text allowFontScaling={false} style={styles.planCardDate}>{formatSavedDate(item.savedAt)}</Text>
         </View>
         <Pressable
           style={styles.deleteBtn}
@@ -218,20 +218,20 @@ const PlanCard: React.FC<{
           accessibilityLabel="Delete plan"
           accessibilityRole="button"
         >
-          <Text style={styles.deleteBtnText}>✕</Text>
+          <Text allowFontScaling={false} style={styles.deleteBtnText}>✕</Text>
         </Pressable>
       </View>
 
       {/* Action buttons */}
       <View style={styles.planActionRow}>
         <Pressable style={styles.viewPlanBtn} onPress={onOpen}>
-          <Text style={styles.viewPlanBtnText}>📋  View plan</Text>
+          <Text allowFontScaling={false} style={styles.viewPlanBtnText}>📋  View plan</Text>
         </Pressable>
         <Pressable style={styles.newSessionBtnCard} onPress={onStartSession}>
-          <Text style={styles.newSessionBtnCardText}>＋ New session</Text>
+          <Text allowFontScaling={false} style={styles.newSessionBtnCardText}>＋ New session</Text>
         </Pressable>
         <Pressable style={styles.shareBtnCard} onPress={handleShare}>
-          <Text style={styles.shareBtnCardText}>📤 Share</Text>
+          <Text allowFontScaling={false} style={styles.shareBtnCardText}>📤 Share</Text>
         </Pressable>
       </View>
 
@@ -240,10 +240,10 @@ const PlanCard: React.FC<{
         style={styles.sessionBar}
         onPress={() => setShowSessions((v) => !v)}
       >
-        <Text style={styles.sessionBarLabel}>
+        <Text allowFontScaling={false} style={styles.sessionBarLabel}>
           📊 {sessions.length} session{sessions.length !== 1 ? 's' : ''} recorded
         </Text>
-        <Text style={styles.sessionBarChevron}>
+        <Text allowFontScaling={false} style={styles.sessionBarChevron}>
           {showSessions ? '▾' : '▸'}
         </Text>
       </Pressable>
@@ -252,7 +252,7 @@ const PlanCard: React.FC<{
       {showSessions && (
         <View style={styles.sessionList}>
           {sessions.length === 0 ? (
-            <Text style={styles.noSessionsText}>
+            <Text allowFontScaling={false} style={styles.noSessionsText}>
               No sessions yet — tap "+ New" to start collecting data.
             </Text>
           ) : (
@@ -297,13 +297,13 @@ const PatientGroupCard: React.FC<{
       <Pressable style={styles.groupHeader} onPress={onToggle}>
         <View style={styles.groupHeaderLeft}>
           <View style={styles.patientIcon}>
-            <Text style={styles.patientIconText}>
+            <Text allowFontScaling={false} style={styles.patientIconText}>
               {group.label.charAt(0).toUpperCase()}
             </Text>
           </View>
           <View style={{ flex: 1 }}>
-            <Text style={styles.groupLabel}>{group.label}</Text>
-            <Text style={styles.groupCount}>
+            <Text allowFontScaling={false} style={styles.groupLabel}>{group.label}</Text>
+            <Text allowFontScaling={false} style={styles.groupCount}>
               {group.plans.length} plan{group.plans.length !== 1 ? 's' : ''}
               {totalSessions > 0 ? ` · ${totalSessions} session${totalSessions !== 1 ? 's' : ''}` : ''}
             </Text>
@@ -317,7 +317,7 @@ const PatientGroupCard: React.FC<{
             accessibilityLabel="Rename patient"
             accessibilityRole="button"
           >
-            <Text style={styles.groupMenuBtnText}>✎</Text>
+            <Text allowFontScaling={false} style={styles.groupMenuBtnText}>✎</Text>
           </Pressable>
           <Pressable
             style={[styles.groupMenuBtn, styles.groupDeleteBtn]}
@@ -326,9 +326,9 @@ const PatientGroupCard: React.FC<{
             accessibilityLabel="Delete patient group"
             accessibilityRole="button"
           >
-            <Text style={[styles.groupMenuBtnText, styles.groupDeleteBtnText]}>🗑</Text>
+            <Text allowFontScaling={false} style={[styles.groupMenuBtnText, styles.groupDeleteBtnText]}>🗑</Text>
           </Pressable>
-          <Text style={styles.chevron}>{expanded ? '▾' : '▸'}</Text>
+          <Text allowFontScaling={false} style={styles.chevron}>{expanded ? '▾' : '▸'}</Text>
         </View>
       </Pressable>
 
@@ -362,13 +362,13 @@ const PatientGroupCard: React.FC<{
 
 const EmptyState: React.FC<{ onBrowse: () => void }> = ({ onBrowse }) => (
   <View style={styles.emptyState}>
-    <Text style={styles.emptyIcon}>📋</Text>
-    <Text style={styles.emptyTitle}>No saved sessions yet</Text>
-    <Text style={styles.emptyBody}>
+    <Text allowFontScaling={false} style={styles.emptyIcon}>📋</Text>
+    <Text allowFontScaling={false} style={styles.emptyTitle}>No saved sessions yet</Text>
+    <Text allowFontScaling={false} style={styles.emptyBody}>
       Generate a session plan from any article and tap "Save to Plans" to store it here.
     </Text>
     <Pressable style={styles.emptyBtn} onPress={onBrowse}>
-      <Text style={styles.emptyBtnText}>Browse articles →</Text>
+      <Text allowFontScaling={false} style={styles.emptyBtnText}>Browse articles →</Text>
     </Pressable>
   </View>
 );
@@ -566,9 +566,9 @@ export const LibraryScreen: React.FC = () => {
   return (
     <SafeAreaView edges={['top']} style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.screenTitle}>Plans</Text>
+        <Text allowFontScaling={false} style={styles.screenTitle}>Plans</Text>
         {groups.length > 0 && (
-          <Text style={styles.headerMeta}>
+          <Text allowFontScaling={false} style={styles.headerMeta}>
             {totalPlans} plan{totalPlans !== 1 ? 's' : ''}
             {totalSessions > 0 ? ` · ${totalSessions} session${totalSessions !== 1 ? 's' : ''}` : ''}
           </Text>
@@ -580,7 +580,7 @@ export const LibraryScreen: React.FC = () => {
         <View style={styles.searchRow}>
           <View style={styles.searchBar}>
             <SearchIcon color={colors.textMuted} size={15} />
-            <TextInput
+            <TextInput allowFontScaling={false}
               style={styles.searchInput}
               value={searchText}
               onChangeText={setSearchText}
@@ -598,7 +598,7 @@ export const LibraryScreen: React.FC = () => {
         <EmptyState onBrowse={() => router.push('/(tabs)/browse')} />
       ) : filteredGroups.length === 0 ? (
         <View style={styles.noResults}>
-          <Text style={styles.noResultsText}>No plans match "{searchText}"</Text>
+          <Text allowFontScaling={false} style={styles.noResultsText}>No plans match "{searchText}"</Text>
         </View>
       ) : (
         <ScrollView
@@ -639,8 +639,8 @@ export const LibraryScreen: React.FC = () => {
         >
           <Pressable style={StyleSheet.absoluteFill} onPress={() => setRenameModalGroup(null)} />
           <View style={styles.renameSheet}>
-            <Text style={styles.renameTitle}>Rename patient label</Text>
-            <TextInput
+            <Text allowFontScaling={false} style={styles.renameTitle}>Rename patient label</Text>
+            <TextInput allowFontScaling={false}
               style={styles.renameInput}
               value={renameText}
               onChangeText={setRenameText}
@@ -656,14 +656,14 @@ export const LibraryScreen: React.FC = () => {
                 style={styles.renameCancelBtn}
                 onPress={() => setRenameModalGroup(null)}
               >
-                <Text style={styles.renameCancelText}>Cancel</Text>
+                <Text allowFontScaling={false} style={styles.renameCancelText}>Cancel</Text>
               </Pressable>
               <Pressable
                 style={[styles.renameSaveBtn, !renameText.trim() && { opacity: 0.4 }]}
                 onPress={confirmRename}
                 disabled={!renameText.trim()}
               >
-                <Text style={styles.renameSaveText}>Save</Text>
+                <Text allowFontScaling={false} style={styles.renameSaveText}>Save</Text>
               </Pressable>
             </View>
           </View>

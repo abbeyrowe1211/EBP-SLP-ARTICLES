@@ -58,32 +58,32 @@ const StepCard: React.FC<{
   <View style={styles.stepCard}>
     <View style={styles.stepHeader}>
       <View style={styles.stepNumCircle}>
-        <Text style={styles.stepNum}>{number}</Text>
+        <Text allowFontScaling={false} style={styles.stepNum}>{number}</Text>
       </View>
       {editable ? (
-        <TextInput
+        <TextInput allowFontScaling={false}
           style={[styles.stepTitle, styles.editableInput, { flex: 1 }]}
           value={title}
           onChangeText={onChangeTitle}
           multiline
         />
       ) : (
-        <Text style={styles.stepTitle}>{title}</Text>
+        <Text allowFontScaling={false} style={styles.stepTitle}>{title}</Text>
       )}
       <View style={styles.stepTimeBadge}>
         {editable ? (
-          <TextInput
+          <TextInput allowFontScaling={false}
             style={styles.stepTimeInput}
             value={duration}
             onChangeText={onChangeDuration}
           />
         ) : (
-          <Text style={styles.stepTimeText}>{duration}</Text>
+          <Text allowFontScaling={false} style={styles.stepTimeText}>{duration}</Text>
         )}
       </View>
     </View>
     {editable ? (
-      <TextInput
+      <TextInput allowFontScaling={false}
         style={[styles.stepInstructions, styles.editableInput]}
         value={instructions}
         onChangeText={onChangeInstructions}
@@ -91,13 +91,13 @@ const StepCard: React.FC<{
         textAlignVertical="top"
       />
     ) : (
-      <Text style={styles.stepInstructions}>{instructions}</Text>
+      <Text allowFontScaling={false} style={styles.stepInstructions}>{instructions}</Text>
     )}
     {(showWhyNotes || editable) && (!!whyNote || editable) && (
       <View style={styles.whyRow}>
-        <Text style={styles.whyLabel}>Why: </Text>
+        <Text allowFontScaling={false} style={styles.whyLabel}>Why: </Text>
         {editable ? (
-          <TextInput
+          <TextInput allowFontScaling={false}
             style={[styles.whyText, styles.editableInput, { flex: 1 }]}
             value={whyNote}
             onChangeText={onChangeWhyNote}
@@ -106,7 +106,7 @@ const StepCard: React.FC<{
             placeholderTextColor={colors.textMuted}
           />
         ) : (
-          <Text style={styles.whyText}>{whyNote}</Text>
+          <Text allowFontScaling={false} style={styles.whyText}>{whyNote}</Text>
         )}
       </View>
     )}
@@ -120,9 +120,9 @@ const InfoPanel: React.FC<{
   onChangeBody?: (v: string) => void;
 }> = ({ title, body, editable, onChangeBody }) => (
   <View style={styles.infoPanel}>
-    <Text style={styles.infoPanelTitle}>{title}</Text>
+    <Text allowFontScaling={false} style={styles.infoPanelTitle}>{title}</Text>
     {editable ? (
-      <TextInput
+      <TextInput allowFontScaling={false}
         style={[styles.infoPanelBody, styles.editableInput]}
         value={body}
         onChangeText={onChangeBody}
@@ -132,7 +132,7 @@ const InfoPanel: React.FC<{
         placeholderTextColor={colors.textMuted}
       />
     ) : (
-      <Text style={styles.infoPanelBody}>{body}</Text>
+      <Text allowFontScaling={false} style={styles.infoPanelBody}>{body}</Text>
     )}
   </View>
 );
@@ -185,15 +185,15 @@ const SaveModal: React.FC<SaveModalProps> = ({
         <View style={styles.modalSheet}>
           <View style={styles.modalHandle} />
 
-          <Text style={styles.modalTitle}>Save to Plans</Text>
-          <Text style={styles.modalSubtitle}>
+          <Text allowFontScaling={false} style={styles.modalTitle}>Save to Plans</Text>
+          <Text allowFontScaling={false} style={styles.modalSubtitle}>
             Name your treatment approach or group — no patient names.
           </Text>
 
           {/* Existing label chips */}
           {existingLabels.length > 0 && (
             <View style={styles.existingSection}>
-              <Text style={styles.existingLabel}>EXISTING PATIENTS</Text>
+              <Text allowFontScaling={false} style={styles.existingLabel}>EXISTING PATIENTS</Text>
               <View style={styles.chipRow}>
                 {existingLabels.map((l) => (
                   <Pressable
@@ -204,7 +204,7 @@ const SaveModal: React.FC<SaveModalProps> = ({
                     ]}
                     onPress={() => setLabel(l)}
                   >
-                    <Text
+                    <Text allowFontScaling={false}
                       style={[
                         styles.labelChipText,
                         label === l && styles.labelChipTextSelected,
@@ -219,7 +219,7 @@ const SaveModal: React.FC<SaveModalProps> = ({
           )}
 
           {/* New label input */}
-          <TextInput
+          <TextInput allowFontScaling={false}
             style={styles.labelInput}
             value={label}
             onChangeText={(t) => setLabel(t)}
@@ -233,7 +233,7 @@ const SaveModal: React.FC<SaveModalProps> = ({
           {/* Actions */}
           <View style={styles.modalActions}>
             <Pressable style={styles.cancelBtn} onPress={onClose}>
-              <Text style={styles.cancelBtnText}>Cancel</Text>
+              <Text allowFontScaling={false} style={styles.cancelBtnText}>Cancel</Text>
             </Pressable>
             <Pressable
               style={[styles.confirmBtn, saving && styles.confirmBtnDisabled]}
@@ -243,7 +243,7 @@ const SaveModal: React.FC<SaveModalProps> = ({
               {saving ? (
                 <ActivityIndicator color={colors.surface} size="small" />
               ) : (
-                <Text style={styles.confirmBtnText}>Save</Text>
+                <Text allowFontScaling={false} style={styles.confirmBtnText}>Save</Text>
               )}
             </Pressable>
           </View>
@@ -652,12 +652,12 @@ export const SessionPlanScreen: React.FC = () => {
       <SafeAreaView style={styles.container}>
         <View style={styles.topBar}>
           <Pressable onPress={() => router.back()}>
-            <Text style={styles.backText}>← Back</Text>
+            <Text allowFontScaling={false} style={styles.backText}>← Back</Text>
           </Pressable>
         </View>
         <View style={styles.errorState}>
-          <Text style={styles.errorTitle}>Couldn't load plan</Text>
-          <Text style={styles.errorBody}>Something went wrong. Go back and try again.</Text>
+          <Text allowFontScaling={false} style={styles.errorTitle}>Couldn't load plan</Text>
+          <Text allowFontScaling={false} style={styles.errorBody}>Something went wrong. Go back and try again.</Text>
         </View>
       </SafeAreaView>
     );
@@ -670,11 +670,11 @@ export const SessionPlanScreen: React.FC = () => {
       {/* Header */}
       <View style={styles.topBar}>
         <Pressable onPress={() => router.back()}>
-          <Text style={styles.backText}>{backLabel}</Text>
+          <Text allowFontScaling={false} style={styles.backText}>{backLabel}</Text>
         </Pressable>
-        <Text style={styles.screenTitle}>Today's session</Text>
+        <Text allowFontScaling={false} style={styles.screenTitle}>Today's session</Text>
         <Pressable onPress={() => setEditMode((v) => !v)} hitSlop={8}>
-          <Text style={styles.editToggleText}>{editMode ? 'Done' : 'Edit'}</Text>
+          <Text allowFontScaling={false} style={styles.editToggleText}>{editMode ? 'Done' : 'Edit'}</Text>
         </Pressable>
       </View>
 
@@ -682,17 +682,17 @@ export const SessionPlanScreen: React.FC = () => {
 
         {/* Citation banner */}
         <View style={styles.citationBanner}>
-          <Text style={styles.citationText}>
-            <Text style={styles.citationLabel}>Protocol: </Text>
+          <Text allowFontScaling={false} style={styles.citationText}>
+            <Text allowFontScaling={false} style={styles.citationLabel}>Protocol: </Text>
             {plan.protocolFidelityNote}
           </Text>
         </View>
 
         {/* PHI safe banner */}
         <View style={styles.phiBanner}>
-          <Text style={styles.phiIcon}>🛡</Text>
-          <Text style={styles.phiText}>
-            <Text style={styles.phiBold}>PHI-safe by design. </Text>
+          <Text allowFontScaling={false} style={styles.phiIcon}>🛡</Text>
+          <Text allowFontScaling={false} style={styles.phiText}>
+            <Text allowFontScaling={false} style={styles.phiBold}>PHI-safe by design. </Text>
             Counts only — no patient names, no notes, nothing leaves your device.
           </Text>
         </View>
@@ -700,10 +700,10 @@ export const SessionPlanScreen: React.FC = () => {
         {/* Session summary row */}
         <View style={styles.summaryRow}>
           <View style={styles.summaryChip}>
-            <Text style={styles.summaryChipText}>⏱ {plan.totalDuration}</Text>
+            <Text allowFontScaling={false} style={styles.summaryChipText}>⏱ {plan.totalDuration}</Text>
           </View>
           <View style={styles.summaryChip}>
-            <Text style={styles.summaryChipText}>📋 {plan.steps.length} steps</Text>
+            <Text allowFontScaling={false} style={styles.summaryChipText}>📋 {plan.steps.length} steps</Text>
           </View>
         </View>
 
@@ -729,7 +729,7 @@ export const SessionPlanScreen: React.FC = () => {
         {(!!plan.cueingHierarchy || !!plan.homeProgram || !!plan.clinicianNotes || editMode) && (
           <View style={styles.sectionDivider}>
             <View style={styles.sectionDividerLine} />
-            <Text style={styles.sectionDividerLabel}>ADDITIONAL INFORMATION</Text>
+            <Text allowFontScaling={false} style={styles.sectionDividerLabel}>ADDITIONAL INFORMATION</Text>
             <View style={styles.sectionDividerLine} />
           </View>
         )}
@@ -767,7 +767,7 @@ export const SessionPlanScreen: React.FC = () => {
         {/* Article credit */}
         {article && (
           <View style={styles.articleCredit}>
-            <Text style={styles.articleCreditText}>
+            <Text allowFontScaling={false} style={styles.articleCreditText}>
               Generated from: {article.authorShort} ({article.year}) · {article.evidenceLevel.toUpperCase()} evidence
             </Text>
           </View>
@@ -777,8 +777,8 @@ export const SessionPlanScreen: React.FC = () => {
         {savedLabel && savedPlanId ? (
           <View style={styles.postSaveGroup}>
             <View style={styles.savedConfirmation}>
-              <Text style={styles.savedIcon}>✓</Text>
-              <Text style={styles.savedText}>Saved to "{savedLabel}"</Text>
+              <Text allowFontScaling={false} style={styles.savedIcon}>✓</Text>
+              <Text allowFontScaling={false} style={styles.savedText}>Saved to "{savedLabel}"</Text>
             </View>
             <Pressable
               style={styles.dataBtn}
@@ -794,16 +794,16 @@ export const SessionPlanScreen: React.FC = () => {
                 })
               }
             >
-              <Text style={styles.dataBtnText}>📊  Start data collection</Text>
+              <Text allowFontScaling={false} style={styles.dataBtnText}>📊  Start data collection</Text>
             </Pressable>
             <Pressable style={styles.exportBtn} onPress={handleExportPress}>
-              <Text style={styles.exportBtnText}>🖨  Save / Print plan</Text>
+              <Text allowFontScaling={false} style={styles.exportBtnText}>🖨  Save / Print plan</Text>
             </Pressable>
             <Pressable
               style={styles.viewPlansBtn}
               onPress={() => router.replace('/(tabs)/library')}
             >
-              <Text style={styles.viewPlansBtnText}>View in Plans →</Text>
+              <Text allowFontScaling={false} style={styles.viewPlansBtnText}>View in Plans →</Text>
             </Pressable>
           </View>
         ) : source === 'library' && savedPlanIdParam ? (
@@ -823,22 +823,22 @@ export const SessionPlanScreen: React.FC = () => {
                 })
               }
             >
-              <Text style={styles.dataBtnText}>📊  Start data collection</Text>
+              <Text allowFontScaling={false} style={styles.dataBtnText}>📊  Start data collection</Text>
             </Pressable>
             <Pressable style={styles.exportBtn} onPress={handleExportPress}>
-              <Text style={styles.exportBtnText}>🖨  Save / Print plan</Text>
+              <Text allowFontScaling={false} style={styles.exportBtnText}>🖨  Save / Print plan</Text>
             </Pressable>
             <Pressable style={styles.deletePlanBtn} onPress={handleDeleteFromPlan}>
-              <Text style={styles.deletePlanBtnText}>🗑  Delete this plan</Text>
+              <Text allowFontScaling={false} style={styles.deletePlanBtnText}>🗑  Delete this plan</Text>
             </Pressable>
           </View>
         ) : (
           <View style={styles.postSaveGroup}>
             <Pressable style={styles.saveBtn} onPress={handleOpenSave}>
-              <Text style={styles.saveBtnText}>📋  Save to Plans</Text>
+              <Text allowFontScaling={false} style={styles.saveBtnText}>📋  Save to Plans</Text>
             </Pressable>
             <Pressable style={styles.exportBtn} onPress={handleExportPress}>
-              <Text style={styles.exportBtnText}>🖨  Save / Print plan</Text>
+              <Text allowFontScaling={false} style={styles.exportBtnText}>🖨  Save / Print plan</Text>
             </Pressable>
           </View>
         )}

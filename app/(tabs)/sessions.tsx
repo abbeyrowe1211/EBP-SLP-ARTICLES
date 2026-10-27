@@ -23,19 +23,19 @@ export default function Sessions() {
   return (
     <SafeAreaView edges={['top']} style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.screenTitle}>Sessions</Text>
+        <Text allowFontScaling={false} style={styles.screenTitle}>Sessions</Text>
       </View>
 
       <View style={styles.content}>
-        <Text style={styles.bolt}>⚡</Text>
-        <Text style={styles.heading}>Build a session plan</Text>
-        <Text style={styles.subheading}>
+        <Text allowFontScaling={false} style={styles.bolt}>⚡</Text>
+        <Text allowFontScaling={false} style={styles.heading}>Build a session plan</Text>
+        <Text allowFontScaling={false} style={styles.subheading}>
           Open any article in Browse and tap{'\n'}"Generate session plan" to get started.
         </Text>
 
         <View style={styles.divider} />
 
-        <Text style={styles.quickLabel}>QUICK START — RECENT ARTICLES</Text>
+        <Text allowFontScaling={false} style={styles.quickLabel}>QUICK START — RECENT ARTICLES</Text>
 
         {recentArticles.map((article) => (
           <Pressable
@@ -50,14 +50,14 @@ export default function Sessions() {
             }}
           >
             <View style={styles.quickCardInner}>
-              <Text style={styles.quickCardTitle} numberOfLines={2}>
+              <Text allowFontScaling={false} style={styles.quickCardTitle} numberOfLines={2}>
                 {article.shortTitle}
               </Text>
-              <Text style={styles.quickCardMeta}>
+              <Text allowFontScaling={false} style={styles.quickCardMeta}>
                 {article.authorShort} · {article.year}
               </Text>
             </View>
-            <Text style={styles.quickCardArrow}>→</Text>
+            <Text allowFontScaling={false} style={styles.quickCardArrow}>→</Text>
           </Pressable>
         ))}
       </View>

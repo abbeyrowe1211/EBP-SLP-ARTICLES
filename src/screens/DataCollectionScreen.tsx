@@ -103,10 +103,10 @@ const AccuracyDisplay: React.FC<{ correct: number; total: number }> = ({ correct
 
   return (
     <View style={styles.accuracyBox}>
-      <Text style={[styles.accuracyPct, { color: pct === null ? colors.textMuted : color }]}>
+      <Text allowFontScaling={false} style={[styles.accuracyPct, { color: pct === null ? colors.textMuted : color }]}>
         {pct === null ? '—' : `${pct}%`}
       </Text>
-      <Text style={styles.accuracyLabel}>
+      <Text allowFontScaling={false} style={styles.accuracyLabel}>
         {total === 0 ? 'No trials yet' : `${correct} / ${total} correct`}
       </Text>
     </View>
@@ -125,7 +125,7 @@ const CueChip: React.FC<{
     style={[styles.cueChip, selected && styles.cueChipActive, style]}
     onPress={onPress}
   >
-    <Text style={[styles.cueChipLabel, selected && styles.cueChipLabelActive]}>
+    <Text allowFontScaling={false} style={[styles.cueChipLabel, selected && styles.cueChipLabelActive]}>
       {label}
     </Text>
   </Pressable>
@@ -400,12 +400,12 @@ export const DataCollectionScreen: React.FC = () => {
       <SafeAreaView style={styles.container}>
         <View style={styles.topBar}>
           <Pressable onPress={() => router.back()}>
-            <Text style={styles.backText}>← Back</Text>
+            <Text allowFontScaling={false} style={styles.backText}>← Back</Text>
           </Pressable>
         </View>
         <View style={styles.errorState}>
-          <Text style={styles.errorTitle}>Couldn't load session</Text>
-          <Text style={styles.errorBody}>Go back and try again.</Text>
+          <Text allowFontScaling={false} style={styles.errorTitle}>Couldn't load session</Text>
+          <Text allowFontScaling={false} style={styles.errorBody}>Go back and try again.</Text>
         </View>
       </SafeAreaView>
     );
@@ -426,10 +426,10 @@ export const DataCollectionScreen: React.FC = () => {
               router.back();
             }
           }}>
-            <Text style={styles.backText}>← Plan</Text>
+            <Text allowFontScaling={false} style={styles.backText}>← Plan</Text>
           </Pressable>
-          <Text style={styles.screenTitle}>Data collection</Text>
-          <Text style={styles.patientChip}>{patientLabel}</Text>
+          <Text allowFontScaling={false} style={styles.screenTitle}>Data collection</Text>
+          <Text allowFontScaling={false} style={styles.patientChip}>{patientLabel}</Text>
         </View>
 
         <ScrollView
@@ -439,7 +439,7 @@ export const DataCollectionScreen: React.FC = () => {
         >
           {/* ── Step selector ── */}
           <View style={styles.section}>
-            <Text style={[styles.sectionLabel, { textAlign: 'center' }]}>CURRENT STEP</Text>
+            <Text allowFontScaling={false} style={[styles.sectionLabel, { textAlign: 'center' }]}>CURRENT STEP</Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {stepTitles.map((title, idx) => {
                 const hasData = trials.some((t) => t.stepIndex === idx);
@@ -467,10 +467,10 @@ export const DataCollectionScreen: React.FC = () => {
 
           {/* ── Current step name ── */}
           <View style={styles.currentStepBanner}>
-            <Text style={styles.currentStepNum}>Step {currentStep + 1} of {stepTitles.length} · {plan.steps[currentStep]?.duration}</Text>
-            <Text style={styles.currentStepTitle}>{stepTitles[currentStep]}</Text>
+            <Text allowFontScaling={false} style={styles.currentStepNum}>Step {currentStep + 1} of {stepTitles.length} · {plan.steps[currentStep]?.duration}</Text>
+            <Text allowFontScaling={false} style={styles.currentStepTitle}>{stepTitles[currentStep]}</Text>
             {plan.steps[currentStep]?.instructions ? (
-              <Text style={styles.currentStepInstructions} numberOfLines={3}>
+              <Text allowFontScaling={false} style={styles.currentStepInstructions} numberOfLines={3}>
                 {plan.steps[currentStep].instructions}
               </Text>
             ) : null}
@@ -481,7 +481,7 @@ export const DataCollectionScreen: React.FC = () => {
 
           {/* ── Cueing level ── */}
           <View style={styles.section}>
-            <Text style={styles.sectionLabel}>CUEING LEVEL</Text>
+            <Text allowFontScaling={false} style={styles.sectionLabel}>CUEING LEVEL</Text>
 
             {/* Independent + Dependent row */}
             {(isCueEnabled('Independent') || isCueEnabled('Dependent')) && (
@@ -514,7 +514,7 @@ export const DataCollectionScreen: React.FC = () => {
             {/* Verbal cue group */}
             {VERBAL_LEVELS.filter(isCueEnabled).length > 0 && (
               <>
-                <Text style={styles.cueGroupLabel}>Verbal Cue</Text>
+                <Text allowFontScaling={false} style={styles.cueGroupLabel}>Verbal Cue</Text>
                 <View style={styles.cueRow}>
                   {VERBAL_LEVELS.filter(isCueEnabled).map((level) => (
                     <CueChip
@@ -532,7 +532,7 @@ export const DataCollectionScreen: React.FC = () => {
             {/* Additional cues */}
             {ADDITIONAL_LEVELS.filter(isCueEnabled).length > 0 && (
               <>
-                <Text style={styles.cueGroupLabel}>Additional</Text>
+                <Text allowFontScaling={false} style={styles.cueGroupLabel}>Additional</Text>
                 <View style={styles.cueRow}>
                   {ADDITIONAL_LEVELS.filter(isCueEnabled).map((level) => (
                     <CueChip
@@ -550,7 +550,7 @@ export const DataCollectionScreen: React.FC = () => {
             {/* Custom cues — wraps to new lines; respects visibility toggle from Profile */}
             {customCues.filter(isCueEnabled).length > 0 && (
               <>
-                <Text style={styles.cueGroupLabel}>My Cues</Text>
+                <Text allowFontScaling={false} style={styles.cueGroupLabel}>My Cues</Text>
                 <View style={styles.cueRowWrapped}>
                   {customCues.filter(isCueEnabled).map((label) => (
                     <Pressable
@@ -559,7 +559,7 @@ export const DataCollectionScreen: React.FC = () => {
                       onPress={() => toggleCustomCue(label)}
                       onLongPress={() => removeCustomCue(label)}
                     >
-                      <Text style={[styles.cueChipLabel, selectedCustomCues.has(label) && styles.cueChipLabelActive]}>
+                      <Text allowFontScaling={false} style={[styles.cueChipLabel, selectedCustomCues.has(label) && styles.cueChipLabelActive]}>
                         {label}
                       </Text>
                     </Pressable>
@@ -568,26 +568,26 @@ export const DataCollectionScreen: React.FC = () => {
               </>
             )}
             <Pressable style={styles.addCustomCueBtn} onPress={addCustomCue}>
-              <Text style={styles.addCustomCueBtnText}>+ Add custom cue</Text>
+              <Text allowFontScaling={false} style={styles.addCustomCueBtnText}>+ Add custom cue</Text>
             </Pressable>
           </View>
 
           {/* ── Trial buttons ── */}
           <View style={styles.section}>
-            <Text style={styles.sectionLabel}>RECORD TRIAL</Text>
+            <Text allowFontScaling={false} style={styles.sectionLabel}>RECORD TRIAL</Text>
             <View style={styles.trialBtns}>
               <Pressable style={styles.incorrectBtn} onPress={() => recordTrial(false)}>
-                <Text style={styles.trialBtnIcon}>✕</Text>
-                <Text style={styles.trialBtnLabel}>Incorrect</Text>
+                <Text allowFontScaling={false} style={styles.trialBtnIcon}>✕</Text>
+                <Text allowFontScaling={false} style={styles.trialBtnLabel}>Incorrect</Text>
               </Pressable>
               <Pressable style={styles.correctBtn} onPress={() => recordTrial(true)}>
-                <Text style={styles.trialBtnIcon}>✓</Text>
-                <Text style={styles.trialBtnLabel}>Correct</Text>
+                <Text allowFontScaling={false} style={styles.trialBtnIcon}>✓</Text>
+                <Text allowFontScaling={false} style={styles.trialBtnLabel}>Correct</Text>
               </Pressable>
             </View>
             {stepTrials.length > 0 && (
               <Pressable style={styles.undoBtn} onPress={undoLast}>
-                <Text style={styles.undoBtnText}>↩  Undo last trial</Text>
+                <Text allowFontScaling={false} style={styles.undoBtnText}>↩  Undo last trial</Text>
               </Pressable>
             )}
           </View>
@@ -595,11 +595,11 @@ export const DataCollectionScreen: React.FC = () => {
           {/* ── Recent trial dots ── */}
           {stepTrials.length > 0 && (
             <View style={styles.recentPanel}>
-              <Text style={styles.sectionLabel}>THIS STEP — RECENT TRIALS</Text>
+              <Text allowFontScaling={false} style={styles.sectionLabel}>THIS STEP — RECENT TRIALS</Text>
               <View style={styles.trialDots}>
                 {[...stepTrials].slice(-12).map((t, i) => (
                   <View key={i} style={[styles.trialDot, { backgroundColor: t.correct ? '#16A34A' : '#DC2626' }]}>
-                    <Text style={styles.trialDotIcon}>{t.correct ? '✓' : '✕'}</Text>
+                    <Text allowFontScaling={false} style={styles.trialDotIcon}>{t.correct ? '✓' : '✕'}</Text>
                   </View>
                 ))}
               </View>
@@ -617,7 +617,7 @@ export const DataCollectionScreen: React.FC = () => {
                   }, {})
                 ).map(([label, count]) => (
                   <View key={label} style={styles.cueTallyPill}>
-                    <Text style={styles.cueTallyText}>{label}: {count}</Text>
+                    <Text allowFontScaling={false} style={styles.cueTallyText}>{label}: {count}</Text>
                   </View>
                 ))}
               </View>
@@ -627,23 +627,23 @@ export const DataCollectionScreen: React.FC = () => {
           {/* ── Session totals ── */}
           {trials.length > 0 && (
             <View style={styles.section}>
-              <Text style={styles.sectionLabel}>SESSION TOTALS</Text>
+              <Text allowFontScaling={false} style={styles.sectionLabel}>SESSION TOTALS</Text>
               <View style={styles.totalsRow}>
                 <View style={styles.totalChip}>
-                  <Text style={styles.totalChipValue}>{trials.length}</Text>
-                  <Text style={styles.totalChipLabel}>Trials</Text>
+                  <Text allowFontScaling={false} style={styles.totalChipValue}>{trials.length}</Text>
+                  <Text allowFontScaling={false} style={styles.totalChipLabel}>Trials</Text>
                 </View>
                 <View style={styles.totalChip}>
-                  <Text style={[styles.totalChipValue, { color: '#16A34A' }]}>
+                  <Text allowFontScaling={false} style={[styles.totalChipValue, { color: '#16A34A' }]}>
                     {computeOverallAccuracy(trials)}%
                   </Text>
-                  <Text style={styles.totalChipLabel}>Accuracy</Text>
+                  <Text allowFontScaling={false} style={styles.totalChipLabel}>Accuracy</Text>
                 </View>
                 <View style={styles.totalChip}>
-                  <Text style={styles.totalChipValue}>
+                  <Text allowFontScaling={false} style={styles.totalChipValue}>
                     {new Set(trials.map((t) => t.stepIndex)).size}
                   </Text>
-                  <Text style={styles.totalChipLabel}>Steps</Text>
+                  <Text allowFontScaling={false} style={styles.totalChipLabel}>Steps</Text>
                 </View>
               </View>
             </View>
@@ -655,7 +655,7 @@ export const DataCollectionScreen: React.FC = () => {
               style={styles.nextStepBtn}
               onPress={() => setCurrentStep((prev) => prev + 1)}
             >
-              <Text style={styles.nextStepBtnText}>Next step →</Text>
+              <Text allowFontScaling={false} style={styles.nextStepBtnText}>Next step →</Text>
             </Pressable>
           )}
 
@@ -665,7 +665,7 @@ export const DataCollectionScreen: React.FC = () => {
             onPress={handleEndSession}
             disabled={saving}
           >
-            <Text style={styles.endBtnText}>
+            <Text allowFontScaling={false} style={styles.endBtnText}>
               {saving ? 'Saving…' : '📊  End session & save data'}
             </Text>
           </Pressable>
@@ -678,17 +678,17 @@ export const DataCollectionScreen: React.FC = () => {
       <Modal visible={endSessionVisible} transparent animationType="fade" onRequestClose={() => setEndSessionVisible(false)}>
         <View style={mStyles.overlay}>
           <View style={mStyles.card}>
-            <Text style={mStyles.icon}>📊</Text>
-            <Text style={mStyles.title}>End session?</Text>
-            <Text style={mStyles.body}>
+            <Text allowFontScaling={false} style={mStyles.icon}>📊</Text>
+            <Text allowFontScaling={false} style={mStyles.title}>End session?</Text>
+            <Text allowFontScaling={false} style={mStyles.body}>
               Save {trials.length} trial{trials.length !== 1 ? 's' : ''} to "{patientLabel}"?
             </Text>
             <View style={mStyles.actions}>
               <Pressable style={mStyles.cancelBtn} onPress={() => setEndSessionVisible(false)}>
-                <Text style={mStyles.cancelText}>Keep going</Text>
+                <Text allowFontScaling={false} style={mStyles.cancelText}>Keep going</Text>
               </Pressable>
               <Pressable style={mStyles.confirmBtn} onPress={confirmEndSession}>
-                <Text style={mStyles.confirmText}>Save & end</Text>
+                <Text allowFontScaling={false} style={mStyles.confirmText}>Save & end</Text>
               </Pressable>
             </View>
           </View>
@@ -699,18 +699,18 @@ export const DataCollectionScreen: React.FC = () => {
       <Modal visible={leaveVisible} transparent animationType="fade" onRequestClose={() => setLeaveVisible(false)}>
         <View style={mStyles.overlay}>
           <View style={mStyles.card}>
-            <Text style={mStyles.icon}>⚠️</Text>
-            <Text style={mStyles.title}>Leave session?</Text>
-            <Text style={mStyles.body}>Unsaved trial data will be lost.</Text>
+            <Text allowFontScaling={false} style={mStyles.icon}>⚠️</Text>
+            <Text allowFontScaling={false} style={mStyles.title}>Leave session?</Text>
+            <Text allowFontScaling={false} style={mStyles.body}>Unsaved trial data will be lost.</Text>
             <View style={mStyles.actions}>
               <Pressable style={mStyles.cancelBtn} onPress={() => setLeaveVisible(false)}>
-                <Text style={mStyles.cancelText}>Stay</Text>
+                <Text allowFontScaling={false} style={mStyles.cancelText}>Stay</Text>
               </Pressable>
               <Pressable
                 style={[mStyles.confirmBtn, mStyles.destructiveBtn]}
                 onPress={() => { clearDraft(); router.back(); }}
               >
-                <Text style={mStyles.confirmText}>Leave</Text>
+                <Text allowFontScaling={false} style={mStyles.confirmText}>Leave</Text>
               </Pressable>
             </View>
           </View>
@@ -721,9 +721,9 @@ export const DataCollectionScreen: React.FC = () => {
       <Modal visible={addCueVisible} transparent animationType="fade" onRequestClose={() => setAddCueVisible(false)}>
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={mStyles.overlay}>
           <View style={mStyles.card}>
-            <Text style={mStyles.title}>Add custom cue</Text>
-            <Text style={mStyles.body}>Give it a short label (e.g. "Written cue", "Repetition").</Text>
-            <TextInput
+            <Text allowFontScaling={false} style={mStyles.title}>Add custom cue</Text>
+            <Text allowFontScaling={false} style={mStyles.body}>Give it a short label (e.g. "Written cue", "Repetition").</Text>
+            <TextInput allowFontScaling={false}
               style={mStyles.input}
               value={newCueText}
               onChangeText={setNewCueText}
@@ -735,10 +735,10 @@ export const DataCollectionScreen: React.FC = () => {
             />
             <View style={mStyles.actions}>
               <Pressable style={mStyles.cancelBtn} onPress={() => setAddCueVisible(false)}>
-                <Text style={mStyles.cancelText}>Cancel</Text>
+                <Text allowFontScaling={false} style={mStyles.cancelText}>Cancel</Text>
               </Pressable>
               <Pressable style={mStyles.confirmBtn} onPress={confirmAddCustomCue}>
-                <Text style={mStyles.confirmText}>Add</Text>
+                <Text allowFontScaling={false} style={mStyles.confirmText}>Add</Text>
               </Pressable>
             </View>
           </View>
@@ -749,14 +749,14 @@ export const DataCollectionScreen: React.FC = () => {
       <Modal visible={!!removeCueLabel} transparent animationType="fade" onRequestClose={() => setRemoveCueLabel(null)}>
         <View style={mStyles.overlay}>
           <View style={mStyles.card}>
-            <Text style={mStyles.title}>Remove "{removeCueLabel}"?</Text>
-            <Text style={mStyles.body}>This cue will be removed from your custom list.</Text>
+            <Text allowFontScaling={false} style={mStyles.title}>Remove "{removeCueLabel}"?</Text>
+            <Text allowFontScaling={false} style={mStyles.body}>This cue will be removed from your custom list.</Text>
             <View style={mStyles.actions}>
               <Pressable style={mStyles.cancelBtn} onPress={() => setRemoveCueLabel(null)}>
-                <Text style={mStyles.cancelText}>Cancel</Text>
+                <Text allowFontScaling={false} style={mStyles.cancelText}>Cancel</Text>
               </Pressable>
               <Pressable style={[mStyles.confirmBtn, mStyles.destructiveBtn]} onPress={confirmRemoveCustomCue}>
-                <Text style={mStyles.confirmText}>Remove</Text>
+                <Text allowFontScaling={false} style={mStyles.confirmText}>Remove</Text>
               </Pressable>
             </View>
           </View>
@@ -767,10 +767,10 @@ export const DataCollectionScreen: React.FC = () => {
       <Modal visible={!!warningText} transparent animationType="fade" onRequestClose={() => setWarningText(null)}>
         <View style={mStyles.overlay}>
           <View style={mStyles.card}>
-            <Text style={mStyles.title}>Heads up</Text>
-            <Text style={mStyles.body}>{warningText}</Text>
+            <Text allowFontScaling={false} style={mStyles.title}>Heads up</Text>
+            <Text allowFontScaling={false} style={mStyles.body}>{warningText}</Text>
             <Pressable style={[mStyles.confirmBtn, { flex: 0, alignSelf: 'stretch' }]} onPress={() => setWarningText(null)}>
-              <Text style={mStyles.confirmText}>Got it</Text>
+              <Text allowFontScaling={false} style={mStyles.confirmText}>Got it</Text>
             </Pressable>
           </View>
         </View>
@@ -785,9 +785,9 @@ export const DataCollectionScreen: React.FC = () => {
       >
         <View style={mStyles.overlay}>
           <View style={mStyles.card}>
-            <Text style={mStyles.icon}>🤔</Text>
-            <Text style={mStyles.title}>Mark as incorrect?</Text>
-            <Text style={mStyles.body}>
+            <Text allowFontScaling={false} style={mStyles.icon}>🤔</Text>
+            <Text allowFontScaling={false} style={mStyles.title}>Mark as incorrect?</Text>
+            <Text allowFontScaling={false} style={mStyles.body}>
               "Dependent" usually means you assisted with 100% of the task. Are you sure you want to mark this trial as incorrect?
             </Text>
             {/* "Do not ask again" — resets each new session */}
@@ -796,13 +796,13 @@ export const DataCollectionScreen: React.FC = () => {
               onPress={() => setSkipDependentWarning((prev) => !prev)}
             >
               <View style={[mStyles.checkbox, skipDependentWarning && mStyles.checkboxOn]}>
-                {skipDependentWarning && <Text style={mStyles.checkmark}>✓</Text>}
+                {skipDependentWarning && <Text allowFontScaling={false} style={mStyles.checkmark}>✓</Text>}
               </View>
-              <Text style={mStyles.checkLabel}>Don't ask again this session</Text>
+              <Text allowFontScaling={false} style={mStyles.checkLabel}>Don't ask again this session</Text>
             </Pressable>
             <View style={mStyles.actions}>
               <Pressable style={mStyles.cancelBtn} onPress={() => setDependentIncorrectVisible(false)}>
-                <Text style={mStyles.cancelText}>No</Text>
+                <Text allowFontScaling={false} style={mStyles.cancelText}>No</Text>
               </Pressable>
               <Pressable
                 style={[mStyles.confirmBtn, mStyles.destructiveBtn]}
@@ -811,7 +811,7 @@ export const DataCollectionScreen: React.FC = () => {
                   doRecordTrial(false);
                 }}
               >
-                <Text style={mStyles.confirmText}>Yes, mark incorrect</Text>
+                <Text allowFontScaling={false} style={mStyles.confirmText}>Yes, mark incorrect</Text>
               </Pressable>
             </View>
           </View>
@@ -827,18 +827,18 @@ export const DataCollectionScreen: React.FC = () => {
       >
         <View style={mStyles.overlay}>
           <View style={mStyles.card}>
-            <Text style={mStyles.icon}>💾</Text>
-            <Text style={mStyles.title}>Unsaved session found</Text>
-            <Text style={mStyles.body}>
+            <Text allowFontScaling={false} style={mStyles.icon}>💾</Text>
+            <Text allowFontScaling={false} style={mStyles.title}>Unsaved session found</Text>
+            <Text allowFontScaling={false} style={mStyles.body}>
               {pendingDraft?.trials.length} trial{(pendingDraft?.trials.length ?? 0) !== 1 ? 's' : ''} recorded for "{pendingDraft?.patientLabel}"{pendingDraft?.sessionTitle ? ` (${pendingDraft.sessionTitle})` : ''} — last updated {formatRelativeTime(pendingDraft?.updatedAt ?? '')}.
               {'\n\n'}This wasn't saved before the app closed. Resume it, or discard it and continue with this session.
             </Text>
             <View style={mStyles.actions}>
               <Pressable style={mStyles.cancelBtn} onPress={discardPendingDraft}>
-                <Text style={mStyles.cancelText}>Discard</Text>
+                <Text allowFontScaling={false} style={mStyles.cancelText}>Discard</Text>
               </Pressable>
               <Pressable style={mStyles.confirmBtn} onPress={resumePendingDraft}>
-                <Text style={mStyles.confirmText}>Resume session</Text>
+                <Text allowFontScaling={false} style={mStyles.confirmText}>Resume session</Text>
               </Pressable>
             </View>
           </View>

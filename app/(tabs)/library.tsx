@@ -23,7 +23,7 @@ function PlansLocked() {
   return (
     <SafeAreaView edges={['top']} style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.screenTitle}>Plans</Text>
+        <Text allowFontScaling={false} style={styles.screenTitle}>Plans</Text>
       </View>
 
       <ScrollView
@@ -31,9 +31,9 @@ function PlansLocked() {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.lockCard}>
-          <Text style={styles.lockIcon}>🔒</Text>
-          <Text style={styles.lockTitle}>Pro feature</Text>
-          <Text style={styles.lockBody}>
+          <Text allowFontScaling={false} style={styles.lockIcon}>🔒</Text>
+          <Text allowFontScaling={false} style={styles.lockTitle}>Pro feature</Text>
+          <Text allowFontScaling={false} style={styles.lockBody}>
             For only $9.99/month, unlock session plans, live data collection, SOAP note builder, and more.
           </Text>
 
@@ -41,17 +41,17 @@ function PlansLocked() {
             style={styles.unlockBtn}
             onPress={() => router.push('/paywall')}
           >
-            <Text style={styles.unlockBtnText}>Unlock EBP-SLP Pro</Text>
+            <Text allowFontScaling={false} style={styles.unlockBtnText}>Unlock EBP-SLP Pro</Text>
           </Pressable>
         </View>
 
-        <Text style={styles.featuresLabel}>WHAT'S INCLUDED IN PRO</Text>
+        <Text allowFontScaling={false} style={styles.featuresLabel}>WHAT'S INCLUDED IN PRO</Text>
         {proFeatures.map((f) => (
           <View key={f.title} style={styles.featureRow}>
-            <Text style={styles.featureIcon}>{f.icon}</Text>
+            <Text allowFontScaling={false} style={styles.featureIcon}>{f.icon}</Text>
             <View style={styles.featureText}>
-              <Text style={styles.featureTitle}>{f.title}</Text>
-              <Text style={styles.featureBody}>{f.body}</Text>
+              <Text allowFontScaling={false} style={styles.featureTitle}>{f.title}</Text>
+              <Text allowFontScaling={false} style={styles.featureBody}>{f.body}</Text>
             </View>
           </View>
         ))}

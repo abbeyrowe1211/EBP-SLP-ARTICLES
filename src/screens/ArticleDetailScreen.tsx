@@ -39,7 +39,7 @@ const NOTES_KEY = 'ebp_article_notes_v1';
 
 const Panel: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
   <View style={styles.panel}>
-    <Text style={styles.panelTitle}>{title}</Text>
+    <Text allowFontScaling={false} style={styles.panelTitle}>{title}</Text>
     {children}
   </View>
 );
@@ -47,14 +47,14 @@ const Panel: React.FC<{ title: string; children: React.ReactNode }> = ({ title, 
 const Bullet: React.FC<{ text: string }> = ({ text: t }) => (
   <View style={styles.bulletRow}>
     <View style={styles.bulletDot} />
-    <Text style={styles.bulletText}>{t}</Text>
+    <Text allowFontScaling={false} style={styles.bulletText}>{t}</Text>
   </View>
 );
 
 const StatBox: React.FC<{ value: string; label: string }> = ({ value, label }) => (
   <View style={styles.statBox}>
-    <Text style={styles.statValue}>{value}</Text>
-    <Text style={styles.statLabel}>{label}</Text>
+    <Text allowFontScaling={false} style={styles.statValue}>{value}</Text>
+    <Text allowFontScaling={false} style={styles.statLabel}>{label}</Text>
   </View>
 );
 
@@ -370,11 +370,11 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
       {/* Back bar */}
       <View style={styles.topBar}>
         <Pressable style={styles.backBtn} onPress={() => router.back()}>
-          <Text style={styles.backText}>← Browse</Text>
+          <Text allowFontScaling={false} style={styles.backText}>← Browse</Text>
         </Pressable>
         <Pressable style={[styles.saveBtn, saved && styles.saveBtnActive]} onPress={handleToggleSave}>
           <SavedIcon color={saved ? colors.surface : colors.primaryDeep} size={14} filled={saved} />
-          <Text style={[styles.saveBtnText, saved && styles.saveBtnTextActive]}>{saved ? 'Saved' : 'Save'}</Text>
+          <Text allowFontScaling={false} style={[styles.saveBtnText, saved && styles.saveBtnTextActive]}>{saved ? 'Saved' : 'Save'}</Text>
         </Pressable>
       </View>
 
@@ -392,25 +392,25 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
         {/* Badge row */}
         <View style={styles.badgeRow}>
           <View style={[styles.badge, { backgroundColor: evColor.bg }]}>
-            <Text style={[styles.badgeText, { color: evColor.text }]}>
+            <Text allowFontScaling={false} style={[styles.badgeText, { color: evColor.text }]}>
               {EVIDENCE_LABELS[article.evidenceLevel]}
             </Text>
           </View>
           {article.isFoundation && (
             <View style={[styles.badge, { backgroundColor: colors.primaryLighter }]}>
-              <Text style={[styles.badgeText, { color: colors.primaryDeep }]}>Foundation</Text>
+              <Text allowFontScaling={false} style={[styles.badgeText, { color: colors.primaryDeep }]}>Foundation</Text>
             </View>
           )}
         </View>
 
         {/* Title */}
-        <Text style={styles.title}>{article.title}</Text>
+        <Text allowFontScaling={false} style={styles.title}>{article.title}</Text>
 
         {/* Authors */}
-        <Text style={styles.authors}>{article.authors}</Text>
+        <Text allowFontScaling={false} style={styles.authors}>{article.authors}</Text>
 
         {/* Journal / year / PMID */}
-        <Text style={styles.journal}>
+        <Text allowFontScaling={false} style={styles.journal}>
           {article.journal} · {article.year}
           {article.pmid ? ` · PMID: ${article.pmid}` : ''}
         </Text>
@@ -431,14 +431,14 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
             Linking.openURL(link);
           }}
         >
-          <Text style={styles.fullArticleBtnText}>🔗  See full article</Text>
+          <Text allowFontScaling={false} style={styles.fullArticleBtnText}>🔗  See full article</Text>
         </Pressable>
 
         {/* Area tags */}
         <View style={styles.tagRow}>
           {article.areas.map((area) => (
             <View key={area} style={styles.areaTag}>
-              <Text style={styles.areaTagText}>{area}</Text>
+              <Text allowFontScaling={false} style={styles.areaTagText}>{area}</Text>
             </View>
           ))}
         </View>
@@ -452,7 +452,7 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
 
         {/* How to apply it */}
         <Panel title="Clinical application">
-          <Text style={styles.paragraphText}>{article.clinicalApplication}</Text>
+          <Text allowFontScaling={false} style={styles.paragraphText}>{article.clinicalApplication}</Text>
         </Panel>
 
         {/* Session stats */}
@@ -478,11 +478,11 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
             notesPanelYRef.current = e.nativeEvent.layout.y;
           }}
         >
-          <Text style={styles.notesPanelTitle}>📝  My notes</Text>
-          <Text style={styles.notesWarning}>
+          <Text allowFontScaling={false} style={styles.notesPanelTitle}>📝  My notes</Text>
+          <Text allowFontScaling={false} style={styles.notesWarning}>
             ⚠️ Do not enter patient names, dates of birth, or any identifying information.
           </Text>
-          <TextInput
+          <TextInput allowFontScaling={false}
             style={styles.notesInput}
             value={note}
             onChangeText={handleNoteChange}
@@ -509,7 +509,7 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
         {/* Related articles */}
         {relatedArticles.length > 0 && (
           <View style={styles.relatedPanel}>
-            <Text style={styles.relatedTitle}>Related articles</Text>
+            <Text allowFontScaling={false} style={styles.relatedTitle}>Related articles</Text>
             {relatedArticles.map((a) => {
               const rc = EVIDENCE_COLORS[a.evidenceLevel];
               return (
@@ -520,14 +520,14 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
                 >
                   <View style={styles.relatedLeft}>
                     <View style={[styles.relatedBadge, { backgroundColor: rc.bg }]}>
-                      <Text style={[styles.relatedBadgeText, { color: rc.text }]}>
+                      <Text allowFontScaling={false} style={[styles.relatedBadgeText, { color: rc.text }]}>
                         {EVIDENCE_LABELS[a.evidenceLevel]}
                       </Text>
                     </View>
-                    <Text style={styles.relatedRowTitle} numberOfLines={2}>{a.shortTitle}</Text>
-                    <Text style={styles.relatedRowMeta}>{a.authorShort} · {a.year}</Text>
+                    <Text allowFontScaling={false} style={styles.relatedRowTitle} numberOfLines={2}>{a.shortTitle}</Text>
+                    <Text allowFontScaling={false} style={styles.relatedRowMeta}>{a.authorShort} · {a.year}</Text>
                   </View>
-                  <Text style={styles.relatedArrow}>›</Text>
+                  <Text allowFontScaling={false} style={styles.relatedArrow}>›</Text>
                 </Pressable>
               );
             })}
@@ -549,12 +549,12 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
               });
             }}
           >
-            <Text style={styles.ctaBtnText}>⚡  Generate session plan from this article</Text>
+            <Text allowFontScaling={false} style={styles.ctaBtnText}>⚡  Generate session plan from this article</Text>
           </Pressable>
         ) : (
           <View style={styles.noCtaNote}>
-            <Text style={styles.noCtaIcon}>📋</Text>
-            <Text style={styles.noCtaText}>
+            <Text allowFontScaling={false} style={styles.noCtaIcon}>📋</Text>
+            <Text allowFontScaling={false} style={styles.noCtaText}>
               This article is a research framework, literature review, or assessment guide. Session plan generation is available for treatment-focused articles.
             </Text>
           </View>
@@ -569,7 +569,7 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
           {printingArticle ? (
             <ActivityIndicator color={colors.primaryDark} size="small" />
           ) : (
-            <Text style={styles.exportBtnText}>📄  Export article summary</Text>
+            <Text allowFontScaling={false} style={styles.exportBtnText}>📄  Export article summary</Text>
           )}
         </Pressable>
 

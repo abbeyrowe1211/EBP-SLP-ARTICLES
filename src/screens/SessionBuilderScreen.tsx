@@ -43,7 +43,7 @@ const PillGroup: React.FC<{
         style={[styles.pill, selected === opt && styles.pillActive]}
         onPress={() => onSelect(opt)}
       >
-        <Text style={[styles.pillText, selected === opt && styles.pillTextActive]}>
+        <Text allowFontScaling={false} style={[styles.pillText, selected === opt && styles.pillTextActive]}>
           {opt}
         </Text>
       </Pressable>
@@ -71,7 +71,7 @@ const MultiPillGroup: React.FC<{
           onLongPress={canDelete ? () => onDelete?.(opt) : undefined}
           delayLongPress={400}
         >
-          <Text style={[styles.pillText, active && styles.pillTextActive]}>{opt}</Text>
+          <Text allowFontScaling={false} style={[styles.pillText, active && styles.pillTextActive]}>{opt}</Text>
         </Pressable>
       );
     })}
@@ -94,7 +94,7 @@ const DropdownSelect: React.FC<{
         <View style={[styles.radioCircle, selected === opt && styles.radioCircleActive]}>
           {selected === opt && <View style={styles.radioDot} />}
         </View>
-        <Text style={[styles.dropdownText, selected === opt && styles.dropdownTextActive]}>
+        <Text allowFontScaling={false} style={[styles.dropdownText, selected === opt && styles.dropdownTextActive]}>
           {opt}
         </Text>
       </Pressable>
@@ -140,7 +140,7 @@ const GeneratingBar: React.FC<{ visible: boolean }> = ({ visible }) => {
 
   return (
     <View style={styles.progressWrapper}>
-      <Text style={styles.progressMsg}>{LOADING_MESSAGES[msgIndex]}</Text>
+      <Text allowFontScaling={false} style={styles.progressMsg}>{LOADING_MESSAGES[msgIndex]}</Text>
       <View style={styles.progressTrack}>
         <Animated.View
           style={[
@@ -294,7 +294,7 @@ export const SessionBuilderScreen: React.FC = () => {
   if (!article) {
     return (
       <SafeAreaView style={styles.container}>
-        <Text style={{ padding: 24, color: colors.textMuted }}>Article not found.</Text>
+        <Text allowFontScaling={false} style={{ padding: 24, color: colors.textMuted }}>Article not found.</Text>
       </SafeAreaView>
     );
   }
@@ -304,9 +304,9 @@ export const SessionBuilderScreen: React.FC = () => {
       {/* Header */}
       <View style={styles.topBar}>
         <Pressable onPress={() => router.back()}>
-          <Text style={styles.backText}>← Article</Text>
+          <Text allowFontScaling={false} style={styles.backText}>← Article</Text>
         </Pressable>
-        <Text style={styles.screenTitle}>Build session</Text>
+        <Text allowFontScaling={false} style={styles.screenTitle}>Build session</Text>
         <View style={{ width: 60 }} />
       </View>
 
@@ -323,18 +323,18 @@ export const SessionBuilderScreen: React.FC = () => {
 
         {/* Citation banner */}
         <View style={styles.citationBanner}>
-          <Text style={styles.citationText}>
-            <Text style={styles.citationLabel}>Built on: </Text>
+          <Text allowFontScaling={false} style={styles.citationText}>
+            <Text allowFontScaling={false} style={styles.citationLabel}>Built on: </Text>
             {article.shortTitle} · {article.authorShort} ({article.year})
           </Text>
         </View>
 
         {/* PHI warning */}
         <View style={styles.phiBanner}>
-          <Text style={styles.phiIcon}>🛡</Text>
+          <Text allowFontScaling={false} style={styles.phiIcon}>🛡</Text>
           <View style={{ flex: 1 }}>
-            <Text style={styles.phiBold}>Do not enter patient information.</Text>
-            <Text style={styles.phiBody}>
+            <Text allowFontScaling={false} style={styles.phiBold}>Do not enter patient information.</Text>
+            <Text allowFontScaling={false} style={styles.phiBody}>
               No names, dates of birth, MRNs, or identifiers. EBP-SLP is a clinical reference tool, not a documentation system.
             </Text>
           </View>
@@ -342,7 +342,7 @@ export const SessionBuilderScreen: React.FC = () => {
 
         {/* Session length */}
         <View style={styles.formGroup}>
-          <Text style={styles.label}>Session length</Text>
+          <Text allowFontScaling={false} style={styles.label}>Session length</Text>
           <PillGroup
             options={SESSION_LENGTHS}
             selected={sessionLength}
@@ -352,13 +352,13 @@ export const SessionBuilderScreen: React.FC = () => {
 
         {/* Severity */}
         <View style={styles.formGroup}>
-          <Text style={styles.label}>Patient severity</Text>
+          <Text allowFontScaling={false} style={styles.label}>Patient severity</Text>
           <PillGroup options={SEVERITIES} selected={severity} onSelect={setSeverity} />
         </View>
 
         {/* Setting */}
         <View style={styles.formGroup}>
-          <Text style={styles.label}>Setting</Text>
+          <Text allowFontScaling={false} style={styles.label}>Setting</Text>
           <PillGroup
             options={customSetting && !SETTINGS.includes(customSetting) ? [...SETTINGS, customSetting] : SETTINGS}
             selected={setting}
@@ -368,8 +368,8 @@ export const SessionBuilderScreen: React.FC = () => {
 
         {/* Functional goal — multi-select */}
         <View style={styles.formGroup}>
-          <Text style={styles.label}>Functional goal targets</Text>
-          <Text style={[styles.helperText, { marginBottom: 10 }]}>
+          <Text allowFontScaling={false} style={styles.label}>Functional goal targets</Text>
+          <Text allowFontScaling={false} style={[styles.helperText, { marginBottom: 10 }]}>
             Select one or more goal areas for this session.
           </Text>
           <View style={styles.dropdownWrap}>
@@ -386,23 +386,23 @@ export const SessionBuilderScreen: React.FC = () => {
                   onPress={() => toggleGoal(g)}
                 >
                   <View style={[styles.checkBox, active && styles.checkBoxActive]}>
-                    {active && <Text style={styles.checkMark}>✓</Text>}
+                    {active && <Text allowFontScaling={false} style={styles.checkMark}>✓</Text>}
                   </View>
-                  <Text style={[styles.dropdownText, active && styles.dropdownTextActive]}>
+                  <Text allowFontScaling={false} style={[styles.dropdownText, active && styles.dropdownTextActive]}>
                     {g}
                   </Text>
                 </Pressable>
               );
             })}
           </View>
-          <Text style={styles.helperText}>
+          <Text allowFontScaling={false} style={styles.helperText}>
             EBP-SLP never stores free-text patient details.
           </Text>
         </View>
 
         {/* Time post-onset */}
         <View style={styles.formGroup}>
-          <Text style={styles.label}>Time post-onset</Text>
+          <Text allowFontScaling={false} style={styles.label}>Time post-onset</Text>
           <DropdownSelect
             options={TIME_POST_ONSET}
             selected={timePostOnset}
@@ -412,7 +412,7 @@ export const SessionBuilderScreen: React.FC = () => {
 
         {/* Materials */}
         <View style={styles.formGroup}>
-          <Text style={styles.label}>Materials available</Text>
+          <Text allowFontScaling={false} style={styles.label}>Materials available</Text>
           <MultiPillGroup
             options={[...MATERIALS, ...customMaterials]}
             selected={materials}
@@ -420,9 +420,9 @@ export const SessionBuilderScreen: React.FC = () => {
             deletable={customMaterials}
             onDelete={deleteCustomMaterial}
           />
-          <Text style={styles.helperText}>Press and hold a material you typed in to remove it.</Text>
+          <Text allowFontScaling={false} style={styles.helperText}>Press and hold a material you typed in to remove it.</Text>
           <View style={styles.customMaterialRow}>
-            <TextInput
+            <TextInput allowFontScaling={false}
               style={styles.customMaterialInput}
               placeholder="Add your own (e.g. kitchen utensils)"
               placeholderTextColor={colors.textMuted}
@@ -436,15 +436,15 @@ export const SessionBuilderScreen: React.FC = () => {
               onPress={addCustomMaterial}
               disabled={!customMaterialInput.trim()}
             >
-              <Text style={styles.addMaterialButtonText}>+ Add</Text>
+              <Text allowFontScaling={false} style={styles.addMaterialButtonText}>+ Add</Text>
             </Pressable>
           </View>
         </View>
 
         {/* AI disclaimer — always visible */}
         <View style={styles.aiDisclaimerBanner}>
-          <Text style={styles.aiDisclaimerIcon}>⚠️</Text>
-          <Text style={styles.aiDisclaimerText}>
+          <Text allowFontScaling={false} style={styles.aiDisclaimerIcon}>⚠️</Text>
+          <Text allowFontScaling={false} style={styles.aiDisclaimerText}>
             AI can make mistakes. As the licensed SLP, you are responsible for all clinical decisions. Always review the generated plan before use.
           </Text>
         </View>
@@ -458,10 +458,10 @@ export const SessionBuilderScreen: React.FC = () => {
           {loading ? (
             <View style={styles.loadingRow}>
               <ActivityIndicator color={colors.surface} size="small" />
-              <Text style={styles.generateBtnText}>Generating…</Text>
+              <Text allowFontScaling={false} style={styles.generateBtnText}>Generating…</Text>
             </View>
           ) : (
-            <Text style={styles.generateBtnText}>⚡  Generate session plan</Text>
+            <Text allowFontScaling={false} style={styles.generateBtnText}>⚡  Generate session plan</Text>
           )}
         </Pressable>
 

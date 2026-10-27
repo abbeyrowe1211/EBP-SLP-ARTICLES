@@ -12,8 +12,8 @@ interface Props {
 
 export const SettingCard: React.FC<Props> = ({ name, count, borderColor, onPress }) => (
   <Pressable style={[styles.card, { borderLeftColor: borderColor }]} onPress={onPress}>
-    <Text style={styles.name}>{name}</Text>
-    <Text style={styles.count}>{count}</Text>
+    <Text allowFontScaling={false} style={styles.name}>{name}</Text>
+    <Text allowFontScaling={false} style={styles.count}>{count}</Text>
   </Pressable>
 );
 

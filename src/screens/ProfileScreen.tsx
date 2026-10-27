@@ -96,7 +96,7 @@ const Section: React.FC<{
   if (!collapsible) {
     return (
       <View style={styles.section}>
-        <Text style={[styles.sectionTitle, { marginBottom: 8 }]}>{title}</Text>
+        <Text allowFontScaling={false} style={[styles.sectionTitle, { marginBottom: 8 }]}>{title}</Text>
         <View style={styles.sectionCard}>{children}</View>
       </View>
     );
@@ -105,8 +105,8 @@ const Section: React.FC<{
   return (
     <View style={styles.section}>
       <Pressable style={styles.collapsibleHeader} onPress={() => setExpanded((v) => !v)}>
-        <Text style={styles.sectionTitle}>{title}</Text>
-        <Text style={styles.collapseChevron}>{expanded ? '▴' : '▾'}</Text>
+        <Text allowFontScaling={false} style={styles.sectionTitle}>{title}</Text>
+        <Text allowFontScaling={false} style={styles.collapseChevron}>{expanded ? '▴' : '▾'}</Text>
       </Pressable>
       {expanded && <View style={styles.sectionCard}>{children}</View>}
     </View>
@@ -120,7 +120,7 @@ const Row: React.FC<{
   last?: boolean;
 }> = ({ label, children, last }) => (
   <View style={[styles.row, !last && styles.rowBorder]}>
-    <Text style={styles.rowLabel}>{label}</Text>
+    <Text allowFontScaling={false} style={styles.rowLabel}>{label}</Text>
     <View style={styles.rowValue}>{children}</View>
   </View>
 );
@@ -128,8 +128,8 @@ const Row: React.FC<{
 // ─── Stat box ─────────────────────────────────────────────────────────────────
 const StatBox: React.FC<{ value: string | number; label: string }> = ({ value, label }) => (
   <View style={styles.statBox}>
-    <Text style={styles.statValue}>{value}</Text>
-    <Text style={styles.statLabel}>{label}</Text>
+    <Text allowFontScaling={false} style={styles.statValue}>{value}</Text>
+    <Text allowFontScaling={false} style={styles.statLabel}>{label}</Text>
   </View>
 );
 
@@ -527,7 +527,7 @@ export const ProfileScreen: React.FC = () => {
   return (
     <SafeAreaView edges={['top']} style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.screenTitle}>Profile</Text>
+        <Text allowFontScaling={false} style={styles.screenTitle}>Profile</Text>
       </View>
 
       <KeyboardAvoidingView
@@ -544,34 +544,34 @@ export const ProfileScreen: React.FC = () => {
         {/* ── Avatar / name banner ── */}
         <View style={styles.avatarBanner}>
           <View style={styles.avatar}>
-            <Text style={styles.avatarInitial}>
+            <Text allowFontScaling={false} style={styles.avatarInitial}>
               {profile.name ? profile.name.trim()[0].toUpperCase() : '?'}
             </Text>
           </View>
           <View style={{ flex: 1 }}>
-            <Text style={styles.avatarName}>
+            <Text allowFontScaling={false} style={styles.avatarName}>
               {profile.name || 'Add your name'}
             </Text>
             {(profile.credentials || profile.setting) ? (
-              <Text style={styles.avatarSub}>
+              <Text allowFontScaling={false} style={styles.avatarSub}>
                 {[profile.credentials, profile.setting].filter(Boolean).join(' · ')}
               </Text>
             ) : (
-              <Text style={styles.avatarSubMuted}>Tap Edit to fill in your details</Text>
+              <Text allowFontScaling={false} style={styles.avatarSubMuted}>Tap Edit to fill in your details</Text>
             )}
           </View>
           <Pressable style={styles.editBtn} onPress={openEditProfile}>
-            <Text style={styles.editBtnText}>Edit</Text>
+            <Text allowFontScaling={false} style={styles.editBtnText}>Edit</Text>
           </Pressable>
         </View>
 
         {/* ── Edit profile form ── */}
         {editingProfile && (
           <View style={styles.editForm}>
-            <Text style={styles.editFormTitle}>Your information</Text>
+            <Text allowFontScaling={false} style={styles.editFormTitle}>Your information</Text>
 
-            <Text style={styles.fieldLabel}>Name</Text>
-            <TextInput
+            <Text allowFontScaling={false} style={styles.fieldLabel}>Name</Text>
+            <TextInput allowFontScaling={false}
               style={styles.fieldInput}
               value={draftProfile.name}
               onChangeText={(v) => setDraftProfile((p) => ({ ...p, name: v }))}
@@ -580,8 +580,8 @@ export const ProfileScreen: React.FC = () => {
               autoCapitalize="words"
             />
 
-            <Text style={styles.fieldLabel}>Credentials</Text>
-            <TextInput
+            <Text allowFontScaling={false} style={styles.fieldLabel}>Credentials</Text>
+            <TextInput allowFontScaling={false}
               style={styles.fieldInput}
               value={draftProfile.credentials}
               onChangeText={(v) => setDraftProfile((p) => ({ ...p, credentials: v }))}
@@ -590,7 +590,7 @@ export const ProfileScreen: React.FC = () => {
               autoCapitalize="characters"
             />
 
-            <Text style={styles.fieldLabel}>Primary work setting</Text>
+            <Text allowFontScaling={false} style={styles.fieldLabel}>Primary work setting</Text>
             <View style={styles.chipGrid}>
               {WORK_SETTINGS.map((s) => {
                 const active = s === 'Other' ? customSettingMode : (!customSettingMode && draftProfile.setting === s);
@@ -608,7 +608,7 @@ export const ProfileScreen: React.FC = () => {
                       }
                     }}
                   >
-                    <Text style={[styles.chipText, active && styles.chipTextActive]}>
+                    <Text allowFontScaling={false} style={[styles.chipText, active && styles.chipTextActive]}>
                       {s}
                     </Text>
                   </Pressable>
@@ -616,7 +616,7 @@ export const ProfileScreen: React.FC = () => {
               })}
             </View>
             {customSettingMode && (
-              <TextInput
+              <TextInput allowFontScaling={false}
                 style={[styles.fieldInput, { marginTop: 10 }]}
                 value={draftProfile.setting}
                 onChangeText={(v) => setDraftProfile((p) => ({ ...p, setting: v }))}
@@ -628,10 +628,10 @@ export const ProfileScreen: React.FC = () => {
 
             <View style={styles.editActions}>
               <Pressable style={styles.cancelBtn} onPress={() => setEditingProfile(false)}>
-                <Text style={styles.cancelBtnText}>Cancel</Text>
+                <Text allowFontScaling={false} style={styles.cancelBtnText}>Cancel</Text>
               </Pressable>
               <Pressable style={styles.saveBtn} onPress={saveProfile}>
-                <Text style={styles.saveBtnText}>Save</Text>
+                <Text allowFontScaling={false} style={styles.saveBtnText}>Save</Text>
               </Pressable>
             </View>
           </View>
@@ -653,7 +653,7 @@ export const ProfileScreen: React.FC = () => {
         {/* ── Data backup ── */}
         <Section title="DATA BACKUP">
           <View style={styles.backupCard}>
-            <Text style={styles.backupBody}>
+            <Text allowFontScaling={false} style={styles.backupBody}>
               Your saved articles, plans, session data, and notes live only on this device — there's no account
               or server sync. Back them up so you don't lose anything if you lose your phone or reinstall the app.
             </Text>
@@ -665,7 +665,7 @@ export const ProfileScreen: React.FC = () => {
               {backingUp ? (
                 <ActivityIndicator color={colors.surface} size="small" />
               ) : (
-                <Text style={styles.backupBtnText}>Export backup</Text>
+                <Text allowFontScaling={false} style={styles.backupBtnText}>Export backup</Text>
               )}
             </Pressable>
             <Pressable
@@ -676,7 +676,7 @@ export const ProfileScreen: React.FC = () => {
               {restoring ? (
                 <ActivityIndicator color={colors.primaryDark} size="small" />
               ) : (
-                <Text style={styles.backupBtnSecondaryText}>Restore from backup</Text>
+                <Text allowFontScaling={false} style={styles.backupBtnSecondaryText}>Restore from backup</Text>
               )}
             </Pressable>
           </View>
@@ -692,7 +692,7 @@ export const ProfileScreen: React.FC = () => {
                   style={[styles.segment, settings.defaultSessionLength === l && styles.segmentActive]}
                   onPress={() => saveSetting({ defaultSessionLength: l })}
                 >
-                  <Text style={[styles.segmentText, settings.defaultSessionLength === l && styles.segmentTextActive]}>
+                  <Text allowFontScaling={false} style={[styles.segmentText, settings.defaultSessionLength === l && styles.segmentTextActive]}>
                     {l.replace(' min', '')}
                   </Text>
                 </Pressable>
@@ -712,7 +712,7 @@ export const ProfileScreen: React.FC = () => {
         {/* ── Cueing personalisation ── */}
         <Section title="CUEING" collapsible defaultExpanded={false}>
           <View style={styles.cueHint}>
-            <Text style={styles.cueHintText}>
+            <Text allowFontScaling={false} style={styles.cueHintText}>
               Choose which cue types appear during data collection. Custom cues you add are always shown.
             </Text>
           </View>
@@ -720,7 +720,7 @@ export const ProfileScreen: React.FC = () => {
             const cues = TOGGLEABLE_CUES.filter((c) => c.group === group);
             return (
               <View key={group}>
-                <Text style={styles.cueGroupHeader}>{group.toUpperCase()}</Text>
+                <Text allowFontScaling={false} style={styles.cueGroupHeader}>{group.toUpperCase()}</Text>
                 {cues.map((c, i) => (
                   <Row key={c.level} label={c.label} last={i === cues.length - 1 && group === 'Additional' && customCues.length === 0}>
                     <Switch
@@ -738,13 +738,13 @@ export const ProfileScreen: React.FC = () => {
           {/* ── Custom cues management ── */}
           {customCues.length > 0 && (
             <View>
-              <Text style={styles.cueGroupHeader}>YOUR CUSTOM CUES</Text>
+              <Text allowFontScaling={false} style={styles.cueGroupHeader}>YOUR CUSTOM CUES</Text>
               {customCues.map((cue, i) => (
                 <View
                   key={cue}
                   style={[styles.row, i < customCues.length - 1 && styles.rowBorder]}
                 >
-                  <Text style={[styles.rowLabel, { flex: 1 }]}>{cue}</Text>
+                  <Text allowFontScaling={false} style={[styles.rowLabel, { flex: 1 }]}>{cue}</Text>
                   <View style={styles.rowValue}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
                       <Switch
@@ -760,7 +760,7 @@ export const ProfileScreen: React.FC = () => {
                         accessibilityLabel={`Delete ${cue}`}
                         accessibilityRole="button"
                       >
-                        <Text style={styles.cueDeleteBtnText}>✕</Text>
+                        <Text allowFontScaling={false} style={styles.cueDeleteBtnText}>✕</Text>
                       </Pressable>
                     </View>
                   </View>
@@ -776,8 +776,8 @@ export const ProfileScreen: React.FC = () => {
             style={styles.collapsibleHeader}
             onPress={() => setNotifExpanded((v) => !v)}
           >
-            <Text style={styles.sectionTitle}>NOTIFICATIONS</Text>
-            <Text style={styles.collapseChevron}>{notifExpanded ? '▴' : '▾'}</Text>
+            <Text allowFontScaling={false} style={styles.sectionTitle}>NOTIFICATIONS</Text>
+            <Text allowFontScaling={false} style={styles.collapseChevron}>{notifExpanded ? '▴' : '▾'}</Text>
           </Pressable>
 
           {notifExpanded && (
@@ -785,7 +785,7 @@ export const ProfileScreen: React.FC = () => {
               {/* Card 1 — Article Reminders */}
               <View style={[styles.sectionCard, { marginBottom: 10 }]}>
                 <View style={styles.notifCardHeader}>
-                  <Text style={styles.notifCardTitle}>📅  Article Reminders</Text>
+                  <Text allowFontScaling={false} style={styles.notifCardTitle}>📅  Article Reminders</Text>
                   <Switch
                     value={notifFreq !== 'off'}
                     onValueChange={handleNotifToggle}
@@ -793,7 +793,7 @@ export const ProfileScreen: React.FC = () => {
                     thumbColor={colors.surface}
                   />
                 </View>
-                <Text style={styles.notifCardCaption}>
+                <Text allowFontScaling={false} style={styles.notifCardCaption}>
                   Get notified when new research articles are added to EBP-SLP.
                 </Text>
                 {notifFreq !== 'off' && (
@@ -805,7 +805,7 @@ export const ProfileScreen: React.FC = () => {
                           style={[styles.segment, notifFreq === f && styles.segmentActive]}
                           onPress={() => handleNotifFreq(f)}
                         >
-                          <Text style={[styles.segmentText, notifFreq === f && styles.segmentTextActive]}>
+                          <Text allowFontScaling={false} style={[styles.segmentText, notifFreq === f && styles.segmentTextActive]}>
                             {f === 'monthly' ? 'Monthly' : 'On Update'}
                           </Text>
                         </Pressable>
@@ -814,14 +814,14 @@ export const ProfileScreen: React.FC = () => {
                     {notifFreq === 'monthly' && (
                       <View style={styles.notifPickerRow}>
                         <View style={styles.notifPickerGroup}>
-                          <Text style={styles.notifPickerLabel}>Time</Text>
+                          <Text allowFontScaling={false} style={styles.notifPickerLabel}>Time</Text>
                           <Pressable onPress={handlePickTime} style={styles.pickerChip}>
-                            <Text style={styles.pickerChipText}>{formatHour(notifHour)} ▾</Text>
+                            <Text allowFontScaling={false} style={styles.pickerChipText}>{formatHour(notifHour)} ▾</Text>
                           </Pressable>
                         </View>
                       </View>
                     )}
-                    <Text style={styles.notifSummary}>
+                    <Text allowFontScaling={false} style={styles.notifSummary}>
                       🔔{'  '}{notifFreq === 'monthly'
                         ? `1st of each month at ${formatHour(notifHour)}`
                         : 'Fires when new articles are added to EBP-SLP'}
@@ -833,7 +833,7 @@ export const ProfileScreen: React.FC = () => {
               {/* Card 2 — Article of the Week */}
               <View style={[styles.sectionCard, { marginBottom: 10 }]}>
                 <View style={styles.notifCardHeader}>
-                  <Text style={styles.notifCardTitle}>📖  Article of the Week</Text>
+                  <Text allowFontScaling={false} style={styles.notifCardTitle}>📖  Article of the Week</Text>
                   <Switch
                     value={aowEnabled}
                     onValueChange={handleAowToggle}
@@ -841,26 +841,26 @@ export const ProfileScreen: React.FC = () => {
                     thumbColor={colors.surface}
                   />
                 </View>
-                <Text style={styles.notifCardCaption}>
+                <Text allowFontScaling={false} style={styles.notifCardCaption}>
                   Get alerted when a new article is selected as the focus of the week.
                 </Text>
                 {aowEnabled && (
                   <View style={[styles.notifCardBody, { borderTopWidth: 1, borderTopColor: colors.border }]}>
                     <View style={styles.notifPickerRow}>
                       <View style={styles.notifPickerGroup}>
-                        <Text style={styles.notifPickerLabel}>Day</Text>
+                        <Text allowFontScaling={false} style={styles.notifPickerLabel}>Day</Text>
                         <Pressable onPress={handlePickAowDay} style={styles.pickerChip}>
-                          <Text style={styles.pickerChipText}>{DAY_FULL_LABELS[aowDay - 1]} ▾</Text>
+                          <Text allowFontScaling={false} style={styles.pickerChipText}>{DAY_FULL_LABELS[aowDay - 1]} ▾</Text>
                         </Pressable>
                       </View>
                       <View style={styles.notifPickerGroup}>
-                        <Text style={styles.notifPickerLabel}>Time</Text>
+                        <Text allowFontScaling={false} style={styles.notifPickerLabel}>Time</Text>
                         <Pressable onPress={handlePickAowTime} style={styles.pickerChip}>
-                          <Text style={styles.pickerChipText}>{formatHour(aowHour)} ▾</Text>
+                          <Text allowFontScaling={false} style={styles.pickerChipText}>{formatHour(aowHour)} ▾</Text>
                         </Pressable>
                       </View>
                     </View>
-                    <Text style={styles.notifSummary}>
+                    <Text allowFontScaling={false} style={styles.notifSummary}>
                       📖{'  '}Every {DAY_FULL_LABELS[aowDay - 1]} at {formatHour(aowHour)} — rotating EBP article
                     </Text>
                   </View>
@@ -870,7 +870,7 @@ export const ProfileScreen: React.FC = () => {
               {/* Card 3 — Motivation Nudges */}
               <View style={styles.sectionCard}>
                 <View style={styles.notifCardHeader}>
-                  <Text style={styles.notifCardTitle}>💜  Motivation Nudges</Text>
+                  <Text allowFontScaling={false} style={styles.notifCardTitle}>💜  Motivation Nudges</Text>
                   <Switch
                     value={motivationEnabled}
                     onValueChange={handleMotivationToggle}
@@ -878,13 +878,13 @@ export const ProfileScreen: React.FC = () => {
                     thumbColor={colors.surface}
                   />
                 </View>
-                <Text style={styles.notifCardCaption}>
+                <Text allowFontScaling={false} style={styles.notifCardCaption}>
                   Quotes and encouragement to keep you checking the evidence.
                 </Text>
                 {motivationEnabled && (
                   <View style={[styles.notifCardBody, { borderTopWidth: 1, borderTopColor: colors.border }]}>
                     <View style={styles.notifPickerGroup}>
-                      <Text style={styles.notifPickerLabel}>Days</Text>
+                      <Text allowFontScaling={false} style={styles.notifPickerLabel}>Days</Text>
                       <View style={styles.dayToggleRow}>
                         {DAY_LABELS.map((label, idx) => {
                           const dayNum = idx + 1;
@@ -895,7 +895,7 @@ export const ProfileScreen: React.FC = () => {
                               style={[styles.dayToggleChip, active && styles.dayToggleChipActive]}
                               onPress={() => toggleMotivDay(dayNum)}
                             >
-                              <Text style={[styles.dayToggleChipText, active && styles.dayToggleChipTextActive]}>
+                              <Text allowFontScaling={false} style={[styles.dayToggleChipText, active && styles.dayToggleChipTextActive]}>
                                 {label}
                               </Text>
                             </Pressable>
@@ -905,13 +905,13 @@ export const ProfileScreen: React.FC = () => {
                     </View>
                     <View style={[styles.notifPickerRow, { marginTop: 10 }]}>
                       <View style={styles.notifPickerGroup}>
-                        <Text style={styles.notifPickerLabel}>Time</Text>
+                        <Text allowFontScaling={false} style={styles.notifPickerLabel}>Time</Text>
                         <Pressable onPress={handlePickMotivTime} style={styles.pickerChip}>
-                          <Text style={styles.pickerChipText}>{formatHour(motivHour)} ▾</Text>
+                          <Text allowFontScaling={false} style={styles.pickerChipText}>{formatHour(motivHour)} ▾</Text>
                         </Pressable>
                       </View>
                     </View>
-                    <Text style={styles.notifSummary}>
+                    <Text allowFontScaling={false} style={styles.notifSummary}>
                       🔔{'  '}Every {motivDays.map((d) => DAY_FULL_LABELS[d - 1]).join(', ')} at {formatHour(motivHour)} — quotes &amp; tips
                     </Text>
                   </View>
@@ -924,24 +924,24 @@ export const ProfileScreen: React.FC = () => {
         {/* ── Article ranking ── */}
         <Section title="HOW ARTICLES ARE RANKED">
           <View style={styles.rankingCard}>
-            <Text style={styles.rankingBody}>
+            <Text allowFontScaling={false} style={styles.rankingBody}>
               Articles in the Browse tab are sorted by two factors:
             </Text>
             <View style={styles.rankingItem}>
-              <Text style={styles.rankingNum}>1</Text>
+              <Text allowFontScaling={false} style={styles.rankingNum}>1</Text>
               <View style={{ flex: 1 }}>
-                <Text style={styles.rankingTitle}>Publication year</Text>
-                <Text style={styles.rankingDesc}>Newer research appears first. More recent evidence better reflects current clinical practice.</Text>
+                <Text allowFontScaling={false} style={styles.rankingTitle}>Publication year</Text>
+                <Text allowFontScaling={false} style={styles.rankingDesc}>Newer research appears first. More recent evidence better reflects current clinical practice.</Text>
               </View>
             </View>
             <View style={styles.rankingItem}>
-              <Text style={styles.rankingNum}>2</Text>
+              <Text allowFontScaling={false} style={styles.rankingNum}>2</Text>
               <View style={{ flex: 1 }}>
-                <Text style={styles.rankingTitle}>Evidence level (within the same year)</Text>
-                <Text style={styles.rankingDesc}>Level 1a (systematic reviews) ranks above 1b (RCTs), then Level 2 (cohort studies), then Level 3 (case studies). Stronger evidence rises to the top.</Text>
+                <Text allowFontScaling={false} style={styles.rankingTitle}>Evidence level (within the same year)</Text>
+                <Text allowFontScaling={false} style={styles.rankingDesc}>Level 1a (systematic reviews) ranks above 1b (RCTs), then Level 2 (cohort studies), then Level 3 (case studies). Stronger evidence rises to the top.</Text>
               </View>
             </View>
-            <Text style={[styles.rankingBody, { marginTop: 8 }]}>
+            <Text allowFontScaling={false} style={[styles.rankingBody, { marginTop: 8 }]}>
               You can filter by ASHA area and search by author, keyword, diagnosis, or treatment name to narrow results further.
             </Text>
           </View>
@@ -950,34 +950,34 @@ export const ProfileScreen: React.FC = () => {
         {/* ── About ── */}
         <Section title="ABOUT">
           <Row label="App version">
-            <Text style={styles.metaText}>1.0.0 (beta)</Text>
+            <Text allowFontScaling={false} style={styles.metaText}>1.0.0 (beta)</Text>
           </Row>
           <Row label="Evidence base">
-            <Text style={styles.metaText}>ASHA · PubMed</Text>
+            <Text allowFontScaling={false} style={styles.metaText}>ASHA · PubMed</Text>
           </Row>
           <Row label="PHI policy">
-            <Text style={styles.metaText}>No PHI stored</Text>
+            <Text allowFontScaling={false} style={styles.metaText}>No PHI stored</Text>
           </Row>
           <Pressable onPress={() => router.push('/onboarding?review=true')}>
             <Row label="Review intro slides">
-              <Text style={styles.linkText}>View →</Text>
+              <Text allowFontScaling={false} style={styles.linkText}>View →</Text>
             </Row>
           </Pressable>
           <Pressable onPress={() => router.push('/disclaimer')}>
             <Row label="Clinical disclaimer">
-              <Text style={styles.linkText}>View →</Text>
+              <Text allowFontScaling={false} style={styles.linkText}>View →</Text>
             </Row>
           </Pressable>
           <Pressable onPress={() => Linking.openURL('https://ebpslp.app')}>
             <Row label="For more info" last>
-              <Text style={styles.linkText}>ebpslp.app →</Text>
+              <Text allowFontScaling={false} style={styles.linkText}>ebpslp.app →</Text>
             </Row>
           </Pressable>
         </Section>
 
         {/* ── PHI disclaimer ── */}
         <View style={styles.phiDisclaimer}>
-          <Text style={styles.phiDisclaimerText}>
+          <Text allowFontScaling={false} style={styles.phiDisclaimerText}>
             🛡  EBP-SLP is designed to be PHI-free. Patient labels are non-identifying descriptors chosen by you. No clinical notes, names, or identifying data are ever stored or transmitted.
           </Text>
         </View>

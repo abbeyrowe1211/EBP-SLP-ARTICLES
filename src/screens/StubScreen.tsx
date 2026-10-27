@@ -12,11 +12,11 @@ interface Props {
 export const StubScreen: React.FC<Props> = ({ title, subtitle }) => (
   <SafeAreaView edges={['top']} style={styles.container}>
     <View style={styles.content}>
-      <Text style={styles.emoji}>🚧</Text>
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.subtitle}>{subtitle}</Text>
+      <Text allowFontScaling={false} style={styles.emoji}>🚧</Text>
+      <Text allowFontScaling={false} style={styles.title}>{title}</Text>
+      <Text allowFontScaling={false} style={styles.subtitle}>{subtitle}</Text>
       <View style={styles.divider} />
-      <Text style={styles.note}>
+      <Text allowFontScaling={false} style={styles.note}>
         Coming in the next build phase. Home screen is live now — tap around the bottom nav and
         scroll to see the full design system in action.
       </Text>

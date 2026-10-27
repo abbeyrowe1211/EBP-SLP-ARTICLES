@@ -15,8 +15,8 @@ import { text } from '@/theme/typography';
 
 const Block: React.FC<{ title: string; body: string }> = ({ title, body }) => (
   <View style={styles.block}>
-    <Text style={styles.blockTitle}>{title}</Text>
-    <Text style={styles.blockBody}>{body}</Text>
+    <Text allowFontScaling={false} style={styles.blockTitle}>{title}</Text>
+    <Text allowFontScaling={false} style={styles.blockBody}>{body}</Text>
   </View>
 );
 
@@ -30,9 +30,9 @@ export const DisclaimerScreen: React.FC = () => {
       {/* Header */}
       <View style={styles.topBar}>
         <Pressable onPress={() => router.back()}>
-          <Text style={styles.backText}>← Back</Text>
+          <Text allowFontScaling={false} style={styles.backText}>← Back</Text>
         </Pressable>
-        <Text style={styles.screenTitle}>Clinical Disclaimer</Text>
+        <Text allowFontScaling={false} style={styles.screenTitle}>Clinical Disclaimer</Text>
         <View style={{ width: 60 }} />
       </View>
 
@@ -40,8 +40,8 @@ export const DisclaimerScreen: React.FC = () => {
 
         {/* Banner */}
         <View style={styles.banner}>
-          <Text style={styles.bannerIcon}>⚠️</Text>
-          <Text style={styles.bannerText}>
+          <Text allowFontScaling={false} style={styles.bannerIcon}>⚠️</Text>
+          <Text allowFontScaling={false} style={styles.bannerText}>
             EBP-SLP is a professional reference and planning tool — not a medical device, diagnostic system, or substitute for clinical judgment.
           </Text>
         </View>
@@ -93,8 +93,8 @@ export const DisclaimerScreen: React.FC = () => {
 
         {/* Footer */}
         <View style={styles.footer}>
-          <Text style={styles.footerText}>EBP-SLP · Version 1.0</Text>
-          <Text style={styles.footerText}>For licensed SLPs and SLP students only</Text>
+          <Text allowFontScaling={false} style={styles.footerText}>EBP-SLP · Version 1.0</Text>
+          <Text allowFontScaling={false} style={styles.footerText}>For licensed SLPs and SLP students only</Text>
         </View>
 
         <View style={{ height: 40 }} />

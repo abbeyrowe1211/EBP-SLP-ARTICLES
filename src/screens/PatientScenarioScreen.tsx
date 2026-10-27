@@ -241,33 +241,33 @@ const ResultCard: React.FC<{
       <View style={styles.cardTopRow}>
         <View style={styles.badgeRow}>
           <View style={[styles.badge, { backgroundColor: evColor.bg }]}>
-            <Text style={[styles.badgeText, { color: evColor.text }]}>
+            <Text allowFontScaling={false} style={[styles.badgeText, { color: evColor.text }]}>
               {EVIDENCE_LABELS[article.evidenceLevel]}
             </Text>
           </View>
           {article.isTreatmentFocused !== false && (
             <View style={[styles.badge, { backgroundColor: '#FFF3E0' }]}>
-              <Text style={[styles.badgeText, { color: '#E65100' }]}>⚡ Plan ready</Text>
+              <Text allowFontScaling={false} style={[styles.badgeText, { color: '#E65100' }]}>⚡ Plan ready</Text>
             </View>
           )}
         </View>
-        <Text style={styles.cardArrow}>›</Text>
+        <Text allowFontScaling={false} style={styles.cardArrow}>›</Text>
       </View>
 
-      <Text style={styles.cardTitle} numberOfLines={2}>{article.shortTitle}</Text>
-      <Text style={styles.cardMeta}>{article.authorShort} · {article.year}</Text>
+      <Text allowFontScaling={false} style={styles.cardTitle} numberOfLines={2}>{article.shortTitle}</Text>
+      <Text allowFontScaling={false} style={styles.cardMeta}>{article.authorShort} · {article.year}</Text>
 
       {matchedTerms.length > 0 && (
         <View style={styles.matchRow}>
           {matchedTerms.slice(0, 3).map((term) => (
             <View key={term} style={styles.matchPill}>
-              <Text style={styles.matchPillText}>{term}</Text>
+              <Text allowFontScaling={false} style={styles.matchPillText}>{term}</Text>
             </View>
           ))}
         </View>
       )}
 
-      <Text style={styles.cardSummary} numberOfLines={2}>{article.summary}</Text>
+      <Text allowFontScaling={false} style={styles.cardSummary} numberOfLines={2}>{article.summary}</Text>
     </Pressable>
   );
 };
@@ -365,16 +365,16 @@ export const PatientScenarioScreen: React.FC = () => {
       {/* Header */}
       <View style={styles.topBar}>
         <Pressable onPress={() => router.back()} style={styles.backBtn}>
-          <Text style={styles.backText}>← Browse</Text>
+          <Text allowFontScaling={false} style={styles.backText}>← Browse</Text>
         </Pressable>
-        <Text style={[styles.screenTitle, { flex: 1, textAlign: 'center' }]}>
+        <Text allowFontScaling={false} style={[styles.screenTitle, { flex: 1, textAlign: 'center' }]}>
           Evidence-Based Plans for My Patient
         </Text>
       </View>
 
       {/* Search bar */}
       <View style={styles.searchWrap}>
-        <TextInput
+        <TextInput allowFontScaling={false}
           ref={inputRef}
           style={styles.searchInput}
           value={query}
@@ -395,12 +395,12 @@ export const PatientScenarioScreen: React.FC = () => {
           {isSearching ? (
             <ActivityIndicator color={colors.surface} size="small" />
           ) : (
-            <Text style={styles.searchBtnText}>Search</Text>
+            <Text allowFontScaling={false} style={styles.searchBtnText}>Search</Text>
           )}
         </Pressable>
       </View>
 
-      <Text style={styles.hint}>
+      <Text allowFontScaling={false} style={styles.hint}>
         Describe your patient's diagnosis, deficits, or goals. The more detail, the better the match.
       </Text>
 
@@ -413,11 +413,11 @@ export const PatientScenarioScreen: React.FC = () => {
         {/* Examples */}
         {!hasSearched && (
           <>
-            <Text style={styles.sectionLabel}>TRY AN EXAMPLE</Text>
+            <Text allowFontScaling={false} style={styles.sectionLabel}>TRY AN EXAMPLE</Text>
             {EXAMPLES.map((ex) => (
               <Pressable key={ex} style={styles.exampleBtn} onPress={() => handleExample(ex)}>
-                <Text style={styles.exampleText}>{ex}</Text>
-                <Text style={styles.exampleArrow}>→</Text>
+                <Text allowFontScaling={false} style={styles.exampleText}>{ex}</Text>
+                <Text allowFontScaling={false} style={styles.exampleArrow}>→</Text>
               </Pressable>
             ))}
           </>
@@ -427,7 +427,7 @@ export const PatientScenarioScreen: React.FC = () => {
         {hasSearched && (
           <>
             <View style={styles.resultsHeader}>
-              <Text style={styles.sectionLabel}>
+              <Text allowFontScaling={false} style={styles.sectionLabel}>
                 {results.length > 0
                   ? `${results.length} ARTICLE${results.length !== 1 ? 'S' : ''} MATCHED`
                   : 'NO MATCHES'}
@@ -436,25 +436,25 @@ export const PatientScenarioScreen: React.FC = () => {
                 onPress={() => { setQuery(''); setResults([]); setSuggestedAreas([]); setHasSearched(false); }}
                 style={styles.clearBtn}
               >
-                <Text style={styles.clearBtnText}>Clear</Text>
+                <Text allowFontScaling={false} style={styles.clearBtnText}>Clear</Text>
               </Pressable>
             </View>
 
             {results.length === 0 ? (
               <View style={styles.emptyState}>
-                <Text style={styles.emptyIcon}>🔍</Text>
-                <Text style={styles.emptyTitle}>No articles matched</Text>
-                <Text style={styles.emptyBody}>
+                <Text allowFontScaling={false} style={styles.emptyIcon}>🔍</Text>
+                <Text allowFontScaling={false} style={styles.emptyTitle}>No articles matched</Text>
+                <Text allowFontScaling={false} style={styles.emptyBody}>
                   Try different clinical terms — diagnosis names, deficit types, or treatment approaches work well.
                 </Text>
                 {suggestedAreas.length > 0 && (
                   <View style={styles.areaSection}>
-                    <Text style={styles.areaSectionLabel}>BROWSE BY TOPIC</Text>
+                    <Text allowFontScaling={false} style={styles.areaSectionLabel}>BROWSE BY TOPIC</Text>
                     <View style={styles.areaChipRow}>
                       {suggestedAreas.map((area) => (
                         <Pressable key={area} style={styles.areaChip} onPress={() => handleAreaPress(area)}>
-                          <Text style={styles.areaChipIcon}>{AREA_ICONS[area] ?? '📂'}</Text>
-                          <Text style={styles.areaChipText}>{area}</Text>
+                          <Text allowFontScaling={false} style={styles.areaChipIcon}>{AREA_ICONS[area] ?? '📂'}</Text>
+                          <Text allowFontScaling={false} style={styles.areaChipText}>{area}</Text>
                         </Pressable>
                       ))}
                     </View>
@@ -464,13 +464,13 @@ export const PatientScenarioScreen: React.FC = () => {
                 {/* Feedback — send what they were looking for straight to EBP-SLP */}
                 <View style={styles.feedbackSection}>
                   {feedbackSent ? (
-                    <Text style={styles.feedbackSentText}>
+                    <Text allowFontScaling={false} style={styles.feedbackSentText}>
                       ✓ Thanks — your note was sent to EBP-SLP.
                     </Text>
                   ) : (
                     <>
-                      <Text style={styles.feedbackLabel}>What kind of article were you looking for?</Text>
-                      <TextInput
+                      <Text allowFontScaling={false} style={styles.feedbackLabel}>What kind of article were you looking for?</Text>
+                      <TextInput allowFontScaling={false}
                         style={styles.feedbackInput}
                         value={feedbackText}
                         onChangeText={setFeedbackText}
@@ -483,7 +483,7 @@ export const PatientScenarioScreen: React.FC = () => {
                         onPress={handleSendFeedback}
                         disabled={!feedbackText.trim()}
                       >
-                        <Text style={styles.feedbackSendBtnText}>✉️  Send to EBP-SLP</Text>
+                        <Text allowFontScaling={false} style={styles.feedbackSendBtnText}>✉️  Send to EBP-SLP</Text>
                       </Pressable>
                     </>
                   )}
@@ -491,7 +491,7 @@ export const PatientScenarioScreen: React.FC = () => {
               </View>
             ) : (
               <>
-                <Text style={styles.queryEcho}>Best matches for: <Text style={styles.queryEchoItalic}>"{query}"</Text></Text>
+                <Text allowFontScaling={false} style={styles.queryEcho}>Best matches for: <Text allowFontScaling={false} style={styles.queryEchoItalic}>"{query}"</Text></Text>
                 {results.map((r) => (
                   <ResultCard
                     key={r.article.id}
@@ -500,21 +500,21 @@ export const PatientScenarioScreen: React.FC = () => {
                   />
                 ))}
                 <View style={styles.tipCard}>
-                  <Text style={styles.tipText}>
-                    💡 Articles with ⚡ <Text style={{ fontFamily: 'Quicksand_700Bold' }}>Plan ready</Text> can generate a full evidence-based session plan directly from the article detail page.
+                  <Text allowFontScaling={false} style={styles.tipText}>
+                    💡 Articles with ⚡ <Text allowFontScaling={false} style={{ fontFamily: 'Quicksand_700Bold' }}>Plan ready</Text> can generate a full evidence-based session plan directly from the article detail page.
                   </Text>
                 </View>
 
                 {/* Continue Searching */}
                 {suggestedAreas.length > 0 && (
                   <View style={styles.areaSection}>
-                    <Text style={styles.areaSectionLabel}>CONTINUE SEARCHING</Text>
-                    <Text style={styles.areaSectionHint}>Browse the full topic library for more articles</Text>
+                    <Text allowFontScaling={false} style={styles.areaSectionLabel}>CONTINUE SEARCHING</Text>
+                    <Text allowFontScaling={false} style={styles.areaSectionHint}>Browse the full topic library for more articles</Text>
                     <View style={styles.areaChipRow}>
                       {suggestedAreas.map((area) => (
                         <Pressable key={area} style={styles.areaChip} onPress={() => handleAreaPress(area)}>
-                          <Text style={styles.areaChipIcon}>{AREA_ICONS[area] ?? '📂'}</Text>
-                          <Text style={styles.areaChipText}>{area}</Text>
+                          <Text allowFontScaling={false} style={styles.areaChipIcon}>{AREA_ICONS[area] ?? '📂'}</Text>
+                          <Text allowFontScaling={false} style={styles.areaChipText}>{area}</Text>
                         </Pressable>
                       ))}
                     </View>

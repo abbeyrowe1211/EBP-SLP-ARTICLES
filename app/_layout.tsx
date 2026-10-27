@@ -58,9 +58,9 @@ function LoadingSplash({ opacity }: { opacity: Animated.Value }) {
           resizeMode="contain"
         />
       </View>
-      <Text style={styles.appName}>EBP-SLP</Text>
+      <Text allowFontScaling={false} style={styles.appName}>EBP-SLP</Text>
       <View style={styles.divider} />
-      <Text style={styles.quote}>{quote}</Text>
+      <Text allowFontScaling={false} style={styles.quote}>{quote}</Text>
     </Animated.View>
   );
 }

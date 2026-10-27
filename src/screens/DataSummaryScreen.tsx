@@ -30,10 +30,10 @@ const StepResultCard: React.FC<{ summary: StepSummary }> = ({ summary }) => {
     <View style={styles.stepCard}>
       <View style={styles.stepCardHeader}>
         <View style={styles.stepNumCircle}>
-          <Text style={styles.stepNumText}>{summary.stepIndex + 1}</Text>
+          <Text allowFontScaling={false} style={styles.stepNumText}>{summary.stepIndex + 1}</Text>
         </View>
-        <Text style={styles.stepCardTitle} numberOfLines={2}>{summary.stepTitle}</Text>
-        <Text style={[styles.stepAccuracy, { color: summary.totalTrials === 0 ? colors.textMuted : barColor }]}>
+        <Text allowFontScaling={false} style={styles.stepCardTitle} numberOfLines={2}>{summary.stepTitle}</Text>
+        <Text allowFontScaling={false} style={[styles.stepAccuracy, { color: summary.totalTrials === 0 ? colors.textMuted : barColor }]}>
           {summary.totalTrials === 0 ? '—' : `${pct}%`}
         </Text>
       </View>
@@ -46,11 +46,11 @@ const StepResultCard: React.FC<{ summary: StepSummary }> = ({ summary }) => {
           </View>
 
           <View style={styles.stepMeta}>
-            <Text style={styles.stepMetaText}>
+            <Text allowFontScaling={false} style={styles.stepMetaText}>
               {summary.correctTrials}/{summary.totalTrials} correct
             </Text>
             {summary.dominantCueLevel && (
-              <Text style={styles.stepMetaText}>
+              <Text allowFontScaling={false} style={styles.stepMetaText}>
                 Most used: {CUE_LABELS[summary.dominantCueLevel]}
               </Text>
             )}
@@ -62,7 +62,7 @@ const StepResultCard: React.FC<{ summary: StepSummary }> = ({ summary }) => {
               .filter(([, count]) => count > 0)
               .map(([level, count]) => (
                 <View key={level} style={styles.cuePill}>
-                  <Text style={styles.cuePillText}>
+                  <Text allowFontScaling={false} style={styles.cuePillText}>
                     {CUE_LABELS[level as keyof typeof CUE_LABELS]}: {count}
                   </Text>
                 </View>
@@ -72,7 +72,7 @@ const StepResultCard: React.FC<{ summary: StepSummary }> = ({ summary }) => {
       )}
 
       {summary.totalTrials === 0 && (
-        <Text style={styles.noDataText}>No trials recorded for this step</Text>
+        <Text allowFontScaling={false} style={styles.noDataText}>No trials recorded for this step</Text>
       )}
     </View>
   );
@@ -253,36 +253,36 @@ export const DataSummaryScreen: React.FC = () => {
   return (
     <SafeAreaView edges={['top']} style={styles.container}>
       <View style={styles.topBar}>
-        <Text style={styles.screenTitle}>Session summary</Text>
-        <Text style={styles.patientChip}>{patientLabel}</Text>
+        <Text allowFontScaling={false} style={styles.screenTitle}>Session summary</Text>
+        <Text allowFontScaling={false} style={styles.patientChip}>{patientLabel}</Text>
       </View>
 
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
         {/* Overall accuracy */}
         <View style={styles.overallCard}>
-          <Text style={[styles.overallPct, { color: overallColor }]}>
+          <Text allowFontScaling={false} style={[styles.overallPct, { color: overallColor }]}>
             {summary ? `${summary.overallAccuracy}%` : '—'}
           </Text>
-          <Text style={styles.overallLabel}>Overall accuracy</Text>
+          <Text allowFontScaling={false} style={styles.overallLabel}>Overall accuracy</Text>
           {summary && (
-            <Text style={styles.overallSub}>{summary.totalTrials} total trials</Text>
+            <Text allowFontScaling={false} style={styles.overallSub}>{summary.totalTrials} total trials</Text>
           )}
         </View>
 
         {/* Session info */}
         <View style={styles.sessionInfoBanner}>
-          <Text style={styles.sessionInfoText}>
-            <Text style={styles.sessionInfoBold}>Session: </Text>{sessionTitle}
+          <Text allowFontScaling={false} style={styles.sessionInfoText}>
+            <Text allowFontScaling={false} style={styles.sessionInfoBold}>Session: </Text>{sessionTitle}
           </Text>
-          <Text style={styles.sessionInfoText}>
-            <Text style={styles.sessionInfoBold}>Saved to: </Text>{patientLabel} in Plans
+          <Text allowFontScaling={false} style={styles.sessionInfoText}>
+            <Text allowFontScaling={false} style={styles.sessionInfoBold}>Saved to: </Text>{patientLabel} in Plans
           </Text>
         </View>
 
         {/* Step breakdowns */}
         {summary && (
           <>
-            <Text style={styles.sectionLabel}>STEP BREAKDOWN</Text>
+            <Text allowFontScaling={false} style={styles.sectionLabel}>STEP BREAKDOWN</Text>
             {summary.stepSummaries.map((s) => (
               <StepResultCard key={s.stepIndex} summary={s} />
             ))}
@@ -292,7 +292,7 @@ export const DataSummaryScreen: React.FC = () => {
         {/* Documentation */}
         {summary && summary.totalTrials > 0 && (
           <View style={styles.docSection}>
-            <Text style={styles.sectionLabel}>DOCUMENTATION</Text>
+            <Text allowFontScaling={false} style={styles.sectionLabel}>DOCUMENTATION</Text>
 
             {/* SOAP note */}
             <Pressable
@@ -303,14 +303,14 @@ export const DataSummaryScreen: React.FC = () => {
               {printingSOAP ? (
                 <ActivityIndicator color={colors.primaryDark} size="small" />
               ) : (
-                <Text style={styles.soapBtnText}>📋  Print SOAP note</Text>
+                <Text allowFontScaling={false} style={styles.soapBtnText}>📋  Print SOAP note</Text>
               )}
             </Pressable>
 
             {/* Documentation phrase — same text used in the SOAP note's Assessment section, editable */}
             <View style={styles.docCard}>
-              <Text style={styles.docCardLabel}>Documentation phrase</Text>
-              <TextInput
+              <Text allowFontScaling={false} style={styles.docCardLabel}>Documentation phrase</Text>
+              <TextInput allowFontScaling={false}
                 style={styles.docText}
                 value={docPhrase}
                 onChangeText={setDocPhrase}
@@ -320,13 +320,13 @@ export const DataSummaryScreen: React.FC = () => {
                 placeholderTextColor={colors.textMuted}
               />
               <Pressable style={styles.regenerateBtn} onPress={handleResetDocPhrase}>
-                <Text style={styles.regenerateBtnText}>Reset to auto-generated text</Text>
+                <Text allowFontScaling={false} style={styles.regenerateBtnText}>Reset to auto-generated text</Text>
               </Pressable>
               <Pressable
                 style={[styles.copyBtn, copied && styles.copyBtnDone]}
                 onPress={handleCopy}
               >
-                <Text style={styles.copyBtnText}>
+                <Text allowFontScaling={false} style={styles.copyBtnText}>
                   {copied ? '✓  Copied!' : 'Copy to clipboard'}
                 </Text>
               </Pressable>
@@ -341,7 +341,7 @@ export const DataSummaryScreen: React.FC = () => {
               style={styles.libraryBtn}
               onPress={() => router.back()}
             >
-              <Text style={styles.libraryBtnText}>← Back to Plans</Text>
+              <Text allowFontScaling={false} style={styles.libraryBtnText}>← Back to Plans</Text>
             </Pressable>
           ) : (
             <>
@@ -349,13 +349,13 @@ export const DataSummaryScreen: React.FC = () => {
                 style={styles.libraryBtn}
                 onPress={() => router.replace('/(tabs)/library')}
               >
-                <Text style={styles.libraryBtnText}>View in Plans →</Text>
+                <Text allowFontScaling={false} style={styles.libraryBtnText}>View in Plans →</Text>
               </Pressable>
               <Pressable
                 style={styles.homeBtn}
                 onPress={() => router.replace('/(tabs)')}
               >
-                <Text style={styles.homeBtnText}>Back to home</Text>
+                <Text allowFontScaling={false} style={styles.homeBtnText}>Back to home</Text>
               </Pressable>
             </>
           )}

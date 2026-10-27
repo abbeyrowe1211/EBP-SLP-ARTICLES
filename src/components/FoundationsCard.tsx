@@ -36,8 +36,8 @@ export const FoundationsCard: React.FC<Props> = ({ onPressArticle }) => {
         <PillarsIcon color={colors.primaryDeep} size={22} />
       </View>
       <View style={{ flex: 1 }}>
-        <Text style={styles.title}>The pillars behind every protocol</Text>
-        <Text style={styles.sub}>Tap any article to read more</Text>
+        <Text allowFontScaling={false} style={styles.title}>The pillars behind every protocol</Text>
+        <Text allowFontScaling={false} style={styles.sub}>Tap any article to read more</Text>
       </View>
     </View>
 
@@ -47,12 +47,12 @@ export const FoundationsCard: React.FC<Props> = ({ onPressArticle }) => {
         style={({ pressed }) => [styles.row, pressed && styles.rowPressed]}
         onPress={() => onPressArticle(article.id)}
       >
-        <Text style={styles.line} numberOfLines={1}>
-          · <Text style={styles.bold}>{article.authorShort} ({article.year})</Text>
+        <Text allowFontScaling={false} style={styles.line} numberOfLines={1}>
+          · <Text allowFontScaling={false} style={styles.bold}>{article.authorShort} ({article.year})</Text>
           {'  '}
-          <Text style={styles.topic}>{article.shortTitle}</Text>
+          <Text allowFontScaling={false} style={styles.topic}>{article.shortTitle}</Text>
         </Text>
-        <Text style={styles.arrow}>›</Text>
+        <Text allowFontScaling={false} style={styles.arrow}>›</Text>
       </Pressable>
     ))}
   </LinearGradient>

@@ -14,7 +14,7 @@ export default function ArticleRoute() {
   if (!article) {
     return (
       <SafeAreaView style={styles.notFound}>
-        <Text style={styles.notFoundText}>Article not found.</Text>
+        <Text allowFontScaling={false} style={styles.notFoundText}>Article not found.</Text>
       </SafeAreaView>
     );
   }

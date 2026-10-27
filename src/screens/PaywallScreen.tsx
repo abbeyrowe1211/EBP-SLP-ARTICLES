@@ -125,7 +125,7 @@ export const PaywallScreen: React.FC = () => {
           accessibilityLabel="Close"
           accessibilityRole="button"
         >
-          <Text style={styles.closeBtnText}>✕</Text>
+          <Text allowFontScaling={false} style={styles.closeBtnText}>✕</Text>
         </Pressable>
 
         {/* Header */}
@@ -135,8 +135,8 @@ export const PaywallScreen: React.FC = () => {
             style={styles.logo}
             resizeMode="contain"
           />
-          <Text style={styles.headline}>Unlock EBP-SLP Pro</Text>
-          <Text style={styles.subheadline}>
+          <Text allowFontScaling={false} style={styles.headline}>Unlock EBP-SLP Pro</Text>
+          <Text allowFontScaling={false} style={styles.subheadline}>
             For only {monthlyPrice}/month, get the full clinical toolkit — evidence search, session plans, data collection, and more.
           </Text>
         </View>
@@ -148,15 +148,15 @@ export const PaywallScreen: React.FC = () => {
             onPress={() => setSelectedPlan('annual')}
           >
             <View style={styles.bestValueBadge}>
-              <Text style={styles.bestValueText}>BEST VALUE</Text>
+              <Text allowFontScaling={false} style={styles.bestValueText}>BEST VALUE</Text>
             </View>
-            <Text style={[styles.planPrice, selectedPlan === 'annual' && styles.planPriceSelected]}>
+            <Text allowFontScaling={false} style={[styles.planPrice, selectedPlan === 'annual' && styles.planPriceSelected]}>
               {annualPrice}
             </Text>
-            <Text style={[styles.planLabel, selectedPlan === 'annual' && styles.planLabelSelected]}>
+            <Text allowFontScaling={false} style={[styles.planLabel, selectedPlan === 'annual' && styles.planLabelSelected]}>
               per year
             </Text>
-            <Text style={[styles.planSub, selectedPlan === 'annual' && styles.planSubSelected]}>
+            <Text allowFontScaling={false} style={[styles.planSub, selectedPlan === 'annual' && styles.planSubSelected]}>
               {annualPerMonth} · save {savingsPct}%
             </Text>
           </Pressable>
@@ -165,13 +165,13 @@ export const PaywallScreen: React.FC = () => {
             style={[styles.planCard, selectedPlan === 'monthly' && styles.planCardSelected]}
             onPress={() => setSelectedPlan('monthly')}
           >
-            <Text style={[styles.planPrice, selectedPlan === 'monthly' && styles.planPriceSelected]}>
+            <Text allowFontScaling={false} style={[styles.planPrice, selectedPlan === 'monthly' && styles.planPriceSelected]}>
               {monthlyPrice}
             </Text>
-            <Text style={[styles.planLabel, selectedPlan === 'monthly' && styles.planLabelSelected]}>
+            <Text allowFontScaling={false} style={[styles.planLabel, selectedPlan === 'monthly' && styles.planLabelSelected]}>
               per month
             </Text>
-            <Text style={[styles.planSub, selectedPlan === 'monthly' && styles.planSubSelected]}>
+            <Text allowFontScaling={false} style={[styles.planSub, selectedPlan === 'monthly' && styles.planSubSelected]}>
               billed monthly
             </Text>
           </Pressable>
@@ -186,23 +186,23 @@ export const PaywallScreen: React.FC = () => {
           {loading || packagesLoading ? (
             <ActivityIndicator color="#fff" />
           ) : (
-            <Text style={styles.subscribeBtnText}>
+            <Text allowFontScaling={false} style={styles.subscribeBtnText}>
               {selectedPlan === 'annual' ? `Start for ${annualPrice}/year` : `Start for ${monthlyPrice}/month`}
             </Text>
           )}
         </Pressable>
 
-        <Text style={styles.cancelNote}>Cancel anytime. No commitment.</Text>
+        <Text allowFontScaling={false} style={styles.cancelNote}>Cancel anytime. No commitment.</Text>
 
         {/* Pro features */}
         <View style={styles.section}>
-          <Text style={styles.sectionLabel}>EVERYTHING IN PRO</Text>
+          <Text allowFontScaling={false} style={styles.sectionLabel}>EVERYTHING IN PRO</Text>
           {PREMIUM_FEATURES.map((f) => (
             <View key={f.title} style={styles.featureRow}>
-              <Text style={styles.featureIcon}>{f.icon}</Text>
+              <Text allowFontScaling={false} style={styles.featureIcon}>{f.icon}</Text>
               <View style={styles.featureText}>
-                <Text style={styles.featureTitle}>{f.title}</Text>
-                <Text style={styles.featureBody}>{f.body}</Text>
+                <Text allowFontScaling={false} style={styles.featureTitle}>{f.title}</Text>
+                <Text allowFontScaling={false} style={styles.featureBody}>{f.body}</Text>
               </View>
             </View>
           ))}
@@ -210,21 +210,21 @@ export const PaywallScreen: React.FC = () => {
 
         {/* Free features */}
         <View style={styles.freeSection}>
-          <Text style={styles.sectionLabel}>ALWAYS FREE</Text>
+          <Text allowFontScaling={false} style={styles.sectionLabel}>ALWAYS FREE</Text>
           {FREE_FEATURES.map((f) => (
             <View key={f} style={styles.freeRow}>
-              <Text style={styles.freeCheck}>✓</Text>
-              <Text style={styles.freeText}>{f}</Text>
+              <Text allowFontScaling={false} style={styles.freeCheck}>✓</Text>
+              <Text allowFontScaling={false} style={styles.freeText}>{f}</Text>
             </View>
           ))}
         </View>
 
         {/* Restore */}
         <Pressable onPress={handleRestore} style={styles.skipBtn} disabled={loading}>
-          <Text style={styles.skipText}>Restore purchases</Text>
+          <Text allowFontScaling={false} style={styles.skipText}>Restore purchases</Text>
         </Pressable>
 
-        <Text style={styles.legalText}>
+        <Text allowFontScaling={false} style={styles.legalText}>
           Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current period. Manage subscriptions in your Apple ID settings.
         </Text>
       </ScrollView>

@@ -85,21 +85,21 @@ export const WalkthroughModal: React.FC<Props> = ({ visible, onDone }) => {
             ))}
           </View>
 
-          <Text style={styles.stepIcon}>{current.icon}</Text>
-          <Text style={styles.title}>{current.title}</Text>
-          <Text style={styles.body}>{current.body}</Text>
+          <Text allowFontScaling={false} style={styles.stepIcon}>{current.icon}</Text>
+          <Text allowFontScaling={false} style={styles.title}>{current.title}</Text>
+          <Text allowFontScaling={false} style={styles.body}>{current.body}</Text>
 
           <View style={styles.actions}>
             {!isLast && (
               <Pressable style={styles.skipBtn} onPress={skip}>
-                <Text style={styles.skipText}>Skip</Text>
+                <Text allowFontScaling={false} style={styles.skipText}>Skip</Text>
               </Pressable>
             )}
             <Pressable
               style={[styles.nextBtn, isLast && { flex: 1 }]}
               onPress={next}
             >
-              <Text style={styles.nextText}>{isLast ? 'Get started →' : 'Next →'}</Text>
+              <Text allowFontScaling={false} style={styles.nextText}>{isLast ? 'Get started →' : 'Next →'}</Text>
             </Pressable>
           </View>
         </View>
