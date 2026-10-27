@@ -449,13 +449,12 @@ export const DataCollectionScreen: React.FC = () => {
                     style={[styles.stepChip, currentStep === idx && styles.stepChipActive]}
                     onPress={() => setCurrentStep(idx)}
                   >
-                    <Text style={[styles.stepChipNum, currentStep === idx && styles.stepChipNumActive]}>
-                      {idx + 1}
-                    </Text>
                     <Text
-                      style={[styles.stepChipText, currentStep === idx && styles.stepChipTextActive]}
+                      style={[styles.stepChipNum, currentStep === idx && styles.stepChipNumActive]}
+                      maxFontSizeMultiplier={1.3}
+                      allowFontScaling
                     >
-                      {title}
+                      {idx + 1}
                     </Text>
                     {hasData && (
                       <View style={[styles.hasDataDot, currentStep === idx && styles.hasDataDotActive]} />
@@ -1019,24 +1018,34 @@ const styles = StyleSheet.create({
 
   // ── Step chips ──
   stepChip: {
-    flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+    justifyContent: 'center',
+    minWidth: 44,
+    minHeight: 44,
+    paddingHorizontal: 8,
     backgroundColor: colors.surface,
     borderWidth: 1.5,
     borderColor: colors.border,
     borderRadius: 999,
-    marginRight: 8,
-    maxWidth: 180,
+    marginRight: 10,
   },
   stepChipActive: { backgroundColor: colors.primary, borderColor: colors.primary },
-  stepChipNum: { ...text.caption, color: colors.textMuted, fontFamily: 'Quicksand_700Bold', minWidth: 14 },
+  stepChipNum: {
+    ...text.body,
+    color: colors.textMuted,
+    fontFamily: 'Quicksand_700Bold',
+    textAlign: 'center',
+  },
   stepChipNumActive: { color: colors.surface },
-  stepChipText: { ...text.caption, color: colors.text, fontFamily: 'Quicksand_600SemiBold', flex: 1 },
-  stepChipTextActive: { color: colors.surface },
-  hasDataDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: colors.primaryDark },
+  hasDataDot: {
+    position: 'absolute',
+    top: 4,
+    right: 4,
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+    backgroundColor: colors.primaryDark,
+  },
   hasDataDotActive: { backgroundColor: colors.surface },
 
   // ── Accuracy ──
