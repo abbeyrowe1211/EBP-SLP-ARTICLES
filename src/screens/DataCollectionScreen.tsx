@@ -327,7 +327,10 @@ export const DataCollectionScreen: React.FC = () => {
         stepTitle: stepTitles[currentStep] ?? `Step ${currentStep + 1}`,
         correct,
         cueLevel: primaryCue,
-        cueLevels: allCues.length > 1 ? allCues : undefined,
+        // Store the full set of standard cues whenever at least one was
+        // selected, even when it's just one combined with a custom cue —
+        // otherwise that cue silently drops out of every tally/count.
+        cueLevels: allCues.length > 0 ? allCues : undefined,
         cueNote: note || undefined,
         timestamp: new Date().toISOString(),
       },

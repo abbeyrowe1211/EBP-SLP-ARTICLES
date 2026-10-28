@@ -666,6 +666,10 @@ export const SessionPlanScreen: React.FC = () => {
   const backLabel = source === 'library' ? '← Plans' : '← Back';
 
   return (
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+    >
     <SafeAreaView edges={['top']} style={styles.container}>
       {/* Header */}
       <View style={styles.topBar}>
@@ -678,7 +682,11 @@ export const SessionPlanScreen: React.FC = () => {
         </Pressable>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={styles.scroll}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
 
         {/* Citation banner */}
         <View style={styles.citationBanner}>
@@ -855,6 +863,7 @@ export const SessionPlanScreen: React.FC = () => {
         saving={saving}
       />
     </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 };
 

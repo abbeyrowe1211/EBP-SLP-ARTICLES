@@ -59,17 +59,27 @@ export function computeStepSummaries(
     const correctTrials = stepTrials.filter((t) => t.correct).length;
     const accuracy = totalTrials > 0 ? Math.round((correctTrials / totalTrials) * 100) : 0;
 
-    // Cue breakdown — only include levels that were actually used
-    const cueBreakdown: Partial<Record<CueLevel, number>> = {};
+    // Cue breakdown — count EVERY cue active on each trial, not just one
+    // "primary" cue per trial. A trial can carry multiple standard cues
+    // (cueLevels) and/or a custom "My Cue" combo (cueNote); each one that
+    // was actually selected should get its own tally entry and increment
+    // every time it's used, including when combined with other cues.
+    const cueBreakdown: Partial<Record<string, number>> = {};
     stepTrials.forEach((t) => {
-      cueBreakdown[t.cueLevel] = (cueBreakdown[t.cueLevel] ?? 0) + 1;
+      const levels = t.cueLevels ?? [t.cueLevel];
+      levels.forEach((lvl) => {
+        const key = lvl === 'Other' && t.cueNote ? t.cueNote : lvl;
+        cueBreakdown[key] = (cueBreakdown[key] ?? 0) + 1;
+      });
     });
 
-    // Dominant cue level (most-used)
-    let dominantCueLevel: CueLevel | null = null;
+    // Dominant cue (most-used)
+    let dominantCueLevel: string | null = null;
     if (totalTrials > 0) {
-      dominantCueLevel = (Object.entries(cueBreakdown) as [CueLevel, number][])
-        .reduce((a, b) => (a[1] >= b[1] ? a : b))[0];
+      const entries = Object.entries(cueBreakdown);
+      if (entries.length > 0) {
+        dominantCueLevel = entries.reduce((a, b) => (a[1]! >= b[1]! ? a : b))[0];
+      }
     }
 
     return { stepIndex, stepTitle: title, totalTrials, correctTrials, accuracy, dominantCueLevel, cueBreakdown };

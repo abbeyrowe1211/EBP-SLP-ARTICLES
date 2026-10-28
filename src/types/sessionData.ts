@@ -70,8 +70,10 @@ export interface StepSummary {
   totalTrials: number;
   correctTrials: number;
   accuracy: number;                      // 0–100
-  dominantCueLevel: CueLevel | null;
-  cueBreakdown: Partial<Record<CueLevel, number>>;
+  // These are keyed by CueLevel OR by a custom cue's free-text name (from
+  // cueNote), so the type is a plain string, not the CueLevel union.
+  dominantCueLevel: string | null;
+  cueBreakdown: Partial<Record<string, number>>;
 }
 
 export interface SessionDataRecord {

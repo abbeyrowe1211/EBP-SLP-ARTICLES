@@ -51,7 +51,7 @@ const StepResultCard: React.FC<{ summary: StepSummary }> = ({ summary }) => {
             </Text>
             {summary.dominantCueLevel && (
               <Text allowFontScaling={false} style={styles.stepMetaText}>
-                Most used: {CUE_LABELS[summary.dominantCueLevel]}
+                Most used: {CUE_LABELS[summary.dominantCueLevel as keyof typeof CUE_LABELS] ?? summary.dominantCueLevel}
               </Text>
             )}
           </View>
@@ -63,7 +63,7 @@ const StepResultCard: React.FC<{ summary: StepSummary }> = ({ summary }) => {
               .map(([level, count]) => (
                 <View key={level} style={styles.cuePill}>
                   <Text allowFontScaling={false} style={styles.cuePillText}>
-                    {CUE_LABELS[level as keyof typeof CUE_LABELS]}: {count}
+                    {CUE_LABELS[level as keyof typeof CUE_LABELS] ?? level}: {count}
                   </Text>
                 </View>
               ))}

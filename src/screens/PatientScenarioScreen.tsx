@@ -460,34 +460,6 @@ export const PatientScenarioScreen: React.FC = () => {
                     </View>
                   </View>
                 )}
-
-                {/* Feedback — send what they were looking for straight to EBP-SLP */}
-                <View style={styles.feedbackSection}>
-                  {feedbackSent ? (
-                    <Text allowFontScaling={false} style={styles.feedbackSentText}>
-                      ✓ Thanks — your note was sent to EBP-SLP.
-                    </Text>
-                  ) : (
-                    <>
-                      <Text allowFontScaling={false} style={styles.feedbackLabel}>What kind of article were you looking for?</Text>
-                      <TextInput allowFontScaling={false}
-                        style={styles.feedbackInput}
-                        value={feedbackText}
-                        onChangeText={setFeedbackText}
-                        placeholder="e.g. memory strategies for early-stage dementia"
-                        placeholderTextColor={colors.textMuted}
-                        multiline
-                      />
-                      <Pressable
-                        style={[styles.feedbackSendBtn, !feedbackText.trim() && styles.feedbackSendBtnDisabled]}
-                        onPress={handleSendFeedback}
-                        disabled={!feedbackText.trim()}
-                      >
-                        <Text allowFontScaling={false} style={styles.feedbackSendBtnText}>✉️  Send to EBP-SLP</Text>
-                      </Pressable>
-                    </>
-                  )}
-                </View>
               </View>
             ) : (
               <>
@@ -522,6 +494,40 @@ export const PatientScenarioScreen: React.FC = () => {
                 )}
               </>
             )}
+
+            {/* Feedback — send what they were looking for straight to EBP-SLP.
+                Shown after every search, whether or not it found a match —
+                they may have gotten results but not the ones they needed. */}
+            <View style={styles.feedbackSection}>
+              {feedbackSent ? (
+                <Text allowFontScaling={false} style={styles.feedbackSentText}>
+                  ✓ Thanks — your note was sent to EBP-SLP.
+                </Text>
+              ) : (
+                <>
+                  <Text allowFontScaling={false} style={styles.feedbackLabel}>
+                    {results.length === 0
+                      ? 'What kind of article were you looking for?'
+                      : "Didn't find what you were looking for? Let us know!"}
+                  </Text>
+                  <TextInput allowFontScaling={false}
+                    style={styles.feedbackInput}
+                    value={feedbackText}
+                    onChangeText={setFeedbackText}
+                    placeholder="e.g. memory strategies for early-stage dementia"
+                    placeholderTextColor={colors.textMuted}
+                    multiline
+                  />
+                  <Pressable
+                    style={[styles.feedbackSendBtn, !feedbackText.trim() && styles.feedbackSendBtnDisabled]}
+                    onPress={handleSendFeedback}
+                    disabled={!feedbackText.trim()}
+                  >
+                    <Text allowFontScaling={false} style={styles.feedbackSendBtnText}>✉️  Send to EBP-SLP</Text>
+                  </Pressable>
+                </>
+              )}
+            </View>
           </>
         )}
 
