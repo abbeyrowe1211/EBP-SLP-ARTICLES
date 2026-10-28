@@ -79,18 +79,18 @@ const ArticleCard: React.FC<{
       <View style={styles.cardTopRow}>
         <View style={styles.badgeRow}>
           <View style={[styles.badge, { backgroundColor: evColor.bg }]}>
-            <Text style={[styles.badgeText, { color: evColor.text }]}>
+            <Text allowFontScaling={false} style={[styles.badgeText, { color: evColor.text }]}>
               {EVIDENCE_LABELS[article.evidenceLevel]}
             </Text>
           </View>
           {article.isFoundation && (
             <View style={[styles.badge, { backgroundColor: colors.primaryLighter }]}>
-              <Text style={[styles.badgeText, { color: colors.primaryDeep }]}>Foundation</Text>
+              <Text allowFontScaling={false} style={[styles.badgeText, { color: colors.primaryDeep }]}>Foundation</Text>
             </View>
           )}
           {hasNote && (
             <View style={[styles.badge, { backgroundColor: '#FFFBEB' }]}>
-              <Text style={[styles.badgeText, { color: '#B45309' }]}>📝 Note</Text>
+              <Text allowFontScaling={false} style={[styles.badgeText, { color: '#B45309' }]}>📝 Note</Text>
             </View>
           )}
         </View>
@@ -100,29 +100,33 @@ const ArticleCard: React.FC<{
               onPress={(e) => { e.stopPropagation(); onGeneratePress?.(); }}
               hitSlop={8}
               style={styles.cardBoltBtn}
+              accessibilityLabel="Generate session plan"
+              accessibilityRole="button"
             >
-              <Text style={styles.cardBoltIcon}>⚡</Text>
+              <Text allowFontScaling={false} style={styles.cardBoltIcon}>⚡</Text>
             </Pressable>
           )}
           <Pressable
             onPress={(e) => { e.stopPropagation(); onToggleSave(); }}
             hitSlop={8}
             style={[styles.cardSaveBtn, isSaved && styles.cardSaveBtnActive]}
+            accessibilityLabel={isSaved ? 'Remove from saved' : 'Save article'}
+            accessibilityRole="button"
           >
             <SavedIcon color={isSaved ? colors.surface : colors.primaryDeep} size={13} filled={isSaved} />
           </Pressable>
         </View>
       </View>
 
-      <Text style={styles.cardTitle} numberOfLines={2}>
+      <Text allowFontScaling={false} style={styles.cardTitle} numberOfLines={2}>
         {article.shortTitle}
       </Text>
 
-      <Text style={styles.cardMeta}>
+      <Text allowFontScaling={false} style={styles.cardMeta}>
         {article.authorShort} · {article.journal.split(',')[0]} · {article.year}
       </Text>
 
-      <Text style={styles.cardSummary} numberOfLines={3}>
+      <Text allowFontScaling={false} style={styles.cardSummary} numberOfLines={3}>
         {article.summary}
       </Text>
     </Pressable>
@@ -142,9 +146,9 @@ const AreaSection: React.FC<{
 }> = ({ area, articles, savedIds, onPress, onToggleSave, onGeneratePress, onLongPress }) => (
   <View style={styles.section}>
     <View style={styles.sectionHeader}>
-      <Text style={styles.sectionTitle}>{area}</Text>
+      <Text allowFontScaling={false} style={styles.sectionTitle}>{area}</Text>
       <View style={styles.sectionCount}>
-        <Text style={styles.sectionCountText}>{articles.length}</Text>
+        <Text allowFontScaling={false} style={styles.sectionCountText}>{articles.length}</Text>
       </View>
     </View>
     {articles.map((article) => (
@@ -402,7 +406,7 @@ export const BrowseScreen: React.FC = () => {
           // ── Search bar ──
           <View style={styles.searchBar}>
             <SearchIcon color={colors.textMuted} size={16} />
-            <TextInput
+            <TextInput allowFontScaling={false}
               ref={searchInputRef}
               style={styles.searchInput}
               value={searchQuery}
@@ -414,13 +418,13 @@ export const BrowseScreen: React.FC = () => {
               onSubmitEditing={Keyboard.dismiss}
             />
             <Pressable onPress={closeSearch} style={styles.cancelBtn}>
-              <Text style={styles.cancelText}>Cancel</Text>
+              <Text allowFontScaling={false} style={styles.cancelText}>Cancel</Text>
             </Pressable>
           </View>
         ) : (
           // ── Normal header ──
           <>
-            <Text style={styles.screenTitle}>Browse</Text>
+            <Text allowFontScaling={false} style={styles.screenTitle}>Browse</Text>
             <View style={styles.headerRight}>
               <Pressable
                 style={styles.patientSearchBtn}
@@ -429,9 +433,14 @@ export const BrowseScreen: React.FC = () => {
                   router.push('/patient-search');
                 }}
               >
-                <Text style={styles.patientSearchBtnText}>🔍 My patient</Text>
+                <Text allowFontScaling={false} style={styles.patientSearchBtnText}>🔍 My patient</Text>
               </Pressable>
-              <Pressable style={styles.searchBtn} onPress={openSearch}>
+              <Pressable
+                style={styles.searchBtn}
+                onPress={openSearch}
+                accessibilityLabel="Search"
+                accessibilityRole="button"
+              >
                 <SearchIcon color={colors.primaryDark} size={18} />
               </Pressable>
             </View>
@@ -455,7 +464,7 @@ export const BrowseScreen: React.FC = () => {
               style={[styles.chip, selectedArea === a.value && styles.chipActive]}
               onPress={() => selectArea(a.value as AshaArea | 'All')}
             >
-              <Text
+              <Text allowFontScaling={false}
                 numberOfLines={1}
                 style={[styles.chipText, selectedArea === a.value && styles.chipTextActive]}
               >
@@ -492,7 +501,7 @@ export const BrowseScreen: React.FC = () => {
               style={[styles.chip, styles.evChip, isActive && styles.evChipActive]}
               onPress={() => toggleEvidenceFilter(opt.value)}
             >
-              <Text
+              <Text allowFontScaling={false}
                 numberOfLines={1}
                 style={[styles.chipText, isActive && styles.evChipTextActive]}
               >
@@ -506,19 +515,19 @@ export const BrowseScreen: React.FC = () => {
 
       {/* Results count + sort toggle + refresh indicator */}
       <View style={styles.resultsRow}>
-        <Text style={styles.resultsText}>{resultsLabel()}</Text>
+        <Text allowFontScaling={false} style={styles.resultsText}>{resultsLabel()}</Text>
         <View style={styles.resultsRight}>
           {isLoading && (
             <View style={styles.refreshPill}>
               <ActivityIndicator size="small" color={colors.primary} style={{ transform: [{ scale: 0.7 }] }} />
-              <Text style={styles.refreshText}>Updating…</Text>
+              <Text allowFontScaling={false} style={styles.refreshText}>Updating…</Text>
             </View>
           )}
           <Pressable
             style={[styles.sortToggle, sortBy === 'evidence' && styles.sortToggleActive]}
             onPress={() => setSortBy(sortBy === 'newest' ? 'evidence' : 'newest')}
           >
-            <Text style={[styles.sortToggleText, sortBy === 'evidence' && styles.sortToggleTextActive]}>
+            <Text allowFontScaling={false} style={[styles.sortToggleText, sortBy === 'evidence' && styles.sortToggleTextActive]}>
               {sortBy === 'newest' ? '🕐 Newest' : '⭐ Evidence'}
             </Text>
           </Pressable>
@@ -528,9 +537,14 @@ export const BrowseScreen: React.FC = () => {
       {/* Network error banner */}
       {fetchError && !errorDismissed && (
         <View style={styles.errorBanner}>
-          <Text style={styles.errorText}>Couldn't refresh articles — showing saved content</Text>
-          <Pressable onPress={() => setErrorDismissed(true)} hitSlop={8}>
-            <Text style={styles.errorDismiss}>✕</Text>
+          <Text allowFontScaling={false} style={styles.errorText}>Couldn't refresh articles — showing saved content</Text>
+          <Pressable
+            onPress={() => setErrorDismissed(true)}
+            hitSlop={8}
+            accessibilityLabel="Dismiss"
+            accessibilityRole="button"
+          >
+            <Text allowFontScaling={false} style={styles.errorDismiss}>✕</Text>
           </Pressable>
         </View>
       )}
@@ -544,8 +558,8 @@ export const BrowseScreen: React.FC = () => {
       >
         {feed.length === 0 ? (
           <View style={styles.empty}>
-            <Text style={styles.emptyTitle}>No results</Text>
-            <Text style={styles.emptyBody}>
+            <Text allowFontScaling={false} style={styles.emptyTitle}>No results</Text>
+            <Text allowFontScaling={false} style={styles.emptyBody}>
               {searchQuery.trim()
                 ? `No articles matched "${searchQuery.trim()}". Try a different keyword.`
                 : 'No articles in this area yet. Check back soon.'}
@@ -587,30 +601,30 @@ export const BrowseScreen: React.FC = () => {
               <View {...sheetPanResponder.panHandlers}>
                 <View style={gpStyles.handle} />
               </View>
-              <Text style={gpStyles.title}>🔖 Saved!</Text>
-              <Text style={gpStyles.subtitle}>Add to a group?</Text>
+              <Text allowFontScaling={false} style={gpStyles.title}>🔖 Saved!</Text>
+              <Text allowFontScaling={false} style={gpStyles.subtitle}>Add to a group?</Text>
 
               {groups.length > 0 && (
                 <ScrollView style={{ maxHeight: 220 }} showsVerticalScrollIndicator={false}>
                   {groups.map((g) => (
                     <Pressable key={g.id} style={gpStyles.groupRow} onPress={() => handleGroupSelected(g.id)}>
-                      <Text style={gpStyles.groupName}>{g.name}</Text>
-                      <Text style={gpStyles.groupCount}>{g.articleIds.length} articles</Text>
+                      <Text allowFontScaling={false} style={gpStyles.groupName}>{g.name}</Text>
+                      <Text allowFontScaling={false} style={gpStyles.groupCount}>{g.articleIds.length} articles</Text>
                     </Pressable>
                   ))}
                 </ScrollView>
               )}
 
               <Pressable style={gpStyles.newGroupRow} onPress={() => { setNewGroupName(''); setNewGroupInputVisible(true); }}>
-                <Text style={gpStyles.newGroupText}>+ New group</Text>
+                <Text allowFontScaling={false} style={gpStyles.newGroupText}>+ New group</Text>
               </Pressable>
 
               <View style={gpStyles.bottomRow}>
                 <Pressable style={gpStyles.skipBtn} onPress={() => { setGroupPickerVisible(false); setPendingArticleId(null); }}>
-                  <Text style={gpStyles.skipText}>No group</Text>
+                  <Text allowFontScaling={false} style={gpStyles.skipText}>No group</Text>
                 </Pressable>
                 <Pressable style={gpStyles.undoBtn} onPress={handleUndoSave}>
-                  <Text style={gpStyles.undoText}>Undo save</Text>
+                  <Text allowFontScaling={false} style={gpStyles.undoText}>Undo save</Text>
                 </Pressable>
               </View>
             </Animated.View>
@@ -620,8 +634,8 @@ export const BrowseScreen: React.FC = () => {
           {newGroupInputVisible && (
             <View style={gpStyles.sheet}>
               <View style={gpStyles.handle} />
-              <Text style={gpStyles.title}>New group</Text>
-              <TextInput
+              <Text allowFontScaling={false} style={gpStyles.title}>New group</Text>
+              <TextInput allowFontScaling={false}
                 style={gpStyles.input}
                 value={newGroupName}
                 onChangeText={setNewGroupName}
@@ -633,10 +647,10 @@ export const BrowseScreen: React.FC = () => {
               />
               <View style={gpStyles.inputActions}>
                 <Pressable style={gpStyles.cancelBtn} onPress={() => setNewGroupInputVisible(false)}>
-                  <Text style={gpStyles.cancelBtnText}>Back</Text>
+                  <Text allowFontScaling={false} style={gpStyles.cancelBtnText}>Back</Text>
                 </Pressable>
                 <Pressable style={gpStyles.createBtn} onPress={handleNewGroupSave}>
-                  <Text style={gpStyles.createBtnText}>Create</Text>
+                  <Text allowFontScaling={false} style={gpStyles.createBtnText}>Create</Text>
                 </Pressable>
               </View>
             </View>
@@ -759,14 +773,14 @@ const styles = StyleSheet.create({
     borderColor: colors.primary,
     borderRadius: 12,
     paddingHorizontal: 12,
-    paddingVertical: 8,
+    paddingVertical: 10,
     gap: 8,
   },
   searchInput: {
     flex: 1,
     ...text.body,
     color: colors.text,
-    paddingVertical: 0,
+    paddingVertical: 2,
   },
   cancelBtn: { paddingLeft: 4 },
   cancelText: {

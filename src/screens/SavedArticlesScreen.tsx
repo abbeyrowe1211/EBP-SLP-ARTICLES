@@ -89,26 +89,31 @@ const BrowseAllModal: React.FC<{
       <View style={[browseStyles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
         {/* Header */}
         <View style={browseStyles.header}>
-          <Pressable onPress={onClose} style={browseStyles.closeBtn}>
-            <Text style={browseStyles.closeBtnText}>✕</Text>
+          <Pressable
+            onPress={onClose}
+            style={browseStyles.closeBtn}
+            accessibilityLabel="Close"
+            accessibilityRole="button"
+          >
+            <Text allowFontScaling={false} style={browseStyles.closeBtnText}>✕</Text>
           </Pressable>
-          <Text style={browseStyles.title}>Browse all articles</Text>
+          <Text allowFontScaling={false} style={browseStyles.title}>Browse all articles</Text>
           <Pressable style={browseStyles.doneBtn} onPress={onClose}>
-            <Text style={browseStyles.doneBtnText}>Done</Text>
+            <Text allowFontScaling={false} style={browseStyles.doneBtnText}>Done</Text>
           </Pressable>
         </View>
 
         {/* "Adding to group" banner — shown when opened from a group card */}
         {targetGroupId && targetGroupName ? (
           <View style={browseStyles.addingToBanner}>
-            <Text style={browseStyles.addingToBannerText}>
-              Adding to · <Text style={browseStyles.addingToGroupName}>{targetGroupName}</Text>
+            <Text allowFontScaling={false} style={browseStyles.addingToBannerText}>
+              Adding to · <Text allowFontScaling={false} style={browseStyles.addingToGroupName}>{targetGroupName}</Text>
             </Text>
           </View>
         ) : null}
 
         <View style={browseStyles.searchRow}>
-          <TextInput
+          <TextInput allowFontScaling={false}
             style={browseStyles.search}
             value={query}
             onChangeText={setQuery}
@@ -117,9 +122,15 @@ const BrowseAllModal: React.FC<{
             autoCapitalize="none"
           />
           {query.length > 0 && (
-            <Pressable style={browseStyles.searchClearBtn} onPress={() => setQuery('')} hitSlop={8}>
+            <Pressable
+              style={browseStyles.searchClearBtn}
+              onPress={() => setQuery('')}
+              hitSlop={8}
+              accessibilityLabel="Clear search"
+              accessibilityRole="button"
+            >
               <View style={browseStyles.searchClearCircle}>
-                <Text style={browseStyles.searchClearText}>✕</Text>
+                <Text allowFontScaling={false} style={browseStyles.searchClearText}>✕</Text>
               </View>
             </Pressable>
           )}
@@ -133,18 +144,18 @@ const BrowseAllModal: React.FC<{
               <View key={article.id} style={browseStyles.row}>
                 <Pressable style={browseStyles.rowInfo} onPress={() => onReadArticle(article)}>
                   <View style={[browseStyles.evBadge, { backgroundColor: evColor.bg }]}>
-                    <Text style={[browseStyles.evBadgeText, { color: evColor.text }]}>
+                    <Text allowFontScaling={false} style={[browseStyles.evBadgeText, { color: evColor.text }]}>
                       {EVIDENCE_LABELS[article.evidenceLevel]}
                     </Text>
                   </View>
-                  <Text style={browseStyles.rowTitle} numberOfLines={2}>{article.shortTitle}</Text>
-                  <Text style={browseStyles.rowMeta}>{article.authorShort} · {article.year} · {article.areas[0]}</Text>
+                  <Text allowFontScaling={false} style={browseStyles.rowTitle} numberOfLines={2}>{article.shortTitle}</Text>
+                  <Text allowFontScaling={false} style={browseStyles.rowMeta}>{article.authorShort} · {article.year} · {article.areas[0]}</Text>
                 </Pressable>
                 <Pressable
                   style={[browseStyles.saveBtn, saved && browseStyles.saveBtnActive]}
                   onPress={() => handleSavePress(article.id)}
                 >
-                  <Text style={[browseStyles.saveBtnText, saved && browseStyles.saveBtnTextActive]}>
+                  <Text allowFontScaling={false} style={[browseStyles.saveBtnText, saved && browseStyles.saveBtnTextActive]}>
                     {saved ? '✓ Saved' : 'Save'}
                   </Text>
                 </Pressable>
@@ -160,8 +171,8 @@ const BrowseAllModal: React.FC<{
             <Pressable style={browseStyles.groupPickerBackdrop} onPress={() => setGroupPickerArticleId(null)} />
             <View style={browseStyles.groupPickerSheet}>
               <View style={browseStyles.sheetHandle} />
-              <Text style={browseStyles.sheetTitle}>Add to a group?</Text>
-              <Text style={browseStyles.sheetSub}>Article saved — choose a group or skip.</Text>
+              <Text allowFontScaling={false} style={browseStyles.sheetTitle}>Add to a group?</Text>
+              <Text allowFontScaling={false} style={browseStyles.sheetSub}>Article saved — choose a group or skip.</Text>
               <ScrollView style={{ maxHeight: 240 }} showsVerticalScrollIndicator={false}>
                 {groups.map((g) => (
                   <Pressable
@@ -172,8 +183,8 @@ const BrowseAllModal: React.FC<{
                       setGroupPickerArticleId(null);
                     }}
                   >
-                    <Text style={browseStyles.groupOptionName}>{g.name}</Text>
-                    <Text style={browseStyles.groupOptionCount}>{g.articleIds.length} articles</Text>
+                    <Text allowFontScaling={false} style={browseStyles.groupOptionName}>{g.name}</Text>
+                    <Text allowFontScaling={false} style={browseStyles.groupOptionCount}>{g.articleIds.length} articles</Text>
                   </Pressable>
                 ))}
               </ScrollView>
@@ -181,13 +192,13 @@ const BrowseAllModal: React.FC<{
                 style={browseStyles.newGroupOptionRow}
                 onPress={() => { setNewGroupInputVisible(true); setNewGroupName(''); }}
               >
-                <Text style={browseStyles.newGroupOptionText}>+ New group</Text>
+                <Text allowFontScaling={false} style={browseStyles.newGroupOptionText}>+ New group</Text>
               </Pressable>
               <Pressable
                 style={browseStyles.skipRow}
                 onPress={() => { onSaveToGroup(groupPickerArticleId, null); setGroupPickerArticleId(null); }}
               >
-                <Text style={browseStyles.skipText}>Save without group</Text>
+                <Text allowFontScaling={false} style={browseStyles.skipText}>Save without group</Text>
               </Pressable>
             </View>
           </View>
@@ -202,8 +213,8 @@ const BrowseAllModal: React.FC<{
             <Pressable style={browseStyles.groupPickerBackdrop} onPress={() => setNewGroupInputVisible(false)} />
             <View style={browseStyles.groupPickerSheet}>
               <View style={browseStyles.sheetHandle} />
-              <Text style={browseStyles.sheetTitle}>New group</Text>
-              <TextInput
+              <Text allowFontScaling={false} style={browseStyles.sheetTitle}>New group</Text>
+              <TextInput allowFontScaling={false}
                 style={browseStyles.newGroupInput}
                 value={newGroupName}
                 onChangeText={setNewGroupName}
@@ -214,7 +225,7 @@ const BrowseAllModal: React.FC<{
               />
               <View style={browseStyles.newGroupActions}>
                 <Pressable style={browseStyles.ngCancelBtn} onPress={() => setNewGroupInputVisible(false)}>
-                  <Text style={browseStyles.ngCancelText}>Cancel</Text>
+                  <Text allowFontScaling={false} style={browseStyles.ngCancelText}>Cancel</Text>
                 </Pressable>
                 <Pressable
                   style={browseStyles.ngCreateBtn}
@@ -225,7 +236,7 @@ const BrowseAllModal: React.FC<{
                     setGroupPickerArticleId(null);
                   }}
                 >
-                  <Text style={browseStyles.ngCreateText}>Create</Text>
+                  <Text allowFontScaling={false} style={browseStyles.ngCreateText}>Create</Text>
                 </Pressable>
               </View>
             </View>
@@ -449,14 +460,14 @@ const ArticlePickerModal: React.FC<{
         <View style={styles.pickerSheet}>
           <View style={styles.modalHandle} />
           <View style={styles.pickerHeader}>
-            <Text style={styles.pickerTitle}>Add articles to group</Text>
+            <Text allowFontScaling={false} style={styles.pickerTitle}>Add articles to group</Text>
             <Pressable style={styles.doneBtn} onPress={() => onDone([...selected])}>
-              <Text style={styles.doneBtnText}>Done</Text>
+              <Text allowFontScaling={false} style={styles.doneBtnText}>Done</Text>
             </Pressable>
           </View>
           <ScrollView showsVerticalScrollIndicator={false}>
             {savedArticles.length === 0 ? (
-              <Text style={styles.pickerEmpty}>No saved articles yet. Save articles from Browse first.</Text>
+              <Text allowFontScaling={false} style={styles.pickerEmpty}>No saved articles yet. Save articles from Browse first.</Text>
             ) : (
               savedArticles.map((article) => {
                 const evColor = EVIDENCE_COLORS[article.evidenceLevel];
@@ -468,18 +479,18 @@ const ArticlePickerModal: React.FC<{
                     onPress={() => toggle(article.id)}
                   >
                     <View style={[styles.checkbox, checked && styles.checkboxActive]}>
-                      {checked && <Text style={styles.checkmark}>✓</Text>}
+                      {checked && <Text allowFontScaling={false} style={styles.checkmark}>✓</Text>}
                     </View>
                     <View style={styles.pickerRowInfo}>
                       <View style={[styles.evBadge, { backgroundColor: evColor.bg }]}>
-                        <Text style={[styles.evBadgeText, { color: evColor.text }]}>
+                        <Text allowFontScaling={false} style={[styles.evBadgeText, { color: evColor.text }]}>
                           {EVIDENCE_LABELS[article.evidenceLevel]}
                         </Text>
                       </View>
-                      <Text style={styles.pickerRowTitle} numberOfLines={2}>
+                      <Text allowFontScaling={false} style={styles.pickerRowTitle} numberOfLines={2}>
                         {article.shortTitle}
                       </Text>
-                      <Text style={styles.pickerRowMeta}>
+                      <Text allowFontScaling={false} style={styles.pickerRowMeta}>
                         {article.authorShort} · {article.year}
                       </Text>
                     </View>
@@ -526,8 +537,8 @@ const NewGroupModal: React.FC<{
         <Pressable style={styles.modalBackdrop} onPress={onClose} />
         <View style={styles.newGroupSheet}>
           <View style={styles.modalHandle} />
-          <Text style={styles.newGroupTitle}>New group</Text>
-          <TextInput
+          <Text allowFontScaling={false} style={styles.newGroupTitle}>New group</Text>
+          <TextInput allowFontScaling={false}
             style={styles.newGroupInput}
             value={name}
             onChangeText={setName}
@@ -539,10 +550,10 @@ const NewGroupModal: React.FC<{
           />
           <View style={styles.newGroupActions}>
             <Pressable style={styles.cancelBtn} onPress={onClose}>
-              <Text style={styles.cancelBtnText}>Cancel</Text>
+              <Text allowFontScaling={false} style={styles.cancelBtnText}>Cancel</Text>
             </Pressable>
             <Pressable style={styles.createBtn} onPress={handleSave}>
-              <Text style={styles.createBtnText}>Create</Text>
+              <Text allowFontScaling={false} style={styles.createBtnText}>Create</Text>
             </Pressable>
           </View>
         </View>
@@ -582,26 +593,38 @@ const GroupCard: React.FC<{
     {/* Group header */}
     <Pressable style={styles.groupHeader} onPress={onToggle}>
       <View style={styles.groupHeaderLeft}>
-        <Text style={styles.groupName}>{group.name}</Text>
+        <Text allowFontScaling={false} style={styles.groupName}>{group.name}</Text>
         <View style={styles.groupCountBadge}>
-          <Text style={styles.groupCountText}>{articles.length}</Text>
+          <Text allowFontScaling={false} style={styles.groupCountText}>{articles.length}</Text>
         </View>
       </View>
       <View style={styles.groupHeaderRight}>
-        <Pressable style={styles.groupMenuBtn} onPress={onRename} hitSlop={8}>
-          <Text style={styles.groupMenuBtnText}>✎</Text>
+        <Pressable
+          style={styles.groupMenuBtn}
+          onPress={onRename}
+          hitSlop={8}
+          accessibilityLabel="Rename group"
+          accessibilityRole="button"
+        >
+          <Text allowFontScaling={false} style={styles.groupMenuBtnText}>✎</Text>
         </Pressable>
-        <Pressable style={[styles.groupMenuBtn, styles.groupDeleteBtn]} onPress={onDelete} hitSlop={8}>
-          <Text style={styles.groupDeleteBtnText}>🗑</Text>
+        <Pressable
+          style={[styles.groupMenuBtn, styles.groupDeleteBtn]}
+          onPress={onDelete}
+          hitSlop={8}
+          accessibilityLabel="Delete group"
+          accessibilityRole="button"
+        >
+          <Text allowFontScaling={false} style={styles.groupDeleteBtnText}>🗑</Text>
         </Pressable>
-        <Text style={styles.chevron}>{expanded ? '▲' : '▼'}</Text>
+        <Text allowFontScaling={false} style={styles.chevron}>{expanded ? '▲' : '▼'}</Text>
       </View>
     </Pressable>
 
     {expanded && (
       <View style={styles.groupBody}>
         {articles.length === 0 ? (
-          <Text style={styles.groupEmptyText}>No articles yet — tap below to add some.</Text>
+          <Text allowFontScaling={false} style={styles.groupEmptyText}>No articles yet — tap below to add some.</Text>
         ) : (
           articles.map((article) => {
             const evColor = EVIDENCE_COLORS[article.evidenceLevel];
@@ -610,18 +633,18 @@ const GroupCard: React.FC<{
                 <View style={styles.articleRowLeft}>
                   <View style={styles.articleBadgeRow}>
                     <View style={[styles.evBadge, { backgroundColor: evColor.bg }]}>
-                      <Text style={[styles.evBadgeText, { color: evColor.text }]}>
+                      <Text allowFontScaling={false} style={[styles.evBadgeText, { color: evColor.text }]}>
                         {EVIDENCE_LABELS[article.evidenceLevel]}
                       </Text>
                     </View>
                     {notedIds?.has(article.id) && (
                       <View style={[styles.evBadge, { backgroundColor: '#FFFBEB' }]}>
-                        <Text style={[styles.evBadgeText, { color: '#B45309' }]}>📝 Note</Text>
+                        <Text allowFontScaling={false} style={[styles.evBadgeText, { color: '#B45309' }]}>📝 Note</Text>
                       </View>
                     )}
                   </View>
-                  <Text style={styles.articleRowTitle} numberOfLines={2}>{article.shortTitle}</Text>
-                  <Text style={styles.articleRowMeta}>
+                  <Text allowFontScaling={false} style={styles.articleRowTitle} numberOfLines={2}>{article.shortTitle}</Text>
+                  <Text allowFontScaling={false} style={styles.articleRowMeta}>
                     {article.authorShort} · {article.year} · {article.areas[0]}
                   </Text>
                 </View>
@@ -630,8 +653,10 @@ const GroupCard: React.FC<{
                     style={styles.removeFromGroupBtn}
                     onPress={() => onRemoveFromGroup(article.id)}
                     hitSlop={8}
+                    accessibilityLabel="Remove from group"
+                    accessibilityRole="button"
                   >
-                    <Text style={styles.removeFromGroupText}>✕</Text>
+                    <Text allowFontScaling={false} style={styles.removeFromGroupText}>✕</Text>
                   </Pressable>
                 </View>
               </Pressable>
@@ -639,7 +664,7 @@ const GroupCard: React.FC<{
           })
         )}
         <Pressable style={styles.addArticlesBtn} onPress={onAddArticles}>
-          <Text style={styles.addArticlesBtnText}>+ Add articles</Text>
+          <Text allowFontScaling={false} style={styles.addArticlesBtnText}>+ Add articles</Text>
         </Pressable>
       </View>
     )}
@@ -805,12 +830,12 @@ export const SavedArticlesScreen: React.FC = () => {
       {/* Header */}
       <View style={styles.header}>
         <View>
-          <Text style={styles.headerTitle}>My Articles</Text>
-          <Text style={styles.headerSub}>{savedArticles.length} saved</Text>
+          <Text allowFontScaling={false} style={styles.headerTitle}>My Articles</Text>
+          <Text allowFontScaling={false} style={styles.headerSub}>{savedArticles.length} saved</Text>
         </View>
         <View style={styles.headerActions}>
           <Pressable style={styles.browseAllBtn} onPress={() => setAllBrowseVisible(true)}>
-            <Text style={styles.browseAllBtnText}>Browse all</Text>
+            <Text allowFontScaling={false} style={styles.browseAllBtnText}>Browse all</Text>
           </Pressable>
           <Pressable
             style={styles.newGroupBtn}
@@ -819,34 +844,34 @@ export const SavedArticlesScreen: React.FC = () => {
               setNewGroupVisible(true);
             }}
           >
-            <Text style={styles.newGroupBtnText}>+ Group</Text>
+            <Text allowFontScaling={false} style={styles.newGroupBtnText}>+ Group</Text>
           </Pressable>
         </View>
       </View>
 
       {savedArticles.length === 0 ? (
         <View style={styles.emptyState}>
-          <Text style={styles.emptyIllustration}>📚</Text>
-          <Text style={styles.emptyTitle}>Your article library</Text>
-          <Text style={styles.emptyBody}>
+          <Text allowFontScaling={false} style={styles.emptyIllustration}>📚</Text>
+          <Text allowFontScaling={false} style={styles.emptyTitle}>Your article library</Text>
+          <Text allowFontScaling={false} style={styles.emptyBody}>
             Save EBP articles from Browse and they'll live here — organized into groups, ready for clinical reference.
           </Text>
           <View style={styles.emptyHints}>
             <View style={styles.emptyHintRow}>
-              <Text style={styles.emptyHintIcon}>🔍</Text>
-              <Text style={styles.emptyHintText}>Find articles by practice area or keyword</Text>
+              <Text allowFontScaling={false} style={styles.emptyHintIcon}>🔍</Text>
+              <Text allowFontScaling={false} style={styles.emptyHintText}>Find articles by practice area or keyword</Text>
             </View>
             <View style={styles.emptyHintRow}>
-              <Text style={styles.emptyHintIcon}>🔖</Text>
-              <Text style={styles.emptyHintText}>Tap the bookmark icon to save any article</Text>
+              <Text allowFontScaling={false} style={styles.emptyHintIcon}>🔖</Text>
+              <Text allowFontScaling={false} style={styles.emptyHintText}>Tap the bookmark icon to save any article</Text>
             </View>
             <View style={styles.emptyHintRow}>
-              <Text style={styles.emptyHintIcon}>📂</Text>
-              <Text style={styles.emptyHintText}>Group saved articles by client, area, or project (Pro)</Text>
+              <Text allowFontScaling={false} style={styles.emptyHintIcon}>📂</Text>
+              <Text allowFontScaling={false} style={styles.emptyHintText}>Group saved articles by client, area, or project (Pro)</Text>
             </View>
           </View>
           <Pressable style={styles.emptyBrowseBtn} onPress={() => setAllBrowseVisible(true)}>
-            <Text style={styles.emptyBrowseBtnText}>Browse articles →</Text>
+            <Text allowFontScaling={false} style={styles.emptyBrowseBtnText}>Browse articles →</Text>
           </Pressable>
         </View>
       ) : (
@@ -882,7 +907,7 @@ export const SavedArticlesScreen: React.FC = () => {
           {/* Ungrouped */}
           {ungrouped.length > 0 && (
             <View style={styles.ungroupedSection}>
-              <Text style={styles.ungroupedLabel}>
+              <Text allowFontScaling={false} style={styles.ungroupedLabel}>
                 UNGROUPED · {ungrouped.length}
               </Text>
               {ungrouped.map((article) => {
@@ -902,18 +927,18 @@ export const SavedArticlesScreen: React.FC = () => {
                     <View style={styles.articleRowLeft}>
                       <View style={styles.articleBadgeRow}>
                         <View style={[styles.evBadge, { backgroundColor: evColor.bg }]}>
-                          <Text style={[styles.evBadgeText, { color: evColor.text }]}>
+                          <Text allowFontScaling={false} style={[styles.evBadgeText, { color: evColor.text }]}>
                             {EVIDENCE_LABELS[article.evidenceLevel]}
                           </Text>
                         </View>
                         {notedIds.has(article.id) && (
                           <View style={[styles.evBadge, { backgroundColor: '#FFFBEB' }]}>
-                            <Text style={[styles.evBadgeText, { color: '#B45309' }]}>📝 Note</Text>
+                            <Text allowFontScaling={false} style={[styles.evBadgeText, { color: '#B45309' }]}>📝 Note</Text>
                           </View>
                         )}
                       </View>
-                      <Text style={styles.articleRowTitle} numberOfLines={2}>{article.shortTitle}</Text>
-                      <Text style={styles.articleRowMeta}>
+                      <Text allowFontScaling={false} style={styles.articleRowTitle} numberOfLines={2}>{article.shortTitle}</Text>
+                      <Text allowFontScaling={false} style={styles.articleRowMeta}>
                         {article.authorShort} · {article.year} · {article.areas[0]}
                       </Text>
                     </View>
@@ -927,15 +952,17 @@ export const SavedArticlesScreen: React.FC = () => {
                           }}
                           hitSlop={8}
                         >
-                          <Text style={styles.moveToGroupText}>→ Group</Text>
+                          <Text allowFontScaling={false} style={styles.moveToGroupText}>→ Group</Text>
                         </Pressable>
                       )}
                       <Pressable
                         style={styles.unsaveBtn}
                         onPress={() => handleUnsave(article.id)}
                         hitSlop={8}
+                        accessibilityLabel="Remove from saved"
+                        accessibilityRole="button"
                       >
-                        <Text style={styles.unsaveBtnText}>✕</Text>
+                        <Text allowFontScaling={false} style={styles.unsaveBtnText}>✕</Text>
                       </Pressable>
                     </View>
                   </Pressable>
@@ -999,7 +1026,7 @@ export const SavedArticlesScreen: React.FC = () => {
             <Pressable style={styles.modalBackdrop} onPress={() => setMovePickerArticleId(null)} />
             <View style={styles.pickerSheet}>
               <View style={styles.modalHandle} />
-              <Text style={styles.pickerTitle}>Move to group</Text>
+              <Text allowFontScaling={false} style={styles.pickerTitle}>Move to group</Text>
               <ScrollView showsVerticalScrollIndicator={false} style={{ maxHeight: 280 }}>
                 {groups.map((g) => (
                   <Pressable
@@ -1007,14 +1034,14 @@ export const SavedArticlesScreen: React.FC = () => {
                     style={styles.moveGroupRow}
                     onPress={() => handleMoveToGroup(g.id)}
                   >
-                    <Text style={styles.moveGroupName}>{g.name}</Text>
-                    <Text style={styles.moveGroupCount}>{g.articleIds.length} articles</Text>
+                    <Text allowFontScaling={false} style={styles.moveGroupName}>{g.name}</Text>
+                    <Text allowFontScaling={false} style={styles.moveGroupCount}>{g.articleIds.length} articles</Text>
                   </Pressable>
                 ))}
                 <View style={{ height: 16 }} />
               </ScrollView>
               <Pressable style={styles.moveCancelBtn} onPress={() => setMovePickerArticleId(null)}>
-                <Text style={styles.moveCancelText}>Cancel</Text>
+                <Text allowFontScaling={false} style={styles.moveCancelText}>Cancel</Text>
               </Pressable>
             </View>
           </KeyboardAvoidingView>
@@ -1041,8 +1068,8 @@ export const SavedArticlesScreen: React.FC = () => {
       <Modal visible={!!renameGroupId} transparent animationType="fade" onRequestClose={() => setRenameGroupId(null)}>
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={saStyles.overlay}>
           <View style={saStyles.card}>
-            <Text style={saStyles.title}>Rename group</Text>
-            <TextInput
+            <Text allowFontScaling={false} style={saStyles.title}>Rename group</Text>
+            <TextInput allowFontScaling={false}
               style={saStyles.input}
               value={renameText}
               onChangeText={setRenameText}
@@ -1054,10 +1081,10 @@ export const SavedArticlesScreen: React.FC = () => {
             />
             <View style={saStyles.actions}>
               <Pressable style={saStyles.cancelBtn} onPress={() => setRenameGroupId(null)}>
-                <Text style={saStyles.cancelText}>Cancel</Text>
+                <Text allowFontScaling={false} style={saStyles.cancelText}>Cancel</Text>
               </Pressable>
               <Pressable style={saStyles.confirmBtn} onPress={confirmRename}>
-                <Text style={saStyles.confirmText}>Save</Text>
+                <Text allowFontScaling={false} style={saStyles.confirmText}>Save</Text>
               </Pressable>
             </View>
           </View>
@@ -1068,15 +1095,15 @@ export const SavedArticlesScreen: React.FC = () => {
       <Modal visible={!!deleteGroupId} transparent animationType="fade" onRequestClose={() => setDeleteGroupId(null)}>
         <View style={saStyles.overlay}>
           <View style={saStyles.card}>
-            <Text style={saStyles.icon}>🗑</Text>
-            <Text style={saStyles.title}>Delete "{groups.find(g => g.id === deleteGroupId)?.name}"?</Text>
-            <Text style={saStyles.body}>The group will be removed. Saved articles stay in your library.</Text>
+            <Text allowFontScaling={false} style={saStyles.icon}>🗑</Text>
+            <Text allowFontScaling={false} style={saStyles.title}>Delete "{groups.find(g => g.id === deleteGroupId)?.name}"?</Text>
+            <Text allowFontScaling={false} style={saStyles.body}>The group will be removed. Saved articles stay in your library.</Text>
             <View style={saStyles.actions}>
               <Pressable style={saStyles.cancelBtn} onPress={() => setDeleteGroupId(null)}>
-                <Text style={saStyles.cancelText}>Cancel</Text>
+                <Text allowFontScaling={false} style={saStyles.cancelText}>Cancel</Text>
               </Pressable>
               <Pressable style={[saStyles.confirmBtn, saStyles.destructiveBtn]} onPress={confirmDelete}>
-                <Text style={saStyles.confirmText}>Delete</Text>
+                <Text allowFontScaling={false} style={saStyles.confirmText}>Delete</Text>
               </Pressable>
             </View>
           </View>
@@ -1087,14 +1114,14 @@ export const SavedArticlesScreen: React.FC = () => {
       <Modal visible={!!unsaveArticleId} transparent animationType="fade" onRequestClose={() => setUnsaveArticleId(null)}>
         <View style={saStyles.overlay}>
           <View style={saStyles.card}>
-            <Text style={saStyles.title}>Remove from saved?</Text>
-            <Text style={saStyles.body}>This article will be unsaved and removed from all groups.</Text>
+            <Text allowFontScaling={false} style={saStyles.title}>Remove from saved?</Text>
+            <Text allowFontScaling={false} style={saStyles.body}>This article will be unsaved and removed from all groups.</Text>
             <View style={saStyles.actions}>
               <Pressable style={saStyles.cancelBtn} onPress={() => setUnsaveArticleId(null)}>
-                <Text style={saStyles.cancelText}>Cancel</Text>
+                <Text allowFontScaling={false} style={saStyles.cancelText}>Cancel</Text>
               </Pressable>
               <Pressable style={[saStyles.confirmBtn, saStyles.destructiveBtn]} onPress={confirmUnsave}>
-                <Text style={saStyles.confirmText}>Remove</Text>
+                <Text allowFontScaling={false} style={saStyles.confirmText}>Remove</Text>
               </Pressable>
             </View>
           </View>

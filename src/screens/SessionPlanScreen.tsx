@@ -193,7 +193,7 @@ const SaveModal: React.FC<SaveModalProps> = ({
           {/* Existing label chips */}
           {existingLabels.length > 0 && (
             <View style={styles.existingSection}>
-              <Text allowFontScaling={false} style={styles.existingLabel}>EXISTING PATIENTS</Text>
+              <Text allowFontScaling={false} style={styles.existingLabel}>EXISTING PLANS</Text>
               <View style={styles.chipRow}>
                 {existingLabels.map((l) => (
                   <Pressable

@@ -76,11 +76,11 @@ const WelcomeSlide: React.FC<{ articleCount: number }> = ({ articleCount }) => (
       colors={[colors.pastelLavender, colors.primaryLight]}
       style={styles.iconCircle}
     >
-      <Text style={styles.iconEmoji}>🧠</Text>
+      <Text allowFontScaling={false} style={styles.iconEmoji}>🧠</Text>
     </LinearGradient>
-    <Text style={styles.slideTitle}>Welcome to EBP-SLP</Text>
-    <Text style={styles.slideSubtitle}>Evidence-based practice, built for medical SLPs</Text>
-    <Text style={styles.slideBody}>
+    <Text allowFontScaling={false} style={styles.slideTitle}>Welcome to EBP-SLP</Text>
+    <Text allowFontScaling={false} style={styles.slideSubtitle}>Evidence-based practice, built for medical SLPs</Text>
+    <Text allowFontScaling={false} style={styles.slideBody}>
       EBP-SLP puts peer-reviewed research directly into your clinical workflow. Browse articles by area, generate evidence-based session plans with AI, and track real session data — all in one place.
     </Text>
     <View style={styles.featureList}>
@@ -91,8 +91,8 @@ const WelcomeSlide: React.FC<{ articleCount: number }> = ({ articleCount }) => (
         ['📁', 'Organize your plans and review session history'],
       ].map(([icon, desc]) => (
         <View key={desc} style={styles.featureRow}>
-          <Text style={styles.featureIcon}>{icon}</Text>
-          <Text style={styles.featureText}>{desc}</Text>
+          <Text allowFontScaling={false} style={styles.featureIcon}>{icon}</Text>
+          <Text allowFontScaling={false} style={styles.featureText}>{desc}</Text>
         </View>
       ))}
     </View>
@@ -105,20 +105,20 @@ const PhiSlide: React.FC<{ acknowledged: boolean; onAcknowledge: () => void }> =
 }) => (
   <ScrollView contentContainerStyle={styles.slideScroll} showsVerticalScrollIndicator={false}>
     <View style={styles.warningCircle}>
-      <Text style={styles.iconEmoji}>🛡</Text>
+      <Text allowFontScaling={false} style={styles.iconEmoji}>🛡</Text>
     </View>
-    <Text style={styles.slideTitle}>Important: PHI & Privacy</Text>
-    <Text style={styles.slideSubtitle}>Please read carefully before using this app</Text>
+    <Text allowFontScaling={false} style={styles.slideTitle}>Important: PHI & Privacy</Text>
+    <Text allowFontScaling={false} style={styles.slideSubtitle}>Please read carefully before using this app</Text>
 
     <View style={styles.alertBox}>
-      <Text style={styles.alertTitle}>This app is NOT HIPAA-compliant software</Text>
-      <Text style={styles.alertBody}>
+      <Text allowFontScaling={false} style={styles.alertTitle}>This app is NOT HIPAA-compliant software</Text>
+      <Text allowFontScaling={false} style={styles.alertBody}>
         EBP-SLP does not meet the technical, administrative, or physical safeguard requirements of HIPAA. It is a clinical reference and session planning tool — not a medical record system or covered entity software.
       </Text>
     </View>
 
-    <Text style={styles.sectionHeading}>What this means for you</Text>
-    <Text style={styles.slideBody}>
+    <Text allowFontScaling={false} style={styles.sectionHeading}>What this means for you</Text>
+    <Text allowFontScaling={false} style={styles.slideBody}>
       You must never enter any Protected Health Information (PHI) into this app. This includes:
     </Text>
 
@@ -132,23 +132,23 @@ const PhiSlide: React.FC<{ acknowledged: boolean; onAcknowledge: () => void }> =
       ].map((item) => (
         <View key={item} style={styles.phiRow}>
           <View style={styles.phiBullet} />
-          <Text style={styles.phiRowText}>{item}</Text>
+          <Text allowFontScaling={false} style={styles.phiRowText}>{item}</Text>
         </View>
       ))}
     </View>
 
-    <Text style={styles.sectionHeading}>Your responsibility</Text>
-    <Text style={styles.slideBody}>
+    <Text allowFontScaling={false} style={styles.sectionHeading}>Your responsibility</Text>
+    <Text allowFontScaling={false} style={styles.slideBody}>
       EBP-SLP is not responsible for any PHI inadvertently entered into the app. It is solely your responsibility as the clinician to ensure no patient-identifying information is entered at any time. If PHI is entered, it remains on your device only — but compliance and risk remain with you.
     </Text>
 
-    <Text style={styles.sectionHeading}>Naming your plans</Text>
-    <Text style={styles.slideBody}>
+    <Text allowFontScaling={false} style={styles.sectionHeading}>Naming your plans</Text>
+    <Text allowFontScaling={false} style={styles.slideBody}>
       When saving a session plan, you will be asked to name it. Use a treatment approach, group name, or case code — do not use any patient identifiers. Keep any cross-reference between your plan labels and your actual patients in a separate, secure system.
     </Text>
 
-    <Text style={styles.sectionHeading}>Your data stays on your device</Text>
-    <Text style={styles.slideBody}>
+    <Text allowFontScaling={false} style={styles.sectionHeading}>Your data stays on your device</Text>
+    <Text allowFontScaling={false} style={styles.slideBody}>
       All session data and plan information is stored locally on this device only. Nothing is transmitted to any server, shared with any third party, or backed up to the cloud.
     </Text>
 
@@ -156,7 +156,7 @@ const PhiSlide: React.FC<{ acknowledged: boolean; onAcknowledge: () => void }> =
       style={[styles.acknowledgeBtn, acknowledged && styles.acknowledgeBtnDone]}
       onPress={onAcknowledge}
     >
-      <Text style={styles.acknowledgeBtnText}>
+      <Text allowFontScaling={false} style={styles.acknowledgeBtnText}>
         {acknowledged ? '✓  I understand and agree' : 'Tap to acknowledge'}
       </Text>
     </Pressable>
@@ -169,23 +169,30 @@ const EvidenceSlide: React.FC = () => (
       colors={[colors.pastelBlue, colors.pastelLavender]}
       style={styles.iconCircle}
     >
-      <Text style={styles.iconEmoji}>📖</Text>
+      <Text allowFontScaling={false} style={styles.iconEmoji}>📖</Text>
     </LinearGradient>
-    <Text style={styles.slideTitle}>About the articles</Text>
-    <Text style={styles.slideSubtitle}>Where they come from and how to read them</Text>
+    <Text allowFontScaling={false} style={styles.slideTitle}>About the articles</Text>
+    <Text allowFontScaling={false} style={styles.slideSubtitle}>Where they come from and how to read them</Text>
 
-    <Text style={styles.sectionHeading}>Sources</Text>
-    <Text style={styles.slideBody}>
+    <Text allowFontScaling={false} style={styles.sectionHeading}>Sources</Text>
+    <Text allowFontScaling={false} style={styles.slideBody}>
       All articles are drawn from peer-reviewed journals indexed in PubMed, aligned with ASHA's scope of practice for adult medical speech-language pathology. Each article is selected for its direct clinical applicability — not just academic interest. Every article in the app has been personally reviewed by the creator, a licensed medical SLP, before being included.
     </Text>
 
-    <Text style={styles.sectionHeading}>How summaries are written</Text>
-    <Text style={styles.slideBody}>
+    <View style={styles.accessNote}>
+      <Text allowFontScaling={false} style={styles.accessNoteTitle}>ℹ️  A note on access</Text>
+      <Text allowFontScaling={false} style={styles.accessNoteBody}>
+        The creator does not have access to paid institutional journal subscriptions, so articles are limited to those with free full-text or abstract access. Some relevant paywalled research may not be represented here.
+      </Text>
+    </View>
+
+    <Text allowFontScaling={false} style={styles.sectionHeading}>How summaries are written</Text>
+    <Text allowFontScaling={false} style={styles.slideBody}>
       Every article includes a plain-language summary, key research findings, clinical application notes, and session parameters drawn directly from the source study. Summaries are written to reflect what the authors actually found — not generalized clinical advice.
     </Text>
 
-    <Text style={styles.sectionHeading}>Evidence levels</Text>
-    <Text style={styles.slideBody}>
+    <Text allowFontScaling={false} style={styles.sectionHeading}>Evidence levels</Text>
+    <Text allowFontScaling={false} style={styles.slideBody}>
       Articles are graded using a standard evidence hierarchy. Higher levels mean more confidence in the finding — but lower-level evidence is still valuable, especially in areas where RCTs are rare or impractical.
     </Text>
 
@@ -193,16 +200,16 @@ const EvidenceSlide: React.FC = () => (
       {EVIDENCE_LEVELS.map((level) => (
         <View key={level.label} style={[styles.evidenceCard, { borderColor: level.color + '40' }]}>
           <View style={[styles.evidenceBadge, { backgroundColor: level.bg }]}>
-            <Text style={[styles.evidenceBadgeText, { color: level.color }]}>{level.label}</Text>
+            <Text allowFontScaling={false} style={[styles.evidenceBadgeText, { color: level.color }]}>{level.label}</Text>
           </View>
-          <Text style={styles.evidenceCardTitle}>{level.title}</Text>
-          <Text style={styles.evidenceCardDesc}>{level.desc}</Text>
+          <Text allowFontScaling={false} style={styles.evidenceCardTitle}>{level.title}</Text>
+          <Text allowFontScaling={false} style={styles.evidenceCardDesc}>{level.desc}</Text>
         </View>
       ))}
     </View>
 
-    <Text style={styles.sectionHeading}>How articles are sorted</Text>
-    <Text style={styles.slideBody}>
+    <Text allowFontScaling={false} style={styles.sectionHeading}>How articles are sorted</Text>
+    <Text allowFontScaling={false} style={styles.slideBody}>
       In Browse, articles default to newest publication year first, with stronger evidence ranked higher within the same year. You can filter by ASHA area or search by author, keyword, diagnosis, or treatment name.
     </Text>
   </ScrollView>
@@ -214,22 +221,22 @@ const MyPatientSlide: React.FC = () => (
       colors={[colors.pastelLavender, colors.pastelMint]}
       style={styles.iconCircle}
     >
-      <Text style={styles.iconEmoji}>🔍</Text>
+      <Text allowFontScaling={false} style={styles.iconEmoji}>🔍</Text>
     </LinearGradient>
-    <Text style={styles.slideTitle}>Find articles for your patient</Text>
-    <Text style={styles.slideSubtitle}>Describe your patient — the app finds the evidence</Text>
+    <Text allowFontScaling={false} style={styles.slideTitle}>Find articles for your patient</Text>
+    <Text allowFontScaling={false} style={styles.slideSubtitle}>Describe your patient — the app finds the evidence</Text>
 
-    <Text style={styles.slideBody}>
+    <Text allowFontScaling={false} style={styles.slideBody}>
       Instead of searching by keyword or scrolling through areas, you can describe your patient in plain clinical language and EBP-SLP will surface the most relevant articles automatically.
     </Text>
 
-    <Text style={styles.sectionHeading}>How to use it</Text>
-    <Text style={styles.slideBody}>
-      Tap the <Text style={{ fontFamily: 'Quicksand_700Bold', color: colors.primaryDeep }}>🔍 My patient</Text> button in the Browse tab header. Type a description of your patient — diagnosis, deficits, presentation, or goals. The more detail, the better the match.
+    <Text allowFontScaling={false} style={styles.sectionHeading}>How to use it</Text>
+    <Text allowFontScaling={false} style={styles.slideBody}>
+      Tap the <Text allowFontScaling={false} style={{ fontFamily: 'Quicksand_700Bold', color: colors.primaryDeep }}>🔍 My patient</Text> button in the Browse tab header. Type a description of your patient — diagnosis, deficits, presentation, or goals. The more detail, the better the match.
     </Text>
 
     <View style={styles.exampleBlock}>
-      <Text style={styles.exampleBlockLabel}>EXAMPLE SEARCHES</Text>
+      <Text allowFontScaling={false} style={styles.exampleBlockLabel}>EXAMPLE SEARCHES</Text>
       {[
         'Severe expressive aphasia post left hemisphere stroke',
         "Parkinson's disease with hypophonia and reduced intelligibility",
@@ -238,15 +245,15 @@ const MyPatientSlide: React.FC = () => (
         'Stuttering in adults with high social anxiety',
       ].map((ex) => (
         <View key={ex} style={styles.exampleRow}>
-          <Text style={styles.exampleDot}>›</Text>
-          <Text style={styles.exampleText}>{ex}</Text>
+          <Text allowFontScaling={false} style={styles.exampleDot}>›</Text>
+          <Text allowFontScaling={false} style={styles.exampleText}>{ex}</Text>
         </View>
       ))}
     </View>
 
-    <Text style={styles.sectionHeading}>What you'll see</Text>
-    <Text style={styles.slideBody}>
-      Matched articles are ranked by relevance to your patient's presentation. Articles marked <Text style={{ fontFamily: 'Quicksand_700Bold', color: '#E65100' }}>⚡ Plan ready</Text> can generate a full evidence-based session plan directly — tap any result to read the article and get started.
+    <Text allowFontScaling={false} style={styles.sectionHeading}>What you'll see</Text>
+    <Text allowFontScaling={false} style={styles.slideBody}>
+      Matched articles are ranked by relevance to your patient's presentation. Articles marked <Text allowFontScaling={false} style={{ fontFamily: 'Quicksand_700Bold', color: '#E65100' }}>⚡ Plan ready</Text> can generate a full evidence-based session plan directly — tap any result to read the article and get started.
     </Text>
   </ScrollView>
 );
@@ -268,10 +275,10 @@ const NotificationsSlide: React.FC<{
       colors={[colors.pastelBlue, colors.pastelMint]}
       style={styles.iconCircle}
     >
-      <Text style={styles.iconEmoji}>🔔</Text>
+      <Text allowFontScaling={false} style={styles.iconEmoji}>🔔</Text>
     </LinearGradient>
-    <Text style={styles.slideTitle}>Stay in the loop</Text>
-    <Text style={styles.slideSubtitle}>Choose how often you'd like a reminder — you can always change this later in Profile</Text>
+    <Text allowFontScaling={false} style={styles.slideTitle}>Stay in the loop</Text>
+    <Text allowFontScaling={false} style={styles.slideSubtitle}>Choose how often you'd like a reminder — you can always change this later in Profile</Text>
 
     <View style={styles.notifOptionList}>
       {NOTIF_OPTIONS.map((opt) => {
@@ -283,10 +290,10 @@ const NotificationsSlide: React.FC<{
             onPress={() => onSelect(opt.value)}
             disabled={saving}
           >
-            <Text style={styles.notifOptionIcon}>{opt.icon}</Text>
+            <Text allowFontScaling={false} style={styles.notifOptionIcon}>{opt.icon}</Text>
             <View style={styles.notifOptionTextWrap}>
-              <Text style={[styles.notifOptionTitle, active && styles.notifOptionTitleActive]}>{opt.title}</Text>
-              <Text style={styles.notifOptionDesc}>{opt.desc}</Text>
+              <Text allowFontScaling={false} style={[styles.notifOptionTitle, active && styles.notifOptionTitleActive]}>{opt.title}</Text>
+              <Text allowFontScaling={false} style={styles.notifOptionDesc}>{opt.desc}</Text>
             </View>
             {saving && active ? (
               <ActivityIndicator size="small" color={colors.primaryDark} />
@@ -308,10 +315,10 @@ const GetStartedSlide: React.FC = () => (
       colors={[colors.pastelMint, colors.pastelBlue]}
       style={styles.iconCircle}
     >
-      <Text style={styles.iconEmoji}>🚀</Text>
+      <Text allowFontScaling={false} style={styles.iconEmoji}>🚀</Text>
     </LinearGradient>
-    <Text style={styles.slideTitle}>You're all set</Text>
-    <Text style={styles.slideSubtitle}>A few tips to get the most out of EBP-SLP</Text>
+    <Text allowFontScaling={false} style={styles.slideTitle}>You're all set</Text>
+    <Text allowFontScaling={false} style={styles.slideSubtitle}>A few tips to get the most out of EBP-SLP</Text>
 
     <View style={styles.tipList}>
       {[
@@ -342,10 +349,10 @@ const GetStartedSlide: React.FC = () => (
         },
       ].map((tip) => (
         <View key={tip.title} style={styles.tipCard}>
-          <Text style={styles.tipIcon}>{tip.icon}</Text>
+          <Text allowFontScaling={false} style={styles.tipIcon}>{tip.icon}</Text>
           <View style={{ flex: 1 }}>
-            <Text style={styles.tipTitle}>{tip.title}</Text>
-            <Text style={styles.tipBody}>{tip.body}</Text>
+            <Text allowFontScaling={false} style={styles.tipTitle}>{tip.title}</Text>
+            <Text allowFontScaling={false} style={styles.tipBody}>{tip.body}</Text>
           </View>
         </View>
       ))}
@@ -353,8 +360,8 @@ const GetStartedSlide: React.FC = () => (
 
     {/* AI disclaimer */}
     <View style={styles.aiDisclaimer}>
-      <Text style={styles.aiDisclaimerTitle}>⚠️  AI-generated content</Text>
-      <Text style={styles.aiDisclaimerBody}>
+      <Text allowFontScaling={false} style={styles.aiDisclaimerTitle}>⚠️  AI-generated content</Text>
+      <Text allowFontScaling={false} style={styles.aiDisclaimerBody}>
         Session plans are generated by AI. AI can make mistakes. You are the licensed clinician — always review and adapt every plan before using it with a patient.
       </Text>
     </View>
@@ -472,7 +479,7 @@ export const OnboardingScreen: React.FC = () => {
           style={[styles.nextBtn, !canAdvance && styles.nextBtnDisabled]}
           onPress={canAdvance ? goNext : undefined}
         >
-          <Text style={styles.nextBtnText}>
+          <Text allowFontScaling={false} style={styles.nextBtnText}>
             {isLast
               ? isReviewMode ? 'Done →' : 'Get started →'
               : isPhiSlide && !phiAcknowledged
@@ -489,14 +496,14 @@ export const OnboardingScreen: React.FC = () => {
               router.replace('/(tabs)');
             }}
           >
-            <Text style={styles.skipText}>Skip</Text>
+            <Text allowFontScaling={false} style={styles.skipText}>Skip</Text>
           </Pressable>
         )}
 
         {/* Close — review mode header-less dismiss */}
         {isReviewMode && isLast && (
           <Pressable onPress={() => router.back()}>
-            <Text style={styles.skipText}>Close</Text>
+            <Text allowFontScaling={false} style={styles.skipText}>Close</Text>
           </Pressable>
         )}
       </View>
@@ -633,6 +640,27 @@ const styles = StyleSheet.create({
   tipIcon: { fontSize: 22, width: 30 },
   tipTitle: { ...text.bodySmall, color: colors.text, fontFamily: 'Quicksand_700Bold', marginBottom: 4 },
   tipBody: { ...text.caption, color: colors.textMuted, lineHeight: 17 },
+
+  // ── Access note (Evidence slide) ──
+  accessNote: {
+    backgroundColor: colors.primaryLighter,
+    borderWidth: 1.5,
+    borderColor: colors.primary,
+    borderRadius: 14,
+    padding: 14,
+    marginBottom: 16,
+  },
+  accessNoteTitle: {
+    ...text.bodySmall,
+    color: colors.primaryDeep,
+    fontFamily: 'Quicksand_700Bold',
+    marginBottom: 6,
+  },
+  accessNoteBody: {
+    ...text.caption,
+    color: colors.primaryDeep,
+    lineHeight: 17,
+  },
 
   // ── AI disclaimer ──
   aiDisclaimer: {
