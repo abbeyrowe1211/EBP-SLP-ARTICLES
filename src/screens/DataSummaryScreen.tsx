@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -9,6 +9,8 @@ import {
   ActivityIndicator,
   Alert,
   Clipboard,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter, useLocalSearchParams } from 'expo-router';
@@ -246,6 +248,14 @@ export const DataSummaryScreen: React.FC = () => {
     setDocPhrase(buildDocPhrase());
   };
 
+  // Tapping "Edit" focuses the box directly so it's obvious the text can be
+  // changed by hand — the field itself was always editable, but nothing
+  // made that clear without a cursor already showing.
+  const docInputRef = useRef<TextInput>(null);
+  const handleEditDocPhrase = () => {
+    docInputRef.current?.focus();
+  };
+
   // Accuracy is always shown in green — the target % is patient-specific,
   // so a lower number can still mean the patient is right on goal.
   const overallColor = !summary ? colors.textMuted : '#16A34A';
@@ -257,7 +267,16 @@ export const DataSummaryScreen: React.FC = () => {
         <Text allowFontScaling={false} style={styles.patientChip}>{patientLabel}</Text>
       </View>
 
-      <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 10 : 0}
+      >
+      <ScrollView
+        contentContainerStyle={styles.scroll}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
         {/* Overall accuracy */}
         <View style={styles.overallCard}>
           <Text allowFontScaling={false} style={[styles.overallPct, { color: overallColor }]}>
@@ -309,8 +328,14 @@ export const DataSummaryScreen: React.FC = () => {
 
             {/* Documentation phrase — same text used in the SOAP note's Assessment section, editable */}
             <View style={styles.docCard}>
-              <Text allowFontScaling={false} style={styles.docCardLabel}>Documentation phrase</Text>
+              <View style={styles.docCardLabelRow}>
+                <Text allowFontScaling={false} style={styles.docCardLabel}>Documentation phrase</Text>
+                <Pressable onPress={handleResetDocPhrase} hitSlop={8}>
+                  <Text allowFontScaling={false} style={styles.resetLink}>Reset to auto-text</Text>
+                </Pressable>
+              </View>
               <TextInput allowFontScaling={false}
+                ref={docInputRef}
                 style={styles.docText}
                 value={docPhrase}
                 onChangeText={setDocPhrase}
@@ -319,8 +344,8 @@ export const DataSummaryScreen: React.FC = () => {
                 placeholder="Documentation phrase"
                 placeholderTextColor={colors.textMuted}
               />
-              <Pressable style={styles.regenerateBtn} onPress={handleResetDocPhrase}>
-                <Text allowFontScaling={false} style={styles.regenerateBtnText}>Reset to auto-generated text</Text>
+              <Pressable style={styles.regenerateBtn} onPress={handleEditDocPhrase}>
+                <Text allowFontScaling={false} style={styles.regenerateBtnText}>✏️  Edit</Text>
               </Pressable>
               <Pressable
                 style={[styles.copyBtn, copied && styles.copyBtnDone]}
@@ -363,6 +388,7 @@ export const DataSummaryScreen: React.FC = () => {
 
         <View style={{ height: 40 }} />
       </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
@@ -473,11 +499,16 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   soapBtnText: { ...text.h4, color: colors.primaryDark },
+  docCardLabelRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   docCardLabel: {
     ...text.label,
     color: colors.textMuted,
-    marginBottom: 8,
   },
+  resetLink: { ...text.caption, color: colors.primary, fontFamily: 'Quicksand_600SemiBold' },
   docBtn: {
     backgroundColor: colors.primaryDark,
     borderRadius: 14,
@@ -494,7 +525,17 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 12,
   },
-  docText: { ...text.bodySmall, color: colors.text, lineHeight: 22, minHeight: 90, padding: 0 },
+  docText: {
+    ...text.bodySmall,
+    color: colors.text,
+    lineHeight: 22,
+    minHeight: 90,
+    backgroundColor: colors.bg,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: colors.border,
+    padding: 10,
+  },
   copyBtn: {
     backgroundColor: colors.primaryDark,
     borderRadius: 10,

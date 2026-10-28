@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -7,9 +7,10 @@ import {
   ScrollView,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useRouter, useFocusEffect } from 'expo-router';
+import { useRouter } from 'expo-router';
 import { LibraryScreen } from '@/screens/LibraryScreen';
-import { isPremium, PREMIUM_FEATURES } from '@/config/premium';
+import { PREMIUM_FEATURES } from '@/config/premium';
+import { useIsPremium } from '@/hooks/useIsPremium';
 import { colors } from '@/theme/colors';
 import { text } from '@/theme/typography';
 
@@ -63,12 +64,9 @@ function PlansLocked() {
 // ─── Route ────────────────────────────────────────────────────────────────────
 
 export default function Library() {
-  const [premium, setPremium] = useState(isPremium());
-
-  // Re-check on every focus so the screen updates immediately after purchase
-  useFocusEffect(useCallback(() => {
-    setPremium(isPremium());
-  }, []));
+  // Reactive — updates the instant RevenueCat confirms entitlement status,
+  // not just when this tab regains focus.
+  const premium = useIsPremium();
 
   if (!premium) return <PlansLocked />;
   return <LibraryScreen />;
