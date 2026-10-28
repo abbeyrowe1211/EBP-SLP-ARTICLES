@@ -391,7 +391,7 @@ export const HomeScreen = () => {
     return unsub;
   }, []);
 
-  useFocusEffect(useCallback(() => { load(); }, [load]));
+  useFocusEffect(useCallback(() => { load().catch(() => {}); }, [load]));
 
   // Recompute article of the week whenever articles load
   useEffect(() => {

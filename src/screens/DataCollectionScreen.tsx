@@ -201,7 +201,7 @@ export const DataCollectionScreen: React.FC = () => {
         if (cueRaw) setCustomCues(JSON.parse(cueRaw));
         if (visRaw) setEnabledCues(JSON.parse(visRaw));
       } catch {}
-    });
+    }).catch(() => {});
   }, []);
 
   // Check once on mount for a leftover autosaved draft — from this session
@@ -213,7 +213,7 @@ export const DataCollectionScreen: React.FC = () => {
       if (!cancelled && draft && draft.trials.length > 0) {
         setPendingDraft(draft);
       }
-    });
+    }).catch(() => {});
     return () => { cancelled = true; };
   }, []);
 

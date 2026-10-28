@@ -22,12 +22,30 @@ export const DAY_FULL_LABELS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thu
 const CONTENT = {
   title: 'New research may be available',
   body: 'Tap to check the latest articles in EBP-SLP.',
+  data: { type: 'article-reminder' },
 };
 
 const NEW_ARTICLES_CONTENT = {
   title: '📚 New articles added',
   body: 'New evidence-based articles are now available in EBP-SLP. Tap to explore.',
+  data: { type: 'article-reminder' },
 };
+
+// Cancels only this feature's own scheduled notification(s) — never the
+// unrelated Motivation Nudges, which are scheduled independently and must
+// survive an Article Reminders change. (Using
+// cancelAllScheduledNotificationsAsync() here used to silently wipe out
+// every pending motivation nudge any time someone touched this setting.)
+async function cancelArticleReminderNotifications(): Promise<void> {
+  try {
+    const scheduled = await Notifications.getAllScheduledNotificationsAsync();
+    for (const n of scheduled) {
+      if ((n.content.data as any)?.type !== 'motivation') {
+        await Notifications.cancelScheduledNotificationAsync(n.identifier);
+      }
+    }
+  } catch {}
+}
 
 // ─── Motivation content pool ──────────────────────────────────────────────────
 // Mix of: weekly nudges · motivational quotes · fun/sassy tips
@@ -118,8 +136,10 @@ export async function getNotifHour(): Promise<number> {
 // ─── Setters & schedule ───────────────────────────────────────────────────────
 
 export async function setNotifFrequency(freq: NotifFrequency): Promise<void> {
-  // Cancel existing scheduled notifications first
-  await Notifications.cancelAllScheduledNotificationsAsync();
+  // Cancel this feature's own existing scheduled notification first —
+  // not cancelAllScheduledNotificationsAsync(), which would also wipe out
+  // any pending Motivation Nudges.
+  await cancelArticleReminderNotifications();
 
   if (freq === 'weekly' || freq === 'monthly') {
     const granted = await requestNotifPermission();

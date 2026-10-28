@@ -219,10 +219,10 @@ export const BrowseScreen: React.FC = () => {
   ).current;
 
   useEffect(() => {
-    getSavedArticleIds().then(setSavedIds);
-    getGroups().then(setGroups);
-    const unsubSaved = subscribeSavedArticles(() => getSavedArticleIds().then(setSavedIds));
-    const unsubGroups = subscribeGroups(() => getGroups().then(setGroups));
+    getSavedArticleIds().then(setSavedIds).catch(() => {});
+    getGroups().then(setGroups).catch(() => {});
+    const unsubSaved = subscribeSavedArticles(() => getSavedArticleIds().then(setSavedIds).catch(() => {}));
+    const unsubGroups = subscribeGroups(() => getGroups().then(setGroups).catch(() => {}));
     return () => { unsubSaved(); unsubGroups(); };
   }, []);
 
@@ -237,7 +237,7 @@ export const BrowseScreen: React.FC = () => {
         } catch {
           setNotedIds(new Set());
         }
-      });
+      }).catch(() => setNotedIds(new Set()));
     }, [])
   );
 

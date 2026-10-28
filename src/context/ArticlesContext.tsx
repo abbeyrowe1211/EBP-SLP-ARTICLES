@@ -116,7 +116,7 @@ export const ArticlesProvider: React.FC<{ children: React.ReactNode }> = ({
       }
     };
 
-    load();
+    load().catch(() => {});
     return () => { cancelled = true; };
   }, [updateArticles]);
 

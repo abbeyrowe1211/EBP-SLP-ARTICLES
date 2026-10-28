@@ -278,7 +278,7 @@ export const SessionPlanScreen: React.FC = () => {
           if (typeof s.showWhyNotes === 'boolean') setShowWhyNotes(s.showWhyNotes);
         } catch {}
       }
-    });
+    }).catch(() => {});
   }, []);
 
   // ── Save state ──

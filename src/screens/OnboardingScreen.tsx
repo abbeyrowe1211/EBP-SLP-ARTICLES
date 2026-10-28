@@ -384,7 +384,7 @@ export const OnboardingScreen: React.FC = () => {
   const [notifSaving, setNotifSaving] = useState(false);
 
   useEffect(() => {
-    getNotifFrequency().then(setNotifFreqState);
+    getNotifFrequency().then(setNotifFreqState).catch(() => {});
   }, []);
 
   const handleSelectNotifFreq = async (freq: NotifFrequency) => {

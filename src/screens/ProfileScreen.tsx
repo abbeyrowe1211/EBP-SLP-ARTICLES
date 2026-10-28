@@ -163,7 +163,9 @@ export const ProfileScreen: React.FC = () => {
   const toggleCueVisibility = async (level: string) => {
     const updated = { ...cueVisibility, [level]: !isCueOn(level) };
     setCueVisibility(updated);
-    await AsyncStorage.setItem(KEY_CUE_VIS, JSON.stringify(updated));
+    try {
+      await AsyncStorage.setItem(KEY_CUE_VIS, JSON.stringify(updated));
+    } catch {}
   };
 
   // ── Load persisted data ──
@@ -221,7 +223,9 @@ export const ProfileScreen: React.FC = () => {
       credentials: draftProfile.credentials.trim(),
       setting: draftProfile.setting.trim(),
     };
-    await AsyncStorage.setItem(KEY_PROFILE, JSON.stringify(trimmed));
+    try {
+      await AsyncStorage.setItem(KEY_PROFILE, JSON.stringify(trimmed));
+    } catch {}
     setProfile(trimmed);
     setEditingProfile(false);
   };
@@ -237,7 +241,9 @@ export const ProfileScreen: React.FC = () => {
   const saveSetting = async (patch: Partial<AppSettings>) => {
     const updated = { ...settings, ...patch };
     setSettings(updated);
-    await AsyncStorage.setItem(KEY_SETTINGS, JSON.stringify(updated));
+    try {
+      await AsyncStorage.setItem(KEY_SETTINGS, JSON.stringify(updated));
+    } catch {}
   };
 
   // ── Notification frequency ──
@@ -313,12 +319,14 @@ export const ProfileScreen: React.FC = () => {
         onPress: async () => {
           const updated = customCues.filter((c) => c !== cue);
           setCustomCues(updated);
-          await AsyncStorage.setItem('ebp_slp_custom_cues_v1', JSON.stringify(updated));
           // Also remove from visibility map
           const vis = { ...cueVisibility };
           delete vis[cue];
           setCueVisibility(vis);
-          await AsyncStorage.setItem(KEY_CUE_VIS, JSON.stringify(vis));
+          try {
+            await AsyncStorage.setItem('ebp_slp_custom_cues_v1', JSON.stringify(updated));
+            await AsyncStorage.setItem(KEY_CUE_VIS, JSON.stringify(vis));
+          } catch {}
         },
       },
     ]);

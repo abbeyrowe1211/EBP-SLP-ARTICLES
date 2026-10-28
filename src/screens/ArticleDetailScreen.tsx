@@ -90,7 +90,7 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
   useEffect(() => {
     setLastRead(article.id);
     pushRecentlyViewed(article.id);
-    isArticleSaved(article.id).then(setSaved);
+    isArticleSaved(article.id).then(setSaved).catch(() => {});
     // Load note for this article
     AsyncStorage.getItem(NOTES_KEY).then((raw) => {
       if (raw) {
@@ -99,7 +99,7 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
           setNote(notes[article.id] ?? '');
         } catch {}
       }
-    });
+    }).catch(() => {});
     // Auto-mark as seen (harmless no-op if it wasn't "new") — clears the
     // home screen red dot for this article without needing to check
     // membership against the dynamic new-articles list first.
@@ -107,10 +107,10 @@ export const ArticleDetailScreen: React.FC<Props> = ({ article }) => {
       try {
         const seen: string[] = raw ? JSON.parse(raw) : [];
         if (!seen.includes(article.id)) {
-          AsyncStorage.setItem(NEW_ARTICLES_SEEN_KEY, JSON.stringify([...seen, article.id]));
+          AsyncStorage.setItem(NEW_ARTICLES_SEEN_KEY, JSON.stringify([...seen, article.id])).catch(() => {});
         }
       } catch {}
-    });
+    }).catch(() => {});
   }, [article.id]);
 
   const handleNoteChange = (val: string) => {

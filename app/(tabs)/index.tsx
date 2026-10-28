@@ -15,17 +15,24 @@ export default function Home() {
   const [showWalkthrough, setShowWalkthrough] = useState(false);
 
   useEffect(() => {
-    AsyncStorage.multiGet([ONBOARDING_DONE_KEY, WALKTHROUGH_DONE_KEY]).then(([[, onboardDone], [, walkDone]]) => {
-      if (!onboardDone) {
-        router.replace('/onboarding');
-      } else {
-        setReady(true);
-        if (!walkDone) {
-          // Small delay so the home screen renders first
-          setTimeout(() => setShowWalkthrough(true), 600);
+    AsyncStorage.multiGet([ONBOARDING_DONE_KEY, WALKTHROUGH_DONE_KEY])
+      .then(([[, onboardDone], [, walkDone]]) => {
+        if (!onboardDone) {
+          router.replace('/onboarding');
+        } else {
+          setReady(true);
+          if (!walkDone) {
+            // Small delay so the home screen renders first
+            setTimeout(() => setShowWalkthrough(true), 600);
+          }
         }
-      }
-    });
+      })
+      .catch(() => {
+        // If this read ever fails, fail open rather than leaving the app
+        // stuck on a blank screen forever — just show Home and skip the
+        // one-time walkthrough prompt.
+        setReady(true);
+      });
   }, []);
 
   const handleWalkthroughDone = async () => {

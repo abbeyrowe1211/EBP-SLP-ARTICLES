@@ -718,7 +718,7 @@ export const SavedArticlesScreen: React.FC = () => {
   }, [articles]);
 
   useFocusEffect(useCallback(() => {
-    reload();
+    reload().catch(() => {});
     if (reopenBrowseAfterRead) {
       setReopenBrowseAfterRead(false);
       setAllBrowseVisible(true);
