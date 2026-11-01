@@ -290,12 +290,23 @@ export const PatientScenarioScreen: React.FC = () => {
   // iOS doesn't reliably auto-scroll a focused input near the bottom of a
   // long, already-scrolled ScrollView above the keyboard on its own —
   // KeyboardAvoidingView only shrinks the visible area, it doesn't move the
-  // scroll position. Scrolling to the end ourselves once the keyboard
-  // starts animating up is what actually brings the feedback box (the last
-  // real content before the trailing spacer) into view.
+  // scroll position. A fixed setTimeout after focus raced the keyboard's
+  // own show animation and could fire before the view had actually
+  // resized, undershooting the scroll. Waiting for the real
+  // keyboardDidShow event (fired once the keyboard animation finishes)
+  // is what reliably brings the feedback box fully above it; the
+  // setTimeout is just a fallback in case that event never fires.
   const scrollRef = useRef<ScrollView>(null);
   const scrollFeedbackIntoView = () => {
-    setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 80);
+    let done = false;
+    const scrollNow = () => {
+      if (done) return;
+      done = true;
+      scrollRef.current?.scrollToEnd({ animated: true });
+      sub.remove();
+    };
+    const sub = Keyboard.addListener('keyboardDidShow', scrollNow);
+    setTimeout(scrollNow, 400); // fallback if the event never fires
   };
 
   const EXAMPLES = [
@@ -535,6 +546,9 @@ export const PatientScenarioScreen: React.FC = () => {
                     placeholder="e.g. memory strategies for early-stage dementia"
                     placeholderTextColor={colors.textMuted}
                     multiline
+                    returnKeyType="send"
+                    blurOnSubmit
+                    onSubmitEditing={handleSendFeedback}
                     onFocus={scrollFeedbackIntoView}
                   />
                   <Pressable
@@ -614,7 +628,7 @@ const styles = StyleSheet.create({
     lineHeight: 17,
   },
 
-  scroll: { paddingHorizontal: 20 },
+  scroll: { paddingHorizontal: 20, paddingBottom: 24 },
 
   sectionLabel: { ...text.label, color: colors.textMuted, marginBottom: 10 },
 
