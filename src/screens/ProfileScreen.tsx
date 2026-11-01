@@ -255,7 +255,11 @@ export const ProfileScreen: React.FC = () => {
       if (e?.message === 'notification_permission_denied') {
         Alert.alert(
           'Notifications blocked',
-          'Go to Settings → EBP-SLP → Notifications and enable them to receive article reminders.',
+          'Notifications are turned off for EBP-SLP. Turn them on in Settings to receive article reminders.',
+          [
+            { text: 'Not now', style: 'cancel' },
+            { text: 'Open Settings', onPress: () => Linking.openSettings().catch(() => {}) },
+          ],
         );
       } else {
         Alert.alert('Error', 'Could not update notification settings. Try again.');
@@ -286,7 +290,11 @@ export const ProfileScreen: React.FC = () => {
       if (e?.message === 'notification_permission_denied') {
         Alert.alert(
           'Notifications blocked',
-          'Go to Settings → EBP-SLP → Notifications and enable them to receive motivation nudges.',
+          'Notifications are turned off for EBP-SLP. Turn them on in Settings to receive motivation nudges.',
+          [
+            { text: 'Not now', style: 'cancel' },
+            { text: 'Open Settings', onPress: () => Linking.openSettings().catch(() => {}) },
+          ],
         );
       } else {
         Alert.alert('Error', 'Could not update notification settings. Try again.');
@@ -408,7 +416,11 @@ export const ProfileScreen: React.FC = () => {
       if (e?.message === 'notification_permission_denied') {
         Alert.alert(
           'Notifications blocked',
-          'Go to Settings → EBP-SLP → Notifications and enable them to receive Article of the Week.',
+          'Notifications are turned off for EBP-SLP. Turn them on in Settings to receive Article of the Week.',
+          [
+            { text: 'Not now', style: 'cancel' },
+            { text: 'Open Settings', onPress: () => Linking.openSettings().catch(() => {}) },
+          ],
         );
       } else {
         Alert.alert('Error', 'Could not update notification settings. Try again.');

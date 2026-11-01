@@ -9,6 +9,7 @@ import {
   FlatList,
   Alert,
   ActivityIndicator,
+  Linking,
   type ViewToken,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -394,9 +395,17 @@ export const OnboardingScreen: React.FC = () => {
       setNotifFreqState(freq);
     } catch (e: any) {
       if (e?.message === 'notification_permission_denied') {
+        // iOS only shows the system permission prompt once per install — if
+        // it's already been denied, requesting again silently does nothing,
+        // which otherwise looks like the button is broken. Send them
+        // straight to Settings instead of just describing where to go.
         Alert.alert(
           'Notifications blocked',
-          'You can enable notifications later in Settings → EBP-SLP → Notifications, or change this anytime in your Profile.'
+          'Notifications are turned off for EBP-SLP. You can turn them on in Settings, or change this anytime in your Profile.',
+          [
+            { text: 'Not now', style: 'cancel' },
+            { text: 'Open Settings', onPress: () => Linking.openSettings().catch(() => {}) },
+          ]
         );
       } else {
         Alert.alert('Error', 'Could not save your notification preference. You can set this later in Profile.');
