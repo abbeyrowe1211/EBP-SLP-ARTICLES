@@ -287,6 +287,16 @@ export const PatientScenarioScreen: React.FC = () => {
   const [feedbackText, setFeedbackText] = useState('');
   const [feedbackSent, setFeedbackSent] = useState(false);
   const inputRef = useRef<TextInput>(null);
+  // iOS doesn't reliably auto-scroll a focused input near the bottom of a
+  // long, already-scrolled ScrollView above the keyboard on its own —
+  // KeyboardAvoidingView only shrinks the visible area, it doesn't move the
+  // scroll position. Scrolling to the end ourselves once the keyboard
+  // starts animating up is what actually brings the feedback box (the last
+  // real content before the trailing spacer) into view.
+  const scrollRef = useRef<ScrollView>(null);
+  const scrollFeedbackIntoView = () => {
+    setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 80);
+  };
 
   const EXAMPLES = [
     'severe expressive aphasia post-stroke',
@@ -412,6 +422,7 @@ export const PatientScenarioScreen: React.FC = () => {
         keyboardVerticalOffset={Platform.OS === 'ios' ? 10 : 0}
       >
       <ScrollView
+        ref={scrollRef}
         contentContainerStyle={styles.scroll}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
@@ -524,6 +535,7 @@ export const PatientScenarioScreen: React.FC = () => {
                     placeholder="e.g. memory strategies for early-stage dementia"
                     placeholderTextColor={colors.textMuted}
                     multiline
+                    onFocus={scrollFeedbackIntoView}
                   />
                   <Pressable
                     style={[styles.feedbackSendBtn, !feedbackText.trim() && styles.feedbackSendBtnDisabled]}
